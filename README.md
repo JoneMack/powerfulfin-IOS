@@ -1,2 +1,2 @@
-# powerfulfin-IOS
-大圣分期IOS
+# powerfulfin-iOS
+大圣分期iOS
