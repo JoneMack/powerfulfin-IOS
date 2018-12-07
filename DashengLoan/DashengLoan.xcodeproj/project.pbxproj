@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3548366621BA158A008AB78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548366521BA158A008AB78D /* AppDelegate.swift */; };
+		3548366D21BA158B008AB78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3548366C21BA158B008AB78D /* Assets.xcassets */; };
+		3548367E21BA1709008AB78D /* DSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548367D21BA1709008AB78D /* DSViewController.swift */; };
+		3548368021BA174D008AB78D /* DSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548367F21BA174D008AB78D /* DSTableViewController.swift */; };
+		3548368221BA1765008AB78D /* DSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368121BA1765008AB78D /* DSTabBarController.swift */; };
+		3548368421BA177B008AB78D /* DSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368321BA177B008AB78D /* DSNavigationController.swift */; };
+		3548368621BA17B8008AB78D /* DSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368521BA17B8008AB78D /* DSWebViewController.swift */; };
+		3548368921BA180E008AB78D /* DSHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368821BA180E008AB78D /* DSHomeViewController.swift */; };
+		3548368D21BA18F5008AB78D /* DSUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368C21BA18F5008AB78D /* DSUserViewController.swift */; };
+		3548368F21BA1976008AB78D /* DSOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368E21BA1976008AB78D /* DSOrderViewController.swift */; };
+		3548369421BA3BE0008AB78D /* XJNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548369321BA3BE0008AB78D /* XJNetWork.swift */; };
+		3548369721BA3F05008AB78D /* DSAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548369621BA3F05008AB78D /* DSAppearance.swift */; };
+		5B8BEE818A3E9F2FA247588B /* Pods_dashengLoan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3548366221BA158A008AB78D /* dashengLoan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dashengLoan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3548366521BA158A008AB78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3548366C21BA158B008AB78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3548367121BA158B008AB78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3548367D21BA1709008AB78D /* DSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSViewController.swift; sourceTree = "<group>"; };
+		3548367F21BA174D008AB78D /* DSTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTableViewController.swift; sourceTree = "<group>"; };
+		3548368121BA1765008AB78D /* DSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTabBarController.swift; sourceTree = "<group>"; };
+		3548368321BA177B008AB78D /* DSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSNavigationController.swift; sourceTree = "<group>"; };
+		3548368521BA17B8008AB78D /* DSWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSWebViewController.swift; sourceTree = "<group>"; };
+		3548368821BA180E008AB78D /* DSHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeViewController.swift; sourceTree = "<group>"; };
+		3548368C21BA18F5008AB78D /* DSUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserViewController.swift; sourceTree = "<group>"; };
+		3548368E21BA1976008AB78D /* DSOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderViewController.swift; sourceTree = "<group>"; };
+		3548369321BA3BE0008AB78D /* XJNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJNetWork.swift; sourceTree = "<group>"; };
+		3548369621BA3F05008AB78D /* DSAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAppearance.swift; sourceTree = "<group>"; };
+		3983E1025C0C766D236DECD0 /* Pods-dashengLoan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dashengLoan.release.xcconfig"; path = "Target Support Files/Pods-dashengLoan/Pods-dashengLoan.release.xcconfig"; sourceTree = "<group>"; };
+		6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dashengLoan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5886AFB4089C0531919489B /* Pods-dashengLoan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dashengLoan.debug.xcconfig"; path = "Target Support Files/Pods-dashengLoan/Pods-dashengLoan.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3548365F21BA158A008AB78D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B8BEE818A3E9F2FA247588B /* Pods_dashengLoan.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3548365921BA158A008AB78D = {
+			isa = PBXGroup;
+			children = (
+				3548366421BA158A008AB78D /* dashengLoan */,
+				3548366321BA158A008AB78D /* Products */,
+				AB16DBBE55B14A38F6F4E78F /* Pods */,
+				BE286E756130561079BDAB8B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3548366321BA158A008AB78D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3548366221BA158A008AB78D /* dashengLoan.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3548366421BA158A008AB78D /* dashengLoan */ = {
+			isa = PBXGroup;
+			children = (
+				3548369521BA3EEA008AB78D /* Appearance */,
+				3548369021BA3B9E008AB78D /* DataService */,
+				3548367821BA15C2008AB78D /* Modules */,
+				3548367721BA15B4008AB78D /* BaseVC */,
+				3548366521BA158A008AB78D /* AppDelegate.swift */,
+				3548366C21BA158B008AB78D /* Assets.xcassets */,
+				3548367121BA158B008AB78D /* Info.plist */,
+			);
+			path = dashengLoan;
+			sourceTree = "<group>";
+		};
+		3548367721BA15B4008AB78D /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				3548367D21BA1709008AB78D /* DSViewController.swift */,
+				3548367F21BA174D008AB78D /* DSTableViewController.swift */,
+				3548368121BA1765008AB78D /* DSTabBarController.swift */,
+				3548368321BA177B008AB78D /* DSNavigationController.swift */,
+				3548368521BA17B8008AB78D /* DSWebViewController.swift */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		3548367821BA15C2008AB78D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3548368B21BA18D1008AB78D /* UserModule */,
+				3548368A21BA18C6008AB78D /* OrderModule */,
+				3548368721BA17F2008AB78D /* HomeModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3548368721BA17F2008AB78D /* HomeModule */ = {
+			isa = PBXGroup;
+			children = (
+				3548368821BA180E008AB78D /* DSHomeViewController.swift */,
+			);
+			path = HomeModule;
+			sourceTree = "<group>";
+		};
+		3548368A21BA18C6008AB78D /* OrderModule */ = {
+			isa = PBXGroup;
+			children = (
+				3548368E21BA1976008AB78D /* DSOrderViewController.swift */,
+			);
+			path = OrderModule;
+			sourceTree = "<group>";
+		};
+		3548368B21BA18D1008AB78D /* UserModule */ = {
+			isa = PBXGroup;
+			children = (
+				3548368C21BA18F5008AB78D /* DSUserViewController.swift */,
+			);
+			path = UserModule;
+			sourceTree = "<group>";
+		};
+		3548369021BA3B9E008AB78D /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				3548369221BA3BE0008AB78D /* XJNetWork */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		3548369221BA3BE0008AB78D /* XJNetWork */ = {
+			isa = PBXGroup;
+			children = (
+				3548369321BA3BE0008AB78D /* XJNetWork.swift */,
+			);
+			path = XJNetWork;
+			sourceTree = "<group>";
+		};
+		3548369521BA3EEA008AB78D /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				3548369621BA3F05008AB78D /* DSAppearance.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
+		AB16DBBE55B14A38F6F4E78F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5886AFB4089C0531919489B /* Pods-dashengLoan.debug.xcconfig */,
+				3983E1025C0C766D236DECD0 /* Pods-dashengLoan.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BE286E756130561079BDAB8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3548366121BA158A008AB78D /* dashengLoan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3548367421BA158B008AB78D /* Build configuration list for PBXNativeTarget "dashengLoan" */;
+			buildPhases = (
+				17E080DFEF4AB86C7BF55C20 /* [CP] Check Pods Manifest.lock */,
+				3548365E21BA158A008AB78D /* Sources */,
+				3548365F21BA158A008AB78D /* Frameworks */,
+				3548366021BA158A008AB78D /* Resources */,
+				7B3C4F6A13E0A043BE4176FB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dashengLoan;
+			productName = dashengLoan;
+			productReference = 3548366221BA158A008AB78D /* dashengLoan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3548365A21BA158A008AB78D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DS;
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = powerfulfin;
+				TargetAttributes = {
+					3548366121BA158A008AB78D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 3548365D21BA158A008AB78D /* Build configuration list for PBXProject "dashengLoan" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3548365921BA158A008AB78D;
+			productRefGroup = 3548366321BA158A008AB78D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3548366121BA158A008AB78D /* dashengLoan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3548366021BA158A008AB78D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3548366D21BA158B008AB78D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17E080DFEF4AB86C7BF55C20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dashengLoan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B3C4F6A13E0A043BE4176FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dashengLoan/Pods-dashengLoan-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dashengLoan/Pods-dashengLoan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3548365E21BA158A008AB78D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3548368621BA17B8008AB78D /* DSWebViewController.swift in Sources */,
+				3548368021BA174D008AB78D /* DSTableViewController.swift in Sources */,
+				3548368D21BA18F5008AB78D /* DSUserViewController.swift in Sources */,
+				3548368421BA177B008AB78D /* DSNavigationController.swift in Sources */,
+				3548369721BA3F05008AB78D /* DSAppearance.swift in Sources */,
+				3548368921BA180E008AB78D /* DSHomeViewController.swift in Sources */,
+				3548368F21BA1976008AB78D /* DSOrderViewController.swift in Sources */,
+				3548366621BA158A008AB78D /* AppDelegate.swift in Sources */,
+				3548368221BA1765008AB78D /* DSTabBarController.swift in Sources */,
+				3548369421BA3BE0008AB78D /* XJNetWork.swift in Sources */,
+				3548367E21BA1709008AB78D /* DSViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3548367221BA158B008AB78D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3548367321BA158B008AB78D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3548367521BA158B008AB78D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5886AFB4089C0531919489B /* Pods-dashengLoan.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = dashengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dashengLoan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3548367621BA158B008AB78D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3983E1025C0C766D236DECD0 /* Pods-dashengLoan.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = dashengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dashengLoan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3548365D21BA158A008AB78D /* Build configuration list for PBXProject "dashengLoan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3548367221BA158B008AB78D /* Debug */,
+				3548367321BA158B008AB78D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3548367421BA158B008AB78D /* Build configuration list for PBXNativeTarget "dashengLoan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3548367521BA158B008AB78D /* Debug */,
+				3548367621BA158B008AB78D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3548365A21BA158A008AB78D /* Project object */;
+}
