@@ -13,4 +13,9 @@ class DSUserViewController: DSTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    override func tableViewType() -> UITableView.Style {
+        return .grouped
+    }
 }

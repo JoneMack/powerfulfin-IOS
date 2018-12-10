@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+import SnapKit
 class DSViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
     }
 }
 extension DSViewController : XJSwipToPopBackDelegate {
@@ -20,5 +21,8 @@ extension DSViewController : XJSwipToPopBackDelegate {
     }
     func pushToNextViewController(_ viewController:UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    func popViewController() {
+        navigationController?.popViewController(animated: true)
     }
 }

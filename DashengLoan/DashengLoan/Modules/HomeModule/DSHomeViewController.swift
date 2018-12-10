@@ -12,19 +12,28 @@ class DSHomeViewController: DSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configSubViews()
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configSubViews()  {
+        
+        let button = UIButton(type: .custom)
+        button.setTitle("下一个", for: .normal)
+        button.setTitleColor(UIColor.blue, for: .normal)
+        button.addTarget(self, action: #selector(showNextVC), for: .touchUpInside)
+        view.addSubview(button)
+        button.snp.makeConstraints { (maker) in
+            maker.center.equalToSuperview()
+        }
     }
-    */
+
+    @objc func showNextVC() {
+        let searchVC = DSSearchViewController()
+        pushToNextViewController(searchVC)
+        
+    }
+
 
 }

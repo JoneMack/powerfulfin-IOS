@@ -33,7 +33,13 @@ extension DSNavigationController:UINavigationControllerDelegate {
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if children.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
+            if viewController.isKind(of: DSViewController.self) {
+                viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navi_back"), style: .plain, target: self, action: #selector(popBackAction))
+            }
         }
         super.pushViewController(viewController, animated: animated)
+    }
+    @objc func popBackAction()  {
+        popViewController(animated: true)
     }
 }

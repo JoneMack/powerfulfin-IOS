@@ -19,6 +19,10 @@
 		3548368F21BA1976008AB78D /* DSOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368E21BA1976008AB78D /* DSOrderViewController.swift */; };
 		3548369421BA3BE0008AB78D /* XJNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548369321BA3BE0008AB78D /* XJNetWork.swift */; };
 		3548369721BA3F05008AB78D /* DSAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548369621BA3F05008AB78D /* DSAppearance.swift */; };
+		3595C61721BE08B100B90FD0 /* DSSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C61621BE08B000B90FD0 /* DSSearchViewController.swift */; };
+		3595C62221BE4CB100B90FD0 /* XJDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C61E21BE4CB100B90FD0 /* XJDeviceInfo.swift */; };
+		3595C62321BE4CB100B90FD0 /* XJKeyChainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C62021BE4CB100B90FD0 /* XJKeyChainStore.swift */; };
+		3595C62421BE4CB100B90FD0 /* XJUDID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C62121BE4CB100B90FD0 /* XJUDID.swift */; };
 		5B8BEE818A3E9F2FA247588B /* Pods_dashengLoan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		3548368E21BA1976008AB78D /* DSOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderViewController.swift; sourceTree = "<group>"; };
 		3548369321BA3BE0008AB78D /* XJNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJNetWork.swift; sourceTree = "<group>"; };
 		3548369621BA3F05008AB78D /* DSAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAppearance.swift; sourceTree = "<group>"; };
+		3595C61621BE08B000B90FD0 /* DSSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchViewController.swift; sourceTree = "<group>"; };
+		3595C61E21BE4CB100B90FD0 /* XJDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJDeviceInfo.swift; sourceTree = "<group>"; };
+		3595C62021BE4CB100B90FD0 /* XJKeyChainStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJKeyChainStore.swift; sourceTree = "<group>"; };
+		3595C62121BE4CB100B90FD0 /* XJUDID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJUDID.swift; sourceTree = "<group>"; };
 		3983E1025C0C766D236DECD0 /* Pods-dashengLoan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dashengLoan.release.xcconfig"; path = "Target Support Files/Pods-dashengLoan/Pods-dashengLoan.release.xcconfig"; sourceTree = "<group>"; };
 		6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dashengLoan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5886AFB4089C0531919489B /* Pods-dashengLoan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dashengLoan.debug.xcconfig"; path = "Target Support Files/Pods-dashengLoan/Pods-dashengLoan.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +83,7 @@
 		3548366421BA158A008AB78D /* dashengLoan */ = {
 			isa = PBXGroup;
 			children = (
+				3595C61C21BE4C9800B90FD0 /* Tools */,
 				3548369521BA3EEA008AB78D /* Appearance */,
 				3548369021BA3B9E008AB78D /* DataService */,
 				3548367821BA15C2008AB78D /* Modules */,
@@ -112,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				3548368821BA180E008AB78D /* DSHomeViewController.swift */,
+				3595C61621BE08B000B90FD0 /* DSSearchViewController.swift */,
 			);
 			path = HomeModule;
 			sourceTree = "<group>";
@@ -154,6 +164,32 @@
 				3548369621BA3F05008AB78D /* DSAppearance.swift */,
 			);
 			path = Appearance;
+			sourceTree = "<group>";
+		};
+		3595C61C21BE4C9800B90FD0 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				3595C61D21BE4CB100B90FD0 /* XJDeviceInfo */,
+				3595C61F21BE4CB100B90FD0 /* XJKeyChainStore */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		3595C61D21BE4CB100B90FD0 /* XJDeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				3595C61E21BE4CB100B90FD0 /* XJDeviceInfo.swift */,
+			);
+			path = XJDeviceInfo;
+			sourceTree = "<group>";
+		};
+		3595C61F21BE4CB100B90FD0 /* XJKeyChainStore */ = {
+			isa = PBXGroup;
+			children = (
+				3595C62021BE4CB100B90FD0 /* XJKeyChainStore.swift */,
+				3595C62121BE4CB100B90FD0 /* XJUDID.swift */,
+			);
+			path = XJKeyChainStore;
 			sourceTree = "<group>";
 		};
 		AB16DBBE55B14A38F6F4E78F /* Pods */ = {
@@ -273,12 +309,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-dashengLoan/Pods-dashengLoan-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -292,13 +330,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3595C62221BE4CB100B90FD0 /* XJDeviceInfo.swift in Sources */,
 				3548368621BA17B8008AB78D /* DSWebViewController.swift in Sources */,
 				3548368021BA174D008AB78D /* DSTableViewController.swift in Sources */,
 				3548368D21BA18F5008AB78D /* DSUserViewController.swift in Sources */,
 				3548368421BA177B008AB78D /* DSNavigationController.swift in Sources */,
 				3548369721BA3F05008AB78D /* DSAppearance.swift in Sources */,
 				3548368921BA180E008AB78D /* DSHomeViewController.swift in Sources */,
+				3595C62421BE4CB100B90FD0 /* XJUDID.swift in Sources */,
 				3548368F21BA1976008AB78D /* DSOrderViewController.swift in Sources */,
+				3595C61721BE08B100B90FD0 /* DSSearchViewController.swift in Sources */,
+				3595C62321BE4CB100B90FD0 /* XJKeyChainStore.swift in Sources */,
 				3548366621BA158A008AB78D /* AppDelegate.swift in Sources */,
 				3548368221BA1765008AB78D /* DSTabBarController.swift in Sources */,
 				3548369421BA3BE0008AB78D /* XJNetWork.swift in Sources */,
@@ -432,6 +474,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48TW2EJWSZ;
 				INFOPLIST_FILE = dashengLoan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -452,6 +495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48TW2EJWSZ;
 				INFOPLIST_FILE = dashengLoan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
