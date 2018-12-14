@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3508525421C352810095C391 /* DSLoactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508525321C352810095C391 /* DSLoactionManager.swift */; };
 		3548366621BA158A008AB78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548366521BA158A008AB78D /* AppDelegate.swift */; };
 		3548366D21BA158B008AB78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3548366C21BA158B008AB78D /* Assets.xcassets */; };
 		3548367E21BA1709008AB78D /* DSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548367D21BA1709008AB78D /* DSViewController.swift */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3508525321C352810095C391 /* DSLoactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLoactionManager.swift; sourceTree = "<group>"; };
+		3508525521C352BB0095C391 /* dashengLoan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dashengLoan-Bridging-Header.h"; sourceTree = "<group>"; };
 		3548366221BA158A008AB78D /* dashengLoan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dashengLoan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3548366521BA158A008AB78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3548366C21BA158B008AB78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3508525221C352510095C391 /* DSLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				3508525321C352810095C391 /* DSLoactionManager.swift */,
+			);
+			path = DSLocationManager;
+			sourceTree = "<group>";
+		};
 		3548365921BA158A008AB78D = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +100,7 @@
 				3548367821BA15C2008AB78D /* Modules */,
 				3548367721BA15B4008AB78D /* BaseVC */,
 				3548366521BA158A008AB78D /* AppDelegate.swift */,
+				3508525521C352BB0095C391 /* dashengLoan-Bridging-Header.h */,
 				3548366C21BA158B008AB78D /* Assets.xcassets */,
 				3548367121BA158B008AB78D /* Info.plist */,
 			);
@@ -169,6 +181,7 @@
 		3595C61C21BE4C9800B90FD0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3508525221C352510095C391 /* DSLocationManager */,
 				3595C61D21BE4CB100B90FD0 /* XJDeviceInfo */,
 				3595C61F21BE4CB100B90FD0 /* XJKeyChainStore */,
 			);
@@ -244,6 +257,7 @@
 				TargetAttributes = {
 					3548366121BA158A008AB78D = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -343,6 +357,7 @@
 				3595C62321BE4CB100B90FD0 /* XJKeyChainStore.swift in Sources */,
 				3548366621BA158A008AB78D /* AppDelegate.swift in Sources */,
 				3548368221BA1765008AB78D /* DSTabBarController.swift in Sources */,
+				3508525421C352810095C391 /* DSLoactionManager.swift in Sources */,
 				3548369421BA3BE0008AB78D /* XJNetWork.swift in Sources */,
 				3548367E21BA1709008AB78D /* DSViewController.swift in Sources */,
 			);
@@ -473,6 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48TW2EJWSZ;
 				INFOPLIST_FILE = dashengLoan/Info.plist;
@@ -483,6 +499,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dashengLoan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/dashengLoan/dashengLoan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -494,6 +512,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48TW2EJWSZ;
 				INFOPLIST_FILE = dashengLoan/Info.plist;
@@ -504,6 +523,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dashengLoan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/dashengLoan/dashengLoan-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

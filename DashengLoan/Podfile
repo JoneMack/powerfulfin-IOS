@@ -6,4 +6,6 @@ target 'dashengLoan' do
 
     pod 'Alamofire'
     pod 'SnapKit'
+    
+    pod 'BMKLocationKit'
 end

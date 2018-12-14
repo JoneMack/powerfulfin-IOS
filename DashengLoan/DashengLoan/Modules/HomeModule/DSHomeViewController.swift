@@ -10,10 +10,15 @@ import UIKit
 
 class DSHomeViewController: DSViewController {
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DSLoactionManager.manager.updateUserLoaction()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         configSubViews()
         
+        DSLoactionManager.manager.addListener(listen: self)
         
     }
     
@@ -30,10 +35,19 @@ class DSHomeViewController: DSViewController {
     }
 
     @objc func showNextVC() {
-        let searchVC = DSSearchViewController()
+        let searchVC = DSWebViewController()
+        searchVC.urlString = "http://www.baidu.com"
         pushToNextViewController(searchVC)
         
     }
 
 
+}
+extension DSHomeViewController:DSLocationDelegate {
+    func userLocationDidUpdate(_ success: Bool, error: Error?) {
+        if success {
+            print(DSLoactionManager.manager.longitude)
+            print(DSLoactionManager.manager.latitude)
+        }
+    }
 }

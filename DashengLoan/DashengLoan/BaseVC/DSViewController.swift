@@ -14,6 +14,7 @@ class DSViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
     }
+    
 }
 extension DSViewController : XJSwipToPopBackDelegate {
     func canSwipToPopBack() -> Bool {

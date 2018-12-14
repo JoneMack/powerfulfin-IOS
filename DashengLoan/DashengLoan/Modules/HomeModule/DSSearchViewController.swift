@@ -21,7 +21,6 @@ class DSSearchViewController: DSTableViewController {
         searchBar.frame = CGRect(x: 30, y: 0, width: UIScreen.main.bounds.width-30, height: XJDeviceInfo.naivgaitonBarHeight)
         navigationItem.titleView = searchBar
         searchBar.becomeFirstResponder()
-        
 
     }
 
