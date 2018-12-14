@@ -38,9 +38,7 @@ class DSHomeViewController: DSViewController {
         let searchVC = DSWebViewController()
         searchVC.urlString = "http://www.baidu.com"
         pushToNextViewController(searchVC)
-        
     }
-
 
 }
 extension DSHomeViewController:DSLocationDelegate {
