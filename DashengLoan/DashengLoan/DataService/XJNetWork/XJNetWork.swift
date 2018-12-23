@@ -23,7 +23,7 @@ class XJRequest {
     var timeoutInterval: TimeInterval = 10
     
     init(_ url:String,method:XJHTTPMethod = .get,parameters:[String:Any]? = nil,httpHeader:[String:String]?=nil) {
-        self.url = url
+        self.url = DSNetConfiger.requestURL(absoluteURL: url)
         self.method = method
         guard let parameter = parameters else {  return }
         self.parameters = parameter
@@ -35,22 +35,34 @@ class XJRequest {
 
 
 class XJNetWork {
-    class func request(_ method:XJHTTPMethod = .get,URL:String, parameters:[String:String] ,successHandler:@escaping((Any) ->Void),failHandler:@escaping((Error)->Void)) {
-        Alamofire.request(URL).responseJSON { (response) in
+    class func request(_ method:XJHTTPMethod = .get,URL:String, parameters:[String:String] ,successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void)) {
+        
+        Alamofire.request(URL, method: HTTPMethod(rawValue: method.rawValue)!, parameters: parameters).responseJSON { (response) in
             handlerResult(response: response, successHandler: successHandler, failHandler: failHandler)
         }
     }
-    class func request(_ requst:XJRequest,successHandler:@escaping((Any) ->Void),failHandler:@escaping((Error)->Void)) {
-        Alamofire.request(requst.url, method:.get, parameters: requst.parameters, headers: requst.httpHeader).responseJSON { (response) in
+    class func request(_ requst:XJRequest,successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void)) {
+        
+        Alamofire.request(requst.url, method:HTTPMethod(rawValue: requst.method.rawValue)!, parameters: requst.parameters, headers: requst.httpHeader).responseJSON { (response) in
             handlerResult(response: response, successHandler: successHandler, failHandler: failHandler)
         }
     }
-    fileprivate class func handlerResult(response:DataResponse<Any>,successHandler:@escaping((Any) ->Void),failHandler:@escaping((Error)->Void)) {
+    fileprivate class func handlerResult(response:DataResponse<Any>,successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void)) {
         
         response.result.ifSuccess {
-                successHandler(response.result.value as Any)
+            let resultDic = response.result.value as? Dictionary<String, Any>
+            let code  = resultDic?["code"] as! NSInteger
+            let msg = resultDic?["msg"] as! String
+            
+            if code == 0 {
+                let data = resultDic?["data"] as Any
+                successHandler(data)
+            }else{
+                failHandler(XJError(code: code, errorMsg: msg))
+            }
             }.ifFailure {
-                failHandler(response.error ?? XJNetError.netFail)
+                failHandler(XJError(code: -1, errorMsg: response.error?.localizedDescription ?? "") )
+                
         }
     }
 }
@@ -64,8 +76,7 @@ class XJDecoder {
             let obj = try jsonDecoder.decode(someClass, from: jsonData)
             return obj
         } catch {
-            print("不行啊，映射不成功")
-            throw XJNetError.mapError
+            throw XJError(code: -2, errorMsg: "数据映射失败")
         }
     }
 }
@@ -88,14 +99,11 @@ extension XJNetWork {
         
     }
 }
-
-enum XJNetError:Error {
-    case netFail
-    case mapError
-    var localizedDescription: String {
-        let desc = self == .mapError ? "映射数据失败" :"请求失败了"
-        return "\(self): \(desc)"
-    }
+struct XJError:Error {
+    
+    /// 0是成功
+    let code:NSInteger
+    let errorMsg:String
     
 }
 

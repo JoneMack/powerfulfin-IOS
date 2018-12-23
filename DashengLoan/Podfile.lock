@@ -1,24 +1,43 @@
 PODS:
   - Alamofire (4.7.3)
+  - AlamofireImage (3.4.1):
+    - Alamofire (~> 4.7)
   - BMKLocationKit (1.3.0.2)
+  - Bugly (2.5.0)
+  - IQKeyboardManagerSwift (6.2.0)
+  - RTRootNavigationController (0.7.0):
+    - RTRootNavigationController/Core (= 0.7.0)
+  - RTRootNavigationController/Core (0.7.0)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage
   - BMKLocationKit
+  - Bugly
+  - IQKeyboardManagerSwift
+  - RTRootNavigationController
   - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireImage
     - BMKLocationKit
+    - Bugly
+    - IQKeyboardManagerSwift
+    - RTRootNavigationController
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
   BMKLocationKit: 6c47273f985609be0a0785f2f6f12bb7c1b7e8b6
+  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
+  RTRootNavigationController: f1369f4257c8a44a05c5d3b151d2b8ec7accf121
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 531a23a0b6a5a24349b3b76b628cd3707568fa25
+PODFILE CHECKSUM: a982e0fe5f6db34ca9074ff75134781be1617183
 
 COCOAPODS: 1.6.0.beta.1

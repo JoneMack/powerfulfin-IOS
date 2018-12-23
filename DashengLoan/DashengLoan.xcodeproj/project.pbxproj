@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		3508525421C352810095C391 /* DSLoactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508525321C352810095C391 /* DSLoactionManager.swift */; };
+		3508778121CDD4AB006580AD /* XJGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778021CDD4AB006580AD /* XJGCDTimer.swift */; };
+		3508778321CDEA94006580AD /* DSHomeSearchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778221CDEA94006580AD /* DSHomeSearchControl.swift */; };
+		3508778521CE1613006580AD /* DSHomeBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778421CE1613006580AD /* DSHomeBannerView.swift */; };
+		3508778721CE2739006580AD /* DSHomeNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778621CE2739006580AD /* DSHomeNewsView.swift */; };
+		3508778A21CE3006006580AD /* DSHomeLoanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778921CE3006006580AD /* DSHomeLoanView.swift */; };
+		3508778C21CE3950006580AD /* DSUserLoanStatusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778B21CE3950006580AD /* DSUserLoanStatusInfo.swift */; };
+		3508778F21CE4126006580AD /* DSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778E21CE4126006580AD /* DSButton.swift */; };
+		3508779121CE480F006580AD /* DSHomeLoanButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779021CE480F006580AD /* DSHomeLoanButtonView.swift */; };
+		3508779421CF27CD006580AD /* DSUserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779321CF27CD006580AD /* DSUserHeaderView.swift */; };
+		3508779621CF3841006580AD /* DSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779521CF3841006580AD /* DSImageView.swift */; };
+		3508779921CF5DE9006580AD /* DSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779821CF5DE9006580AD /* DSTableViewCell.swift */; };
+		3508779B21CF62F0006580AD /* DSLogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779A21CF62F0006580AD /* DSLogoutTableViewCell.swift */; };
+		3508779E21CF66AC006580AD /* DSUserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779D21CF66AC006580AD /* DSUserDataSource.swift */; };
+		350877A121CF81F7006580AD /* DSOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350877A021CF81F7006580AD /* DSOrderTableViewCell.swift */; };
 		3548366621BA158A008AB78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548366521BA158A008AB78D /* AppDelegate.swift */; };
 		3548366D21BA158B008AB78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3548366C21BA158B008AB78D /* Assets.xcassets */; };
 		3548367E21BA1709008AB78D /* DSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548367D21BA1709008AB78D /* DSViewController.swift */; };
@@ -20,16 +34,55 @@
 		3548368F21BA1976008AB78D /* DSOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368E21BA1976008AB78D /* DSOrderViewController.swift */; };
 		3548369421BA3BE0008AB78D /* XJNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548369321BA3BE0008AB78D /* XJNetWork.swift */; };
 		3548369721BA3F05008AB78D /* DSAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548369621BA3F05008AB78D /* DSAppearance.swift */; };
+		35552C5D21C9E7EC002033FC /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C5C21C9E7EB002033FC /* libicucore.tbd */; };
+		35552C5F21C9E7FA002033FC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C5E21C9E7FA002033FC /* libc++.tbd */; };
+		35552C6121C9E803002033FC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6021C9E803002033FC /* CoreMedia.framework */; };
+		35552C6321C9E80B002033FC /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6221C9E80B002033FC /* ImageIO.framework */; };
+		35552C6521C9E814002033FC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6421C9E814002033FC /* SystemConfiguration.framework */; };
+		35552C6721C9E82B002033FC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6621C9E82A002033FC /* CoreTelephony.framework */; };
+		35552C6921C9E834002033FC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6821C9E834002033FC /* AudioToolbox.framework */; };
+		35552C6B21C9E840002033FC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6A21C9E840002033FC /* AVFoundation.framework */; };
+		35552C6D21C9E848002033FC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6C21C9E848002033FC /* MobileCoreServices.framework */; };
+		35552C6F21C9E90B002033FC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6E21C9E90A002033FC /* CoreMotion.framework */; };
+		35552C7521CA444C002033FC /* DSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35552C7421CA444C002033FC /* DSLoginViewController.swift */; };
+		35552C7821CB5D15002033FC /* DSUserCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35552C7721CB5D15002033FC /* DSUserCenter.swift */; };
+		35552C7A21CB5DB6002033FC /* DSUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35552C7921CB5DB6002033FC /* DSUserInfo.swift */; };
+		35552C7E21CB63D8002033FC /* DSAccountDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35552C7D21CB63D8002033FC /* DSAccountDataService.swift */; };
+		35552C8021CB6F78002033FC /* UIApplication+Convenient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35552C7F21CB6F78002033FC /* UIApplication+Convenient.swift */; };
+		356E80B021CC87FD0052C6E2 /* XJToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356E80AF21CC87FD0052C6E2 /* XJToast.swift */; };
+		356E80B321CCC3F40052C6E2 /* DSTextValidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356E80B221CCC3F40052C6E2 /* DSTextValidate.swift */; };
+		356E80B621CD05860052C6E2 /* DSBugly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356E80B521CD05860052C6E2 /* DSBugly.swift */; };
 		3595C61721BE08B100B90FD0 /* DSSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C61621BE08B000B90FD0 /* DSSearchViewController.swift */; };
 		3595C62221BE4CB100B90FD0 /* XJDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C61E21BE4CB100B90FD0 /* XJDeviceInfo.swift */; };
 		3595C62321BE4CB100B90FD0 /* XJKeyChainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C62021BE4CB100B90FD0 /* XJKeyChainStore.swift */; };
 		3595C62421BE4CB100B90FD0 /* XJUDID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C62121BE4CB100B90FD0 /* XJUDID.swift */; };
+		35A82B3921CB976B0009D5F2 /* DSPhoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3821CB976B0009D5F2 /* DSPhoneButton.swift */; };
+		35A82B3B21CBA39A0009D5F2 /* DSAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3A21CBA39A0009D5F2 /* DSAgreementView.swift */; };
+		35A82B3D21CBA87C0009D5F2 /* DSNetConfiger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3C21CBA87C0009D5F2 /* DSNetConfiger.swift */; };
+		35E810D221C3A7BD00B5714E /* UDIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E810CD21C3A7BC00B5714E /* UDIDSDK.a */; };
+		35E810D321C3A7BD00B5714E /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35E810CF21C3A7BC00B5714E /* Resource.bundle */; };
+		35E810D421C3A7BD00B5714E /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E810D021C3A7BC00B5714E /* opencv2.framework */; };
+		35E810D521C3A7BD00B5714E /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E810D121C3A7BC00B5714E /* libjpeg.a */; };
 		5B8BEE818A3E9F2FA247588B /* Pods_dashengLoan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3508525321C352810095C391 /* DSLoactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLoactionManager.swift; sourceTree = "<group>"; };
 		3508525521C352BB0095C391 /* dashengLoan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dashengLoan-Bridging-Header.h"; sourceTree = "<group>"; };
+		3508778021CDD4AB006580AD /* XJGCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJGCDTimer.swift; sourceTree = "<group>"; };
+		3508778221CDEA94006580AD /* DSHomeSearchControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeSearchControl.swift; sourceTree = "<group>"; };
+		3508778421CE1613006580AD /* DSHomeBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeBannerView.swift; sourceTree = "<group>"; };
+		3508778621CE2739006580AD /* DSHomeNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeNewsView.swift; sourceTree = "<group>"; };
+		3508778921CE3006006580AD /* DSHomeLoanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeLoanView.swift; sourceTree = "<group>"; };
+		3508778B21CE3950006580AD /* DSUserLoanStatusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserLoanStatusInfo.swift; sourceTree = "<group>"; };
+		3508778E21CE4126006580AD /* DSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSButton.swift; sourceTree = "<group>"; };
+		3508779021CE480F006580AD /* DSHomeLoanButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeLoanButtonView.swift; sourceTree = "<group>"; };
+		3508779321CF27CD006580AD /* DSUserHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserHeaderView.swift; sourceTree = "<group>"; };
+		3508779521CF3841006580AD /* DSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSImageView.swift; sourceTree = "<group>"; };
+		3508779821CF5DE9006580AD /* DSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTableViewCell.swift; sourceTree = "<group>"; };
+		3508779A21CF62F0006580AD /* DSLogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLogoutTableViewCell.swift; sourceTree = "<group>"; };
+		3508779D21CF66AC006580AD /* DSUserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserDataSource.swift; sourceTree = "<group>"; };
+		350877A021CF81F7006580AD /* DSOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderTableViewCell.swift; sourceTree = "<group>"; };
 		3548366221BA158A008AB78D /* dashengLoan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dashengLoan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3548366521BA158A008AB78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3548366C21BA158B008AB78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,10 +97,39 @@
 		3548368E21BA1976008AB78D /* DSOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderViewController.swift; sourceTree = "<group>"; };
 		3548369321BA3BE0008AB78D /* XJNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJNetWork.swift; sourceTree = "<group>"; };
 		3548369621BA3F05008AB78D /* DSAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAppearance.swift; sourceTree = "<group>"; };
+		35552C5C21C9E7EB002033FC /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		35552C5E21C9E7FA002033FC /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		35552C6021C9E803002033FC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		35552C6221C9E80B002033FC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		35552C6421C9E814002033FC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		35552C6621C9E82A002033FC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		35552C6821C9E834002033FC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		35552C6A21C9E840002033FC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		35552C6C21C9E848002033FC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		35552C6E21C9E90A002033FC /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		35552C7421CA444C002033FC /* DSLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLoginViewController.swift; sourceTree = "<group>"; };
+		35552C7721CB5D15002033FC /* DSUserCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserCenter.swift; sourceTree = "<group>"; };
+		35552C7921CB5DB6002033FC /* DSUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserInfo.swift; sourceTree = "<group>"; };
+		35552C7D21CB63D8002033FC /* DSAccountDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAccountDataService.swift; sourceTree = "<group>"; };
+		35552C7F21CB6F78002033FC /* UIApplication+Convenient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Convenient.swift"; sourceTree = "<group>"; };
+		356E80AF21CC87FD0052C6E2 /* XJToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJToast.swift; sourceTree = "<group>"; };
+		356E80B221CCC3F40052C6E2 /* DSTextValidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTextValidate.swift; sourceTree = "<group>"; };
+		356E80B521CD05860052C6E2 /* DSBugly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSBugly.swift; sourceTree = "<group>"; };
 		3595C61621BE08B000B90FD0 /* DSSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchViewController.swift; sourceTree = "<group>"; };
 		3595C61E21BE4CB100B90FD0 /* XJDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJDeviceInfo.swift; sourceTree = "<group>"; };
 		3595C62021BE4CB100B90FD0 /* XJKeyChainStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJKeyChainStore.swift; sourceTree = "<group>"; };
 		3595C62121BE4CB100B90FD0 /* XJUDID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJUDID.swift; sourceTree = "<group>"; };
+		35A82B3821CB976B0009D5F2 /* DSPhoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSPhoneButton.swift; sourceTree = "<group>"; };
+		35A82B3A21CBA39A0009D5F2 /* DSAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAgreementView.swift; sourceTree = "<group>"; };
+		35A82B3C21CBA87C0009D5F2 /* DSNetConfiger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSNetConfiger.swift; sourceTree = "<group>"; };
+		35E810CA21C3A7BC00B5714E /* UDIDSafeDataDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeDataDefine.h; sourceTree = "<group>"; };
+		35E810CB21C3A7BC00B5714E /* UDIDSafeOCREngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeOCREngine.h; sourceTree = "<group>"; };
+		35E810CC21C3A7BC00B5714E /* UDIDSafeAuthEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeAuthEngine.h; sourceTree = "<group>"; };
+		35E810CD21C3A7BC00B5714E /* UDIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = UDIDSDK.a; sourceTree = "<group>"; };
+		35E810CE21C3A7BC00B5714E /* UDIDSafeVideoRecodeEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeVideoRecodeEngine.h; sourceTree = "<group>"; };
+		35E810CF21C3A7BC00B5714E /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
+		35E810D021C3A7BC00B5714E /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		35E810D121C3A7BC00B5714E /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
 		3983E1025C0C766D236DECD0 /* Pods-dashengLoan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dashengLoan.release.xcconfig"; path = "Target Support Files/Pods-dashengLoan/Pods-dashengLoan.release.xcconfig"; sourceTree = "<group>"; };
 		6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dashengLoan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5886AFB4089C0531919489B /* Pods-dashengLoan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dashengLoan.debug.xcconfig"; path = "Target Support Files/Pods-dashengLoan/Pods-dashengLoan.debug.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +140,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35552C6F21C9E90B002033FC /* CoreMotion.framework in Frameworks */,
+				35552C6D21C9E848002033FC /* MobileCoreServices.framework in Frameworks */,
+				35552C6B21C9E840002033FC /* AVFoundation.framework in Frameworks */,
+				35552C6921C9E834002033FC /* AudioToolbox.framework in Frameworks */,
+				35552C6721C9E82B002033FC /* CoreTelephony.framework in Frameworks */,
+				35552C6521C9E814002033FC /* SystemConfiguration.framework in Frameworks */,
+				35552C6321C9E80B002033FC /* ImageIO.framework in Frameworks */,
+				35552C6121C9E803002033FC /* CoreMedia.framework in Frameworks */,
+				35552C5F21C9E7FA002033FC /* libc++.tbd in Frameworks */,
+				35552C5D21C9E7EC002033FC /* libicucore.tbd in Frameworks */,
+				35E810D421C3A7BD00B5714E /* opencv2.framework in Frameworks */,
+				35E810D521C3A7BD00B5714E /* libjpeg.a in Frameworks */,
+				35E810D221C3A7BD00B5714E /* UDIDSDK.a in Frameworks */,
 				5B8BEE818A3E9F2FA247588B /* Pods_dashengLoan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +166,65 @@
 				3508525321C352810095C391 /* DSLoactionManager.swift */,
 			);
 			path = DSLocationManager;
+			sourceTree = "<group>";
+		};
+		3508777F21CDD494006580AD /* XJGCDTimer */ = {
+			isa = PBXGroup;
+			children = (
+				3508778021CDD4AB006580AD /* XJGCDTimer.swift */,
+			);
+			path = XJGCDTimer;
+			sourceTree = "<group>";
+		};
+		3508778821CE2FB7006580AD /* DSHomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				3508778921CE3006006580AD /* DSHomeLoanView.swift */,
+				3508779021CE480F006580AD /* DSHomeLoanButtonView.swift */,
+				3508778B21CE3950006580AD /* DSUserLoanStatusInfo.swift */,
+			);
+			path = DSHomeCell;
+			sourceTree = "<group>";
+		};
+		3508778D21CE410C006580AD /* DSButton */ = {
+			isa = PBXGroup;
+			children = (
+				3508778E21CE4126006580AD /* DSButton.swift */,
+			);
+			path = DSButton;
+			sourceTree = "<group>";
+		};
+		3508779221CF27B8006580AD /* DSUerHeadView */ = {
+			isa = PBXGroup;
+			children = (
+				3508779321CF27CD006580AD /* DSUserHeaderView.swift */,
+			);
+			path = DSUerHeadView;
+			sourceTree = "<group>";
+		};
+		3508779721CF5DCF006580AD /* DSTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3508779821CF5DE9006580AD /* DSTableViewCell.swift */,
+				3508779A21CF62F0006580AD /* DSLogoutTableViewCell.swift */,
+			);
+			path = DSTableViewCell;
+			sourceTree = "<group>";
+		};
+		3508779C21CF6661006580AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3508779D21CF66AC006580AD /* DSUserDataSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3508779F21CF818C006580AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				350877A021CF81F7006580AD /* DSOrderTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3548365921BA158A008AB78D = {
@@ -94,6 +248,7 @@
 		3548366421BA158A008AB78D /* dashengLoan */ = {
 			isa = PBXGroup;
 			children = (
+				35E810C821C3A79700B5714E /* Third */,
 				3595C61C21BE4C9800B90FD0 /* Tools */,
 				3548369521BA3EEA008AB78D /* Appearance */,
 				3548369021BA3B9E008AB78D /* DataService */,
@@ -122,6 +277,8 @@
 		3548367821BA15C2008AB78D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				35552C7621CB5CFC002033FC /* UserCenter */,
+				35552C7021CA43D3002033FC /* AccountModule */,
 				3548368B21BA18D1008AB78D /* UserModule */,
 				3548368A21BA18C6008AB78D /* OrderModule */,
 				3548368721BA17F2008AB78D /* HomeModule */,
@@ -132,6 +289,7 @@
 		3548368721BA17F2008AB78D /* HomeModule */ = {
 			isa = PBXGroup;
 			children = (
+				35552C5B21C9E6FE002033FC /* Views */,
 				3548368821BA180E008AB78D /* DSHomeViewController.swift */,
 				3595C61621BE08B000B90FD0 /* DSSearchViewController.swift */,
 			);
@@ -141,6 +299,7 @@
 		3548368A21BA18C6008AB78D /* OrderModule */ = {
 			isa = PBXGroup;
 			children = (
+				3508779F21CF818C006580AD /* Views */,
 				3548368E21BA1976008AB78D /* DSOrderViewController.swift */,
 			);
 			path = OrderModule;
@@ -149,6 +308,8 @@
 		3548368B21BA18D1008AB78D /* UserModule */ = {
 			isa = PBXGroup;
 			children = (
+				3508779C21CF6661006580AD /* Model */,
+				3508779221CF27B8006580AD /* DSUerHeadView */,
 				3548368C21BA18F5008AB78D /* DSUserViewController.swift */,
 			);
 			path = UserModule;
@@ -157,6 +318,7 @@
 		3548369021BA3B9E008AB78D /* DataService */ = {
 			isa = PBXGroup;
 			children = (
+				35552C7B21CB6393002033FC /* DSDataService */,
 				3548369221BA3BE0008AB78D /* XJNetWork */,
 			);
 			path = DataService;
@@ -174,13 +336,82 @@
 			isa = PBXGroup;
 			children = (
 				3548369621BA3F05008AB78D /* DSAppearance.swift */,
+				35552C7F21CB6F78002033FC /* UIApplication+Convenient.swift */,
+				356E80AF21CC87FD0052C6E2 /* XJToast.swift */,
+				3508779521CF3841006580AD /* DSImageView.swift */,
 			);
 			path = Appearance;
+			sourceTree = "<group>";
+		};
+		35552C5B21C9E6FE002033FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3508778821CE2FB7006580AD /* DSHomeCell */,
+				3508778221CDEA94006580AD /* DSHomeSearchControl.swift */,
+				3508778421CE1613006580AD /* DSHomeBannerView.swift */,
+				3508778621CE2739006580AD /* DSHomeNewsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35552C7021CA43D3002033FC /* AccountModule */ = {
+			isa = PBXGroup;
+			children = (
+				35A82B3721CB97440009D5F2 /* Views */,
+				35552C7421CA444C002033FC /* DSLoginViewController.swift */,
+			);
+			path = AccountModule;
+			sourceTree = "<group>";
+		};
+		35552C7621CB5CFC002033FC /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				35552C7721CB5D15002033FC /* DSUserCenter.swift */,
+				35552C7921CB5DB6002033FC /* DSUserInfo.swift */,
+			);
+			path = UserCenter;
+			sourceTree = "<group>";
+		};
+		35552C7B21CB6393002033FC /* DSDataService */ = {
+			isa = PBXGroup;
+			children = (
+				35552C7C21CB63A4002033FC /* NetDataService */,
+			);
+			path = DSDataService;
+			sourceTree = "<group>";
+		};
+		35552C7C21CB63A4002033FC /* NetDataService */ = {
+			isa = PBXGroup;
+			children = (
+				35552C7D21CB63D8002033FC /* DSAccountDataService.swift */,
+				35A82B3C21CBA87C0009D5F2 /* DSNetConfiger.swift */,
+			);
+			path = NetDataService;
+			sourceTree = "<group>";
+		};
+		356E80B121CCC3C40052C6E2 /* XJTextValidate */ = {
+			isa = PBXGroup;
+			children = (
+				356E80B221CCC3F40052C6E2 /* DSTextValidate.swift */,
+			);
+			path = XJTextValidate;
+			sourceTree = "<group>";
+		};
+		356E80B421CD056F0052C6E2 /* BuglyManager */ = {
+			isa = PBXGroup;
+			children = (
+				356E80B521CD05860052C6E2 /* DSBugly.swift */,
+			);
+			path = BuglyManager;
 			sourceTree = "<group>";
 		};
 		3595C61C21BE4C9800B90FD0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3508779721CF5DCF006580AD /* DSTableViewCell */,
+				3508778D21CE410C006580AD /* DSButton */,
+				3508777F21CDD494006580AD /* XJGCDTimer */,
+				356E80B121CCC3C40052C6E2 /* XJTextValidate */,
 				3508525221C352510095C391 /* DSLocationManager */,
 				3595C61D21BE4CB100B90FD0 /* XJDeviceInfo */,
 				3595C61F21BE4CB100B90FD0 /* XJKeyChainStore */,
@@ -205,6 +436,39 @@
 			path = XJKeyChainStore;
 			sourceTree = "<group>";
 		};
+		35A82B3721CB97440009D5F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35A82B3821CB976B0009D5F2 /* DSPhoneButton.swift */,
+				35A82B3A21CBA39A0009D5F2 /* DSAgreementView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35E810C821C3A79700B5714E /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				356E80B421CD056F0052C6E2 /* BuglyManager */,
+				35E810C921C3A7BC00B5714E /* UDSafeSDK */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		35E810C921C3A7BC00B5714E /* UDSafeSDK */ = {
+			isa = PBXGroup;
+			children = (
+				35E810CA21C3A7BC00B5714E /* UDIDSafeDataDefine.h */,
+				35E810CB21C3A7BC00B5714E /* UDIDSafeOCREngine.h */,
+				35E810CC21C3A7BC00B5714E /* UDIDSafeAuthEngine.h */,
+				35E810CD21C3A7BC00B5714E /* UDIDSDK.a */,
+				35E810CE21C3A7BC00B5714E /* UDIDSafeVideoRecodeEngine.h */,
+				35E810CF21C3A7BC00B5714E /* Resource.bundle */,
+				35E810D021C3A7BC00B5714E /* opencv2.framework */,
+				35E810D121C3A7BC00B5714E /* libjpeg.a */,
+			);
+			path = UDSafeSDK;
+			sourceTree = "<group>";
+		};
 		AB16DBBE55B14A38F6F4E78F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +481,16 @@
 		BE286E756130561079BDAB8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				35552C6E21C9E90A002033FC /* CoreMotion.framework */,
+				35552C6C21C9E848002033FC /* MobileCoreServices.framework */,
+				35552C6A21C9E840002033FC /* AVFoundation.framework */,
+				35552C6821C9E834002033FC /* AudioToolbox.framework */,
+				35552C6621C9E82A002033FC /* CoreTelephony.framework */,
+				35552C6421C9E814002033FC /* SystemConfiguration.framework */,
+				35552C6221C9E80B002033FC /* ImageIO.framework */,
+				35552C6021C9E803002033FC /* CoreMedia.framework */,
+				35552C5E21C9E7FA002033FC /* libc++.tbd */,
+				35552C5C21C9E7EB002033FC /* libicucore.tbd */,
 				6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */,
 			);
 			name = Frameworks;
@@ -234,6 +508,7 @@
 				3548365F21BA158A008AB78D /* Frameworks */,
 				3548366021BA158A008AB78D /* Resources */,
 				7B3C4F6A13E0A043BE4176FB /* [CP] Embed Pods Frameworks */,
+				356E80B721CD06ED0052C6E2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -285,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3548366D21BA158B008AB78D /* Assets.xcassets in Resources */,
+				35E810D321C3A7BD00B5714E /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +589,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		356E80B721CD06ED0052C6E2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n#\n# Copyright 2016 Bugly, Tencent. All rights reserved.\n#\n# V1.4.0\n#\n# 2016.08.03\n#\n#\n#\n######################################################\n# 1. 脚本集成到Xcode工程的Target\n######################################################\n#\n# --- Copy the SCRIPT to the Run Script of Build Phases in the Xcode project ---\n#\n# #\nBUGLY_APP_ID=\"d601f14874\"\n# #\nBUGLY_APP_KEY=\"c56e2879-81ed-4fe9-bdc1-9ac166ac01e2\"\n# #\nBUNDLE_IDENTIFIER=\"com.powerfulfin.dashengloan\"\n# #\nUPLOAD_DSYM_ONLY=1\n#\n# # 脚本默认配置的版本格式为CFBundleShortVersionString(CFBundleVersion),  如果你修改默认的版本格式, 请设置此变量, 如果不想修改, 请忽略此设置\n# CUSTOMIZED_APP_VERSION=\"\"\n#\n# # Debug模式编译是否上传，1＝上传 0＝不上传，默认不上传\n# UPLOAD_DEBUG_SYMBOLS=0\n#\n# # 模拟器编译是否上传，1=上传 0=不上传，默认不上传\n# UPLOAD_SIMULATOR_SYMBOLS=0\n#\n# #只有Archive操作时上传, 1=支持Archive上传 0=所有Release模式编译都上传\n# UPLOAD_ARCHIVE_ONLY=0\n#\n# #\n# source dSYMUpload.sh\n#\n# --- END OF SCRIPT ---\n#\n#\n#\n#\n#######################################################\n# 2. 脚本根据输入参数处理\n#######################################################\n#\n# #命令行下输入应用基本信息, .dSYM文件的父目录路径, 输出文件目录即可\n#\n# sh dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir>\n#\n# #\n#\n# #注意:\n# # 1. dSYMUpload.sh会调用buglySymboliOS.jar进行.dSYM解析，所以依赖Java运行时环境\n# # 2. dSYMUpload.sh和buglySymboliOS.jar的文件路径需一致\n#\n#\n\n#\n# --- CONTENT OF SCRIPT ---\n#\n\n# Bugly服务域名\nBUGLY_DSYM_UPLOAD_DOMAIN=\"api.bugly.qq.com\"\n\n# 注意jar工具的路径跟dSYMUpload.sh脚本路径一致, 请务必保证jar路径的正确性\nBUGLY_SYMBOL_JAR_PATH=\"dsymtool/buglySymboliOS.jar\"\n# 查找添加到系统目录的jar工具\nif [ ! -f \"${BUGLY_SYMBOL_JAR_PATH}\" ]; then\nBUGLY_SYMBOL_JAR_PATH=\"$HOME/bin/buglySymboliOS.jar\"\nfi\n\n# 打印错误信息\nfunction exitWithMessage(){\necho \"--------------------------------\"\necho \"${1}\"\necho \"--------------------------------\"\nexit ${2}\n}\n\n# 上传bSYMBOL文件\nfunction dSYMUpload() {\nP_APP_ID=\"$1\"\nP_APP_KEY=\"$2\"\nP_APP_BUNDLE_ID=\"$3\"\nP_APP_VERSION=\"$4\"\nP_BSYMBOL_ZIP_FILE=\"$5\"\n\n#\nP_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE##*/}\nP_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE_NAME//&/_}\nP_BSYMBOL_ZIP_FILE_NAME=\"${P_BSYMBOL_ZIP_FILE_NAME// /_}\"\n\nDSYM_UPLOAD_URL=\"https://${BUGLY_DSYM_UPLOAD_DOMAIN}/openapi/file/upload/symbol?app_id=${P_APP_ID}&app_key=${P_APP_KEY}\"\necho \"dSYM upload url: ${DSYM_UPLOAD_URL}\"\n\necho \"-----------------------------\"\nSTATUS=$(/usr/bin/curl -k \"${DSYM_UPLOAD_URL}\" --form \"api_version=1\" --form \"app_id=${P_APP_ID}\" --form \"app_key=${P_APP_KEY}\" --form \"symbolType=2\"  --form \"bundleId=${BUNDLE_IDENTIFIER}\" --form \"productVersion=${BUGLY_APP_VERSION}\" --form \"fileName=${P_BSYMBOL_ZIP_FILE_NAME}\" --form \"file=@${P_BSYMBOL_ZIP_FILE}\" --verbose)\necho \"-----------------------------\"\n\nUPLOAD_RESULT=\"FAILTURE\"\necho \"Bugly server response: ${STATUS}\"\nif [ ! \"${STATUS}\" ]; then\necho \"Error: Failed to upload the zip archive file.\"\nelif [[ \"${STATUS}\" == *\"{\\\"reponseCode\\\":\\\"0\\\"}\"* ]]; then\necho \"Success to upload the dSYM for the app [${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION}]\"\nUPLOAD_RESULT=\"SUCCESS\"\nelse\necho \"Error: Failed to upload the zip archive file to Bugly.\"\nfi\n\n#Remove temp dSYM archive\n#echo \"Remove temporary zip archive: ${DSYM_ZIP_FPATH}\"\n#/bin/rm -f \"${DSYM_ZIP_FPATH}\"\n\nif [ \"$?\" -ne 0 ]; then\nexitWithMessage \"Error: Failed to remove temporary zip archive.\" 0\nfi\n\necho \"--------------------------------\"\necho \"${UPLOAD_RESULT} - dSYM upload complete.\"\n\nif [[ \"${UPLOAD_RESULT}\" == \"FAILTURE\" ]]; then\necho \"--------------------------------\"\necho \"Failed to upload the dSYM\"\necho \"Please check the script and try it again.\"\nfi\n}\n\n# .dSYM解析为bSYMBOL文件\nfunction dSYMParse() {\nDSYM_FILE=\"$1\"\nDSYM_SYMBOL_FILE=\"$2\"\n\necho \"--------------------------------\"\necho \"Extract symbol info from .dSYM file. to ${DSYM_SYMBOL_FILE}\"\n(/usr/bin/java -Xms512m -Xmx1024m -Dfile.encoding=UTF8 -jar \"${BUGLY_SYMBOL_JAR_PATH}\" -i \"${DSYM_FILE}\" -o \"${DSYM_SYMBOL_FILE}\" ) || exitWithMessage \"Error: Failed to extract symbols.\" 1\necho \"--------------------------------\"\n\n}\n\n# 执行\nfunction run() {\n\nCONFIG_BUGLY_APP_ID=\"$1\"\nCONFIG_BUGLY_APP_KEY=\"$2\"\n\nCONFIG_BUGLY_APP_BUNDLE_IDENTIFIER=\"$3\"\nCONFIG_BUGLY_APP_VERSION=\"$4\"\nCONFIG_DSYM_SOURCE_DIR=\"$5\"\nCONFIG_DSYM_DEST_DIR=\"$6\"\nCONFIG_UPLOAD_DSYM_ONLY=\"$7\"\n\n# 检查必须参数是否设置\nif [ ! \"${CONFIG_BUGLY_APP_ID}\" ]; then\nexitWithMessage \"Error: Bugly App ID not defined. Please set 'BUGLY_APP_ID' \" 0\nfi\n\nif [[ \"${CONFIG_BUGLY_APP_ID}\" == *\"App ID\"* ]]; then\nexitWithMessage \"Error: Bugly App ID not defined.\" 0\nfi\n\nif [ ! \"${CONFIG_BUGLY_APP_KEY}\" ]; then\nexitWithMessage \"Error: Bugly App Key not defined.\" 0\nfi\n\nif [ ! \"${CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER}\" ]; then\nexitWithMessage \"Error: Bundle Identifier not defined.\" 0\nfi\n\nif [ ! \"${CONFIG_BUGLY_APP_VERSION}\" ]; then\nexitWithMessage \"Error: App Version not defined.\" 0\nfi\n\nif [ ! -e \"${CONFIG_DSYM_SOURCE_DIR}\" ]; then\nexitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_SOURCE_DIR}\" 0\nfi\n\nif [ ! \"${CONFIG_DSYM_DEST_DIR}\" ]; then\nexitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_DEST_DIR}\" 0\nfi\n\nif [ ! -e \"${CONFIG_DSYM_DEST_DIR}\" ]; then\nmkdir ${CONFIG_DSYM_DEST_DIR}\nfi\n\nDSYM_FOLDER=\"${CONFIG_DSYM_SOURCE_DIR}\"\nIFS=$'\\n'\n\necho \"Scaning dSYM FOLDER: ${DSYM_FOLDER} ...\"\nRET=\"F\"\n\n#\nfor dsymFile in $(find \"$DSYM_FOLDER\" -name '*.dSYM'); do\nRET=\"T\"\necho \"Found dSYM file: $dsymFile\"\n\nDSYM_FILE_NAME=${dsymFile##*/}\nDSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_FILE_NAME}.zip\"\nDSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_SYMBOL_ZIP_FILE_NAME// /_}\"\nDSYM_SYMBOL_ZIP_FILE=${CONFIG_DSYM_DEST_DIR}/${DSYM_SYMBOL_ZIP_FILE_NAME}\n\nif [ $CONFIG_UPLOAD_DSYM_ONLY -eq 1 ]; then\nif [ -e $DSYM_SYMBOL_ZIP_FILE ]; then\nrm -f $DSYM_SYMBOL_ZIP_FILE\nfi\n# 如果只上传dSYM，直接压缩dSYM目录\nzip -r -j $DSYM_SYMBOL_ZIP_FILE $dsymFile -x *.plist\nelse\n# 使用符号表工具来生成Symbol文件\ndSYMParse $dsymFile $DSYM_SYMBOL_ZIP_FILE\nfi\n\n# 上传\ndSYMUpload $CONFIG_BUGLY_APP_ID $CONFIG_BUGLY_APP_KEY $CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER $CONFIG_BUGLY_APP_VERSION $DSYM_SYMBOL_ZIP_FILE\ndone\n\nif [ $RET = \"F\" ]; then\nexitWithMessage \"No .dSYM found in ${DSYM_FOLDER}\" 0\nfi\n}\n\n# 在Xcode工程中执行\nfunction runInXcode(){\necho \"Uploading dSYM to Bugly in Xcode ...\"\n\necho \"Info.Plist : ${INFOPLIST_FILE}\"\n\nBUNDLE_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' \"${INFOPLIST_FILE}\")\nBUNDLE_SHORT_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' \"${INFOPLIST_FILE}\")\n\n# 组装Bugly默认识别的版本信息(格式为CFBundleShortVersionString(CFBundleVersion), 例如: 1.0(1))\nif [ ! \"${CUSTOMIZED_APP_VERSION}\" ]; then\nBUGLY_APP_VERSION=\"${BUNDLE_SHORT_VERSION}(${BUNDLE_VERSION})\"\nelse\nBUGLY_APP_VERSION=\"${CUSTOMIZED_APP_VERSION}\"\nfi\n\necho \"--------------------------------\"\necho \"Prepare application information.\"\necho \"--------------------------------\"\n\necho \"Product Name: ${PRODUCT_NAME}\"\necho \"Bundle Identifier: ${BUNDLE_IDENTIFIER}\"\necho \"Version: ${BUNDLE_SHORT_VERSION}\"\necho \"Build: ${BUNDLE_VERSION}\"\n\necho \"Bugly App ID: ${BUGLY_APP_ID}\"\necho \"Bugly App key: ${BUGLY_APP_KEY}\"\necho \"Bugly App Version: ${BUGLY_APP_VERSION}\"\n\necho \"--------------------------------\"\necho \"Check the arguments ...\"\n\n##检查模拟器编译是否允许上传符号\nif [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\nif [ $UPLOAD_SIMULATOR_SYMBOLS -eq 0 ]; then\nexitWithMessage \"Warning: Build for simulator and skipping to upload. \\nYou can modify 'UPLOAD_SIMULATOR_SYMBOLS' to 1 in the script.\" 0\nfi\nfi\n\n##检查是否是Release模式编译\nif [ \"${CONFIGURATION=}\" == \"Debug\" ]; then\nif [ $UPLOAD_DEBUG_SYMBOLS -eq 0 ]; then\nexitWithMessage \"Warning: Build for debug mode and skipping to upload. \\nYou can modify 'UPLOAD_DEBUG_SYMBOLS' to 1 in the script.\" 0\nfi\nfi\n\n##检查是否Archive操作\nif [ $UPLOAD_ARCHIVE_ONLY -eq 1 ]; then\nif [[ \"$TARGET_BUILD_DIR\" == *\"/Archive\"* ]]; then\necho \"Archive the package\"\nelse\nexitWithMessage \"Warning: Build for NOT Archive mode and skipping to upload. \\nYou can modify 'UPLOAD_ARCHIVE_ONLY' to 0 in the script.\" 0\nfi\nfi\n\n#\nrun ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${BUILD_DIR}/BuglySymbolTemp ${UPLOAD_DSYM_ONLY}\n}\n\n# 根据Xcode的环境变量判断是否处于Xcode环境\nINFO_PLIST_FILE=\"${INFOPLIST_FILE}\"\n\nBuildInXcode=\"F\"\nif [ -f \"${INFO_PLIST_FILE}\" ]; then\nBuildInXcode=\"T\"\nfi\n\nif [ $BuildInXcode = \"T\" ]; then\nrunInXcode\nelse\necho \"\\nUsage: dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir> [upload_dsym_only]\\n\"\n# 你可以在此处直接设置BuglyAppID和BuglyAppKey，排除不常变参数的输入\nBUGLY_APP_ID=\"$1\"\nBUGLY_APP_KEY=\"$2\"\nBUNDLE_IDENTIFIER=\"$3\"\nBUGLY_APP_VERSION=\"$4\"\nDWARF_DSYM_FOLDER_PATH=\"$5\"\nSYMBOL_OUTPUT_PATH=\"$6\"\nUPLOAD_DSYM_ONLY=$7\nrun ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${SYMBOL_OUTPUT_PATH} ${UPLOAD_DSYM_ONLY}\nfi\n\n";
+		};
 		7B3C4F6A13E0A043BE4176FB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,6 +616,9 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-dashengLoan/Pods-dashengLoan-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -330,6 +626,9 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTRootNavigationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,21 +644,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				3595C62221BE4CB100B90FD0 /* XJDeviceInfo.swift in Sources */,
+				35A82B3D21CBA87C0009D5F2 /* DSNetConfiger.swift in Sources */,
 				3548368621BA17B8008AB78D /* DSWebViewController.swift in Sources */,
+				356E80B621CD05860052C6E2 /* DSBugly.swift in Sources */,
+				3508778121CDD4AB006580AD /* XJGCDTimer.swift in Sources */,
 				3548368021BA174D008AB78D /* DSTableViewController.swift in Sources */,
+				3508779B21CF62F0006580AD /* DSLogoutTableViewCell.swift in Sources */,
 				3548368D21BA18F5008AB78D /* DSUserViewController.swift in Sources */,
 				3548368421BA177B008AB78D /* DSNavigationController.swift in Sources */,
+				3508778521CE1613006580AD /* DSHomeBannerView.swift in Sources */,
+				3508778721CE2739006580AD /* DSHomeNewsView.swift in Sources */,
+				3508779921CF5DE9006580AD /* DSTableViewCell.swift in Sources */,
 				3548369721BA3F05008AB78D /* DSAppearance.swift in Sources */,
+				350877A121CF81F7006580AD /* DSOrderTableViewCell.swift in Sources */,
 				3548368921BA180E008AB78D /* DSHomeViewController.swift in Sources */,
+				35552C7521CA444C002033FC /* DSLoginViewController.swift in Sources */,
+				35552C7821CB5D15002033FC /* DSUserCenter.swift in Sources */,
+				3508778F21CE4126006580AD /* DSButton.swift in Sources */,
+				3508779421CF27CD006580AD /* DSUserHeaderView.swift in Sources */,
+				35552C8021CB6F78002033FC /* UIApplication+Convenient.swift in Sources */,
 				3595C62421BE4CB100B90FD0 /* XJUDID.swift in Sources */,
 				3548368F21BA1976008AB78D /* DSOrderViewController.swift in Sources */,
 				3595C61721BE08B100B90FD0 /* DSSearchViewController.swift in Sources */,
+				35552C7E21CB63D8002033FC /* DSAccountDataService.swift in Sources */,
 				3595C62321BE4CB100B90FD0 /* XJKeyChainStore.swift in Sources */,
+				3508779121CE480F006580AD /* DSHomeLoanButtonView.swift in Sources */,
+				3508778A21CE3006006580AD /* DSHomeLoanView.swift in Sources */,
+				3508779E21CF66AC006580AD /* DSUserDataSource.swift in Sources */,
 				3548366621BA158A008AB78D /* AppDelegate.swift in Sources */,
+				3508779621CF3841006580AD /* DSImageView.swift in Sources */,
+				3508778321CDEA94006580AD /* DSHomeSearchControl.swift in Sources */,
 				3548368221BA1765008AB78D /* DSTabBarController.swift in Sources */,
 				3508525421C352810095C391 /* DSLoactionManager.swift in Sources */,
 				3548369421BA3BE0008AB78D /* XJNetWork.swift in Sources */,
+				35552C7A21CB5DB6002033FC /* DSUserInfo.swift in Sources */,
 				3548367E21BA1709008AB78D /* DSViewController.swift in Sources */,
+				35A82B3B21CBA39A0009D5F2 /* DSAgreementView.swift in Sources */,
+				35A82B3921CB976B0009D5F2 /* DSPhoneButton.swift in Sources */,
+				3508778C21CE3950006580AD /* DSUserLoanStatusInfo.swift in Sources */,
+				356E80B021CC87FD0052C6E2 /* XJToast.swift in Sources */,
+				356E80B321CCC3F40052C6E2 /* DSTextValidate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,13 +815,22 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48TW2EJWSZ;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dashengLoan/Third/UDSafeSDK",
+				);
 				INFOPLIST_FILE = dashengLoan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dashengLoan;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dashengLoan/Third/UDSafeSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dashengloan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/dashengLoan/dashengLoan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -515,13 +848,22 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48TW2EJWSZ;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dashengLoan/Third/UDSafeSDK",
+				);
 				INFOPLIST_FILE = dashengLoan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dashengLoan;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dashengLoan/Third/UDSafeSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dashengloan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/dashengLoan/dashengLoan-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

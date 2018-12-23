@@ -7,39 +7,38 @@
 //
 
 import UIKit
+import RTRootNavigationController
 
-/// 是否可以滑动返回，只要ViewController遵循这个协议即可
-protocol XJSwipToPopBackDelegate:NSObjectProtocol {
-    func canSwipToPopBack() -> Bool
-}
-
-class DSNavigationController: UINavigationController {
+class DSNavigationController: RTRootNavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactivePopGestureRecognizer?.delegate = self
+        UINavigationBar.appearance().barStyle = .blackOpaque
+        UINavigationBar.appearance().tintColor = UIColor.white
+
     }
 }
-extension DSNavigationController:UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if self.viewControllers.count == 1 {
-            return false
-        }
-        let topController = self.topViewController as? (XJSwipToPopBackDelegate & UIViewController)
-        return topController?.canSwipToPopBack() ?? true
-    }
-}
-extension DSNavigationController:UINavigationControllerDelegate {
+
+extension DSNavigationController {
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         if children.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
-            if viewController.isKind(of: DSViewController.self) {
-                viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navi_back"), style: .plain, target: self, action: #selector(popBackAction))
-            }
         }
         super.pushViewController(viewController, animated: animated)
     }
-    @objc func popBackAction()  {
-        popViewController(animated: true)
+    func updateTopViewControllerSwipBackEnable()  {
+        let isRootVC = self.viewControllers.count == 1;
+        if (isRootVC) {
+            return;
+        }
+        if rt_topViewController.rt_disableInteractivePop == true {
+            interactivePopGestureRecognizer?.delegate = nil
+            interactivePopGestureRecognizer?.isEnabled = false
+        }else{
+            interactivePopGestureRecognizer?.delaysTouchesBegan = true
+            interactivePopGestureRecognizer?.delegate = nil
+            interactivePopGestureRecognizer?.isEnabled = true
+        }
     }
+
 }

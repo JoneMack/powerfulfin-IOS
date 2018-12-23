@@ -62,6 +62,13 @@ class XJDeviceInfo: NSObject {
             return 49
         }
     }
+    static var tabbarSpaceInX:CGFloat {
+        if isPhoneXMore {
+            return 34
+        }
+        return 0
+        
+    }
     
     static var naivgaitonBarHeight:CGFloat {
         return defaultBarHeight+statusBarHeight

@@ -11,17 +11,15 @@ import UIKit
 class DSSearchViewController: DSTableViewController {
     let searchBar = UISearchBar()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBar.placeholder = "请输入机构名称/机构编号"
+        searchBar.placeholder = "请输入机构名称/编号"
         searchBar.showsCancelButton = true
         searchBar.delegate = self
         searchBar.frame = CGRect(x: 30, y: 0, width: UIScreen.main.bounds.width-30, height: XJDeviceInfo.naivgaitonBarHeight)
         navigationItem.titleView = searchBar
         searchBar.becomeFirstResponder()
-
     }
 
 }

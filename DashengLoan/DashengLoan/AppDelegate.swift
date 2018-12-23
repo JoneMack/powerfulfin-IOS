@@ -17,13 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,BMKLocationAuthDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        
-  
-
-        
-        
+        DSAppearance.applicationDidFinishLaunching()
         window?.rootViewController = DSTabBarController()
+        DSUserCenter.defalut.applicationDidFinishLaunching()
         
+
         
         window?.makeKeyAndVisible()
         return true

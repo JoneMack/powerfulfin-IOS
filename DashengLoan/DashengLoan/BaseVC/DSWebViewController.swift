@@ -30,8 +30,8 @@ class DSWebViewController: DSViewController {
             webView.scrollView.contentInsetAdjustmentBehavior = .never
         }
         webView.snp.makeConstraints { (maker) in
-            maker.top.equalToSuperview().offset(XJDeviceInfo.naivgaitonBarHeight)
-            maker.left.bottom.right.equalToSuperview().offset(0)
+            maker.top.equalTo(0)
+            maker.left.bottom.right.equalTo(0)
         }
         
         view.addSubview(progressView)

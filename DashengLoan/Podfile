@@ -5,7 +5,11 @@ target 'dashengLoan' do
     use_frameworks!
 
     pod 'Alamofire'
+    pod 'AlamofireImage'
     pod 'SnapKit'
-    
+    pod 'IQKeyboardManagerSwift'
     pod 'BMKLocationKit'
+    pod 'Bugly'
+    pod 'RTRootNavigationController'    #自定义导航栏
+    
 end
