@@ -68,3 +68,8 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 DashengLoan/Pods/Bugly
 DashengLoan/DashengLoan/Third/UDSafeSDK/opencv2.framework
+*.opencv2.framework
+*.Bugly.framework
+DashengLoan/Pods/Bugly/
+dashengLoan/Pods/Bugly/
+dashengLoan/dashengLoan/Third/UDSafeSDK/

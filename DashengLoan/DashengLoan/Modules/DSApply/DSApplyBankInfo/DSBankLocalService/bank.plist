@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>type</key>
+		<integer>1</integer>
+		<key>title</key>
+		<string>发卡行</string>
+		<key>placeholder</key>
+		<string>请选择发卡行</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<integer>0</integer>
+		<key>title</key>
+		<string>储蓄卡号</string>
+		<key>placeholder</key>
+		<string>请输入储蓄卡号</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<integer>0</integer>
+		<key>title</key>
+		<string>手机号</string>
+		<key>placeholder</key>
+		<string>银行预留的手机号码</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<integer>4</integer>
+		<key>title</key>
+		<string>短信验证</string>
+		<key>placeholder</key>
+		<string>请输入短信验证码</string>
+		<key>rightTitle</key>
+		<string>获取短信验证码</string>
+	</dict>
+</array>
+</plist>

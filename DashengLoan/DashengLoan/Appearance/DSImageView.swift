@@ -11,8 +11,13 @@ import AlamofireImage
 
 extension UIImageView {
     func setImage(_ urlString:String?,placeholderImage:UIImage? = nil)  {
-        if(urlString != nil){
-            if let url = URL(string: urlString!) {
+        
+        if var urlStr = urlString {
+            
+            if urlStr.hasPrefix("http") == false && urlStr.hasPrefix("/")  {
+                urlStr = baseHost + urlStr
+            }
+            if let url = URL(string: urlStr) {
                 self.af_setImage(withURL: url ,placeholderImage:placeholderImage)
             }
         }

@@ -32,8 +32,6 @@ class DSHomeSearchControl: UIControl {
             maker.top.equalTo(titleLabel).offset(3)
             maker.bottom.equalTo(titleLabel).offset(-3)
         }
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

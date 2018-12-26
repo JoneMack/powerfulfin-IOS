@@ -8,7 +8,15 @@
 
 import UIKit
 
-struct DSUserInfo:Decodable {
+struct DSUserInfo:Codable {
+    
+    /// 用户id
+    var uid:String?
+    /// 手机号
+    var phone:String?
+    /// 用户名
     var name:String?
+    /// 是否设置了密码
+    var has_password:String?
     
 }

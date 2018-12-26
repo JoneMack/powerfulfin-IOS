@@ -100,6 +100,12 @@
 	<true/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
+	<key>NSCameraUsageDescription</key>
+	<string>APP需要您的同意，才能使用人脸识别、拍照等功能</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>APP需要您的同意，才能使用人脸识别提醒</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>APP需要您的同意，才能获取相册的照片</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

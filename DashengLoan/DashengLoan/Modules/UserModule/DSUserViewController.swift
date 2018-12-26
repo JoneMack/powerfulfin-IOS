@@ -137,6 +137,7 @@ extension DSUserViewController {
         
     }
     @objc fileprivate func logoutAction() {
+        DSAccountDataService.logout()
         DSUserCenter.defalut.logout()
     }
     

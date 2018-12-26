@@ -23,15 +23,20 @@ class DSAccountDataService {
         if type == 1 {
             request = XJRequest("v1/login/login", method: .post, parameters: ["phone":userName,"vcode":password])
         }else{
-            request = XJRequest("v1/login/login", method: .post, parameters: ["name":userName,"password":password])
+            request = XJRequest("v1/login/login", method: .post, parameters: ["phone":userName,"password":password])
         }
         
         XJNetWork.request(request, successHandler: { (jsonInfo) in
             
-           
-            
+            if let userInfo = try? XJDecoder.xj_decode(DSUserInfo.self, from: jsonInfo) {
+                complete(userInfo)
+            }
         }) { (error) in
-            XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
+            if error.code > 0 {//新用户，没密码
+                DSAlert.showAlert(title: "提示", message: error.errorMsg, sureTitle: "确定")
+            }else{
+                XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
+            }
         }
         
     }
@@ -39,6 +44,15 @@ class DSAccountDataService {
         let request = XJRequest("v1/login/verifycode", method: .get, parameters: ["phone":phone])
         XJNetWork.request(request, successHandler: { (jsonInfo) in
            complete()
+        }) { (error) in
+            XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
+        }
+        
+    }
+    class func logout() {
+        let request = XJRequest("v1/logout", method: .get)
+        XJNetWork.request(request, successHandler: { (jsonInfo) in
+            
         }) { (error) in
             XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
         }

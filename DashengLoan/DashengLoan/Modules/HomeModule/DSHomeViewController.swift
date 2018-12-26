@@ -15,17 +15,14 @@ class DSHomeViewController: DSViewController {
     fileprivate let newsView = DSHomeNewsView()
     fileprivate var loanView : DSHomeLoanView?
     fileprivate let refreshControl = UIRefreshControl()
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
+    fileprivate var homeInfo :DSHomeInfo?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        configLocationService()
+
         setupNavigationView()
         configSubViews()
-        
-
+        reloadHomeData()
     }
     func configSubViews()  {
         view.addSubview(contentView)
@@ -55,7 +52,6 @@ class DSHomeViewController: DSViewController {
         contentView.addSubview(loanView!)
         loanView?.frame = CGRect(x: 0, y: newsView.frame.maxY, width: XJDeviceInfo.screenWidth, height: 255)
         let height = XJDeviceInfo.screenHeight > (loanView?.frame.maxY)! ? XJDeviceInfo.screenHeight : (loanView?.frame.maxY)!
-        
         contentView.contentSize = CGSize(width: XJDeviceInfo.screenWidth, height: height)
 
         
@@ -69,20 +65,6 @@ class DSHomeViewController: DSViewController {
         }
     }
   
-}
-
-// MARK: - 定位
-extension DSHomeViewController:DSLocationDelegate {
-   fileprivate func configLocationService() {
-        DSLoactionManager.manager.addListener(listen: self)
-        DSLoactionManager.manager.updateUserLoaction()
-    }
-    internal func userLocationDidUpdate(_ success: Bool, error: Error?) {
-        if success {
-            print(DSLoactionManager.manager.longitude)
-            print(DSLoactionManager.manager.latitude)
-        }
-    }
 }
 
 // MARK: - 导航栏
@@ -103,25 +85,12 @@ extension DSHomeViewController {
             maker.right.equalTo(-60)
         }
     }
-    
-    
-    @objc fileprivate func showScanViewController()  {
-        
-    }
-    @objc fileprivate func callCustomerService() {
-        
-    }
-    @objc fileprivate func showSearchViewController() {
-        let searchVC = DSSearchViewController()
-        pushToNextViewController(searchVC)
-    }
 }
 
 // MARK: - UIScrollViewDelegate
 extension DSHomeViewController:UIScrollViewDelegate  {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offSetY = scrollView.contentOffset.y
-        
         if  offSetY < -150{
             var frame = backTopView.frame
             frame.size.height = -offSetY+100
@@ -130,18 +99,73 @@ extension DSHomeViewController:UIScrollViewDelegate  {
         }
     }
 }
-
-// MARK: - Banner点击或者消息点击
+// MARK: - 刷新页面
 extension DSHomeViewController {
-    
+    func refreshViews()  {
+        var bannerArray = [String]()
+        let count = homeInfo?.banner?.count ?? 0
+        for i in 0..<count {
+            let banner = homeInfo?.banner?[i]
+            bannerArray.append(banner?.img ?? "")
+        }
+        bannerView.loopView?.arrImage = bannerArray
+        newsView.titleLabel?.setTitle(title: homeInfo?.notice?.content ?? "")
+        
+        loanView?.removeFromSuperview()
+        loanView =  DSHomeLoanView.loanView(loanStatus: homeInfo?.loan)
+        loanView?.delegate = self
+        contentView.addSubview(loanView!)
+        loanView?.frame = CGRect(x: 0, y: newsView.frame.maxY, width: XJDeviceInfo.screenWidth, height: 255)
+    }
+}
+// MARK: - 各页面跳转
+extension DSHomeViewController:DSHomeLoanButtonViewDelegate {
+    func bottomBttonClicl(index: Int, action: String?) {
+        let actions = "powerfulfin://apply?id=300650"
+        DSRouter.openURL(url: actions)
+    }
+    @objc fileprivate func showScanViewController()  {
+        
+    }
+    @objc fileprivate func callCustomerService() {
+        let phone = homeInfo?.customer_service?.phone
+        let phoneTitle = "呼叫:" + (phone ?? "")
+        
+        let email = homeInfo?.customer_service?.email
+        let emailTitle = "邮箱:" + (email ?? "")
+        
+        let serviceSheet = UIAlertController(title: "工作时间：每天9：00——19：00", message: nil, preferredStyle: .actionSheet)
+        serviceSheet.addAction(UIAlertAction(title: phoneTitle, style: .default, handler: { (action) in
+            let callURL = "telprompt://" + (phone ?? "")
+            if let url = URL(string: callURL),UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.openURL(url)
+            }
+        }))
+        serviceSheet.addAction(UIAlertAction(title: emailTitle, style: .default, handler: { (action) in
+            let callURL = "mailto://" + (email ?? "")
+            if let url = URL(string: callURL),UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.openURL(url)
+            }
+        }))
+        serviceSheet.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        present(serviceSheet, animated: true)
+    }
+    @objc fileprivate func showSearchViewController() {
+        let searchVC = DSSearchViewController()
+        pushToNextViewController(searchVC)
+    }
 }
 
 // MARK: - 网络请求
 extension DSHomeViewController {
    @objc func reloadHomeData()  {
-    print("12345678")
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+4) {
-        self.refreshControl.endRefreshing()
+        DSHomeDataService.loadHomeData {[weak self] (homeData, success) in
+            self?.refreshControl.endRefreshing()
+            if success == true {
+                self?.homeInfo = homeData
+                self?.refreshViews()
+            }
+        }
     }
-    }
+    
 }

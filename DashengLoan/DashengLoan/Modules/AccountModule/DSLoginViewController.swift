@@ -55,7 +55,9 @@ class DSLoginViewController: DSViewController {
             maker.right.equalTo(-28)
         }
     }
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
     /// 添加输入框
     fileprivate func loadTextFields() {
         titleLabel.textColor = UIColor.ds_blackText
@@ -183,7 +185,10 @@ class DSLoginViewController: DSViewController {
     @objc func cancelLoginAction(){
 //        dismiss(animated: true, completion: nil)
 //        DispatchQueue.main.async {
-            self.navigationController?.dismiss(animated: true, completion: nil)
+        navigationController?.dismiss(animated: true, completion: {[weak self] in
+             self?.loginSuccess?()
+        })
+//            self.navigationController?.dismiss(animated: true, completion: )
 //        }
     }
 }
@@ -203,9 +208,10 @@ extension DSLoginViewController {
             passwordTF.keyboardType = .default
             passwordTF.isSecureTextEntry = true
             passwordTF.validater = DSPasswordValidater()
-            
+            loginBtn.setTitle("登录", for: .normal)
         }else{
             titleLabel.text = "手机号验证码登录"
+            loginBtn.setTitle("登录/注册", for: .normal)
             passwordTF.placeholder = "请输入验证码"
             passwordTF.keyboardType = .numberPad
             passwordTF.isSecureTextEntry = false
@@ -242,26 +248,23 @@ extension DSLoginViewController {
         }
         return true
     }
+    
+    /// mark - 登录请求
     @objc func loginAction()  {
         
         if validateLoginEnable() == false {
             return
         }
         view.resignFirstResponder()
-        
-        let userInfo = DSUserInfo(name:"151****112")
-        DSUserCenter.defalut.login(userInfo: userInfo)
-        self.cancelLoginAction()
-        self.loginSuccess?()
-        /*
+    
         let type:NSInteger = loginTypeBtn.isSelected == false ? 1 : 2
         
         DSAccountDataService.login(userName: userNameTF.text!, password: passwordTF.text!, type: type) { (userInfo) in
             DSUserCenter.defalut.login(userInfo: userInfo)
             self.cancelLoginAction()
-            self.loginSuccess?()
+          
         }
-         */
+ 
     }
 }
 

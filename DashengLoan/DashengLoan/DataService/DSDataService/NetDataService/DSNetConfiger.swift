@@ -7,7 +7,9 @@
 //
 
 import AVFoundation
-let baseURL = "http://powerfulfin.kezhanwang.cn/app/"
+let baseURL = "http://www.powerfulfin.com/app/"
+let baseHost = "http://www.powerfulfin.com"
+
 class DSNetConfiger {
     
     class func requestURL(absoluteURL:String) -> String {

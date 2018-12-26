@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>type</key>
+			<integer>1</integer>
+			<key>title</key>
+			<string>培训课程</string>
+			<key>placeholder</key>
+			<string>请选择培训课程</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<integer>0</integer>
+			<key>title</key>
+			<string>分期金额</string>
+			<key>placeholder</key>
+			<string>请输入分期金额</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<integer>1</integer>
+			<key>title</key>
+			<string>分期产品</string>
+			<key>placeholder</key>
+			<string>请选择分期产品</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>type</key>
+			<integer>1</integer>
+			<key>title</key>
+			<string>开课日期</string>
+			<key>placeholder</key>
+			<string>请选择开课日期</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<integer>5</integer>
+			<key>title</key>
+			<string>场景照片</string>
+			<key>placeholder</key>
+			<string>注:请在有学校LOGO的地方与顾问合影</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<integer>5</integer>
+			<key>title</key>
+			<string>手持身份证照片</string>
+			<key>placeholder</key>
+			<string>注:请本人手持身份证，证件内容清晰无遮挡</string>
+		</dict>
+	</array>
+</array>
+</plist>

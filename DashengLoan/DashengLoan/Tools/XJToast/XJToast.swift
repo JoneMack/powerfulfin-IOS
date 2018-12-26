@@ -44,7 +44,7 @@ class XJToast: NSObject {
     
     //默认显示消息-->center
     class func showToastAction(message : String) {
-        self.showToast(message: message, aLocationStr: "center", aShowTime: 2.0)
+        self.showToast(message: message, aLocationStr: "center", aShowTime: 5.0)
     }
     
     //显示消息

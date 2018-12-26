@@ -12,13 +12,16 @@ extension UIApplication {
         return self.currentNavigationController?.viewControllers.last
     }
     var currentNavigationController:UINavigationController? {
-        if self.rootViewController?.isKind(of: UINavigationController.classForCoder()) ?? false {
-            return (self.rootViewController as! UINavigationController)
-        }else if self.rootViewController?.isKind(of: UITabBarController.classForCoder()) ?? false {
-            let tabBar = self.rootViewController as! UITabBarController
-            let viewController = tabBar.selectedViewController
-            if viewController?.isKind(of: UINavigationController.classForCoder()) ?? false {
-                return (viewController as! UINavigationController)
+        var parent: UIViewController?
+        if let window = UIApplication.shared.delegate?.window,let rootVC = window?.rootViewController {
+            parent = rootVC
+            while (parent?.presentedViewController != nil) {
+                parent = parent?.presentedViewController!
+            }
+            if let tabbar = parent as? UITabBarController ,let nav = tabbar.selectedViewController as? UINavigationController {
+                return nav
+            }else if let nav = parent as? UINavigationController {
+                return nav
             }
         }
         return nil
@@ -28,13 +31,13 @@ extension UIApplication {
         return keyWindow?.rootViewController
     }
     
-    
-    
     func present(controller:UIViewController) {
-        
+        currentNavigationController?.present(controller, animated: true, completion: nil)
     }
     func push(controller:UIViewController)  {
-        
+        controller.hidesBottomBarWhenPushed = true
+        currentNavigationController?.pushViewController(controller, animated: true)
     }
+  
     
 }

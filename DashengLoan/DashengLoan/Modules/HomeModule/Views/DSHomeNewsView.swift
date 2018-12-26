@@ -10,7 +10,7 @@ import UIKit
 
 class DSHomeNewsView: UIView {
     fileprivate let logoImageView = UIImageView()
-    fileprivate let titleLabel = UILabel()
+    var titleLabel:MarqueeView?
     override init(frame: CGRect) {
         super.init(frame: frame)
         logoImageView.image = UIImage(named: "home_icon_news")
@@ -20,12 +20,12 @@ class DSHomeNewsView: UIView {
             maker.width.equalTo(59)
             maker.centerY.equalTo(self)
         }
-        
-        addSubview(titleLabel)
-        titleLabel.text = "这是个假消息"
-        titleLabel.textColor = UIColor.ds_blackText
-        titleLabel.font = UIFont.ds_font(ptSize: 13)
-        titleLabel.snp.makeConstraints { (maker) in
+        titleLabel = MarqueeView(frame: CGRect(x: 74, y: 0, width: XJDeviceInfo.screenWidth-124, height: 32))
+        addSubview(titleLabel!)
+        titleLabel?.color = UIColor.ds_blackText
+        titleLabel?.font = UIFont.ds_font(ptSize: 13)
+
+        titleLabel?.snp.makeConstraints { (maker) in
             maker.left.equalTo(logoImageView.snp_rightMargin).offset(15)
             maker.top.bottom.equalTo(0)
         }
@@ -44,7 +44,7 @@ class DSHomeNewsView: UIView {
             maker.top.bottom.equalTo(0)
             maker.right.equalTo(-15)
             maker.width.equalTo(49)
-            maker.left.equalTo(titleLabel.snp_rightMargin).offset(10)
+            maker.left.equalTo(titleLabel!.snp_rightMargin).offset(10)
         }
         let lineView = UIView.lineView()
         addSubview(lineView)

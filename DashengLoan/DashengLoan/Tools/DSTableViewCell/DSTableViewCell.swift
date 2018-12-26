@@ -34,7 +34,8 @@ class DSTableViewCell: UITableViewCell {
         contentView.addSubview(separatorView)
         separatorView.snp.makeConstraints { (maker) in
             maker.left.equalTo(leftSpearatorSpace)
-            maker.right.bottom.equalTo(0)
+            maker.bottom.equalTo(0)
+            maker.right.equalTo(30)
             maker.height.equalTo(0.5)
         }
         

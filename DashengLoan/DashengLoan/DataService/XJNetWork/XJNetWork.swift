@@ -73,10 +73,11 @@ class XJDecoder {
         do {
             let jsonDecoder = JSONDecoder()
             let jsonData = try JSONSerialization.data(withJSONObject: jsonDic, options: [])
-            let obj = try jsonDecoder.decode(someClass, from: jsonData)
-            return obj
+            let objc = try jsonDecoder.decode(someClass, from: jsonData)
+            return objc
         } catch {
-            throw XJError(code: -2, errorMsg: "数据映射失败")
+            XJToast.showToastAction(message: "数据格式错误")
+            throw XJError(code: -2, errorMsg: "数据格式错误")
         }
     }
 }

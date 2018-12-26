@@ -23,23 +23,26 @@ class DSViewController: UIViewController {
     func loginWithController(comolete:(()->Void)?) {
         let loginVC = DSLoginViewController()
         let navi = DSNavigationController.init(rootViewController: loginVC)
-        present(navi, animated: true, completion: nil)
+        UIApplication.shared.present(controller: navi)
         loginVC.loginSuccess = {
             comolete?()
         }
     }
-    
-}
-
-// MARK: - 设置导航栏
-extension DSViewController {
-    fileprivate func configNavigationBarApperance()  {
+    func configNavigationBarApperance()  {
         navigationController?.navigationBar.setBackgroundImage(UIImage.ds_backgroundImage(CGSize(width: XJDeviceInfo.screenWidth, height: XJDeviceInfo.naivgaitonBarHeight)), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage.ds_backgroundImage(CGSize(width: XJDeviceInfo.screenWidth, height: 2))
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white,NSAttributedString.Key.font:UIFont.ds_font(ptSize: 17)]
         navigationController?.navigationBar.barTintColor = UIColor.white
         
     }
+    
+    
+}
+
+// MARK: - 设置导航栏
+extension DSViewController {
+ 
     func pushToNextViewController(_ viewController:UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
     }
