@@ -59,7 +59,7 @@ class DSDatePicker: KZAlertController {
         }
         let cancelBtn = UIButton(type: .custom)
         cancelBtn.addTarget(self, action: #selector(DSDatePicker.cancelAction), for: .touchUpInside)
-        cancelBtn.setTitleColor(UIColor(R: 33, G: 171, B: 242), for: .normal)
+        cancelBtn.setTitleColor(UIColor.ds_blackText, for: .normal)
         cancelBtn.setTitle("取消", for: .normal)
         cancelBtn.titleLabel?.font = UIFont.ds_font(ptSize: 14)
         toolView.addSubview(cancelBtn)
@@ -70,7 +70,7 @@ class DSDatePicker: KZAlertController {
         
         let sureBtn = UIButton(type: .custom)
         sureBtn.addTarget(self, action: #selector(DSDatePicker.makeSureDate), for: .touchUpInside)
-        sureBtn.setTitleColor(UIColor(R: 10, G: 170, B: 245), for: .normal)
+        sureBtn.setTitleColor(UIColor.ds_blackText, for: .normal)
         sureBtn.setTitle("确定", for: .normal)
         sureBtn.titleLabel?.font = UIFont.ds_font(ptSize: 14)
         toolView.addSubview(sureBtn)
@@ -82,7 +82,7 @@ class DSDatePicker: KZAlertController {
         toolView.addSubview(lineView)
         lineView.snp.makeConstraints { (maker) in
             maker.left.right.bottom.equalTo(0)
-            maker.height.equalTo(1)
+            maker.height.equalTo(0.5)
         }
         
         datePicker.locale = Locale(identifier: "zh_CN")

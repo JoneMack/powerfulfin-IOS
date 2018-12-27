@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol DSInputTableViewCellDelegate :NSObjectProtocol {
- @objc optional func addImage()
+    @objc optional func uploadIdCardImage(isFace:Bool,indexPath:IndexPath)
 }
 
 

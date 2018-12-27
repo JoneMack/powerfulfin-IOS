@@ -9,6 +9,9 @@
 import UIKit
 
 class DSApplyTableViewController: DSTableViewController {
+    var schooId:String = ""
+    
+    
     var dataSource:DSApplyLocalService!
     var footView:DSApplyFooterView?
     

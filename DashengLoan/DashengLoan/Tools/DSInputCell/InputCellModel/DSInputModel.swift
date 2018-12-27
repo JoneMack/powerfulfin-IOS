@@ -26,10 +26,12 @@ class DSInputModel:NSObject {
     var subContent:String?
     var validater:DSTextValidater?
     
+    //仅用于DSRightButtonCell
     var rightTitle:String?
     
     //仅仅用于DSSelectorCell中，
     var alignment:Int?
+        
     
     var images:[String]?
     

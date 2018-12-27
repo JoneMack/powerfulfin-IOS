@@ -62,6 +62,13 @@ class DSApplyLocalService: NSObject {
         }
         models.append(sectionModel)
     }
+    
+    func reloadData(info:Any)  {
+        
+    }
+    func getDataInfo() -> [String:String] {
+        return [:]
+    }
 }
 extension DSApplyLocalService {
     func numberOfSections() -> Int {

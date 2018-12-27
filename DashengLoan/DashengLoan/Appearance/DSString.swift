@@ -22,5 +22,20 @@ extension String {
         return md5String as String
             
     }
+    
+    /// 从时间区间获取时间：例如：从2017.09.04-2037.09.04中得到2017-09-04 和2037-09-04
+    ///
+    /// - Parameter dateStr: 2017.09.04-2037.09.04
+    /// - Returns: (2017-09-04,2037-09-04)
+    func getDate() -> (String?,String?) {
+        let dataArray = self.components(separatedBy: "-")
+        let begin = dataArray.first
+        let end = dataArray.last
+        
+        let beginDate = begin?.replacingOccurrences(of: ".", with: "-")
+        let endDate = end?.replacingOccurrences(of: ".", with: "-")
+        
+        return (beginDate,endDate)
+    }
    
 }

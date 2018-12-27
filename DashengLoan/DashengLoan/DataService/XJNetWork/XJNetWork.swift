@@ -59,10 +59,11 @@ class XJNetWork {
                 successHandler(data)
             }else{
                 failHandler(XJError(code: code, errorMsg: msg))
+                XJToast.hiddenToastAction()
             }
             }.ifFailure {
                 failHandler(XJError(code: -1, errorMsg: response.error?.localizedDescription ?? "") )
-                
+                XJToast.hiddenToastAction()
         }
     }
 }
@@ -77,6 +78,7 @@ class XJDecoder {
             return objc
         } catch {
             XJToast.showToastAction(message: "数据格式错误")
+            XJToast.hiddenToastAction()
             throw XJError(code: -2, errorMsg: "数据格式错误")
         }
     }
