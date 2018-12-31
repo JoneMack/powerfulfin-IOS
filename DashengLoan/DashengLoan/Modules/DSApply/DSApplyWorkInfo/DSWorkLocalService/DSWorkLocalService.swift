@@ -12,7 +12,7 @@ class DSWorkLocalService: DSApplyLocalService {
     fileprivate var incumbentModels = [DSInputModel]()
     fileprivate var studentModels = [DSInputModel]()
     fileprivate var unemployedModels = [DSInputModel]()
-    fileprivate var cuttentIndex = 0
+    fileprivate(set) var cuttentIndex = 0
     override init() {
         super.init()
         cuttentIndex = 0

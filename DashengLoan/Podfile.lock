@@ -9,6 +9,7 @@ PODS:
     - RTRootNavigationController/Core (= 0.7.0)
   - RTRootNavigationController/Core (0.7.0)
   - SnapKit (4.2.0)
+  - TZImagePickerController (3.1.3)
 
 DEPENDENCIES:
   - Alamofire
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - RTRootNavigationController
   - SnapKit
+  - TZImagePickerController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -28,6 +30,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - RTRootNavigationController
     - SnapKit
+    - TZImagePickerController
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -37,7 +40,8 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   RTRootNavigationController: f1369f4257c8a44a05c5d3b151d2b8ec7accf121
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  TZImagePickerController: 3f1fea61ac4a7ecc7f4ef5213375c00b020d5b9b
 
-PODFILE CHECKSUM: a982e0fe5f6db34ca9074ff75134781be1617183
+PODFILE CHECKSUM: 0567347a45073a9c1982d5f94b4f10120e633c2b
 
 COCOAPODS: 1.6.0.beta.1

@@ -9,7 +9,7 @@
 			<key>content</key>
 			<string>自动识别</string>
 			<key>type</key>
-			<integer>1</integer>
+			<string>DSSelectorCell</string>
 			<key>title</key>
 			<string>身份信息</string>
 		</dict>
@@ -19,13 +19,13 @@
 			<key>title</key>
 			<string>姓名</string>
 			<key>type</key>
-			<integer>0</integer>
+			<string>DSInputCell</string>
 		</dict>
 		<dict>
 			<key>placeholder</key>
 			<string>请输入身份证号</string>
 			<key>type</key>
-			<integer>0</integer>
+			<string>DSInputCell</string>
 			<key>title</key>
 			<string>身份证</string>
 		</dict>
@@ -33,7 +33,7 @@
 			<key>placeholder</key>
 			<string>请输入民族</string>
 			<key>type</key>
-			<integer>0</integer>
+			<string>DSInputCell</string>
 			<key>title</key>
 			<string>民族</string>
 		</dict>
@@ -43,7 +43,7 @@
 			<key>placeholder</key>
 			<string>请输入签发机关</string>
 			<key>type</key>
-			<integer>0</integer>
+			<string>DSInputCell</string>
 		</dict>
 		<dict>
 			<key>title</key>
@@ -51,17 +51,17 @@
 			<key>placeholder</key>
 			<string>请选择身份证起始时间</string>
 			<key>type</key>
-			<integer>1</integer>
+			<string>DSSelectorCell</string>
 		</dict>
 		<dict>
 			<key>type</key>
-			<integer>1</integer>
+			<string>DSSelectorCell</string>
 			<key>placeholder</key>
 			<string>请选择身份证结束时间</string>
 		</dict>
 		<dict>
 			<key>type</key>
-			<integer>0</integer>
+			<string>DSInputCell</string>
 			<key>title</key>
 			<string>地址</string>
 			<key>placeholder</key>
@@ -71,13 +71,13 @@
 			<key>title</key>
 			<string>身份证照</string>
 			<key>type</key>
-			<integer>2</integer>
+			<string>DSIdImageCell</string>
 		</dict>
 	</array>
 	<array>
 		<dict>
 			<key>type</key>
-			<integer>1</integer>
+			<string>DSSelectorCell</string>
 			<key>title</key>
 			<string>人脸识别</string>
 			<key>content</key>

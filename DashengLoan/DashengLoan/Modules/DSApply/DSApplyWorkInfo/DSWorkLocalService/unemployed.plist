@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>type</key>
-		<integer>0</integer>
+		<string>DSInputCell</string>
 		<key>title</key>
 		<string>家庭月收入</string>
 		<key>placeholder</key>
@@ -12,7 +12,7 @@
 	</dict>
 	<dict>
 		<key>type</key>
-		<integer>0</integer>
+		<string>DSInputCell</string>
 		<key>title</key>
 		<string>机构电话</string>
 		<key>placeholder</key>

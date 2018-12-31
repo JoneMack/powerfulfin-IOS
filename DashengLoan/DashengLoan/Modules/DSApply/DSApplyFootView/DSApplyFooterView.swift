@@ -18,7 +18,7 @@ class DSApplyFooterView: UIView {
             footBtn?.setTitle(title, for: .normal)
         }
     }
-    var delegate:DSApplyFooterViewDelegate?
+    weak var delegate:DSApplyFooterViewDelegate?
     
     var footBtn:DSButton?
     

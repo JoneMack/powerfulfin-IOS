@@ -15,9 +15,9 @@ enum CellType : Int {
     case mutableImage = 5 //DSMutableImageCell
 }
 
+@objcMembers
 class DSInputModel:NSObject {
-    
-    var inputType:DSInputTableViewCell.Type!
+    var type:String = "DSInputCell"
     
     var title:String?
     
@@ -30,29 +30,18 @@ class DSInputModel:NSObject {
     var rightTitle:String?
     
     //仅仅用于DSSelectorCell中，
-    var alignment:Int?
+    var alignment:NSNumber?
         
     
     var images:[String]?
     
     convenience init(dic:[String:Any]) {
         self.init()
-        self.title = dic["title"] as? String
-        self.content = dic["content"] as? String
-        self.placeholder = dic["placeholder"] as? String
-        self.alignment = dic["alignment"] as? Int
+        setValuesForKeys(dic)
+ 
+    }
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
 
-        let cellType = dic["type"] as? Int
-        if cellType == 1{
-            inputType = DSSelectorCell.self
-        }else if cellType == 2{
-            inputType = DSIdImageCell.self
-        }else if cellType == 4 {
-            inputType = DSRightButtonCell.self
-        }else if cellType == 5 {
-            inputType = DSMutableImageCell.self
-        }else{
-            inputType = DSInputCell.self
-        }
     }
 }

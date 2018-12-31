@@ -35,16 +35,47 @@ class XJRequest {
 
 
 class XJNetWork {
-    class func request(_ method:XJHTTPMethod = .get,URL:String, parameters:[String:String] ,successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void)) {
-        
-        Alamofire.request(URL, method: HTTPMethod(rawValue: method.rawValue)!, parameters: parameters).responseJSON { (response) in
-            handlerResult(response: response, successHandler: successHandler, failHandler: failHandler)
-        }
-    }
+//    class func request(_ method:XJHTTPMethod = .get,URL:String, parameters:[String:String] ,successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void)) {
+//
+//        Alamofire.request(URL, method: HTTPMethod(rawValue: method.rawValue)!, parameters: parameters).responseJSON { (response) in
+//            handlerResult(response: response, successHandler: successHandler, failHandler: failHandler)
+//        }
+//    }
+    //请求
     class func request(_ requst:XJRequest,successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void)) {
         
         Alamofire.request(requst.url, method:HTTPMethod(rawValue: requst.method.rawValue)!, parameters: requst.parameters, headers: requst.httpHeader).responseJSON { (response) in
             handlerResult(response: response, successHandler: successHandler, failHandler: failHandler)
+        }
+    }
+    //上传请求
+    class func uploadRequest(_ request:XJRequest,progressHandler:@escaping((CGFloat) -> Void),successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void))
+    {
+        let imageName = request.parameters["name"] as! String
+        
+        let imageData = request.parameters["data"] as? Data
+        if imageData == nil {
+            failHandler(XJError(code: -1, errorMsg: "图片为空，换一张试试"))
+            return
+        }
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+                multipartFormData.append(imageData!, withName: imageName, fileName: imageName, mimeType: "image/png")
+        }, to: request.url) { (encodingResult) in
+            switch encodingResult {
+            case .success(let upload,_,_) :
+                upload.uploadProgress(closure: { (progerss) in
+                    
+                    let aValue :Double = Double(progerss.completedUnitCount)/Double(progerss.totalUnitCount)
+                    print("上传进度L：", aValue)
+                    progressHandler(CGFloat(aValue))
+                    
+                }).responseJSON(completionHandler: { (response) in
+                    handlerResult(response: response, successHandler: successHandler, failHandler: failHandler)
+                })
+            case.failure(let error):
+                print("\(error.localizedDescription)")
+            }
         }
     }
     fileprivate class func handlerResult(response:DataResponse<Any>,successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void)) {

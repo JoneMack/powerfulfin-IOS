@@ -160,7 +160,13 @@ extension UIColor {
     /// 按钮红色字颜色 RGB:234.73.52 hex:ea4934
     class var ds_redText:UIColor {
         return UIColor(hex: "ea4934")
-
+    }
+    /// 浅黄色背景色
+    class var ds_lightOrangeBack:UIColor {
+        return UIColor(R: 255, G: 248, B: 216)
+    }
+    class var ds_orangeText:UIColor {
+        return UIColor(R: 255, G: 111, B: 0)
     }
     class var ds_blueText:UIColor {
         return UIColor(hex: "5a91e1")

@@ -21,7 +21,7 @@ class DSSelectorCell: DSInputTableViewCell {
     }
     override func configCellData(model: DSInputModel) {
         super.configCellData(model: model)
-        contentTextField.textAlignment =  NSTextAlignment(rawValue: model.alignment ?? 0) ?? .left
+        contentTextField.textAlignment =  NSTextAlignment(rawValue: model.alignment?.intValue ?? 0) ?? .left
     }
 
 }

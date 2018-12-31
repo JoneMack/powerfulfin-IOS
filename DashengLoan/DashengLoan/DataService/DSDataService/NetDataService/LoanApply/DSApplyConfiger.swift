@@ -23,11 +23,11 @@ struct DSApplyConfiger: Codable {
     var bank_list:[DSBank]?
     
     // MARK: - 关系 part = 3
-    //关系列表
+    /// 关系列表
     var relations:[String]?
-    //住房情况
+    /// 住房情况
     var housing_situation:[String]?
-    // 婚姻状况
+    /// 婚姻状况
     var marital_status:[String]?
     
     

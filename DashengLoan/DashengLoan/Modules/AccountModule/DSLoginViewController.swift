@@ -48,7 +48,7 @@ class DSLoginViewController: DSViewController {
         loginTypeBtn.setTitle("账号密码登录", for: .normal)
         loginTypeBtn.setTitle("手机验证码登录", for: .selected)
         loginTypeBtn.setTitleColor(UIColor.ds_grayColor, for: .normal)
-        loginBtn.titleLabel?.font = UIFont.ds_font(ptSize: 14)
+        loginTypeBtn.titleLabel?.font = UIFont.ds_font(ptSize: 14)
         loginTypeBtn.addTarget(self, action: #selector(exchangeLoginType(_:)), for: .touchUpInside)
         loginTypeBtn.snp.makeConstraints { (maker) in
             maker.top.equalTo(XJDeviceInfo.statusBarHeight+10)

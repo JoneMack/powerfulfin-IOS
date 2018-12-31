@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol CLLoopViewDelegate{
+@objc public protocol CLLoopViewDelegate{
     func selectLoopViewPage(idx:Int);
 }
 
@@ -171,7 +171,7 @@ public class CLLoopView: UIView,UIScrollViewDelegate {
     private let imageView2:UIImageView = UIImageView()
     
     
-    public var delegate:CLLoopViewDelegate? = nil
+    public weak var delegate:CLLoopViewDelegate? = nil
     /// 当前页
     public var currentPage:Int = 0
     /// 定时跳转到下一页

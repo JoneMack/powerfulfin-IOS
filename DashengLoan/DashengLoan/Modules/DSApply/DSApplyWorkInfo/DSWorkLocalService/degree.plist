@@ -5,7 +5,7 @@
 	<array>
 		<dict>
 			<key>type</key>
-			<integer>1</integer>
+			<string>DSSelectorCell</string>
 			<key>title</key>
 			<string>学历</string>
 			<key>placeholder</key>
@@ -13,7 +13,7 @@
 		</dict>
 		<dict>
 			<key>type</key>
-			<integer>1</integer>
+			<string>DSSelectorCell</string>
 			<key>title</key>
 			<string>职业</string>
 			<key>placeholder</key>
@@ -23,7 +23,7 @@
 	<array>
 		<dict>
 			<key>type</key>
-			<integer>5</integer>
+			<string>DSMutableImageCell</string>
 			<key>title</key>
 			<string>学历证明</string>
 			<key>placeholder</key>

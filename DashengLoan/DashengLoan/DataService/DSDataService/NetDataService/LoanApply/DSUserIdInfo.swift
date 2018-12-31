@@ -11,7 +11,7 @@ import UIKit
 /// 用户身份证信息
 struct DSUserIdInfo: Codable {
     
-    var uid:Int?
+    var uid:String?
     
     /// 姓名
     var full_name:String?
@@ -34,8 +34,8 @@ struct DSUserIdInfo: Codable {
     /// 签证机关
     var issuing_authority:String?
     
-    /// 认证结果：0是认证失败 1 是认证通过 2 是取消认证 3 待认证
-    var auth:String?
+    /// 实名状态：1：未认证or待认证，2：认证成功，3：认证失败
+    var user_real:Int?
     
     
     var phone:String?

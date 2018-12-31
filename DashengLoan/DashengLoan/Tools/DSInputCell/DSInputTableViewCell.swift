@@ -10,8 +10,19 @@ import UIKit
 
 @objc protocol DSInputTableViewCellDelegate :NSObjectProtocol {
     @objc optional func uploadIdCardImage(isFace:Bool,indexPath:IndexPath)
+    @objc optional func inputCell(inputCell:DSInputTableViewCell,rightButtonClick rightBtn:UIButton)
 }
 
+
+protocol MallocCellProtocol {
+    static func mallocCell(reuseIdentifier: String?) -> Self
+    
+}
+extension UITableViewCell:MallocCellProtocol{
+    static func mallocCell(reuseIdentifier: String?) -> Self {
+       return self.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: reuseIdentifier)
+    }
+}
 
 class DSInputTableViewCell: DSTableViewCell {
 
@@ -67,3 +78,8 @@ func InputCell<T:DSInputTableViewCell>(_ cellClass:T.Type) -> DSInputTableViewCe
 }
 
 
+func mallocCell(name:String, reuseIdentifier:String) -> DSInputTableViewCell? {
+    let namespace = Bundle.main.infoDictionary?["CFBundleExecutable"] as! String
+
+    return (NSClassFromString(namespace+"."+name) as? MallocCellProtocol.Type)?.mallocCell(reuseIdentifier:reuseIdentifier) as? DSInputTableViewCell
+}

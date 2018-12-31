@@ -47,7 +47,7 @@ extension DSAuthFaceManager : UDIDSafeAuthDelegate {
                     errorMsg = "认证成功"
                     isAuthSuccessed = true }
                 
-                userIdInfo.auth = isAuthSuccessed ? "1" : "0"
+                userIdInfo.user_real = isAuthSuccessed ? 2 : 3
                 userIdInfo.full_name = resultInfo["id_name"] as? String
                 userIdInfo.identity_number = resultInfo["id_no"] as? String
                 userIdInfo.nationality = resultInfo["state_id"] as? String
@@ -66,7 +66,7 @@ extension DSAuthFaceManager : UDIDSafeAuthDelegate {
             errorMsg = "认证发生异常"
         }else if result == 2 {//取消认证
             errorMsg = "取消认证"
-            userIdInfo.auth = "2"
+            userIdInfo.user_real = 1
         }else if result == 3 {//取消认证
             errorMsg = "认证姓名不合法"
         }else if result == 4 {//取消认证

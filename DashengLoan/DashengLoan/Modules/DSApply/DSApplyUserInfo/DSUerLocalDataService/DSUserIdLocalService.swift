@@ -33,13 +33,10 @@ class DSUserIdLocalService: DSApplyLocalService {
             endDate.content = userInfo.end_date
             address.content = userInfo.address
             idPic.content = userInfo.idcard_information_pic_url
-            authResult.subContent = userInfo.auth
-            if userInfo.auth == "0" {
+            if userInfo.user_real == 3 {
                 authResult.content = "认证失败"
-            }else if userInfo.auth == "1" {
-                authResult.content = "认证成功"
-            }else if userInfo.auth == "2" {
-                authResult.content = "取消认证"
+            }else if userInfo.user_real == 2 {
+               authResult.content = "认证成功"
             }else{
                 authResult.content = "待认证"
             }
@@ -53,7 +50,6 @@ class DSUserIdLocalService: DSApplyLocalService {
         let starDate = cellMode(indexPath: IndexPath(row: 5, section: 0))
         let endDate = cellMode(indexPath: IndexPath(row: 6, section: 0))
         let address = cellMode(indexPath: IndexPath(row: 7, section: 0))
-        let authResult = cellMode(indexPath: IndexPath(row: 0, section: 1))
         
         var paraDic = [String:String]()
         paraDic["full_name"] = nameModel.content
@@ -63,7 +59,6 @@ class DSUserIdLocalService: DSApplyLocalService {
         paraDic["start_date"] = starDate.content
         paraDic["end_date"] = endDate.content
         paraDic["address"] = address.content
-        paraDic["auth"] = authResult.content
         return paraDic
         
     }

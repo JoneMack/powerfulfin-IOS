@@ -71,6 +71,26 @@
 		350A692021D3658E0055EFA6 /* DSOrderLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A691F21D3658E0055EFA6 /* DSOrderLocalService.swift */; };
 		350A692221D365BF0055EFA6 /* order.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A692121D365BF0055EFA6 /* order.plist */; };
 		350A692521D37C830055EFA6 /* DSUserIdInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A692421D37C830055EFA6 /* DSUserIdInfo.swift */; };
+		3513214721D4B120005AB183 /* XJImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214621D4B120005AB183 /* XJImagePicker.swift */; };
+		3513214921D4B527005AB183 /* DSImagePickerActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */; };
+		3513214B21D4D5FB005AB183 /* XJImageCompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214A21D4D5FB005AB183 /* XJImageCompress.swift */; };
+		3513214E21D4DC8D005AB183 /* DSCommonDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214D21D4DC8D005AB183 /* DSCommonDataService.swift */; };
+		3513215221D4FAC3005AB183 /* DSImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513215121D4FAC3005AB183 /* DSImageInfo.swift */; };
+		3513215621D5F9A1005AB183 /* DSLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513215521D5F9A1005AB183 /* DSLocationViewController.swift */; };
+		3513215821D5F9AE005AB183 /* DSPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513215721D5F9AE005AB183 /* DSPhoneViewController.swift */; };
+		3513215A21D607E1005AB183 /* DSArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513215921D607E1005AB183 /* DSArray.swift */; };
+		3513215C21D613D4005AB183 /* DSBankListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513215B21D613D4005AB183 /* DSBankListViewController.swift */; };
+		3513215E21D6166A005AB183 /* DSUserBanksInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513215D21D6166A005AB183 /* DSUserBanksInfo.swift */; };
+		3513216121D62413005AB183 /* DSBanksPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216021D62413005AB183 /* DSBanksPicker.swift */; };
+		3513216421D642CE005AB183 /* XJDataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216321D642CE005AB183 /* XJDataPicker.swift */; };
+		3513216621D652A6005AB183 /* DSAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216521D652A6005AB183 /* DSAddress.swift */; };
+		3513216821D65500005AB183 /* DSUserContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216721D65500005AB183 /* DSUserContact.swift */; };
+		3513216A21D6571B005AB183 /* DSUserWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216921D6571B005AB183 /* DSUserWork.swift */; };
+		3513216D21D65AD5005AB183 /* XJSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216C21D65AD5005AB183 /* XJSegmentedControl.swift */; };
+		3513217021D72231005AB183 /* DSWorkHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216F21D72231005AB183 /* DSWorkHeaderView.swift */; };
+		3513217321D73CBD005AB183 /* XJMutailDataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217221D73CBD005AB183 /* XJMutailDataPicker.swift */; };
+		3513217521D74785005AB183 /* DSAddressPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217421D74785005AB183 /* DSAddressPicker.swift */; };
+		3513217721D75158005AB183 /* DSDataPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217621D75158005AB183 /* DSDataPickerCell.swift */; };
 		3548366621BA158A008AB78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548366521BA158A008AB78D /* AppDelegate.swift */; };
 		3548366D21BA158B008AB78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3548366C21BA158B008AB78D /* Assets.xcassets */; };
 		3548367E21BA1709008AB78D /* DSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548367D21BA1709008AB78D /* DSViewController.swift */; };
@@ -193,6 +213,26 @@
 		350A691F21D3658E0055EFA6 /* DSOrderLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderLocalService.swift; sourceTree = "<group>"; };
 		350A692121D365BF0055EFA6 /* order.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = order.plist; sourceTree = "<group>"; };
 		350A692421D37C830055EFA6 /* DSUserIdInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserIdInfo.swift; sourceTree = "<group>"; };
+		3513214621D4B120005AB183 /* XJImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJImagePicker.swift; sourceTree = "<group>"; };
+		3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSImagePickerActionSheet.swift; sourceTree = "<group>"; };
+		3513214A21D4D5FB005AB183 /* XJImageCompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJImageCompress.swift; sourceTree = "<group>"; };
+		3513214D21D4DC8D005AB183 /* DSCommonDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSCommonDataService.swift; sourceTree = "<group>"; };
+		3513215121D4FAC3005AB183 /* DSImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSImageInfo.swift; sourceTree = "<group>"; };
+		3513215521D5F9A1005AB183 /* DSLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLocationViewController.swift; sourceTree = "<group>"; };
+		3513215721D5F9AE005AB183 /* DSPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSPhoneViewController.swift; sourceTree = "<group>"; };
+		3513215921D607E1005AB183 /* DSArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSArray.swift; sourceTree = "<group>"; };
+		3513215B21D613D4005AB183 /* DSBankListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSBankListViewController.swift; sourceTree = "<group>"; };
+		3513215D21D6166A005AB183 /* DSUserBanksInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserBanksInfo.swift; sourceTree = "<group>"; };
+		3513216021D62413005AB183 /* DSBanksPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSBanksPicker.swift; sourceTree = "<group>"; };
+		3513216321D642CE005AB183 /* XJDataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJDataPicker.swift; sourceTree = "<group>"; };
+		3513216521D652A6005AB183 /* DSAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAddress.swift; sourceTree = "<group>"; };
+		3513216721D65500005AB183 /* DSUserContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserContact.swift; sourceTree = "<group>"; };
+		3513216921D6571B005AB183 /* DSUserWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserWork.swift; sourceTree = "<group>"; };
+		3513216C21D65AD5005AB183 /* XJSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJSegmentedControl.swift; sourceTree = "<group>"; };
+		3513216F21D72231005AB183 /* DSWorkHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSWorkHeaderView.swift; sourceTree = "<group>"; };
+		3513217221D73CBD005AB183 /* XJMutailDataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMutailDataPicker.swift; sourceTree = "<group>"; };
+		3513217421D74785005AB183 /* DSAddressPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAddressPicker.swift; sourceTree = "<group>"; };
+		3513217621D75158005AB183 /* DSDataPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDataPickerCell.swift; sourceTree = "<group>"; };
 		3548366221BA158A008AB78D /* dashengLoan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dashengLoan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3548366521BA158A008AB78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3548366C21BA158B008AB78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -369,6 +409,13 @@
 		350A68AD21D0B52D0055EFA6 /* LoanApply */ = {
 			isa = PBXGroup;
 			children = (
+				350A68CE21D1D4DC0055EFA6 /* DSApplyDataService.swift */,
+				3513215D21D6166A005AB183 /* DSUserBanksInfo.swift */,
+				350A692421D37C830055EFA6 /* DSUserIdInfo.swift */,
+				350A68D021D1D5170055EFA6 /* DSApplyConfiger.swift */,
+				3513216521D652A6005AB183 /* DSAddress.swift */,
+				3513216721D65500005AB183 /* DSUserContact.swift */,
+				3513216921D6571B005AB183 /* DSUserWork.swift */,
 			);
 			path = LoanApply;
 			sourceTree = "<group>";
@@ -383,9 +430,6 @@
 		350A68AF21D0B5480055EFA6 /* LoanPay */ = {
 			isa = PBXGroup;
 			children = (
-				350A68CE21D1D4DC0055EFA6 /* DSApplyDataService.swift */,
-				350A692421D37C830055EFA6 /* DSUserIdInfo.swift */,
-				350A68D021D1D5170055EFA6 /* DSApplyConfiger.swift */,
 			);
 			path = LoanPay;
 			sourceTree = "<group>";
@@ -416,6 +460,8 @@
 				350A68F121D321CE0055EFA6 /* DSApplyBankInfo */,
 				350A690121D33A280055EFA6 /* DSApplyContactInfo */,
 				350A690921D34C340055EFA6 /* DSApplyWorkInfo */,
+				3513215321D5F880005AB183 /* DSApplyLocation */,
+				3513215421D5F899005AB183 /* DSApplyPhone */,
 				350A691B21D364FC0055EFA6 /* DSApplyOrderInfo */,
 			);
 			path = DSApply;
@@ -506,6 +552,7 @@
 			children = (
 				350A68F421D325CA0055EFA6 /* DSBankLocalService */,
 				350A68F221D322080055EFA6 /* DSBankViewController.swift */,
+				3513215B21D613D4005AB183 /* DSBankListViewController.swift */,
 			);
 			path = DSApplyBankInfo;
 			sourceTree = "<group>";
@@ -557,6 +604,7 @@
 		350A690921D34C340055EFA6 /* DSApplyWorkInfo */ = {
 			isa = PBXGroup;
 			children = (
+				3513216E21D7221A005AB183 /* Views */,
 				350A690C21D34CFE0055EFA6 /* DSWorkLocalService */,
 				350A690A21D34CF90055EFA6 /* DSWorkViewController.swift */,
 			);
@@ -599,6 +647,83 @@
 				356E80AF21CC87FD0052C6E2 /* XJToast.swift */,
 			);
 			path = XJToast;
+			sourceTree = "<group>";
+		};
+		3513214521D4AF8D005AB183 /* XJImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				3513214621D4B120005AB183 /* XJImagePicker.swift */,
+				3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */,
+				3513214A21D4D5FB005AB183 /* XJImageCompress.swift */,
+			);
+			path = XJImagePicker;
+			sourceTree = "<group>";
+		};
+		3513214C21D4DC54005AB183 /* Commom */ = {
+			isa = PBXGroup;
+			children = (
+				3513214D21D4DC8D005AB183 /* DSCommonDataService.swift */,
+				3513215121D4FAC3005AB183 /* DSImageInfo.swift */,
+			);
+			path = Commom;
+			sourceTree = "<group>";
+		};
+		3513215321D5F880005AB183 /* DSApplyLocation */ = {
+			isa = PBXGroup;
+			children = (
+				3513215521D5F9A1005AB183 /* DSLocationViewController.swift */,
+			);
+			path = DSApplyLocation;
+			sourceTree = "<group>";
+		};
+		3513215421D5F899005AB183 /* DSApplyPhone */ = {
+			isa = PBXGroup;
+			children = (
+				3513215721D5F9AE005AB183 /* DSPhoneViewController.swift */,
+			);
+			path = DSApplyPhone;
+			sourceTree = "<group>";
+		};
+		3513215F21D623F8005AB183 /* DSBanksPicker */ = {
+			isa = PBXGroup;
+			children = (
+				3513216021D62413005AB183 /* DSBanksPicker.swift */,
+			);
+			path = DSBanksPicker;
+			sourceTree = "<group>";
+		};
+		3513216221D642B3005AB183 /* XJDataPicker */ = {
+			isa = PBXGroup;
+			children = (
+				3513216321D642CE005AB183 /* XJDataPicker.swift */,
+			);
+			path = XJDataPicker;
+			sourceTree = "<group>";
+		};
+		3513216B21D65A62005AB183 /* XJSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				3513216C21D65AD5005AB183 /* XJSegmentedControl.swift */,
+			);
+			path = XJSegmentedControl;
+			sourceTree = "<group>";
+		};
+		3513216E21D7221A005AB183 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3513216F21D72231005AB183 /* DSWorkHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3513217121D72B9D005AB183 /* XJMutailDataPicker */ = {
+			isa = PBXGroup;
+			children = (
+				3513217221D73CBD005AB183 /* XJMutailDataPicker.swift */,
+				3513217421D74785005AB183 /* DSAddressPicker.swift */,
+				3513217621D75158005AB183 /* DSDataPickerCell.swift */,
+			);
+			path = XJMutailDataPicker;
 			sourceTree = "<group>";
 		};
 		3548365921BA158A008AB78D = {
@@ -719,6 +844,7 @@
 				350A68BB21D0C53A0055EFA6 /* DSString.swift */,
 				350A68EC21D266E00055EFA6 /* DSDate.swift */,
 				350A68BD21D0C8FE0055EFA6 /* DSAlertController.swift */,
+				3513215921D607E1005AB183 /* DSArray.swift */,
 			);
 			path = Appearance;
 			sourceTree = "<group>";
@@ -764,6 +890,7 @@
 		35552C7C21CB63A4002033FC /* NetDataService */ = {
 			isa = PBXGroup;
 			children = (
+				3513214C21D4DC54005AB183 /* Commom */,
 				350A68AF21D0B5480055EFA6 /* LoanPay */,
 				350A68AE21D0B53A0055EFA6 /* LoanOrder */,
 				350A68AD21D0B52D0055EFA6 /* LoanApply */,
@@ -793,6 +920,11 @@
 		3595C61C21BE4C9800B90FD0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3513217121D72B9D005AB183 /* XJMutailDataPicker */,
+				3513216B21D65A62005AB183 /* XJSegmentedControl */,
+				3513216221D642B3005AB183 /* XJDataPicker */,
+				3513215F21D623F8005AB183 /* DSBanksPicker */,
+				3513214521D4AF8D005AB183 /* XJImagePicker */,
 				350A68D721D2021F0055EFA6 /* DSInputCell */,
 				350A692321D369750055EFA6 /* XJToast */,
 				350A68E321D25B5F0055EFA6 /* XJDatePicker */,
@@ -1020,6 +1152,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -1030,6 +1163,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTRootNavigationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1043,12 +1177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3513214921D4B527005AB183 /* DSImagePickerActionSheet.swift in Sources */,
 				3595C62221BE4CB100B90FD0 /* XJDeviceInfo.swift in Sources */,
 				350A68F021D317460055EFA6 /* DSApplyFooterView.swift in Sources */,
 				35A82B3D21CBA87C0009D5F2 /* DSNetConfiger.swift in Sources */,
 				350A68BE21D0C8FE0055EFA6 /* DSAlertController.swift in Sources */,
 				3548368621BA17B8008AB78D /* DSWebViewController.swift in Sources */,
 				356E80B621CD05860052C6E2 /* DSBugly.swift in Sources */,
+				3513215C21D613D4005AB183 /* DSBankListViewController.swift in Sources */,
 				3508778121CDD4AB006580AD /* XJGCDTimer.swift in Sources */,
 				350A68C721D110D00055EFA6 /* DSMessageViewController.swift in Sources */,
 				3548368021BA174D008AB78D /* DSTableViewController.swift in Sources */,
@@ -1075,31 +1211,44 @@
 				3595C62421BE4CB100B90FD0 /* XJUDID.swift in Sources */,
 				350A68B821D0B8BC0055EFA6 /* DSSearchTableViewCell.swift in Sources */,
 				350A68D321D1DE2A0055EFA6 /* DSAuthFaceManager.swift in Sources */,
+				3513217321D73CBD005AB183 /* XJMutailDataPicker.swift in Sources */,
+				3513216121D62413005AB183 /* DSBanksPicker.swift in Sources */,
 				350A68D921D202550055EFA6 /* DSInputTableViewCell.swift in Sources */,
+				3513214721D4B120005AB183 /* XJImagePicker.swift in Sources */,
 				3548368F21BA1976008AB78D /* DSOrderViewController.swift in Sources */,
 				350A690021D32D6A0055EFA6 /* DSApplyLocalService.swift in Sources */,
+				3513216621D652A6005AB183 /* DSAddress.swift in Sources */,
 				3595C61721BE08B100B90FD0 /* DSSearchViewController.swift in Sources */,
+				3513215621D5F9A1005AB183 /* DSLocationViewController.swift in Sources */,
+				3513214E21D4DC8D005AB183 /* DSCommonDataService.swift in Sources */,
 				350A68D121D1D5170055EFA6 /* DSApplyConfiger.swift in Sources */,
 				350A690E21D34D340055EFA6 /* DSWorkLocalService.swift in Sources */,
 				35552C7E21CB63D8002033FC /* DSAccountDataService.swift in Sources */,
+				3513216421D642CE005AB183 /* XJDataPicker.swift in Sources */,
+				3513217021D72231005AB183 /* DSWorkHeaderView.swift in Sources */,
+				3513215A21D607E1005AB183 /* DSArray.swift in Sources */,
 				350A68FD21D32D400055EFA6 /* DSApplyTableViewController.swift in Sources */,
 				350A68EB21D25C290055EFA6 /* DSDatePicker.swift in Sources */,
+				3513216821D65500005AB183 /* DSUserContact.swift in Sources */,
 				350A68F621D325EB0055EFA6 /* DSBankLocalService.swift in Sources */,
 				350A68F321D322080055EFA6 /* DSBankViewController.swift in Sources */,
 				3595C62321BE4CB100B90FD0 /* XJKeyChainStore.swift in Sources */,
 				3508779121CE480F006580AD /* DSHomeLoanButtonView.swift in Sources */,
+				3513217521D74785005AB183 /* DSAddressPicker.swift in Sources */,
 				3508778A21CE3006006580AD /* DSHomeLoanView.swift in Sources */,
 				3508779E21CF66AC006580AD /* DSUserDataSource.swift in Sources */,
 				3548366621BA158A008AB78D /* AppDelegate.swift in Sources */,
 				350A68BC21D0C53A0055EFA6 /* DSString.swift in Sources */,
 				3508779621CF3841006580AD /* DSImageView.swift in Sources */,
 				350A68E021D23E5C0055EFA6 /* DSSelectorCell.swift in Sources */,
+				3513214B21D4D5FB005AB183 /* XJImageCompress.swift in Sources */,
 				350A68A821D0769B0055EFA6 /* MarqueeView.swift in Sources */,
 				3508778321CDEA94006580AD /* DSHomeSearchControl.swift in Sources */,
 				350A690B21D34CF90055EFA6 /* DSWorkViewController.swift in Sources */,
 				350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */,
 				3548368221BA1765008AB78D /* DSTabBarController.swift in Sources */,
 				3508525421C352810095C391 /* DSLoactionManager.swift in Sources */,
+				3513215E21D6166A005AB183 /* DSUserBanksInfo.swift in Sources */,
 				350A68B521D0B6520055EFA6 /* DSSearchData.swift in Sources */,
 				350A690421D33A960055EFA6 /* DSContactLocalService.swift in Sources */,
 				350A68BA21D0B9650055EFA6 /* DSLabel.swift in Sources */,
@@ -1112,12 +1261,17 @@
 				350A68ED21D266E00055EFA6 /* DSDate.swift in Sources */,
 				350A68C121D106020055EFA6 /* DSRouter.swift in Sources */,
 				35552C7A21CB5DB6002033FC /* DSUserInfo.swift in Sources */,
+				3513217721D75158005AB183 /* DSDataPickerCell.swift in Sources */,
 				3548367E21BA1709008AB78D /* DSViewController.swift in Sources */,
 				35A82B3B21CBA39A0009D5F2 /* DSAgreementView.swift in Sources */,
 				350A68C421D10ED50055EFA6 /* DSOrderDetailViewController.swift in Sources */,
+				3513216A21D6571B005AB183 /* DSUserWork.swift in Sources */,
 				350A68CF21D1D4DC0055EFA6 /* DSApplyDataService.swift in Sources */,
 				35A82B3921CB976B0009D5F2 /* DSPhoneButton.swift in Sources */,
+				3513215221D4FAC3005AB183 /* DSImageInfo.swift in Sources */,
+				3513215821D5F9AE005AB183 /* DSPhoneViewController.swift in Sources */,
 				356E80B021CC87FD0052C6E2 /* XJToast.swift in Sources */,
+				3513216D21D65AD5005AB183 /* XJSegmentedControl.swift in Sources */,
 				350A68E221D2406E0055EFA6 /* DSIdImageCell.swift in Sources */,
 				356E80B321CCC3F40052C6E2 /* DSTextValidate.swift in Sources */,
 				350A68B321D0B59B0055EFA6 /* DSHomeInfo.swift in Sources */,

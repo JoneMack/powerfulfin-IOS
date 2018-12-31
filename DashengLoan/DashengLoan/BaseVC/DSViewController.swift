@@ -36,8 +36,7 @@ class DSViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor.white
         
     }
-    
-    
+  
 }
 
 // MARK: - 设置导航栏

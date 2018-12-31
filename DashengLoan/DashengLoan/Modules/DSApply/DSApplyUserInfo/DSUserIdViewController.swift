@@ -12,6 +12,7 @@ private let cellIdentifier = "cellIdentifier"
 class DSUserIdViewController: DSApplyTableViewController {
     fileprivate var userIdInfo:DSUserIdInfo?
     fileprivate var loadPicCount = 0
+    fileprivate var imagePicker : XJImagePicker?
     var orderId:String?
     
     override func viewDidLoad() {
@@ -20,11 +21,24 @@ class DSUserIdViewController: DSApplyTableViewController {
         dataSource = DSUserIdLocalService()
         loadFooterView(title: "下一步")
         loadUserIdInfo()
+        imagePicker = XJImagePicker()
     }
     override func tableViewType() -> UITableView.Style {
         return .grouped
     }
-    
+    override func uploadImageSuccess(_ imageInfo: DSImageInfo) {
+        
+        if let urlType = DSPic(rawValue: imageInfo.type ?? "") {
+            if urlType == .idcardface {
+                userIdInfo?.idcard_information_pic = imageInfo.path
+                userIdInfo?.idcard_information_pic_url = imageInfo.url
+            }else if urlType == .idcardback {
+                userIdInfo?.idcard_national_pic = imageInfo.path
+                userIdInfo?.idcard_national_pic_url = imageInfo.url
+            }
+            tableView?.reloadData()
+        }
+    }
     func updateUserIdInfo(userInfo:DSUserIdInfo)  {
         self.userIdInfo = userInfo
         dataSource.reloadData(info: userInfo)
@@ -66,9 +80,9 @@ extension DSUserIdViewController {
             DSApply.default.beginAuthFace()
         }
         if model.title == "有限期限" {
-            let years = 70
-            let yearSecond = 24*60*60*365
-            let totle = -years * yearSecond
+            let years:Double = 70
+            let yearSecond:Double = 24*60*60*365
+            let totle :Double = -years * yearSecond
             
             let minDate = Date(timeIntervalSinceNow: TimeInterval(totle))
             
@@ -79,6 +93,21 @@ extension DSUserIdViewController {
             showDatePicker(minDate: minDate, maxDate: nil, indexPath: indexPath)
         }
     }
+}
+
+// MARK: - 图片选择和上传
+extension DSUserIdViewController {
+    func uploadIdCardImage(isFace: Bool, indexPath: IndexPath) {
+        let placeholder = isFace ? "apply_help_1" : "apply_help_2"
+        imagePicker?.ds_showImagePicker(placeholder: placeholder, complete: {[weak self] (images, datas) in
+            let fileName = isFace ? "idcard_information_pic":"idcard_national_pic"
+            if let data = datas.first {
+                self?.uploadImageToService(imageData: data, name: fileName)
+            }
+        })
+    }
+   
+    
 }
 // MARK: - 时间选择器
 extension DSUserIdViewController {
@@ -106,6 +135,9 @@ extension DSUserIdViewController  {
         DSApplyDataService.getUserIdInfo {[weak self] (userIdInfo) in
             DispatchQueue.main.async {
                 XJToast.hiddenToastAction()
+                if userIdInfo.user_real == 1 {
+                    DSApply.default.beginAuthFace()
+                }
                 self?.updateUserIdInfo(userInfo: userIdInfo)
             }
         }
@@ -148,7 +180,5 @@ extension DSUserIdViewController {
         uploadUserIdInfo {
             DSApply.default.showNextStep()
         }
-//        let bankVC = DSBankViewController()
-//        pushToNextViewController(bankVC)
     }
 }
