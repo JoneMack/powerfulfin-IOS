@@ -146,10 +146,10 @@ extension XJMutailDataPicker:UITableViewDelegate,UITableViewDataSource {
         }else{
             titleArray?[currentIndex-1] = text ?? ""
         }
-        
-        segmentControl?.titles = titleArray
-        
-        contentView?.setContentOffset(CGPoint(x: CGFloat(maxIndex-1) * XJDeviceInfo.screenWidth, y: 0), animated: true)
+        DispatchQueue.main.async {
+            self.segmentControl?.titles = titleArray
+            self.contentView?.setContentOffset(CGPoint(x: CGFloat(self.maxIndex-1) * XJDeviceInfo.screenWidth, y: 0), animated: true)
+        }
 
         if delegate?.responds(to: #selector(delegate?.dataPicker(_:didSelectedIndexPath:))) ?? false {
             delegate?.dataPicker!(self, didSelectedIndexPath: IndexPath(row: indexPath.row, section: tableView.tag-1))

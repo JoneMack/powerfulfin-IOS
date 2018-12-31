@@ -47,6 +47,7 @@ class DSInputTableViewCell: DSTableViewCell {
         contentTextField.font = UIFont.ds_font(ptSize: 15)
         contentTextField.tintColor = .ds_blackText
         contentTextField.textColor = .ds_blackText
+        NotificationCenter.default.addObserver(self, selector: #selector(DSInputTableViewCell.textFiledTextDidChanged), name: UITextField.textDidChangeNotification, object: contentTextField)
         contentView.addSubview(contentTextField)
         titleLabel.snp.makeConstraints { (maker) in
             maker.left.equalTo(15)
@@ -67,6 +68,11 @@ class DSInputTableViewCell: DSTableViewCell {
         contentTextField.validater = model.validater
         contentTextField.placeholder = model.placeholder
         contentTextField.text = model.content
+    }
+}
+extension DSInputTableViewCell {
+    @objc func textFiledTextDidChanged()  {
+        inputModel.content = contentTextField.text
     }
 }
 class DSInputCell: DSInputTableViewCell {

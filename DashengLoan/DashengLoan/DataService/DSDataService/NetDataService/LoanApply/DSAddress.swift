@@ -13,21 +13,4 @@ class DSAddress:NSObject,Codable {
     var name:String?
     var parentid:Int?
     var joinname:String?
-    
-//    var vieworder:String?
-    
 }
-struct Table {
-    var a = 0
-}
-
-//var b = Table()
-//b.a = 10
-//
-//let c = b
-
-
-
-
-
-

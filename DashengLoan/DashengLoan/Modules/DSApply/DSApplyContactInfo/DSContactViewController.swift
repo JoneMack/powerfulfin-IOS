@@ -11,14 +11,12 @@ import UIKit
 class DSContactViewController: DSApplyTableViewController {
 
     fileprivate var applyConfiger :DSApplyConfiger?
-    fileprivate var addressPicker :DSAddressPicker?
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "联络信息"
         dataSource = DSContactLocalService()
         loadFooterView(title: "下一步")
         
-        addressPicker = DSAddressPicker()
         loadConfiger()
         loadUserContactInfoFromService()
     }
@@ -33,14 +31,16 @@ extension DSContactViewController {
         }else if model.title == "关系" {
             showDataPicker(dataArray: applyConfiger?.relations ?? [], mode: model, indexPath: indexPath)
         }else if model.title == "现居地址" {
-            addressPicker?.tipsTitle = "请选择省市区"
-            addressPicker?.showAlertController(from: self)
+            let addressPicker = DSAddressPicker()
+            addressPicker.delegate = self
+            addressPicker.tipsTitle = "请选择省市区"
+            addressPicker.showAlertController(from: self)
         }
     }
 }
 
 // MARK: - DataPicker,AddressPicker
-extension DSContactViewController {
+extension DSContactViewController:DSAddressPickerDelegate {
     func showDataPicker(dataArray:[String],mode:DSInputModel,indexPath:IndexPath)  {
         DispatchQueue.main.async {
             let dataPicker = XJDataPicker()
@@ -54,25 +54,45 @@ extension DSContactViewController {
             }
         }
     }
+    func addressPicker(_ addressPicker: DSAddressPicker, didSelectedAddress province: DSAddress, city: DSAddress, area: DSAddress) {
+        (dataSource as! DSContactLocalService).addressInfo.province = province.areaid?.description ?? ""
+        (dataSource as! DSContactLocalService).addressInfo.city = city.areaid?.description ?? ""
+        (dataSource as! DSContactLocalService).addressInfo.area = area.areaid?.description ?? ""
+        (dataSource as! DSContactLocalService).addressInfo.address = area.joinname ?? ""
+        (dataSource as! DSContactLocalService).updateHomeAddress()
+        self.tableView?.reloadRows(at: [IndexPath(row: 1, section: 1)], with: .automatic)
+        
+    }
 }
+
+// MARK: - 网络请求
 extension DSContactViewController {
     
     /// 获取配置信息
     func loadConfiger()  {
-        
         DSApplyDataService.getApplyConifer(part: 3) {[weak self] (configer) in
             self?.applyConfiger = configer
         }
     }
+    /// 获取联系人信息
     func loadUserContactInfoFromService()  {
-        
+        DSApplyDataService.getUserContact {[weak self] (userContactInfo) in
+            self?.dataSource.reloadData(info: userContactInfo)
+            self?.tableView?.reloadData()
+            
+        }
     }
+    func uploadUserContactInfoToService()  {
+        let paraDic = dataSource.getDataInfo()
+        DSApplyDataService.uploadUserContact(contactInfo: paraDic) {
+            DSApply.default.showNextStep()
+        }
+    }
+    
 }
 extension DSContactViewController {
     override func footViewClick(footBtn: UIButton) {
-        let workVC = DSWorkViewController()
-        pushToNextViewController(workVC)
-        
+        uploadUserContactInfoToService()
     }
 }
 

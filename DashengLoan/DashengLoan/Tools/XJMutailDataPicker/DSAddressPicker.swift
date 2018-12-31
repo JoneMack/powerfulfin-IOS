@@ -162,8 +162,8 @@ extension DSAddressPicker : XJMutailDataPickerDelegate,XJMutailDataPickerDataSou
             loadAddressDataFromService(city: city.areaid?.description)
         }else if indexPath.section == 2 {
             let area = areaArray[indexPath.row]
-            
             delegate?.addressPicker?(self, didSelectedAddress: selectedProvince!, city: selectedCity!, area: area)
+            dismissViewController()
         }
     }
     
