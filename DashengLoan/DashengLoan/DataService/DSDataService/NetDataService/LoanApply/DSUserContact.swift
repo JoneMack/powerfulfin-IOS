@@ -13,10 +13,16 @@ struct DSUserContact:Codable {
     var email:String?
     /// 省id
     var home_province:String?
+    /// 省名字
+    var home_province_name:String?
     /// 市id
     var home_city:String?
+    /// 市名字
+    var home_city_name:String?
     /// 区id
     var home_area:String?
+    /// 区名字
+    var home_area_name:String?
     /// 详细地址
     var home_address:String?
     /// 住房情况

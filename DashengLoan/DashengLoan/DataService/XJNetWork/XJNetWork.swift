@@ -43,8 +43,11 @@ class XJNetWork {
 //    }
     //请求
     class func request(_ requst:XJRequest,successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void)) {
+        var paramrters = requst.parameters
+        paramrters["lng"] = DSLoactionManager.manager.longitude
+        paramrters["lat"] = DSLoactionManager.manager.latitude
         
-        Alamofire.request(requst.url, method:HTTPMethod(rawValue: requst.method.rawValue)!, parameters: requst.parameters, headers: requst.httpHeader).responseJSON { (response) in
+        Alamofire.request(requst.url, method:HTTPMethod(rawValue: requst.method.rawValue)!, parameters: paramrters, headers: requst.httpHeader).responseJSON { (response) in
             handlerResult(response: response, successHandler: successHandler, failHandler: failHandler)
         }
     }

@@ -18,7 +18,7 @@ class XJImagePicker: NSObject {
             let picker = UIImagePickerController()
             picker.delegate = self
             picker.modalTransitionStyle = .flipHorizontal
-            picker.allowsEditing = true
+            picker.allowsEditing = false
             picker.sourceType = .camera
             picker.modalPresentationStyle = .overCurrentContext
 //            picker.mediaTypes = [kUTTypeImage as String]
@@ -34,9 +34,9 @@ class XJImagePicker: NSObject {
             picker?.allowTakeVideo = false
             picker?.naviBgColor = UIColor.ds_redText
             picker?.allowPickingVideo = false
-            picker?.allowCrop = true
-            let height = 3*XJDeviceInfo.screenWidth/4
-            picker?.cropRect = CGRect(x: 0, y: (XJDeviceInfo.screenHeight-height)/2, width: XJDeviceInfo.screenWidth, height: height)
+            picker?.allowCrop = false
+//            let height = 3*XJDeviceInfo.screenWidth/4
+//            picker?.cropRect = CGRect(x: 0, y: (XJDeviceInfo.screenHeight-height)/2, width: XJDeviceInfo.screenWidth, height: height)
             return picker!
         }
     }

@@ -177,6 +177,7 @@ extension DSApply {
 extension DSApply {
     fileprivate func showLocationViewController() {
         let targetVC = DSLocationViewController()
+        targetVC.schooId = self.schooId
         beginController?.navigationController?.pushViewController(targetVC, animated: true)
     }
 }

@@ -7,12 +7,7 @@
 //
 
 import UIKit
-class DSAddressLocalInfo {
-    var province:String = ""
-    var city:String = ""
-    var area:String = ""
-    var address:String = ""
-}
+
 class DSContactLocalService: DSApplyLocalService {
     var addressInfo = DSAddressLocalInfo()
     override func fileName() -> String {
@@ -25,7 +20,7 @@ class DSContactLocalService: DSApplyLocalService {
             let qqModel = models[0][2]
             
             let houseModel = models[1][0]
-//        let addressModel = models[1][1]
+            let addressModel = models[1][1]
             let addressDetailModel = models[1][2]
             
             let marrageModel = models[2][0]
@@ -41,8 +36,9 @@ class DSContactLocalService: DSApplyLocalService {
             addressInfo.province = contactInfo.home_province ?? ""
             addressInfo.city = contactInfo.home_city ?? ""
             addressInfo.area = contactInfo.home_area ?? ""
-            addressInfo.address = ""
+            addressInfo.address = (contactInfo.home_province_name ?? "") + (contactInfo.home_city_name ?? "") + (contactInfo.home_area_name ?? "")
             
+            addressModel.content = addressInfo.address
             addressDetailModel.content = contactInfo.home_address
             marrageModel.content = contactInfo.marital_status
             nameModel.content = contactInfo.contact_person

@@ -14,3 +14,9 @@ class DSAddress:NSObject,Codable {
     var parentid:Int?
     var joinname:String?
 }
+class DSAddressLocalInfo {
+    var province:String = ""
+    var city:String = ""
+    var area:String = ""
+    var address:String = ""
+}

@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>type</key>
-		<string>DSSelectorCell</string>
+		<string>DSInputCell</string>
 		<key>title</key>
 		<string>学校</string>
 		<key>placeholder</key>
@@ -12,11 +12,19 @@
 	</dict>
 	<dict>
 		<key>type</key>
-		<string>DSInputCell</string>
+		<string>DSSelectorCell</string>
 		<key>title</key>
 		<string>学校地址</string>
 		<key>placeholder</key>
-		<string>请输入学校地址，精确到门牌号</string>
+		<string>请选择学校所在省市区</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>DSInputCell</string>
+		<key>title</key>
+		<string></string>
+		<key>placeholder</key>
+		<string>请输入学校详细地址，精确到门牌号</string>
 	</dict>
 	<dict>
 		<key>type</key>

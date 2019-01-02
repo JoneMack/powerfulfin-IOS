@@ -11,6 +11,7 @@ import UIKit
 @objc protocol DSInputTableViewCellDelegate :NSObjectProtocol {
     @objc optional func uploadIdCardImage(isFace:Bool,indexPath:IndexPath)
     @objc optional func inputCell(inputCell:DSInputTableViewCell,rightButtonClick rightBtn:UIButton)
+    @objc optional func inputCell(inputCell:DSInputTableViewCell,uploadImageClick index:Int)
 }
 
 
@@ -23,6 +24,8 @@ extension UITableViewCell:MallocCellProtocol{
        return self.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: reuseIdentifier)
     }
 }
+
+let inputCellTitleWidth:CGFloat = 80
 
 class DSInputTableViewCell: DSTableViewCell {
 
@@ -52,7 +55,7 @@ class DSInputTableViewCell: DSTableViewCell {
         titleLabel.snp.makeConstraints { (maker) in
             maker.left.equalTo(15)
             maker.top.bottom.equalTo(0)
-            maker.width.equalTo(70)
+            maker.width.equalTo(inputCellTitleWidth)
         }
         contentTextField.snp.makeConstraints { (maker) in
             maker.left.equalTo(titleLabel.snp.right).offset(10)

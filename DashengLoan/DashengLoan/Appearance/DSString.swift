@@ -49,3 +49,21 @@ extension String {
     }
    
 }
+extension String {
+    func twoScaleValue() -> String {
+        let numberA = NSDecimalNumber(string: self)
+        let numberHandler = NSDecimalNumberHandler(roundingMode: .plain, scale: 2, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)
+        var valueString = numberA.rounding(accordingToBehavior: numberHandler).stringValue
+        
+        let arange = valueString.range(of: ".")
+        if arange?.isEmpty ?? true {
+            valueString = valueString.appending(".00")
+        }else{
+            let location = distance(from: (arange?.lowerBound)!, to:valueString.endIndex)
+            if location == 2 {
+                valueString = valueString.appending("0")
+            }
+        }
+        return valueString
+    }
+}

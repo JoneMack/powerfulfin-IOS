@@ -147,7 +147,9 @@ extension UIColor {
     class var ds_lineGrayColor:UIColor {
         return UIColor(hex: "cccccc")
     }
-    
+    class var ds_backgroundColor:UIColor {
+        return UIColor(R: 239, G: 239, B: 239)
+    }
     /// 按钮红色边框的颜色 RGB:210 57 40 hex D23928
     class var ds_redBorder:UIColor {
         return UIColor(hex: "d23928")

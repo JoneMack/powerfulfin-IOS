@@ -30,6 +30,16 @@ struct DSApplyConfiger: Codable {
     /// 婚姻状况
     var marital_status:[String]?
     
+    // MARK: - part = 4
+    /// 学历
+    var highest_education:[String]?
+    /// 职位
+    var work_profession:[String]?
+    /// 职业
+    var profession:[String]?
+    
+    
+    
     
 }
 

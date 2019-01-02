@@ -9,7 +9,7 @@
 import UIKit
 
 class DSApplyDataService {
-    /// 获取配置
+    /// 获取配置 : 1 ,2 ,3,4
     class func getApplyConifer(part:Int,complete:@escaping((DSApplyConfiger)->Void)) {
         let request = XJRequest("v1/user/uconfig", method: .post, parameters: ["part":part])
         XJNetWork.request(request, successHandler: { (jsonInfo) in
@@ -181,6 +181,20 @@ extension DSApplyDataService {
     }
 }
 
+// MARK: - 位置信息
+extension DSApplyDataService {
+    class func getUserLocationInfo(organId:String,complete:@escaping((DSUserLocationInfo?)->Void)){
+        let requrst = XJRequest("v1/user/userlocation", method: .get, parameters: ["oid":organId])
+        XJNetWork.request(requrst, successHandler: { (jsonInfo) in
+            if let model = try? XJDecoder.xj_decode(DSUserLocationInfo.self, from: jsonInfo) {
+                complete(model)
+            }
+        }) { (error) in
+            complete(nil)
+            XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
+        }
+    }
+}
 // MARK: - 设备信息。通讯录
 extension DSApplyDataService {
     class func uploadUserPhoneInfo(phoneInfo:[String:String],complete:@escaping(()->Void)) {
@@ -195,5 +209,15 @@ extension DSApplyDataService {
 
 // MARK: - 订单资料相关
 extension DSApplyDataService {
-    
+    class func getOrderConfiger(oid:String,complete:@escaping((DSUserOrderInfo?)->Void)) {
+        let requrst = XJRequest("v1/loan/config", method: .get, parameters: ["oid":oid])
+        XJNetWork.request(requrst, successHandler: { (jsonInfo) in
+            if let model = try? XJDecoder.xj_decode(DSUserOrderInfo.self, from: jsonInfo) {
+                complete(model)
+            }
+        }) { (error) in
+            complete(nil)
+            XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
+        }
+    }
 }

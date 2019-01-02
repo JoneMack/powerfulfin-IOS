@@ -92,7 +92,8 @@ extension DSContactViewController {
 }
 extension DSContactViewController {
     override func footViewClick(footBtn: UIButton) {
-        uploadUserContactInfoToService()
+//        uploadUserContactInfoToService()
+        DSApply.default.showNextStep()
     }
 }
 

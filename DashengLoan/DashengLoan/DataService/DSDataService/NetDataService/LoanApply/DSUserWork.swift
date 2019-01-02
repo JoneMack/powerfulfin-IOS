@@ -12,7 +12,7 @@ struct DSUserWork:Codable {
     var highest_education:String?
     /// 职业
     var profession:String?
-    /// 工作状态
+    /// 工作状态 1=在职，2=学生，3=待业
     var working_status:String?
     /// 月收入
     var monthly_income:String?
@@ -24,10 +24,17 @@ struct DSUserWork:Codable {
     var work_name:String?
     /// 单位所在省ID
     var work_province:String?
+    /// 单位所在省的名字
+    var work_province_name:String?
+    
     /// 单位所在市ID
     var work_city:String?
+    /// 单位所在区名字
+    var work_city_name:String?
     /// 单位所在区ID
     var work_area:String?
+    /// 单位所在区名字
+    var work_area_name:String?
     /// 单位详细地址
     var work_address:String?
     /// 入职时间
@@ -40,10 +47,13 @@ struct DSUserWork:Codable {
     var school_name:String?
     /// 学校所在省ID
     var school_province:String?
+    var school_province_name:String?
     /// 学校所在市ID
     var school_city:String?
+    var school_city_name:String?
     /// 学校所在区ID
     var school_area:String?
+    var school_area_name:String?
     /// 学校详细地址
     var school_address:String?
     /// 学校联系方式

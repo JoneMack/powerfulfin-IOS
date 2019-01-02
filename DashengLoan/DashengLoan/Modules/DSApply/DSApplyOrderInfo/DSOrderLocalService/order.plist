@@ -44,6 +44,18 @@
 			<string>场景照片</string>
 			<key>placeholder</key>
 			<string>注:请在有学校LOGO的地方与顾问合影</string>
+			<key>maxcount</key>
+			<integer>9</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>DSMutableImageCell</string>
+			<key>title</key>
+			<string>培训协议</string>
+			<key>placeholder</key>
+			<string>注：培训协议需要体现申请人、金额、签字等要素。上传图片文字清晰可辨认</string>
+			<key>maxcount</key>
+			<integer>9</integer>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -52,6 +64,18 @@
 			<string>手持身份证照片</string>
 			<key>placeholder</key>
 			<string>注:请本人手持身份证，证件内容清晰无遮挡</string>
+			<key>maxcount</key>
+			<integer>9</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>DSMutableImageCell</string>
+			<key>title</key>
+			<string>声明照片</string>
+			<key>placeholder</key>
+			<string>注：请上传本人于培训机构签订的培训协议照片，拍摄内容要有本人签名及机构签章的一页</string>
+			<key>maxcount</key>
+			<integer>9</integer>
 		</dict>
 	</array>
 </array>

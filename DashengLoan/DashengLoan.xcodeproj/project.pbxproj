@@ -91,6 +91,9 @@
 		3513217321D73CBD005AB183 /* XJMutailDataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217221D73CBD005AB183 /* XJMutailDataPicker.swift */; };
 		3513217521D74785005AB183 /* DSAddressPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217421D74785005AB183 /* DSAddressPicker.swift */; };
 		3513217721D75158005AB183 /* DSDataPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217621D75158005AB183 /* DSDataPickerCell.swift */; };
+		3513217C21DC6400005AB183 /* DSUserLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217B21DC6400005AB183 /* DSUserLocationInfo.swift */; };
+		3513217E21DC9BD8005AB183 /* DSContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217D21DC9BD8005AB183 /* DSContacts.swift */; };
+		3513218021DCBEFA005AB183 /* DSUserOrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217F21DCBEFA005AB183 /* DSUserOrderInfo.swift */; };
 		3548366621BA158A008AB78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548366521BA158A008AB78D /* AppDelegate.swift */; };
 		3548366D21BA158B008AB78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3548366C21BA158B008AB78D /* Assets.xcassets */; };
 		3548367E21BA1709008AB78D /* DSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548367D21BA1709008AB78D /* DSViewController.swift */; };
@@ -233,6 +236,9 @@
 		3513217221D73CBD005AB183 /* XJMutailDataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMutailDataPicker.swift; sourceTree = "<group>"; };
 		3513217421D74785005AB183 /* DSAddressPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAddressPicker.swift; sourceTree = "<group>"; };
 		3513217621D75158005AB183 /* DSDataPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDataPickerCell.swift; sourceTree = "<group>"; };
+		3513217B21DC6400005AB183 /* DSUserLocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserLocationInfo.swift; sourceTree = "<group>"; };
+		3513217D21DC9BD8005AB183 /* DSContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSContacts.swift; sourceTree = "<group>"; };
+		3513217F21DCBEFA005AB183 /* DSUserOrderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserOrderInfo.swift; sourceTree = "<group>"; };
 		3548366221BA158A008AB78D /* dashengLoan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dashengLoan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3548366521BA158A008AB78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3548366C21BA158B008AB78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -410,12 +416,14 @@
 			isa = PBXGroup;
 			children = (
 				350A68CE21D1D4DC0055EFA6 /* DSApplyDataService.swift */,
+				3513217B21DC6400005AB183 /* DSUserLocationInfo.swift */,
 				3513215D21D6166A005AB183 /* DSUserBanksInfo.swift */,
 				350A692421D37C830055EFA6 /* DSUserIdInfo.swift */,
 				350A68D021D1D5170055EFA6 /* DSApplyConfiger.swift */,
 				3513216521D652A6005AB183 /* DSAddress.swift */,
 				3513216721D65500005AB183 /* DSUserContact.swift */,
 				3513216921D6571B005AB183 /* DSUserWork.swift */,
+				3513217F21DCBEFA005AB183 /* DSUserOrderInfo.swift */,
 			);
 			path = LoanApply;
 			sourceTree = "<group>";
@@ -726,6 +734,14 @@
 			path = XJMutailDataPicker;
 			sourceTree = "<group>";
 		};
+		3513217821DC51D3005AB183 /* DSAddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				3513217D21DC9BD8005AB183 /* DSContacts.swift */,
+			);
+			path = DSAddressBook;
+			sourceTree = "<group>";
+		};
 		3548365921BA158A008AB78D = {
 			isa = PBXGroup;
 			children = (
@@ -920,6 +936,7 @@
 		3595C61C21BE4C9800B90FD0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				3513217821DC51D3005AB183 /* DSAddressBook */,
 				3513217121D72B9D005AB183 /* XJMutailDataPicker */,
 				3513216B21D65A62005AB183 /* XJSegmentedControl */,
 				3513216221D642B3005AB183 /* XJDataPicker */,
@@ -1185,6 +1202,7 @@
 				3548368621BA17B8008AB78D /* DSWebViewController.swift in Sources */,
 				356E80B621CD05860052C6E2 /* DSBugly.swift in Sources */,
 				3513215C21D613D4005AB183 /* DSBankListViewController.swift in Sources */,
+				3513218021DCBEFA005AB183 /* DSUserOrderInfo.swift in Sources */,
 				3508778121CDD4AB006580AD /* XJGCDTimer.swift in Sources */,
 				350A68C721D110D00055EFA6 /* DSMessageViewController.swift in Sources */,
 				3548368021BA174D008AB78D /* DSTableViewController.swift in Sources */,
@@ -1232,6 +1250,7 @@
 				3513216821D65500005AB183 /* DSUserContact.swift in Sources */,
 				350A68F621D325EB0055EFA6 /* DSBankLocalService.swift in Sources */,
 				350A68F321D322080055EFA6 /* DSBankViewController.swift in Sources */,
+				3513217E21DC9BD8005AB183 /* DSContacts.swift in Sources */,
 				3595C62321BE4CB100B90FD0 /* XJKeyChainStore.swift in Sources */,
 				3508779121CE480F006580AD /* DSHomeLoanButtonView.swift in Sources */,
 				3513217521D74785005AB183 /* DSAddressPicker.swift in Sources */,
@@ -1254,6 +1273,7 @@
 				350A68BA21D0B9650055EFA6 /* DSLabel.swift in Sources */,
 				350A691D21D365470055EFA6 /* DSApplyOrderViewController.swift in Sources */,
 				350A68CD21D1CF930055EFA6 /* DSApply.swift in Sources */,
+				3513217C21DC6400005AB183 /* DSUserLocationInfo.swift in Sources */,
 				3548369421BA3BE0008AB78D /* XJNetWork.swift in Sources */,
 				350A68CB21D1CF590055EFA6 /* DSUserIdViewController.swift in Sources */,
 				350A68DC21D202800055EFA6 /* DSInputModel.swift in Sources */,
