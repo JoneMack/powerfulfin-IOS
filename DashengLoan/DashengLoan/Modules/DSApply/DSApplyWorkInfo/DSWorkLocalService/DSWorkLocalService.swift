@@ -26,8 +26,8 @@ class DSWorkLocalService: DSApplyLocalService {
         models.insert(incumbentModels, at: 1)
         
         var placeHolderInfo = DSImageInfo()
-        placeHolderInfo.type = "1"
-        addImageInfo(placeHolderInfo)
+        placeHolderInfo.type = defaultImageType
+        addImageInfo(imageInfo: placeHolderInfo, atIndexPath: IndexPath(row: 0, section: 2))
     }
     override func fileName() -> String {
         return "degree"
@@ -75,10 +75,13 @@ class DSWorkLocalService: DSApplyLocalService {
             eduModel.content = workInfo.highest_education
             eduPicModel.content = workInfo.edu_pic_url
             eduPicModel.subContent = workInfo.edu_pic
+            
             var imageInfo = DSImageInfo()
-            imageInfo.url = workInfo.edu_pic ?? ""
+            imageInfo.url = workInfo.edu_pic_url ?? ""
+            imageInfo.path = workInfo.edu_pic ?? ""
             imageInfo.type = "edu_pic"
-            addImageInfo(imageInfo)
+            replaceImageInfo(imageInfo: imageInfo, atIndex: 0, atIndexPath: IndexPath(row: 0, section: 2))
+            
             if workInfo.working_status == "2" {
                 changeItem(index: 1)
             }else if workInfo.working_status == "3"{
@@ -169,7 +172,7 @@ class DSWorkLocalService: DSApplyLocalService {
                 "profession":wordModel.content ?? "",
                 "working_status":cuttentIndex.description,
                 "monthly_income":income,
-                "edu_pic":eduPicModel.subContent ?? "",
+                "edu_pic":eduPicModel.images?[0].path ?? "",
                 "work_name":workName.content ?? "",
                 "work_province":workAddress.province,
                 "work_city":workAddress.city,
@@ -191,26 +194,4 @@ class DSWorkLocalService: DSApplyLocalService {
         ]
     }
     
-}
-extension DSWorkLocalService {
-    func addImageInfo(_ imageInfo:DSImageInfo)  {
-        let eduPicModel = models[2][0]
-        eduPicModel.subContent = imageInfo.path
-        eduPicModel.content = imageInfo.url
-        if imagesArray.count  >= maxCount {
-            imagesArray[0] = imageInfo
-        }else{
-            imagesArray.append(imageInfo)
-        }
-    }
-    func replaceImageInfo(_ imageInfo:DSImageInfo, atIndex index:Int) {
-        if imagesArray.count > index {
-            imagesArray[index] = imageInfo
-        }
-    }
-    func removeImageInfo(atIndex index:Int) {
-        if imagesArray.count > index {
-            imagesArray.remove(at: index)
-        }
-    }
 }

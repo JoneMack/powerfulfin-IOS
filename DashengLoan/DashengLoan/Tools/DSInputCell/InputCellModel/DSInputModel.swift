@@ -19,6 +19,10 @@ enum CellType : Int {
 class DSInputModel:NSObject {
     var type:String = "DSInputCell"
     
+    // 服务器字段名字
+    var servicename : String = ""
+    
+    
     var title:String?
     
     var placeholder:String?
@@ -31,9 +35,16 @@ class DSInputModel:NSObject {
     
     //仅仅用于DSSelectorCell中，
     var alignment:NSNumber?
-        
     
-    var images:[String]?
+    // 用于DSMutableImageCell
+    /// 照片信息
+    var images:[DSImageInfo]?
+    /// 多张上传的时候，最大上传数量
+    var maxcount:NSNumber?
+    var tipimage:String?
+    var tips:String?
+    
+    
     
     convenience init(dic:[String:Any]) {
         self.init()

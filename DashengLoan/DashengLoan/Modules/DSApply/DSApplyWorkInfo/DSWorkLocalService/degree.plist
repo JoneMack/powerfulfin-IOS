@@ -27,6 +27,14 @@
 			<key>title</key>
 			<string>学历证明</string>
 			<key>placeholder</key>
+			<string>请上传学历证明照片</string>
+			<key>servicename</key>
+			<string>edu_pic</string>
+			<key>maxcount</key>
+			<integer>1</integer>
+			<key>tipimage</key>
+			<string>apply_loan_3</string>
+			<key>tips</key>
 			<string>注:请上传学生证、学信网截图或者其他证明材料</string>
 		</dict>
 	</array>

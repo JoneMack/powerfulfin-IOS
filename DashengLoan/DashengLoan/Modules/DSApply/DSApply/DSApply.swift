@@ -48,8 +48,12 @@ extension DSApply {
             showPhoneViewController()
         }else if step == 6 {
             showOrderViewController()
+        }else if step == 7 {
+            beginController?.navigationController?.popToRootViewController(animated: true)
         }
-        removeMiddleViewController()
+        if step != 7 {
+            removeMiddleViewController()
+        }
     }
     fileprivate func removeMiddleViewController(){
            var controllers = beginController?.rt_navigationController.viewControllers
@@ -73,7 +77,10 @@ extension DSApply {
             step = 5
         }else if topVC?.isKind(of: DSPhoneViewController.classForCoder()) ?? false {
             step = 6
+        }else if topVC?.isKind(of: DSApplyOrderViewController.classForCoder()) ?? false {
+            step = 7
         }
+        
     }
   
     
@@ -134,7 +141,9 @@ extension DSApply {
 // MARK: - 步骤 1 银行卡信息
 extension DSApply {
    fileprivate func beginBankManagerController() {
+        XJToast.showToastAction()
         DSApplyDataService.getBindsBakCards {[weak self] (banksInfo) in
+            XJToast.hiddenToastAction()
             if banksInfo.banks?.count ?? 0 > 0 {
                 self?.showBankListViewController(bansInfo: banksInfo)
             }else{

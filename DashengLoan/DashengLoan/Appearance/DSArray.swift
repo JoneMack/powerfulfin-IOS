@@ -24,7 +24,9 @@ extension Array where Element: Equatable {
     mutating func removeObjects(from starObjc:Element,to endObjc:Element) {
         if let starIndex = index(of:starObjc) {
             if let lastIndex = index(of: endObjc)  {
-                removeSubrange((starIndex+1)..<lastIndex)
+                if starIndex < lastIndex {
+                    removeSubrange((starIndex+1)..<lastIndex)
+                }
             }
         }
     }

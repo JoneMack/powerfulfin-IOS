@@ -96,7 +96,7 @@ extension DSApplyDataService {
     }
     /// 绑定银行卡
     class func bindBankCard(cardInfo:[String:String],complete:@escaping(()->Void)){
-        let requrst = XJRequest("v1/bank/bind", method: .get, parameters: cardInfo)
+        let requrst = XJRequest("v1/bank/bind", method: .post, parameters: cardInfo)
         
         XJNetWork.request(requrst, successHandler: { (jsonInfo) in
              complete()
@@ -126,7 +126,7 @@ extension DSApplyDataService {
     ///   - carNum: 卡号
     ///   - complete: 回调
     class func changePayBankCard(_ carNum:String,complete:@escaping(()->Void)) {
-        let requrst = XJRequest("v1/bank/change", method: .get, parameters: ["bank_account":carNum])
+        let requrst = XJRequest("v1/bank/change", method: .post, parameters: ["bank_account":carNum])
         XJNetWork.request(requrst, successHandler: { (jsonInfo) in
             complete()
         }) { (error) in
@@ -209,14 +209,22 @@ extension DSApplyDataService {
 
 // MARK: - 订单资料相关
 extension DSApplyDataService {
-    class func getOrderConfiger(oid:String,complete:@escaping((DSUserOrderInfo?)->Void)) {
+    class func getOrderConfiger(oid:String,complete:@escaping((DSUserOrderConfiger?)->Void)) {
         let requrst = XJRequest("v1/loan/config", method: .get, parameters: ["oid":oid])
         XJNetWork.request(requrst, successHandler: { (jsonInfo) in
-            if let model = try? XJDecoder.xj_decode(DSUserOrderInfo.self, from: jsonInfo) {
+            if let model = try? XJDecoder.xj_decode(DSUserOrderConfiger.self, from: jsonInfo) {
                 complete(model)
             }
         }) { (error) in
             complete(nil)
+            XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
+        }
+    }
+    class func uploadUserOrderInfo(paramDic:[String:Any],complete:@escaping(()->Void)){
+        let requrst = XJRequest("v1/loan/submit", method: .post, parameters: paramDic)
+        XJNetWork.request(requrst, successHandler: { (jsonInfo) in
+           complete()
+        }) { (error) in
             XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
         }
     }

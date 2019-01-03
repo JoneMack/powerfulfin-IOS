@@ -87,3 +87,59 @@ extension DSApplyLocalService {
         return false
     }
 }
+
+// MARK: - 多图相关的
+extension DSApplyLocalService {
+    
+    func replaceImageInfo(imageInfo:DSImageInfo, atIndex index:Int,atIndexPath indexPath:IndexPath) {
+        let model = models[indexPath.section][indexPath.row]
+        model.images?[index] = imageInfo
+    }
+    func addImageInfo(imageInfo:DSImageInfo,atIndexPath indexPath:IndexPath)  {
+        let model = models[indexPath.section][indexPath.row]
+        let count = model.maxcount?.intValue ?? 9
+        if model.images == nil {
+            var placeHolderInfo = DSImageInfo()
+            placeHolderInfo.type = defaultImageType
+            model.images = [placeHolderInfo]
+        }
+        if model.images?.count == count {
+            model.images?[0] = imageInfo
+        }else{
+            model.images?.append(imageInfo)
+        }
+    }
+    func removeImageInfo(indexPath:IndexPath,atIndex index:Int) {
+        let model = models[indexPath.section][indexPath.row]
+        model.images?.remove(at: index)
+    }
+    
+    func heightOfMutableImageRow(atIndexPath indexPath:IndexPath) -> CGFloat {
+        var rowHeight:CGFloat = 87
+        
+        let model = models[indexPath.section][indexPath.row]
+        let count = model.images?.count ?? 1
+        let rightSpace :CGFloat = 15
+        let space :CGFloat = 10
+        
+        var imageRowCount = count/3
+        if count%3 > 0 {
+            imageRowCount += 1
+        }
+        let labelWidth = XJDeviceInfo.screenWidth - 2*rightSpace
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: labelWidth, height: 50))
+        label.font = UIFont.ds_font(ptSize: 14)
+        label.numberOfLines = 0
+        label.text = model.tips
+        label.sizeToFit()
+        let lebelHeight:CGFloat = label.frame.height
+        
+        let oneRowHeight = (XJDeviceInfo.screenWidth -  rightSpace*2 - inputCellTitleWidth - space*3)/3
+        
+        rowHeight = (space + oneRowHeight) * CGFloat(imageRowCount) + space*2 + lebelHeight
+        
+        return rowHeight
+    }
+    
+}

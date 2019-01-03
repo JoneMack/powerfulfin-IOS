@@ -93,8 +93,9 @@ class XJNetWork {
                 successHandler(data)
             }else{
                 failHandler(XJError(code: code, errorMsg: msg))
-                XJToast.hiddenToastAction()
             }
+            XJToast.hiddenToastAction()
+
             }.ifFailure {
                 failHandler(XJError(code: -1, errorMsg: response.error?.localizedDescription ?? "") )
                 XJToast.hiddenToastAction()

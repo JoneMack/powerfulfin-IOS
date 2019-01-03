@@ -11,7 +11,6 @@ import UIKit
 class DSWorkViewController: DSApplyTableViewController {
     
     fileprivate var applyConfiger :DSApplyConfiger?
-    fileprivate var imagePicker:XJImagePicker?
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = DSWorkLocalService()
@@ -19,36 +18,16 @@ class DSWorkViewController: DSApplyTableViewController {
         loadFooterView(title: "下一步")
         loadConfiger()
         loadUserWorkInfo()
-        imagePicker = XJImagePicker()
-
     }
     override func configTableView() {
         super.configTableView()
         tableView?.register(DSWorkHeaderView.classForCoder(), forHeaderFooterViewReuseIdentifier: "headerId")
     }
-    
-    override func uploadImageSuccess(_ imageInfo: DSImageInfo) {
-        
-        if let urlType = DSPic(rawValue: imageInfo.type ?? "") {
-            if urlType == .education {
-                
-                (dataSource as! DSWorkLocalService).addImageInfo(imageInfo)
-                tableView?.reloadSections(IndexSet(integer: 2), with: .automatic)
-            }
-        }
-    }
 }
 extension DSWorkViewController {
     override func configCell(_ cell: DSInputTableViewCell, model: DSInputModel, indexPath: IndexPath) {
         super.configCell(cell, model: model, indexPath: indexPath)
-        if model.title == "学历证明" {
-            if let imageCell = cell as? DSMutableImageCell {
-                imageCell.tipsLabel?.text = model.placeholder
-                if let localDataSource = dataSource as? DSWorkLocalService {
-                    imageCell.reloadImageViews(images:localDataSource.imagesArray)
-                }
-            }
-        }else if model.title == "月收入" || model.title == "家庭月收入" || model.title == "机构电话" {
+       if model.title == "月收入" || model.title == "家庭月收入" || model.title == "机构电话" {
             cell.showSpearator = true
         }
     }
@@ -70,8 +49,7 @@ extension DSWorkViewController {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 2 && indexPath.row == 0{
-            let count = (dataSource as! DSWorkLocalService).imagesArray.count
-            return DSMutableImageCell.heightOfRow(count: count)
+            return 140
         }
         return 57
     }
@@ -100,18 +78,7 @@ extension DSWorkViewController {
     }
 }
 
-// MARK: - 照片选择
-extension DSWorkViewController {
-    func inputCell(inputCell: DSInputTableViewCell, uploadImageClick index: Int) {
-        let placeholder = "apply_help_3"
-        imagePicker?.ds_showImagePicker(placeholder: placeholder, complete: {[weak self] (images, datas) in
-            let fileName = "edu_pic"
-            if let data = datas.first {
-                self?.uploadImageToService(imageData: data, name: fileName)
-            }
-        })
-    }
-}
+
 // MARK: - 日期选择
 extension DSWorkViewController {
     func showDataPicker(dataArray:[String],mode:DSInputModel,indexPath:IndexPath)  {
@@ -127,7 +94,6 @@ extension DSWorkViewController {
             }
         }
     }
-    
     func showDatePicker(minDate:Date?,maxDate:Date?,indexPath:IndexPath) {
         let model = dataSource.cellMode(indexPath: indexPath)
         
@@ -170,19 +136,21 @@ extension DSWorkViewController:DSWorkHeaderViewDelegate,DSAddressPickerDelegate 
 extension DSWorkViewController {
     /// 获取配置信息
     func loadConfiger()  {
+        XJToast.showToastAction()
         DSApplyDataService.getApplyConifer(part: 4) {[weak self] (configer) in
             self?.applyConfiger = configer
         }
     }
     func loadUserWorkInfo()  {
+        XJToast.showToastAction()
         DSApplyDataService.getUserWork {[weak self] (workInfo) in
             self?.dataSource.reloadData(info: workInfo)
             self?.tableView?.reloadData()
         }
     }
     func uploadUserWorkInfo()  {
+        XJToast.showToastAction()
         let paraDic = dataSource.getDataInfo()
-        
         DSApplyDataService.uploadUserWork(workInfo: paraDic) {
             DSApply.default.showNextStep()
         }

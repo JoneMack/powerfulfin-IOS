@@ -70,12 +70,14 @@ extension DSContactViewController {
     
     /// 获取配置信息
     func loadConfiger()  {
+        XJToast.showToastAction()
         DSApplyDataService.getApplyConifer(part: 3) {[weak self] (configer) in
             self?.applyConfiger = configer
         }
     }
     /// 获取联系人信息
     func loadUserContactInfoFromService()  {
+        XJToast.showToastAction()
         DSApplyDataService.getUserContact {[weak self] (userContactInfo) in
             self?.dataSource.reloadData(info: userContactInfo)
             self?.tableView?.reloadData()
@@ -83,6 +85,7 @@ extension DSContactViewController {
         }
     }
     func uploadUserContactInfoToService()  {
+        XJToast.showToastAction()
         let paraDic = dataSource.getDataInfo()
         DSApplyDataService.uploadUserContact(contactInfo: paraDic) {
             DSApply.default.showNextStep()

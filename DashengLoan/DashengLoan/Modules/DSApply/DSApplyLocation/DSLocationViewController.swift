@@ -107,6 +107,7 @@ class DSLocationViewController: DSViewController {
 extension DSLocationViewController {
     /// 网络请求
     func loadUserLocationInfo()  {
+        XJToast.showToastAction()
         DSApplyDataService.getUserLocationInfo(organId: "1") {[weak self] (locationInfo) in
             if locationInfo != nil {
                 self?.locationInfo = locationInfo

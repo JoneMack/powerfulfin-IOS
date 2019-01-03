@@ -8,7 +8,6 @@
 
 import UIKit
 
-let placeholderImage = "1"
 
 private let space :CGFloat = 10;
 private let rightSpace :CGFloat = 15
@@ -16,26 +15,26 @@ private let rightSpace :CGFloat = 15
 class DSMutableImageCell: DSInputTableViewCell {
     
     var tipsLabel :UILabel?
-    var maxCount :Int = 9
     
     
     fileprivate var imagesView : UIView!
-    fileprivate var imageWidth:CGFloat = 0
     required init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         titleLabel.numberOfLines = 0
         contentTextField.isEnabled = false
         contentTextField.isHidden = true
         
-        imageWidth = (XJDeviceInfo.screenWidth -  rightSpace*2 - inputCellTitleWidth - space*3)/3
 
         tipsLabel = UILabel()
         tipsLabel?.configLabel(color: UIColor.ds_redText, font: UIFont.ds_font(ptSize: 14))
+        tipsLabel?.numberOfLines = 0
         contentView.addSubview(tipsLabel!)
         
-        let imagesViewHeight = DSMutableImageCell.heightOfRow(count: 1) - 30
-
-        tipsLabel?.frame = CGRect(x: rightSpace, y: imagesViewHeight, width: XJDeviceInfo.screenWidth - rightSpace*2, height: 30)
+        tipsLabel?.snp.makeConstraints({ (maker) in
+            maker.bottom.equalTo(-10)
+            maker.left.equalTo(15)
+            maker.right.equalTo(-15)
+        })
 
         imagesView = UIView ()
         contentView.addSubview(imagesView)
@@ -43,43 +42,34 @@ class DSMutableImageCell: DSInputTableViewCell {
     }
     override func configCellData(model: DSInputModel) {
         super.configCellData(model: model)
-        tipsLabel?.text = model.placeholder
+        tipsLabel?.text = model.tips
+        if let images = model.images {
+            reloadImageViews(images: images)
+        }
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-extension DSMutableImageCell {
-   
-    static func heightOfRow(count:Int) -> CGFloat {
-        let rowHeight = (XJDeviceInfo.screenWidth -  rightSpace*2 - inputCellTitleWidth - space*3)/3
 
-        if count <= 3 {
-            let rowHeight = space*3 + rowHeight  + 30
-            return rowHeight
-        }else if count <= 6 {
-            let rowHeight = space*4 + rowHeight*2 + 30
-            return rowHeight
-        }else{
-            let rowHeight = space*5 + rowHeight*3 + 30
-            return rowHeight
-        }
-    }
-}
 extension DSMutableImageCell {
      func reloadImageViews(images:[DSImageInfo])  {
         for subView in imagesView.subviews {
             subView.removeFromSuperview()
         }
-        
         var orX  = rightSpace + inputCellTitleWidth + space
         var orY = space
         let count = images.count
+        let imageWidth = (XJDeviceInfo.screenWidth -  rightSpace*2 - inputCellTitleWidth - space*3)/3
+
         let imagesViewWidth = XJDeviceInfo.screenWidth - orX
-        let imagesViewHeight = DSMutableImageCell.heightOfRow(count: count) - 30
         
+        var imageRowCount = count/3
+        if count%3 > 0 {
+            imageRowCount += 1
+        }
+        let imagesViewHeight = CGFloat(imageRowCount) * (space + imageWidth) + space
         imagesView.frame = CGRect(x: orX, y: 0, width: imagesViewWidth, height: imagesViewHeight)
-        tipsLabel?.frame = CGRect(x: rightSpace, y: imagesViewHeight, width: XJDeviceInfo.screenWidth - rightSpace*2, height: 30)
         for index in 0..<count {
             if index%3 == 0 {
                 orX  = 0
@@ -98,8 +88,8 @@ extension DSMutableImageCell {
             let imageInfo = images[index]
             let image = UIImageView()
             imagesView.addSubview(image)
-
-            if imageInfo.type == placeholderImage {
+            imagesView.contentMode = .scaleAspectFill
+            if imageInfo.type == defaultImageType {
                 image.image = UIImage(named: "apply_add_image")
             }else{
                 image.setImage(imageInfo.url)

@@ -94,6 +94,7 @@
 		3513217C21DC6400005AB183 /* DSUserLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217B21DC6400005AB183 /* DSUserLocationInfo.swift */; };
 		3513217E21DC9BD8005AB183 /* DSContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217D21DC9BD8005AB183 /* DSContacts.swift */; };
 		3513218021DCBEFA005AB183 /* DSUserOrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217F21DCBEFA005AB183 /* DSUserOrderInfo.swift */; };
+		3513218221DCD030005AB183 /* DSUserOrderConfiger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513218121DCD030005AB183 /* DSUserOrderConfiger.swift */; };
 		3548366621BA158A008AB78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548366521BA158A008AB78D /* AppDelegate.swift */; };
 		3548366D21BA158B008AB78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3548366C21BA158B008AB78D /* Assets.xcassets */; };
 		3548367E21BA1709008AB78D /* DSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548367D21BA1709008AB78D /* DSViewController.swift */; };
@@ -239,6 +240,7 @@
 		3513217B21DC6400005AB183 /* DSUserLocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserLocationInfo.swift; sourceTree = "<group>"; };
 		3513217D21DC9BD8005AB183 /* DSContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSContacts.swift; sourceTree = "<group>"; };
 		3513217F21DCBEFA005AB183 /* DSUserOrderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserOrderInfo.swift; sourceTree = "<group>"; };
+		3513218121DCD030005AB183 /* DSUserOrderConfiger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserOrderConfiger.swift; sourceTree = "<group>"; };
 		3548366221BA158A008AB78D /* dashengLoan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dashengLoan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3548366521BA158A008AB78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3548366C21BA158B008AB78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				3513216721D65500005AB183 /* DSUserContact.swift */,
 				3513216921D6571B005AB183 /* DSUserWork.swift */,
 				3513217F21DCBEFA005AB183 /* DSUserOrderInfo.swift */,
+				3513218121DCD030005AB183 /* DSUserOrderConfiger.swift */,
 			);
 			path = LoanApply;
 			sourceTree = "<group>";
@@ -1256,6 +1259,7 @@
 				3513217521D74785005AB183 /* DSAddressPicker.swift in Sources */,
 				3508778A21CE3006006580AD /* DSHomeLoanView.swift in Sources */,
 				3508779E21CF66AC006580AD /* DSUserDataSource.swift in Sources */,
+				3513218221DCD030005AB183 /* DSUserOrderConfiger.swift in Sources */,
 				3548366621BA158A008AB78D /* AppDelegate.swift in Sources */,
 				350A68BC21D0C53A0055EFA6 /* DSString.swift in Sources */,
 				3508779621CF3841006580AD /* DSImageView.swift in Sources */,

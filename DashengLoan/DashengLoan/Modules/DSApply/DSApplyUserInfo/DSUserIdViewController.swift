@@ -12,7 +12,7 @@ private let cellIdentifier = "cellIdentifier"
 class DSUserIdViewController: DSApplyTableViewController {
     fileprivate var userIdInfo:DSUserIdInfo?
     fileprivate var loadPicCount = 0
-    fileprivate var imagePicker : XJImagePicker?
+    fileprivate var imageIdPicker : XJImagePicker?
     var orderId:String?
     
     override func viewDidLoad() {
@@ -21,23 +21,21 @@ class DSUserIdViewController: DSApplyTableViewController {
         dataSource = DSUserIdLocalService()
         loadFooterView(title: "下一步")
         loadUserIdInfo()
-        imagePicker = XJImagePicker()
+        imageIdPicker = XJImagePicker()
     }
     override func tableViewType() -> UITableView.Style {
         return .grouped
     }
-    override func uploadImageSuccess(_ imageInfo: DSImageInfo) {
-        
-        if let urlType = DSPic(rawValue: imageInfo.type ?? "") {
-            if urlType == .idcardface {
-                userIdInfo?.idcard_information_pic = imageInfo.path
-                userIdInfo?.idcard_information_pic_url = imageInfo.url
-            }else if urlType == .idcardback {
-                userIdInfo?.idcard_national_pic = imageInfo.path
-                userIdInfo?.idcard_national_pic_url = imageInfo.url
-            }
-            tableView?.reloadData()
+    override func uploadImageSuccess(_ imageInfo: DSUploaderImageInfo) {
+        if imageInfo.index == 0 {
+            userIdInfo?.idcard_information_pic = imageInfo.imageInfo?.path
+            userIdInfo?.idcard_information_pic_url = imageInfo.imageInfo?.url
+        }else{
+            userIdInfo?.idcard_national_pic = imageInfo.imageInfo?.path
+            userIdInfo?.idcard_national_pic_url = imageInfo.imageInfo?.url
         }
+        tableView?.reloadData()
+       
     }
     func updateUserIdInfo(userInfo:DSUserIdInfo)  {
         self.userIdInfo = userInfo
@@ -98,11 +96,18 @@ extension DSUserIdViewController {
 // MARK: - 图片选择和上传
 extension DSUserIdViewController {
     func uploadIdCardImage(isFace: Bool, indexPath: IndexPath) {
+        
         let placeholder = isFace ? "apply_help_1" : "apply_help_2"
-        imagePicker?.ds_showImagePicker(placeholder: placeholder, complete: {[weak self] (images, datas) in
-            let fileName = isFace ? "idcard_information_pic":"idcard_national_pic"
+        
+        var imageInfo = DSUploaderImageInfo()
+        imageInfo.servicename = isFace ? "idcard_information_pic" : "idcard_national_pic"
+        imageInfo.index = isFace ? 0 : 1
+        imageInfo.indexPath = indexPath
+        
+        imageIdPicker?.ds_showImagePicker(placeholder: placeholder, complete: {[weak self] (images, datas) in
             if let data = datas.first {
-                self?.uploadImageToService(imageData: data, name: fileName)
+                imageInfo.data = data
+                self?.uploadImageToService(imageInfo: imageInfo)
             }
         })
     }

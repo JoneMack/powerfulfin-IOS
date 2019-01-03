@@ -4,6 +4,8 @@
 <array>
 	<array>
 		<dict>
+			<key>servicename</key>
+			<string>cid</string>
 			<key>type</key>
 			<string>DSSelectorCell</string>
 			<key>title</key>
@@ -12,6 +14,8 @@
 			<string>请选择培训课程</string>
 		</dict>
 		<dict>
+			<key>servicename</key>
+			<string>borrow_money</string>
 			<key>type</key>
 			<string>DSInputCell</string>
 			<key>title</key>
@@ -20,6 +24,8 @@
 			<string>请输入分期金额</string>
 		</dict>
 		<dict>
+			<key>servicename</key>
+			<string>loan_product</string>
 			<key>type</key>
 			<string>DSSelectorCell</string>
 			<key>title</key>
@@ -30,6 +36,8 @@
 	</array>
 	<array>
 		<dict>
+			<key>servicename</key>
+			<string>class_start_date</string>
 			<key>type</key>
 			<string>DSSelectorCell</string>
 			<key>title</key>
@@ -38,42 +46,66 @@
 			<string>请选择开课日期</string>
 		</dict>
 		<dict>
+			<key>servicename</key>
+			<string>scene_pic</string>
 			<key>type</key>
 			<string>DSMutableImageCell</string>
+			<key>tipimage</key>
+			<string>apply_loan_4</string>
 			<key>title</key>
 			<string>场景照片</string>
-			<key>placeholder</key>
+			<key>tips</key>
 			<string>注:请在有学校LOGO的地方与顾问合影</string>
 			<key>maxcount</key>
 			<integer>9</integer>
+			<key>placeholder</key>
+			<string>请上传场景照片</string>
 		</dict>
 		<dict>
+			<key>servicename</key>
+			<string>train_contract_pic</string>
 			<key>type</key>
 			<string>DSMutableImageCell</string>
+			<key>tipimage</key>
+			<string>apply_loan_5</string>
 			<key>title</key>
 			<string>培训协议</string>
-			<key>placeholder</key>
+			<key>tips</key>
 			<string>注：培训协议需要体现申请人、金额、签字等要素。上传图片文字清晰可辨认</string>
 			<key>maxcount</key>
 			<integer>9</integer>
+			<key>placeholder</key>
+			<string>请上传培训协议照片</string>
 		</dict>
 		<dict>
+			<key>servicename</key>
+			<string>person_pic</string>
 			<key>type</key>
 			<string>DSMutableImageCell</string>
+			<key>tipimage</key>
+			<string>apply_loan_6</string>
 			<key>title</key>
 			<string>手持身份证照片</string>
-			<key>placeholder</key>
+			<key>tips</key>
 			<string>注:请本人手持身份证，证件内容清晰无遮挡</string>
+			<key>placeholder</key>
+			<string>请上手持身份证照片</string>
 			<key>maxcount</key>
 			<integer>9</integer>
 		</dict>
 		<dict>
+			<key>tips</key>
+			<string>注：请上传您对培训及还款义务认可的声明照片，签字清晰可辨认。</string>
+			<key>tipimage</key>
+			<string>apply_loan_7</string>
+			<key>servicename</key>
+			<string>train_statement_pic</string>
 			<key>type</key>
 			<string>DSMutableImageCell</string>
 			<key>title</key>
 			<string>声明照片</string>
 			<key>placeholder</key>
-			<string>注：请上传本人于培训机构签订的培训协议照片，拍摄内容要有本人签名及机构签章的一页</string>
+			<string>请上传声明照片</string>
 			<key>maxcount</key>
 			<integer>9</integer>
 		</dict>

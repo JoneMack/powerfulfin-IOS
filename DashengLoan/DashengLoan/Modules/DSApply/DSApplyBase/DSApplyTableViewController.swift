@@ -15,6 +15,10 @@ class DSApplyTableViewController: DSTableViewController {
     var dataSource:DSApplyLocalService!
     var footView:DSApplyFooterView?
     
+    lazy var imagePicker: XJImagePicker = {
+        return XJImagePicker();
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
@@ -32,8 +36,16 @@ class DSApplyTableViewController: DSTableViewController {
     override func tableViewType() -> UITableView.Style {
         return .grouped
     }
-    func uploadImageSuccess(_ imageInfo:DSImageInfo)  {
-        
+    func uploadImageSuccess(_ imageInfo: DSUploaderImageInfo)  {
+        let indexPath = imageInfo.indexPath!
+        let image = imageInfo.imageInfo!
+        if imageInfo.isReplace {
+            let index = imageInfo.index
+            dataSource.replaceImageInfo(imageInfo: image, atIndex: index, atIndexPath: indexPath)
+        }else{
+            dataSource.addImageInfo(imageInfo: image, atIndexPath: indexPath)
+        }
+        tableView?.reloadRows(at: [indexPath], with: .automatic)
     }
 }
 extension DSApplyTableViewController {
@@ -66,11 +78,39 @@ extension DSApplyTableViewController {
 }
 extension DSApplyTableViewController:DSInputTableViewCellDelegate {
     
+    func inputCell(inputCell: DSInputTableViewCell, uploadImageClick index: Int) {
+        let indexPath = inputCell.indexPath
+        
+        let model = dataSource.cellMode(indexPath: indexPath!)
+        let placeholder = model.tipimage ?? ""
+        var imageInfo = DSUploaderImageInfo()
+        
+        imageInfo.servicename = model.servicename
+        imageInfo.index = index
+        imageInfo.indexPath = indexPath
+        if  index > 0 {
+            imageInfo.isReplace = true
+        }else{
+            imageInfo.isReplace = false
+        }
+        
+        imagePicker.ds_showImagePicker(placeholder: placeholder, complete: {[weak self] (images, datas) in
+            if let data = datas.first {
+                imageInfo.data = data
+                self?.uploadImageToService(imageInfo: imageInfo)
+            }
+        })
+    }
 }
 extension DSApplyTableViewController {
-    func uploadImageToService(imageData:Data,name:String) {
-        DSCommonDataService.uploadImage(imageData: imageData, name: name) {[weak self] (imageInfo) in
-            self?.uploadImageSuccess(imageInfo)
+    
+    func uploadImageToService(imageInfo:DSUploaderImageInfo) {
+    
+        DSCommonDataService.uploadImage(imageData: imageInfo.data!, name: imageInfo.servicename!) {[weak self] (info) in
+            var image = imageInfo
+            image.data = nil
+            image.imageInfo = info
+            self?.uploadImageSuccess(image)
         }
     }
 
