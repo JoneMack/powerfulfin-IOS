@@ -260,7 +260,7 @@ extension DSLoginViewController {
         let type:NSInteger = loginTypeBtn.isSelected == false ? 1 : 2
         
         DSAccountDataService.login(userName: userNameTF.text!, password: passwordTF.text!, type: type) { (userInfo) in
-            DSUserCenter.defalut.login(userInfo: userInfo)
+            DSUserCenter.`default`.login(userInfo: userInfo)
             self.cancelLoginAction()
           
         }

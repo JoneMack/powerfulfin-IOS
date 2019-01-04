@@ -7,10 +7,12 @@
 //
 
 import UIKit
-
+@objc protocol DSHomeBannerViewDelegate {
+    @objc optional func bannerView(_ bannerView:DSHomeBannerView, didSelectedIndex index:Int)
+}
 class DSHomeBannerView: UIView {
     var loopView:CLLoopView?
-    
+    weak var delegate:DSHomeBannerViewDelegate?
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = 10
@@ -29,6 +31,7 @@ class DSHomeBannerView: UIView {
 }
 extension DSHomeBannerView:CLLoopViewDelegate {
     func selectLoopViewPage(idx: Int) {
-        print("选中了index=\(idx)")
+        delegate?.bannerView?(self, didSelectedIndex: idx)
+        
     }
 }

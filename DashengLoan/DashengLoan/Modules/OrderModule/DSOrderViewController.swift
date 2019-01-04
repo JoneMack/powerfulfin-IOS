@@ -10,10 +10,19 @@ import UIKit
 fileprivate let cellIdentifier = "cellIdentifier"
 
 class DSOrderViewController: DSTableViewController {
-
+    
+    fileprivate var resultView: DSSearchResultView?
+    fileprivate var orderListArray:[DSSimpleOrderInfo] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
+        DSUserCenter.default.addListener(self)
+        if DSUserCenter.default.hasLogin {
+            loadOrederListData()
+        }else{
+            showNoResultView()
+        }
     }
     func configTableView() {
         tableView?.register(DSOrderTableViewCell.classForCoder(), forCellReuseIdentifier: cellIdentifier)
@@ -33,24 +42,39 @@ class DSOrderViewController: DSTableViewController {
 }
 extension DSOrderViewController {
     @objc func loadOrederListData()  {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3) {
-            self.refreshControl?.endRefreshing()
+        if refreshControl?.isRefreshing == false {
+            XJToast.showToastAction()
+        }
+        DSOrderDataService.getUserOrderList {[weak self] (orderListInfo, success) in
+            if success {
+                self?.orderListArray.removeAll()
+                self?.orderListArray += orderListInfo?.list ?? []
+                self?.tableView?.reloadData()
+                if self?.orderListArray.count ?? 0 > 0 {
+                    self?.hiddenNoResultView()
+                }else{
+                    self?.showNoResultView()
+                }
+            }
+            self?.refreshControl?.endRefreshing()
         }
     }
 }
 extension DSOrderViewController {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return orderListArray.count
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DSOrderTableViewCell
-        cell.orderNumLabel?.text = "订单编号：326005861"
-        cell.statusLabel?.text = "已放款"
-        cell.organizationNameLabel?.text = "翡翠教育（北京亚太新创网络有限公司）"
-        cell.moenyLabel?.text = "￥14,400.00"
+        let orderInfo = orderListArray[indexPath.section]
+        
+        cell.orderNumLabel?.text = "订单编号：\(orderInfo.lid ?? "")"
+        cell.statusLabel?.text = orderInfo.status_desp
+        cell.organizationNameLabel?.text = orderInfo.org_name
+        cell.moenyLabel?.text = "￥\(orderInfo.borrow_money ?? "0.00")"
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -61,5 +85,48 @@ extension DSOrderViewController {
     }
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 9.0
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let orderDetailVC = DSOrderDetailViewController()
+        let orderInfo = orderListArray[indexPath.section]
+        orderDetailVC.orderId = orderInfo.lid ?? ""
+        pushToNextViewController(orderDetailVC)
+    }
+}
+extension DSOrderViewController :DSUserStatusListener{
+    func userLoginSuccess() {
+        loadOrederListData()
+    }
+    
+    func userLogoutSuccess() {
+        orderListArray.removeAll()
+        showNoResultView()
+        tableView?.reloadData()
+    }
+}
+
+// MARK: - 无结果页面
+extension DSOrderViewController:DSSearchResultViewDelegate {
+    func showNoResultView()  {
+        if resultView == nil {
+            resultView = DSSearchResultView()
+            resultView?.delegate = self
+        }
+//        tableView?.isHidden = true
+        resultView?.isHidden = false
+        tableView?.addSubview(resultView!)
+        resultView?.snp.makeConstraints({ (maker) in
+            maker.top.equalTo(150)
+            maker.centerX.equalToSuperview()
+        })
+    }
+    func hiddenNoResultView()  {
+//        tableView?.isHidden = false
+        resultView?.isHidden = true
+        resultView?.removeFromSuperview()
+    }
+    func showSearchViewController()  {
+        let searchVC = DSSearchViewController()
+        pushToNextViewController(searchVC)
     }
 }

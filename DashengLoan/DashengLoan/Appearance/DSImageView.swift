@@ -13,7 +13,6 @@ extension UIImageView {
     func setImage(_ urlString:String?,placeholderImage:UIImage? = nil)  {
         
         if var urlStr = urlString {
-            
             if urlStr.hasPrefix("http") == false && urlStr.hasPrefix("/")  {
                 urlStr = baseHost + urlStr
             }

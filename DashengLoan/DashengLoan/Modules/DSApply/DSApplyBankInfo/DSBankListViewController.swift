@@ -14,12 +14,13 @@ class DSBankListViewController: DSTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "银行卡"
         configTableView()
         loadFooterView(title: "下一步")
     }
     func configTableView()  {
-        tableView?.register(DSTableViewCell.classForCoder(), forCellReuseIdentifier: cellIdentifier)
-        tableView?.rowHeight = 75
+        tableView?.register(DSApplyBankCell.classForCoder(), forCellReuseIdentifier: cellIdentifier)
+        tableView?.rowHeight = 55
     }
     func loadFooterView(title:String)  {
         footView = DSApplyFooterView(title: title)
@@ -32,12 +33,13 @@ extension DSBankListViewController {
         return banksInfo?.banks?.count ?? 0
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DSTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DSApplyBankCell
         cell.selectionStyle = .none
-        let bankInfo = banksInfo?.banks?[indexPath.row]
-        cell.imageView?.setImage(bankInfo?.logo)
-        let num = "****\(bankInfo?.bank_account?.suffix((bankInfo?.bank_account?.count ?? 4 )-4) ?? "")"
-        cell.textLabel?.text = "\(bankInfo?.bank_name ?? "") \(num)"
+        if let bankInfo = banksInfo?.banks?[indexPath.row] {
+            cell.logo.setImage(bankInfo.logo)
+            let num = bankInfo.bank_account ?? ""
+            cell.nameLabel.text = "\(bankInfo.bank_name ?? "") ****\(num)"
+        }
         return cell
     }
 }

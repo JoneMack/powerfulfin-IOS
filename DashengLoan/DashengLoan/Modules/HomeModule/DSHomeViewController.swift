@@ -16,13 +16,21 @@ class DSHomeViewController: DSViewController {
     fileprivate var loanView : DSHomeLoanView?
     fileprivate let refreshControl = UIRefreshControl()
     fileprivate var homeInfo :DSHomeInfo?
-   
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        newsView.titleLabel?.start()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        newsView.titleLabel?.start()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupNavigationView()
         configSubViews()
-        reloadHomeData()
+        firstLaunchReloadData()
+        contentView.isHidden = true
     }
     func configSubViews()  {
         view.addSubview(contentView)
@@ -43,6 +51,7 @@ class DSHomeViewController: DSViewController {
         contentView.addSubview(backTopView)
         
         bannerView.frame = CGRect(x: 9, y: 9, width: XJDeviceInfo.screenWidth-18, height: 150)
+        bannerView.delegate = self
         contentView.addSubview(bannerView)
         
         newsView.frame = CGRect(x: 0, y: bannerView.frame.maxY+7, width: XJDeviceInfo.screenWidth, height: 32)
@@ -54,7 +63,6 @@ class DSHomeViewController: DSViewController {
         let height = XJDeviceInfo.screenHeight > (loanView?.frame.maxY)! ? XJDeviceInfo.screenHeight : (loanView?.frame.maxY)!
         contentView.contentSize = CGSize(width: XJDeviceInfo.screenWidth, height: height)
 
-        
         refreshControl.tintColor = UIColor.white
         refreshControl.addTarget(self, action: #selector(DSHomeViewController.reloadHomeData), for: .valueChanged)
         if #available(iOS 10.0, *) {
@@ -155,16 +163,37 @@ extension DSHomeViewController:DSHomeLoanButtonViewDelegate {
         pushToNextViewController(searchVC)
     }
 }
-
+extension DSHomeViewController:DSHomeBannerViewDelegate {
+    func bannerView(_ bannerView:DSHomeBannerView, didSelectedIndex index:Int) {
+        if let homeBanner = homeInfo?.banner?[index] {
+            if let url = homeBanner.url {
+                DSRouter.openURL(url: url)
+            }
+        }
+    }
+}
 // MARK: - 网络请求
 extension DSHomeViewController {
    @objc func reloadHomeData()  {
         DSHomeDataService.loadHomeData {[weak self] (homeData, success) in
             self?.refreshControl.endRefreshing()
             if success == true {
+                self?.contentView.isHidden = false
                 self?.homeInfo = homeData
                 self?.refreshViews()
+            }else{
+                self?.contentView.isHidden = true
+                
             }
+        }
+    }
+    func firstLaunchReloadData()  {
+        if DSUserCenter.default.firstLaunch {
+            DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+                self.reloadHomeData()
+            }
+        }else{
+            reloadHomeData()
         }
     }
     

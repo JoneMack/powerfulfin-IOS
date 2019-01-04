@@ -45,7 +45,7 @@ class DSUserHeaderView: UIView {
             maker.width.height.equalTo(60)
         }
         headerImageView.image = UIImage(named: "user_icon_header")
-        DSUserCenter.defalut.addListener(self)
+        DSUserCenter.default.addListener(self)
         
         nameLabel.textColor = UIColor.ds_blackText
         nameLabel.font = UIFont.ds_boldFont(ptSize: 14)
@@ -88,7 +88,7 @@ extension DSUserHeaderView :DSUserStatusListener {
     fileprivate func userInfoChanged() {
         loginBtn.isHidden = true
         nameLabel.isHidden = false
-        let name = DSUserCenter.defalut.userInfo?.name
+        let name = DSUserCenter.`default`.userInfo?.name
         nameLabel.text = "您好，\(name ?? "")同学"
     }
 }

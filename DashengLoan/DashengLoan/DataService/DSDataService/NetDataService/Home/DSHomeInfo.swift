@@ -36,7 +36,7 @@ struct DSHomeNotice:Codable {
 
 /// 分期信息
 struct DSHomeLoanInfo:Codable {
-    /// 状态值
+    /// 状态值 0 是未分期。 1 是审核中 2是还款中
     var status:String?
     
     /// 状态logo
@@ -44,6 +44,9 @@ struct DSHomeLoanInfo:Codable {
     var status_img_3x:String?
     /// 状态
     var status_desp:String?
+    /// 是否逾期 0 是没，1 是已逾期
+    var is_overdue:String?
+    
     /// 还款日
     var repay_date:String?
     /// 还款金额

@@ -16,6 +16,7 @@ class DSApplyOrderViewController: DSApplyTableViewController {
         dataSource = DSOrderLocalService()
         navigationItem.title = "订单资料"
         loadFooterView(title: "完成")
+        footView?.showAgreement()
         loadConfiger()
     }
  
@@ -125,5 +126,11 @@ extension DSApplyOrderViewController {
 extension DSApplyOrderViewController {
     override func footViewClick(footBtn: UIButton) {
         uploadUserOrderInfos()
+    }
+    func footViewShowTrainAgreement() {
+        DSRouter.openURL(url: "https:www.baidu.com")
+    }
+    func footViewShowDutyAgreement() {
+        DSRouter.openURL(url: "https:www.baidu.com")
     }
 }

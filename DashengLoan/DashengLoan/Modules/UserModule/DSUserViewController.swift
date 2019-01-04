@@ -17,7 +17,7 @@ class DSUserViewController: DSTableViewController {
         super.viewDidLoad()
         loadHeaderView()
         configTableView()
-        DSUserCenter.defalut.addListener(self)
+        DSUserCenter.`default`.addListener(self)
     }
     func loadHeaderView() {
         headerView.frame = CGRect(x: 0, y: 0, width: XJDeviceInfo.screenWidth, height: 179)
@@ -104,7 +104,7 @@ extension DSUserViewController {
 extension DSUserViewController:DSUserStatusListener {
     
     @objc func reloadUserInfo() {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+4) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3) {
             self.refreshControl?.endRefreshing()
         }
     }
@@ -138,7 +138,7 @@ extension DSUserViewController {
     }
     @objc fileprivate func logoutAction() {
         DSAccountDataService.logout()
-        DSUserCenter.defalut.logout()
+        DSUserCenter.`default`.logout()
     }
     
 }

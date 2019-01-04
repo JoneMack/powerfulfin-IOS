@@ -158,7 +158,7 @@ extension DSWorkViewController {
 }
 extension DSWorkViewController {
     override func footViewClick(footBtn: UIButton) {
-//        uploadUserWorkInfo()
-        DSApply.default.showNextStep()
+        uploadUserWorkInfo()
+        
     }
 }

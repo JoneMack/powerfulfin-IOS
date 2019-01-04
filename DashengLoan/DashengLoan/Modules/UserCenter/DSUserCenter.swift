@@ -14,8 +14,10 @@ import UIKit
     @objc optional func userInfoChanged()
 }
 class DSUserCenter: NSObject {
-    static let defalut = DSUserCenter()
+    static let `default` = DSUserCenter()
     fileprivate(set) var userInfo:DSUserInfo?
+    var firstLaunch = DSAppearance.isFirstLaunch
+
     var hasLogin:Bool {
         if userInfo != nil {
             return true

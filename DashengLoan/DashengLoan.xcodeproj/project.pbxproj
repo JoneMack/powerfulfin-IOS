@@ -21,6 +21,18 @@
 		3508779B21CF62F0006580AD /* DSLogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779A21CF62F0006580AD /* DSLogoutTableViewCell.swift */; };
 		3508779E21CF66AC006580AD /* DSUserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779D21CF66AC006580AD /* DSUserDataSource.swift */; };
 		350877A121CF81F7006580AD /* DSOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350877A021CF81F7006580AD /* DSOrderTableViewCell.swift */; };
+		350A00D121DE0AE900DFE703 /* DSApplyBankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00D021DE0AE900DFE703 /* DSApplyBankCell.swift */; };
+		350A00D321DE2C3A00DFE703 /* DSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00D221DE2C3A00DFE703 /* DSColor.swift */; };
+		350A00D521DE2C7600DFE703 /* DSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00D421DE2C7600DFE703 /* DSImage.swift */; };
+		350A00D721DE2C9100DFE703 /* DSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00D621DE2C9100DFE703 /* DSFont.swift */; };
+		350A00D921DE31D700DFE703 /* DSOrderDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00D821DE31D700DFE703 /* DSOrderDetailHeadView.swift */; };
+		350A00DB21DEF2DB00DFE703 /* DSOrderTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00DA21DEF2DB00DFE703 /* DSOrderTitleCell.swift */; };
+		350A00DD21DEF2EA00DFE703 /* DSOrderPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00DC21DEF2EA00DFE703 /* DSOrderPlanCell.swift */; };
+		350A00E121DF032500DFE703 /* DSOrderDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00E021DF032500DFE703 /* DSOrderDataService.swift */; };
+		350A00E321DF03F000DFE703 /* DSUserOrderListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00E221DF03F000DFE703 /* DSUserOrderListInfo.swift */; };
+		350A00E621DF306A00DFE703 /* DSOrderInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00E421DF306A00DFE703 /* DSOrderInfoCell.swift */; };
+		350A00E721DF306A00DFE703 /* DSOrderInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350A00E521DF306A00DFE703 /* DSOrderInfoCell.xib */; };
+		350A00E921DF3F4000DFE703 /* DSSearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00E821DF3F4000DFE703 /* DSSearchResultView.swift */; };
 		350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A521D06E170055EFA6 /* CLLoopView.swift */; };
 		350A68A821D0769B0055EFA6 /* MarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A721D0769B0055EFA6 /* MarqueeView.swift */; };
 		350A68AA21D0A71E0055EFA6 /* DSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A921D0A71E0055EFA6 /* DSSearchView.swift */; };
@@ -169,6 +181,18 @@
 		3508779A21CF62F0006580AD /* DSLogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLogoutTableViewCell.swift; sourceTree = "<group>"; };
 		3508779D21CF66AC006580AD /* DSUserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserDataSource.swift; sourceTree = "<group>"; };
 		350877A021CF81F7006580AD /* DSOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderTableViewCell.swift; sourceTree = "<group>"; };
+		350A00D021DE0AE900DFE703 /* DSApplyBankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyBankCell.swift; sourceTree = "<group>"; };
+		350A00D221DE2C3A00DFE703 /* DSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColor.swift; sourceTree = "<group>"; };
+		350A00D421DE2C7600DFE703 /* DSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSImage.swift; sourceTree = "<group>"; };
+		350A00D621DE2C9100DFE703 /* DSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSFont.swift; sourceTree = "<group>"; };
+		350A00D821DE31D700DFE703 /* DSOrderDetailHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderDetailHeadView.swift; sourceTree = "<group>"; };
+		350A00DA21DEF2DB00DFE703 /* DSOrderTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderTitleCell.swift; sourceTree = "<group>"; };
+		350A00DC21DEF2EA00DFE703 /* DSOrderPlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderPlanCell.swift; sourceTree = "<group>"; };
+		350A00E021DF032500DFE703 /* DSOrderDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderDataService.swift; sourceTree = "<group>"; };
+		350A00E221DF03F000DFE703 /* DSUserOrderListInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserOrderListInfo.swift; sourceTree = "<group>"; };
+		350A00E421DF306A00DFE703 /* DSOrderInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderInfoCell.swift; sourceTree = "<group>"; };
+		350A00E521DF306A00DFE703 /* DSOrderInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSOrderInfoCell.xib; sourceTree = "<group>"; };
+		350A00E821DF3F4000DFE703 /* DSSearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchResultView.swift; sourceTree = "<group>"; };
 		350A68A521D06E170055EFA6 /* CLLoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoopView.swift; sourceTree = "<group>"; };
 		350A68A721D0769B0055EFA6 /* MarqueeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeView.swift; sourceTree = "<group>"; };
 		350A68A921D0A71E0055EFA6 /* DSSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchView.swift; sourceTree = "<group>"; };
@@ -382,8 +406,22 @@
 			isa = PBXGroup;
 			children = (
 				350877A021CF81F7006580AD /* DSOrderTableViewCell.swift */,
+				350A00D821DE31D700DFE703 /* DSOrderDetailHeadView.swift */,
+				350A00DA21DEF2DB00DFE703 /* DSOrderTitleCell.swift */,
+				350A00DC21DEF2EA00DFE703 /* DSOrderPlanCell.swift */,
+				350A00E421DF306A00DFE703 /* DSOrderInfoCell.swift */,
+				350A00E521DF306A00DFE703 /* DSOrderInfoCell.xib */,
+				350A00E821DF3F4000DFE703 /* DSSearchResultView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		350A00CF21DE0ABF00DFE703 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				350A00D021DE0AE900DFE703 /* DSApplyBankCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		350A68A421D06E040055EFA6 /* XJRoopView */ = {
@@ -434,6 +472,8 @@
 		350A68AE21D0B53A0055EFA6 /* LoanOrder */ = {
 			isa = PBXGroup;
 			children = (
+				350A00E021DF032500DFE703 /* DSOrderDataService.swift */,
+				350A00E221DF03F000DFE703 /* DSUserOrderListInfo.swift */,
 			);
 			path = LoanOrder;
 			sourceTree = "<group>";
@@ -561,6 +601,7 @@
 		350A68F121D321CE0055EFA6 /* DSApplyBankInfo */ = {
 			isa = PBXGroup;
 			children = (
+				350A00CF21DE0ABF00DFE703 /* View */,
 				350A68F421D325CA0055EFA6 /* DSBankLocalService */,
 				350A68F221D322080055EFA6 /* DSBankViewController.swift */,
 				3513215B21D613D4005AB183 /* DSBankListViewController.swift */,
@@ -857,6 +898,9 @@
 			isa = PBXGroup;
 			children = (
 				3548369621BA3F05008AB78D /* DSAppearance.swift */,
+				350A00D221DE2C3A00DFE703 /* DSColor.swift */,
+				350A00D421DE2C7600DFE703 /* DSImage.swift */,
+				350A00D621DE2C9100DFE703 /* DSFont.swift */,
 				35552C7F21CB6F78002033FC /* UIApplication+Convenient.swift */,
 				3508779521CF3841006580AD /* DSImageView.swift */,
 				350A68B921D0B9650055EFA6 /* DSLabel.swift */,
@@ -1110,6 +1154,7 @@
 				35E810D321C3A7BD00B5714E /* Resource.bundle in Resources */,
 				350A690821D33B7C0055EFA6 /* contact.plist in Resources */,
 				350A691421D350390055EFA6 /* incumbent.plist in Resources */,
+				350A00E721DF306A00DFE703 /* DSOrderInfoCell.xib in Resources */,
 				350A691621D352520055EFA6 /* student.plist in Resources */,
 				350A68DE21D22D150055EFA6 /* userid.plist in Resources */,
 				350A691821D353BF0055EFA6 /* unemployed.plist in Resources */,
@@ -1199,9 +1244,11 @@
 			files = (
 				3513214921D4B527005AB183 /* DSImagePickerActionSheet.swift in Sources */,
 				3595C62221BE4CB100B90FD0 /* XJDeviceInfo.swift in Sources */,
+				350A00D321DE2C3A00DFE703 /* DSColor.swift in Sources */,
 				350A68F021D317460055EFA6 /* DSApplyFooterView.swift in Sources */,
 				35A82B3D21CBA87C0009D5F2 /* DSNetConfiger.swift in Sources */,
 				350A68BE21D0C8FE0055EFA6 /* DSAlertController.swift in Sources */,
+				350A00E321DF03F000DFE703 /* DSUserOrderListInfo.swift in Sources */,
 				3548368621BA17B8008AB78D /* DSWebViewController.swift in Sources */,
 				356E80B621CD05860052C6E2 /* DSBugly.swift in Sources */,
 				3513215C21D613D4005AB183 /* DSBankListViewController.swift in Sources */,
@@ -1225,12 +1272,15 @@
 				35552C7521CA444C002033FC /* DSLoginViewController.swift in Sources */,
 				350A68FA21D32BA30055EFA6 /* DSRightButtonCell.swift in Sources */,
 				35552C7821CB5D15002033FC /* DSUserCenter.swift in Sources */,
+				350A00D921DE31D700DFE703 /* DSOrderDetailHeadView.swift in Sources */,
 				350A68AA21D0A71E0055EFA6 /* DSSearchView.swift in Sources */,
 				3508778F21CE4126006580AD /* DSButton.swift in Sources */,
+				350A00E121DF032500DFE703 /* DSOrderDataService.swift in Sources */,
 				3508779421CF27CD006580AD /* DSUserHeaderView.swift in Sources */,
 				35552C8021CB6F78002033FC /* UIApplication+Convenient.swift in Sources */,
 				3595C62421BE4CB100B90FD0 /* XJUDID.swift in Sources */,
 				350A68B821D0B8BC0055EFA6 /* DSSearchTableViewCell.swift in Sources */,
+				350A00DD21DEF2EA00DFE703 /* DSOrderPlanCell.swift in Sources */,
 				350A68D321D1DE2A0055EFA6 /* DSAuthFaceManager.swift in Sources */,
 				3513217321D73CBD005AB183 /* XJMutailDataPicker.swift in Sources */,
 				3513216121D62413005AB183 /* DSBanksPicker.swift in Sources */,
@@ -1248,6 +1298,7 @@
 				3513216421D642CE005AB183 /* XJDataPicker.swift in Sources */,
 				3513217021D72231005AB183 /* DSWorkHeaderView.swift in Sources */,
 				3513215A21D607E1005AB183 /* DSArray.swift in Sources */,
+				350A00E921DF3F4000DFE703 /* DSSearchResultView.swift in Sources */,
 				350A68FD21D32D400055EFA6 /* DSApplyTableViewController.swift in Sources */,
 				350A68EB21D25C290055EFA6 /* DSDatePicker.swift in Sources */,
 				3513216821D65500005AB183 /* DSUserContact.swift in Sources */,
@@ -1265,6 +1316,8 @@
 				3508779621CF3841006580AD /* DSImageView.swift in Sources */,
 				350A68E021D23E5C0055EFA6 /* DSSelectorCell.swift in Sources */,
 				3513214B21D4D5FB005AB183 /* XJImageCompress.swift in Sources */,
+				350A00E621DF306A00DFE703 /* DSOrderInfoCell.swift in Sources */,
+				350A00DB21DEF2DB00DFE703 /* DSOrderTitleCell.swift in Sources */,
 				350A68A821D0769B0055EFA6 /* MarqueeView.swift in Sources */,
 				3508778321CDEA94006580AD /* DSHomeSearchControl.swift in Sources */,
 				350A690B21D34CF90055EFA6 /* DSWorkViewController.swift in Sources */,
@@ -1286,6 +1339,8 @@
 				350A68C121D106020055EFA6 /* DSRouter.swift in Sources */,
 				35552C7A21CB5DB6002033FC /* DSUserInfo.swift in Sources */,
 				3513217721D75158005AB183 /* DSDataPickerCell.swift in Sources */,
+				350A00D721DE2C9100DFE703 /* DSFont.swift in Sources */,
+				350A00D121DE0AE900DFE703 /* DSApplyBankCell.swift in Sources */,
 				3548367E21BA1709008AB78D /* DSViewController.swift in Sources */,
 				35A82B3B21CBA39A0009D5F2 /* DSAgreementView.swift in Sources */,
 				350A68C421D10ED50055EFA6 /* DSOrderDetailViewController.swift in Sources */,
@@ -1293,6 +1348,7 @@
 				350A68CF21D1D4DC0055EFA6 /* DSApplyDataService.swift in Sources */,
 				35A82B3921CB976B0009D5F2 /* DSPhoneButton.swift in Sources */,
 				3513215221D4FAC3005AB183 /* DSImageInfo.swift in Sources */,
+				350A00D521DE2C7600DFE703 /* DSImage.swift in Sources */,
 				3513215821D5F9AE005AB183 /* DSPhoneViewController.swift in Sources */,
 				356E80B021CC87FD0052C6E2 /* XJToast.swift in Sources */,
 				3513216D21D65AD5005AB183 /* XJSegmentedControl.swift in Sources */,

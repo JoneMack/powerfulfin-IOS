@@ -161,6 +161,7 @@ extension DSApply {
     }
     fileprivate func showBankListViewController(bansInfo:DSUserBanksInfo) {
         let bankVC = DSBankListViewController()
+        bankVC.banksInfo = bansInfo
         beginController?.navigationController?.pushViewController(bankVC, animated: true)
     }
 }

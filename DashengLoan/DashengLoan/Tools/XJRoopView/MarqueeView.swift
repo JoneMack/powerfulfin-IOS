@@ -53,15 +53,18 @@ class MarqueeView: UIView {
     // MARK: - 开始跑马灯动画
     func start(){
         if isRun == false {
-            isRun = true
-            isSuspend = false
-            frontLabel.layer.timeOffset = 0.0
-            behindLabel.layer.timeOffset = 0.0
-            frontLabel.layer.speed = 1.0
-            behindLabel.layer.speed = 1.0
-            frontLabel.layer.beginTime = 0.0
-            behindLabel.layer.beginTime = 0.0
-            marqueeAnimation()
+            if behindLabel.frame.width > self.frame.width {
+                  behindLabel.isHidden = false
+                isRun = true
+                isSuspend = false
+                frontLabel.layer.timeOffset = 0.0
+                behindLabel.layer.timeOffset = 0.0
+                frontLabel.layer.speed = 1.0
+                behindLabel.layer.speed = 1.0
+                frontLabel.layer.beginTime = 0.0
+                behindLabel.layer.beginTime = 0.0
+                marqueeAnimation()
+            }            
         }
     }
     

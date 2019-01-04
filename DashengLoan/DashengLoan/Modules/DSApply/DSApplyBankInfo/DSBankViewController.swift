@@ -117,8 +117,6 @@ extension DSBankViewController {
 
     }
     func getPhoneCodeFromService() {
-        updateCodeButton(success: true)
-        return
         let paramDic = (dataSource as! DSBankLocalService).getPhoneCodeParaDic()
         DSApplyDataService.getBankPhoneCode(cardInfo: paramDic) {[weak self] (serialnumber, success) in
             self?.serialnumber = serialnumber

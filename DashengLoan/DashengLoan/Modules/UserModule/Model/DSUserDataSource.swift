@@ -35,7 +35,7 @@ class DSUserDataSource: NSObject {
         
     }
     func numberOfSections() -> Int {
-        if DSUserCenter.defalut.userInfo == nil {
+        if DSUserCenter.`default`.userInfo == nil {
             return (dataArray?.count ?? 1) - 1
         }
         return dataArray?.count ?? 1

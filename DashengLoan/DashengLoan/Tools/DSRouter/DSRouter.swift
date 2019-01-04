@@ -42,7 +42,7 @@ class DSRouter {
             webView.urlString = url!
             UIApplication.shared.push(controller: webView)
         case .loandetail :
-            if DSUserCenter.defalut.hasLogin == false {
+            if DSUserCenter.`default`.hasLogin == false {
                 DSRouter.loginWithController {
                     DSRouter.openURL(url: url)
                 }

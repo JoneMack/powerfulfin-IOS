@@ -161,6 +161,9 @@ class DSHomeLoanTitleView: DSHomeLoanView {
     override func reloadData() {
         super.reloadData()
         moneyLabel?.text = loanStatusInfo?.repay_money
-        
+        if loanStatusInfo?.is_overdue == "1" {
+            moneyLabel?.textColor = UIColor.ds_redText
+            descLabbel.textColor = UIColor.ds_redText
+        }
     }
 }
