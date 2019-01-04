@@ -42,7 +42,7 @@ class DSRouter {
             webView.urlString = url!
             UIApplication.shared.push(controller: webView)
         case .loandetail :
-            if DSUserCenter.`default`.hasLogin == false {
+            if DSUserCenter.default.hasLogin == false {
                 DSRouter.loginWithController {
                     DSRouter.openURL(url: url)
                 }
@@ -55,7 +55,12 @@ class DSRouter {
             let messageVC = DSMessageViewController()
             UIApplication.shared.push(controller: messageVC)
         case .apply:
-            
+            if DSUserCenter.default.hasLogin == false {
+                DSRouter.loginWithController {
+                    DSRouter.openURL(url: url)
+                }
+                return
+            }
             if let id = urlInfo.1!["id"] {
                 DSApply.default.beginApply(id, fromController: UIApplication.shared.topViewController!)
             }

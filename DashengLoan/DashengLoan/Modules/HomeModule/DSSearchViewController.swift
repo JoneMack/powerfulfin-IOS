@@ -12,7 +12,7 @@ class DSSearchViewController: DSTableViewController {
     fileprivate var searView:DSSearchView!
     fileprivate var oragnationArray = [DSOrgation]()
     fileprivate var page:Int = 1
-    
+    fileprivate var resultView:DSSearchResultView?
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -73,7 +73,13 @@ extension DSSearchViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         super.tableView(tableView, didSelectRowAt: indexPath)
         let orgation = oragnationArray[indexPath.row]
-        DSApply.default.beginApply(orgation.id ?? "", fromController: self)
+        if DSUserCenter.default.hasLogin == false {
+            loginWithController {
+                DSApply.default.beginApply(orgation.id ?? "", fromController: self)
+            }
+        }else{
+            DSApply.default.beginApply(orgation.id ?? "", fromController: self)
+        }
         
     }
 }
@@ -87,11 +93,11 @@ extension DSSearchViewController :DSSearchViewDelegate {
             popViewController()
         }
     }
-    internal func searchViewDidBeginEditing(searchView: DSSearchView) {
-        
-    }
-    internal func searchViewDidEndEditing(searchView: DSSearchView) {
-        
+   
+    internal func searchViewSeachButtonClick(searchView: DSSearchView) {
+        page = 1
+        let text  = searchView.searchBar.text ?? ""
+        loadSearchData(text: text )
     }
     internal func searchTextDidChanged(searchView: DSSearchView, text: String?) {
         page = 1
@@ -112,9 +118,38 @@ extension DSSearchViewController {
                 self?.oragnationArray.removeAll()
             }
             self?.oragnationArray = (self?.oragnationArray ?? []) + (searchResult.list ?? [])
+            if self?.oragnationArray.count ?? 0 == 0 {
+                self?.showNoResultView()
+            }else{
+                self?.hiddenNoResultView()
+            }
             self?.tableView?.reloadData()
+            self?.refreshControl?.endRefreshing()
         }
     }
 }
 
-
+// MARK: - 无结果页面
+extension DSSearchViewController:DSSearchResultViewDelegate {
+    func showNoResultView()  {
+        if resultView == nil {
+            resultView = DSSearchResultView()
+            resultView?.delegate = self
+        }
+        resultView?.titleLabel.text = "没有这样的机构，再来搜搜看吧"
+        resultView?.isHidden = false
+        tableView?.addSubview(resultView!)
+        resultView?.snp.makeConstraints({ (maker) in
+            maker.top.equalTo(110)
+            maker.centerX.equalToSuperview()
+        })
+    }
+    func hiddenNoResultView()  {
+        resultView?.isHidden = true
+        resultView?.removeFromSuperview()
+    }
+    func showSearchViewController()  {
+        let searchVC = DSSearchViewController()
+        pushToNextViewController(searchVC)
+    }
+}

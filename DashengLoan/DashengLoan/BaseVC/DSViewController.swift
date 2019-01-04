@@ -20,7 +20,7 @@ class DSViewController: UIViewController {
     deinit {
         print(NSStringFromClass(self.classForCoder)+"释放了")
     }
-    func loginWithController(comolete:(()->Void)?) {
+    func loginWithController(comolete:(()->Void)?) {	
         let loginVC = DSLoginViewController()
         let navi = DSNavigationController.init(rootViewController: loginVC)
         UIApplication.shared.present(controller: navi)

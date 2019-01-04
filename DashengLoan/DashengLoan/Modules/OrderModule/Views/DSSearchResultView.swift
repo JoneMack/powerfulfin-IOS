@@ -12,13 +12,15 @@ import UIKit
 }
 class DSSearchResultView: UIView {
     weak var delegate:DSSearchResultViewDelegate?
+    var titleLabel:UILabel!
     
     override init(frame: CGRect) {
         super.init(frame:frame)
         let logoImageView = UIImageView(image: UIImage(named: "search_result_icon"))
         addSubview(logoImageView)
         
-        let titleLabel = UILabel()
+        titleLabel = UILabel()
+        titleLabel.textColor = .ds_darkText
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (maker) in
             maker.top.equalTo(logoImageView.snp.bottom).offset(20)

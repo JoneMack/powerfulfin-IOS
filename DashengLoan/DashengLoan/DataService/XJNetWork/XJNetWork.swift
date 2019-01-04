@@ -35,17 +35,19 @@ class XJRequest {
 
 
 class XJNetWork {
-//    class func request(_ method:XJHTTPMethod = .get,URL:String, parameters:[String:String] ,successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void)) {
-//
-//        Alamofire.request(URL, method: HTTPMethod(rawValue: method.rawValue)!, parameters: parameters).responseJSON { (response) in
-//            handlerResult(response: response, successHandler: successHandler, failHandler: failHandler)
-//        }
-//    }
+
     //请求
+    //大圣分期 公共参数：lng，lat，version，phoneid，ssid，mac，_t
     class func request(_ requst:XJRequest,successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void)) {
         var paramrters = requst.parameters
         paramrters["lng"] = DSLoactionManager.manager.longitude
         paramrters["lat"] = DSLoactionManager.manager.latitude
+        paramrters["version"] = XJDeviceInfo.appVersion
+        paramrters["phoneid"] = XJDeviceInfo.deviceId
+        let wifiInfo = XJDeviceInfo.wifiInfo
+        paramrters["ssid"] = wifiInfo.ssid
+        paramrters["mac"] = wifiInfo.mac
+        paramrters["_t"] = Date().milliStamp
         
         Alamofire.request(requst.url, method:HTTPMethod(rawValue: requst.method.rawValue)!, parameters: paramrters, headers: requst.httpHeader).responseJSON { (response) in
             handlerResult(response: response, successHandler: successHandler, failHandler: failHandler)

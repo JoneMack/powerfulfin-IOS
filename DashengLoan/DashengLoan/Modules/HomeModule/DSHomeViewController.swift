@@ -30,7 +30,7 @@ class DSHomeViewController: DSViewController {
         setupNavigationView()
         configSubViews()
         firstLaunchReloadData()
-        contentView.isHidden = true
+        reloadViewStatus(false)
     }
     func configSubViews()  {
         view.addSubview(contentView)
@@ -178,14 +178,18 @@ extension DSHomeViewController {
         DSHomeDataService.loadHomeData {[weak self] (homeData, success) in
             self?.refreshControl.endRefreshing()
             if success == true {
-                self?.contentView.isHidden = false
+                self?.reloadViewStatus(true)
                 self?.homeInfo = homeData
                 self?.refreshViews()
             }else{
-                self?.contentView.isHidden = true
-                
+                self?.reloadViewStatus(false)
             }
         }
+    }
+    func reloadViewStatus(_ show:Bool)  {
+        bannerView.isHidden = !show
+        newsView.isHidden = !show
+        loanView?.isHidden = !show
     }
     func firstLaunchReloadData()  {
         if DSUserCenter.default.firstLaunch {

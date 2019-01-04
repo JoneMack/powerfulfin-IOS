@@ -12,6 +12,7 @@ import UIKit
     @objc optional func searchViewDidEndEditing(searchView:DSSearchView)
     @objc optional func cancelButtonClick()
     @objc optional func searchTextDidChanged(searchView:DSSearchView,text:String?)
+    @objc optional func searchViewSeachButtonClick(searchView:DSSearchView)
     
 }
 class DSSearchView: UIView {
@@ -71,13 +72,14 @@ class DSSearchView: UIView {
 }
 extension DSSearchView:UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        delegate?.searchViewDidBeginEditing!(searchView: self)
+        delegate?.searchViewDidBeginEditing?(searchView: self)
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        delegate?.searchViewDidEndEditing!(searchView: self)
+        delegate?.searchViewDidEndEditing?(searchView: self)
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        delegate?.searchViewSeachButtonClick?(searchView: self)
         return true
     }
 }

@@ -21,7 +21,18 @@ extension Date {
         
         let date = dastDate?.addingTimeInterval(TimeInterval(interval))
         return date!
-        
-        
     }
+    ///  当前时间戳，秒级
+    var timeStamp : String {
+        let timeInterval: TimeInterval = self.timeIntervalSince1970
+        let timeStamp = Int(timeInterval)
+        return "\(timeStamp)"
+    }
+    /// 获取当前 毫秒级 时间戳 - 13位
+    var milliStamp : String {
+        let timeInterval: TimeInterval = self.timeIntervalSince1970
+        let millisecond = CLongLong(round(timeInterval*1000))
+        return "\(millisecond)"
+    }
+   
 }

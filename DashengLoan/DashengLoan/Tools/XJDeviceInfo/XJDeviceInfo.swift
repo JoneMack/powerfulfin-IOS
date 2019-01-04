@@ -7,20 +7,29 @@
 //
 
 import UIKit
+struct WifiInfo {
+    var ssid:String = ""
+    var mac:String = ""
+    
+    
+}
 import SystemConfiguration.CaptiveNetwork
 class XJDeviceInfo: NSObject {
-    static func getWiFiSsid() -> String? {
-        var ssid: String?
+    
+    static var wifiInfo:WifiInfo {
+        var wifiInof = WifiInfo()
         if let interfaces = CNCopySupportedInterfaces() as NSArray? {
             for interface in interfaces {
                 if let interfaceInfo = CNCopyCurrentNetworkInfo(interface as! CFString) as NSDictionary? {
-                    ssid = interfaceInfo[kCNNetworkInfoKeySSID as String] as? String
+                    wifiInof.ssid = interfaceInfo[kCNNetworkInfoKeySSID as String] as? String ?? ""
+                    wifiInof.mac = interfaceInfo[kCNNetworkInfoKeyBSSID as String] as? String ?? ""
                     break
                 }
             }
         }
-        return ssid
+        return wifiInof
     }
+   
     static var deviceId: String {
         return XJUDID.xj_uuidForDeivce()
     }
