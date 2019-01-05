@@ -22,7 +22,7 @@ class DSHomeViewController: DSViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        newsView.titleLabel?.start()
+        newsView.titleLabel?.stop()
     }
     override func viewDidLoad() {
         super.viewDidLoad()

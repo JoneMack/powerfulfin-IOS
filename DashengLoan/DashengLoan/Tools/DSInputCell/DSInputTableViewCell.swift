@@ -29,7 +29,6 @@ let inputCellTitleWidth:CGFloat = 80
 
 class DSInputTableViewCell: DSTableViewCell {
 
-    var indexPath:IndexPath!
     var inputModel:DSInputModel! {
         didSet {
             configCellData(model: inputModel)

@@ -16,7 +16,7 @@ struct DSUserInfo:Codable {
     var phone:String?
     /// 用户名
     var name:String?
-    /// 是否设置了密码
+    /// 是否设置了密码 1 是设置了
     var has_password:String?
     
 }

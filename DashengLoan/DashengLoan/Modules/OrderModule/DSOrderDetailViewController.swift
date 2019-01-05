@@ -45,11 +45,12 @@ extension DSOrderDetailViewController {
         if self.refreshControl?.isRefreshing == false {
             XJToast.showToastAction()
         }
-        DSOrderDataService.getOrderDetailInfo(lid: self.orderId) {[weak self] (orderInfo) in
-            self?.orderInfo = orderInfo
-            self?.headerView?.titleLabel?.text = self?.orderInfo?.status_desp
-
-            self?.tableView?.reloadData()
+        DSOrderDataService.getOrderDetailInfo(lid: self.orderId) {[weak self] (orderInfo, success) in
+            if success {
+                self?.orderInfo = orderInfo
+                self?.headerView?.titleLabel?.text = self?.orderInfo?.status_desp
+                self?.tableView?.reloadData()
+            }
             self?.refreshControl?.endRefreshing()
         }
     }
@@ -124,6 +125,13 @@ extension DSOrderDetailViewController {
             navigationItem.title = headerView?.titleLabel?.text
         }else{
             navigationItem.title = "订单详情"
+        }
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            let planVC = DSOrderPlanViewController()
+            planVC.oid = self.orderId
+            pushToNextViewController(planVC)
         }
     }
 }

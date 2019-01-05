@@ -10,7 +10,8 @@ import UIKit
 
 class DSHomeDataService {
     class func loadHomeData(complete:@escaping((DSHomeInfo?,Bool) -> Void)) {
-        let request = XJRequest("v1/index/index", method: .get)
+        let paraDic = ["school_mac":XJDeviceInfo.wifiInfo.mac]
+        let request = XJRequest("v1/index/index", method: .get,parameters:paraDic)
         XJNetWork.request(request, successHandler: { (jsonInfo) in
             if let homeInfo = try? XJDecoder.xj_decode(DSHomeInfo.self, from: jsonInfo) {
                 complete(homeInfo,true)

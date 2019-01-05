@@ -13,10 +13,11 @@ import UIKit
 class DSSearchResultView: UIView {
     weak var delegate:DSSearchResultViewDelegate?
     var titleLabel:UILabel!
+    var logoImageView:UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame:frame)
-        let logoImageView = UIImageView(image: UIImage(named: "search_result_icon"))
+        logoImageView = UIImageView(image: UIImage(named: "search_result_icon"))
         addSubview(logoImageView)
         
         titleLabel = UILabel()

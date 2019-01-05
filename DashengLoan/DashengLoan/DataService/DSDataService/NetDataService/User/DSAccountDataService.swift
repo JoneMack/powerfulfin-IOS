@@ -40,6 +40,7 @@ class DSAccountDataService {
         }
         
     }
+    /// 获取手机号验证码
     class func getPhoneCode(phone:String ,complete:@escaping(()->Void))  {
         let request = XJRequest("v1/login/verifycode", method: .get, parameters: ["phone":phone])
         XJNetWork.request(request, successHandler: { (jsonInfo) in
@@ -49,6 +50,7 @@ class DSAccountDataService {
         }
         
     }
+    /// 退出登录
     class func logout() {
         let request = XJRequest("v1/logout", method: .get)
         XJNetWork.request(request, successHandler: { (jsonInfo) in
@@ -57,6 +59,20 @@ class DSAccountDataService {
             XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
         }
         
+    }
+    static func updateUserPassword(oldPwd:String?,newPwd:String,complete:@escaping((Bool)->Void)) {
+        let request = XJRequest("v1/login/setpassword", method: .post, parameters: ["old_password":oldPwd ?? "","new_password":newPwd])
+        XJNetWork.request(request, successHandler: { (jsonInfo) in
+            if DSUserCenter.default.userInfo != nil {
+                var userInfo = DSUserCenter.default.userInfo!
+                userInfo.has_password = "1"
+                DSUserCenter.default.updateUserInfo(userInfo)
+            }
+            complete(true)
+        }) { (error) in
+            complete(false)
+            XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
+        }
     }
     
     

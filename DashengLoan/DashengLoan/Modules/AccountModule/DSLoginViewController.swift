@@ -171,7 +171,7 @@ class DSLoginViewController: DSViewController {
         
         agreeView.showAgreeView = { [weak self] in
             let webView = DSWebViewController()
-            webView.urlString = "https://www.baidu.com"
+            webView.urlString = registerURL
             self?.pushToNextViewController(webView)
         }
         view.addSubview(agreeView)

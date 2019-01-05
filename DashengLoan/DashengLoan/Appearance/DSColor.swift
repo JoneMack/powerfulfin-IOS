@@ -62,6 +62,10 @@ extension UIColor {
     class var ds_lightGrayText: UIColor {
         return UIColor(hex: "c3c3c3")
     }
+    /// 浅灰色 hex 8f8f8f
+    class var ds_gray8fText:UIColor {
+        return UIColor(hex: "8f8f8f")
+    }
     
     /// 最浅色的字：RGB:204.204.204 hex cccccc
     class var ds_lineGrayColor:UIColor {

@@ -47,6 +47,12 @@ extension String {
         
         return (beginDate,endDate)
     }
+    
+    /// 移除首尾的空格
+    func removeWhiteSpace() -> String {
+        let whitespace = NSCharacterSet.whitespacesAndNewlines
+        return trimmingCharacters(in: whitespace)
+    }
    
 }
 extension String {

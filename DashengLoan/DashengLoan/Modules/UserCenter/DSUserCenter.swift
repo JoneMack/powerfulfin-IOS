@@ -57,7 +57,8 @@ extension DSUserCenter {
         noticeListenter(selector: #selector(DSUserStatusListener.userLogoutSuccess))
         logoutFromLocalService()
     }
-    func updateUserInfo()  {
+    func updateUserInfo(_ userInfo:DSUserInfo)  {
+        self.userInfo = userInfo
         noticeListenter(selector: #selector(DSUserStatusListener.userInfoChanged))
         loginToLocalService(userInfo: self.userInfo!)
     }

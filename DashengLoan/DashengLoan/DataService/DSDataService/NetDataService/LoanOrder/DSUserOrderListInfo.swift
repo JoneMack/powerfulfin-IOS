@@ -52,7 +52,4 @@ struct DSOrderInfo:Codable {
     var contract:String?
     /// 拒绝原因
     var audit_opinion:String?
-    
-    
-    
 }

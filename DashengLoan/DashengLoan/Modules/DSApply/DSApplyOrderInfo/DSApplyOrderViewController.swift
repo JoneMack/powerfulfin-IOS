@@ -128,9 +128,9 @@ extension DSApplyOrderViewController {
         uploadUserOrderInfos()
     }
     func footViewShowTrainAgreement() {
-        DSRouter.openURL(url: "https:www.baidu.com")
+        DSRouter.openURL(url: agreementURL)
     }
     func footViewShowDutyAgreement() {
-        DSRouter.openURL(url: "https:www.baidu.com")
+        DSRouter.openURL(url: dutyURL)
     }
 }

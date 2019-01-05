@@ -9,6 +9,8 @@
 import UIKit
 
 class DSTableViewCell: UITableViewCell {
+    var indexPath:IndexPath!
+
     fileprivate var separatorView = UIView.lineView()
     open var showSpearator:Bool = false {
         didSet {

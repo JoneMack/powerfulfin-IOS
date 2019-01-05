@@ -119,15 +119,45 @@ extension DSUserViewController:DSUserStatusListener {
 // MARK: - 页面跳转
 extension DSUserViewController {
     @objc func showUserInfoViewController()  {
-       
+        if DSUserCenter.default.hasLogin == false {
+            loginWithController {[weak self] in
+                self?.showUserInfoViewController()
+            }
+            return
+        }
+        let userInfoVC = DSUserInfoViewController()
+        pushToNextViewController(userInfoVC)
     }
     @objc fileprivate func showBankCardsViewController() {
-    
-    }
-    @objc fileprivate func showPasswordViewController() {
+        if DSUserCenter.default.hasLogin == false {
+            loginWithController {[weak self] in
+                self?.showUserInfoViewController()
+            }
+            return
+        }
+        let banksVC = DSUserBanksController()
+        pushToNextViewController(banksVC)
         
     }
+    @objc fileprivate func showPasswordViewController() {
+        if DSUserCenter.default.hasLogin == false {
+            loginWithController {[weak self] in
+                self?.showUserInfoViewController()
+            }
+            return
+        }
+        let passwordVC =  DSPasswordViewController()
+        pushToNextViewController(passwordVC)
+    }
     @objc fileprivate func showMessageViewController() {
+        if DSUserCenter.default.hasLogin == false {
+            loginWithController {[weak self] in
+                self?.showUserInfoViewController()
+            }
+            return
+        }
+        let messageVC = DSMessageViewController()
+        pushToNextViewController(messageVC)
         
     }
     @objc fileprivate func showSericeViewController() {
