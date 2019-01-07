@@ -13,6 +13,7 @@ class DSPhoneViewController: DSViewController {
     var titleLabel:UILabel?
     var backView:UIView?
     var addressBool:[[String:AnyObject]]?
+    var hasNext:Bool = true
     
     var conanctManager = DSContacts()
     
@@ -25,7 +26,11 @@ class DSPhoneViewController: DSViewController {
         view.backgroundColor = UIColor.ds_backgroundColor
 
         addSubViews()
-        loadFooterView()
+        if hasNext {
+            loadFooterView("下一步")
+        }else{
+            loadFooterView("提交")
+        }
         conanctManager.delegate = self
         conanctManager.checkContactStoreAuthorization {[weak self] (status) in
             if status == .denied {
@@ -70,8 +75,8 @@ class DSPhoneViewController: DSViewController {
             maker.bottom.equalTo(100+XJDeviceInfo.tabbarSpaceInX)
         }
     }
-    func loadFooterView()  {
-        footerView = DSApplyFooterView(title: "下一步")
+    func loadFooterView(_ title:String)  {
+        footerView = DSApplyFooterView(title: title)
         footerView?.delegate = self
         footerView?.footBtn?.isEnabled = false
         view.addSubview(footerView!)
@@ -112,6 +117,10 @@ extension DSPhoneViewController:DSApplyFooterViewDelegate {
         }
     }
     func footViewClick(footBtn: UIButton) {
-        DSApply.default.showNextStep()
+        if hasNext {
+            DSApply.default.showNextStep()
+        }else{
+            popViewController()
+        }
     }
 }

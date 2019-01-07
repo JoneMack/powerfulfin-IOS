@@ -51,7 +51,10 @@ class XJImagePicker: NSObject {
         selectorHandler = complete
         ds_showActionSheet(placeholder: placeholder)
     }
-   
+    func ds_showPhotoLibraryPicker( complete:(([UIImage],[Data])->Void)?) {
+        selectorHandler = complete
+        showPhotoLibraryController()
+    }
 }
 
 // MARK: - 选择提示相关

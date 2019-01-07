@@ -142,14 +142,16 @@ extension DSApply {
 extension DSApply {
    fileprivate func beginBankManagerController() {
         XJToast.showToastAction()
-        DSApplyDataService.getBindsBakCards {[weak self] (banksInfo) in
+        DSApplyDataService.getBindsBakCards {[weak self] (banksInfo,success) in
             XJToast.hiddenToastAction()
-            if banksInfo.banks?.count ?? 0 > 0 {
-                self?.showBankListViewController(bansInfo: banksInfo)
-            }else{
-                self?.showBankViewController(bansInfo: banksInfo)
+            if success {
+                if banksInfo?.banks?.count ?? 0 > 0 {
+                    self?.showBankListViewController(bansInfo: banksInfo!)
+                }else{
+                    self?.showBankViewController(bansInfo: banksInfo!)
+                }
+                self?.removeMiddleViewController()
             }
-            self?.removeMiddleViewController()
         }
     }
    fileprivate func showBankViewController(bansInfo:DSUserBanksInfo)  {

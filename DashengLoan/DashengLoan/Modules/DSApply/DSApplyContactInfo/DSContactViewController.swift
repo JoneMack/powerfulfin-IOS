@@ -15,8 +15,11 @@ class DSContactViewController: DSApplyTableViewController {
         super.viewDidLoad()
         navigationItem.title = "联络信息"
         dataSource = DSContactLocalService()
-        loadFooterView(title: "下一步")
-        
+        if hasNext {
+            loadFooterView(title: "下一步")
+        }else{
+            loadFooterView(title: "提交")
+        }
         loadConfiger()
         loadUserContactInfoFromService()
     }
@@ -87,8 +90,12 @@ extension DSContactViewController {
     func uploadUserContactInfoToService()  {
         XJToast.showToastAction()
         let paraDic = dataSource.getDataInfo()
-        DSApplyDataService.uploadUserContact(contactInfo: paraDic) {
-            DSApply.default.showNextStep()
+        DSApplyDataService.uploadUserContact(contactInfo: paraDic) {[weak self] in
+            if self?.hasNext == true {
+                DSApply.default.showNextStep()
+            }else{
+                self?.popViewController()
+            }
         }
     }
     

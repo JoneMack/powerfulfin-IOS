@@ -133,7 +133,8 @@ extension DSHomeViewController:DSHomeLoanButtonViewDelegate {
         DSRouter.openURL(url: actions)
     }
     @objc fileprivate func showScanViewController()  {
-        
+        let scanVC = DSScanViewController()
+        pushToNextViewController(scanVC)
     }
     @objc fileprivate func callCustomerService() {
         let phone = homeInfo?.customer_service?.phone

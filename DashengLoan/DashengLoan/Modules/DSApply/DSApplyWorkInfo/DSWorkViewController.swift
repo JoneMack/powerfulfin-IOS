@@ -15,7 +15,11 @@ class DSWorkViewController: DSApplyTableViewController {
         super.viewDidLoad()
         dataSource = DSWorkLocalService()
         navigationItem.title = "学历及职业"
-        loadFooterView(title: "下一步")
+        if hasNext {
+            loadFooterView(title: "下一步")
+        }else{
+            loadFooterView(title: "提交")
+        }
         loadConfiger()
         loadUserWorkInfo()
     }
@@ -151,14 +155,17 @@ extension DSWorkViewController {
     func uploadUserWorkInfo()  {
         XJToast.showToastAction()
         let paraDic = dataSource.getDataInfo()
-        DSApplyDataService.uploadUserWork(workInfo: paraDic) {
-            DSApply.default.showNextStep()
+        DSApplyDataService.uploadUserWork(workInfo: paraDic) {[weak self] in
+            if self?.hasNext == true {
+                DSApply.default.showNextStep()
+            }else{
+                self?.popViewController()
+            }
         }
     }
 }
 extension DSWorkViewController {
     override func footViewClick(footBtn: UIButton) {
         uploadUserWorkInfo()
-        
     }
 }

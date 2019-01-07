@@ -19,7 +19,11 @@ class DSUserIdViewController: DSApplyTableViewController {
         super.viewDidLoad()
         navigationItem.title = "身份信息"
         dataSource = DSUserIdLocalService()
-        loadFooterView(title: "下一步")
+        if hasNext {
+            loadFooterView(title: "下一步")
+        }else{
+            loadFooterView(title: "提交")
+        }
         loadUserIdInfo()
         imageIdPicker = XJImagePicker()
     }
@@ -182,8 +186,12 @@ extension DSUserIdViewController  {
 }
 extension DSUserIdViewController {
     override func footViewClick(footBtn: UIButton) {
-        uploadUserIdInfo {
-            DSApply.default.showNextStep()
+        uploadUserIdInfo {[weak self] in
+            if self?.hasNext == true {
+                DSApply.default.showNextStep()
+            }else{
+                self?.popViewController()
+            }
         }
     }
 }

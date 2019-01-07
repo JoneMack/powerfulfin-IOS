@@ -84,13 +84,14 @@ extension DSApplyDataService {
 // MARK: - 银行卡相关
 extension DSApplyDataService {
     /// 获取已绑银行卡列表
-    class func getBindsBakCards(complete:@escaping((DSUserBanksInfo)-> Void)){
+    class func getBindsBakCards(complete:@escaping((DSUserBanksInfo?,Bool)-> Void)){
         let requrst = XJRequest("v1/bank/banks", method: .get)
         XJNetWork.request(requrst, successHandler: { (jsonInfo) in
             if let model = try? XJDecoder.xj_decode(DSUserBanksInfo.self, from: jsonInfo) {
-                complete(model)
+                complete(model,true)
             }
         }) { (error) in
+            complete(nil,false)
             XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
         }
     }

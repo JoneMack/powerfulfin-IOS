@@ -74,6 +74,17 @@ class DSAccountDataService {
             XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
         }
     }
-    
+    static func getUserMessageList(complete:@escaping((DSUserMessageInfo?,Bool)->Void)) {
+        let requet = XJRequest("", method: .get)
+        XJNetWork.request(requet, successHandler: { (jsonInfo) in
+            if let model = try? XJDecoder.xj_decode(DSUserMessageInfo.self, from: jsonInfo) {
+                complete(model,true)
+            }
+        }) { (error) in
+            complete(nil,false)
+            XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
+        }
+        
+    }
     
 }

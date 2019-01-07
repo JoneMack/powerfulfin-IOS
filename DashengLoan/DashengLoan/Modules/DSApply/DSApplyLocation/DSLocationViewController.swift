@@ -10,6 +10,8 @@ import UIKit
 
 class DSLocationViewController: DSViewController {
     var schooId:String = "0"
+    var hasNext = true
+    
     fileprivate var locationInfo:DSUserLocationInfo?
     fileprivate var coordinateLabel:UILabel?
     fileprivate var addressLabel:UILabel?
@@ -25,7 +27,11 @@ class DSLocationViewController: DSViewController {
         loadSubViews()
         DSLoactionManager.manager.addListener(listen: self)
         reloadUserLocation()
-        loadFooterView()
+        if hasNext {
+            loadFooterView("下一步")
+        }else{
+            loadFooterView("提交")
+        }
         updateUserLocationViewInfo(false)
     }
     fileprivate func loadSubViews()  {
@@ -90,8 +96,8 @@ class DSLocationViewController: DSViewController {
             maker.centerY.equalTo((addressLabel?.snp.bottom)!).offset(5)
         }
     }
-    func loadFooterView()  {
-        footerView = DSApplyFooterView(title: "下一步")
+    func loadFooterView(_ title:String)  {
+        footerView = DSApplyFooterView(title: title)
         footerView?.delegate = self
         footerView?.footBtn?.isEnabled = false
         view.addSubview(footerView!)
@@ -163,6 +169,10 @@ extension DSLocationViewController:DSLocationDelegate,DSApplyFooterViewDelegate 
         }
     }
     func footViewClick(footBtn: UIButton) {
-        DSApply.default.showNextStep()
+        if hasNext == true {
+            DSApply.default.showNextStep()
+        }else{
+            self.popViewController()
+        }
     }
 }

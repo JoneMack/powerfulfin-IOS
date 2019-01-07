@@ -10,6 +10,7 @@ import UIKit
 
 class DSApplyTableViewController: DSTableViewController {
     var schooId:String = ""
+    var hasNext:Bool = true
     
     
     var dataSource:DSApplyLocalService!
