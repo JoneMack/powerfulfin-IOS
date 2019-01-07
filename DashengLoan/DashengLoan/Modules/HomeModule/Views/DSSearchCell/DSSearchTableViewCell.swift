@@ -28,6 +28,7 @@ class DSSearchTableViewCell: DSTableViewCell {
         detailLabel?.snp.makeConstraints({ (maker) in
             maker.left.equalTo(20)
             maker.centerY.equalToSuperview().offset(12.5)
+            maker.right.equalTo(-15)
         })
         self.showSpearator = true
         self.leftSpearatorSpace = 0

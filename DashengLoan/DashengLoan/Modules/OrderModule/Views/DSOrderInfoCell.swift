@@ -7,9 +7,12 @@
 //
 
 import UIKit
-
+@objc protocol DSOrderInfoCellDelegate {
+   @objc optional func showContactViewAction()
+}
 class DSOrderInfoCell: UITableViewCell {
-
+    
+    weak var delegate:DSOrderInfoCellDelegate?
     @IBOutlet weak var schoolNameLabel: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var installmentLabel: UILabel!
@@ -23,16 +26,13 @@ class DSOrderInfoCell: UITableViewCell {
     @IBOutlet weak var reasonLabel: UILabel!
     @IBOutlet weak var reasonTitleLabel: UILabel!
     
-    
+    @IBOutlet weak var contactBtn: DSButton!
+    @IBAction func showContactView(_ sender: Any) {
+        delegate?.showContactViewAction?()
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        contactBtn.borderType = .gray
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

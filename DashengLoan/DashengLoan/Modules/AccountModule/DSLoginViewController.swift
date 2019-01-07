@@ -183,11 +183,10 @@ class DSLoginViewController: DSViewController {
     
     /// 取消登录
     @objc func cancelLoginAction(){
+        navigationController?.dismiss(animated: true, completion: nil)
 //        dismiss(animated: true, completion: nil)
 //        DispatchQueue.main.async {
-        navigationController?.dismiss(animated: true, completion: {[weak self] in
-             self?.loginSuccess?()
-        })
+       
 //            self.navigationController?.dismiss(animated: true, completion: )
 //        }
     }
@@ -259,9 +258,13 @@ extension DSLoginViewController {
     
         let type:NSInteger = loginTypeBtn.isSelected == false ? 1 : 2
         
-        DSAccountDataService.login(userName: userNameTF.text!, password: passwordTF.text!, type: type) { (userInfo) in
+        DSAccountDataService.login(userName: userNameTF.text!, password: passwordTF.text!, type: type) {[weak self] (userInfo) in
+            
             DSUserCenter.`default`.login(userInfo: userInfo)
-            self.cancelLoginAction()
+            
+            self?.navigationController?.dismiss(animated: true, completion: { 
+                self?.loginSuccess?()
+            })
           
         }
  

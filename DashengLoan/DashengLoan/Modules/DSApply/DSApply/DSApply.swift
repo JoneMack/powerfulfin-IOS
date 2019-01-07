@@ -11,7 +11,7 @@ import UIKit
 /// 申请管理中心
 class DSApply: NSObject {
     static let `default` = DSApply()
-    
+    static let applyFinished: NSNotification.Name = NSNotification.Name(rawValue: "DSApplyFinishedNotice")
     //学校机构id
     fileprivate var schooId:String = ""
     //人脸识别SDK的配置
@@ -28,7 +28,6 @@ class DSApply: NSObject {
         step = 0
         showNextStep()
     }
-
 }
 // MARK: - 额，步骤管理
 extension DSApply {
@@ -49,6 +48,7 @@ extension DSApply {
         }else if step == 6 {
             showOrderViewController()
         }else if step == 7 {
+            NotificationCenter.default.post(name: DSApply.applyFinished, object: nil)
             beginController?.navigationController?.popToRootViewController(animated: true)
         }
         if step != 7 {

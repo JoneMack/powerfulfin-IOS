@@ -7,10 +7,7 @@
 //
 
 import UIKit
-enum DSLoanStatus : String {
-    case locationUnknown = "DSHome"
-    
-}
+
 class DSHomeLoanView: UIView {
     fileprivate let titleLabel = UILabel()
     fileprivate let descLabbel = UILabel()
@@ -119,15 +116,24 @@ class DSHomeLoanLogoView: DSHomeLoanView {
         }else{
             logoImageView?.setImage(loanStatusInfo?.status_img_3x)
         }
+        descLabbel.isUserInteractionEnabled = false
         if loanStatusInfo?.status == "0" {
             titleLabel.text = "推荐机构"
-            descLabbel.text = "无法定位？请点击搜索，或其他方式进行申请"
+            let titleText = NSMutableAttributedString(string: "无法定位？请点击搜索，或其他方式进行申请", attributes: [NSAttributedString.Key.font:UIFont.ds_font(ptSize: 13),NSAttributedString.Key.foregroundColor:UIColor.ds_darkText])
+            titleText.addAttributes([.font:UIFont.ds_boldFont(ptSize: 13),.foregroundColor:UIColor.ds_darkText,.underlineStyle:NSUnderlineStyle.single.rawValue], range: NSMakeRange(8, 2))
+            descLabbel.attributedText = titleText
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(DSHomeLoanLogoView.showSeachView))
+            descLabbel.isUserInteractionEnabled = true
+            descLabbel.addGestureRecognizer(tapGesture)
             nameLabel?.text = loanStatusInfo?.school_name
         }else if loanStatusInfo?.status == "1" {
             titleLabel.text = "订单状态"
             nameLabel?.text = loanStatusInfo?.status_desp
             descLabbel.text = loanStatusInfo?.remark
         }
+    }
+    @objc func showSeachView()  {
+        delegate?.searchButtonClick?()
     }
 }
 class DSHomeLoanTitleView: DSHomeLoanView {

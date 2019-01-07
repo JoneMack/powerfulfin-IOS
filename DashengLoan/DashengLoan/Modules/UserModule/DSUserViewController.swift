@@ -160,10 +160,15 @@ extension DSUserViewController {
         pushToNextViewController(messageVC)
     }
     @objc fileprivate func showSericeViewController() {
+        let webVC = DSWebViewController()
+        webVC.urlString = questionURL
+        pushToNextViewController(webVC)
         
     }
     @objc fileprivate func showAboutViewController() {
-        
+        let webVC = DSWebViewController()
+        webVC.urlString = aboutUsURL
+        pushToNextViewController(webVC)
     }
     @objc fileprivate func logoutAction() {
         DSAccountDataService.logout()

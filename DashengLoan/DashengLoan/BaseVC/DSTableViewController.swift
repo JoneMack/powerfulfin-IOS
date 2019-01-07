@@ -11,7 +11,8 @@ import UIKit
 class DSTableViewController: DSViewController {
     var tableView:UITableView?
     var refreshControl:UIRefreshControl?
-    
+    var loadMoreEnable:Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTableView()
@@ -46,6 +47,9 @@ class DSTableViewController: DSViewController {
             tableView?.addSubview(refreshControl!)
         }
     }
+    func loadMoreDataFromService() {
+        loadMoreEnable = false
+    }
 
 }
 extension DSTableViewController:UITableViewDelegate,UITableViewDataSource {
@@ -63,6 +67,15 @@ extension DSTableViewController:UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let currentOffY = scrollView.contentOffset.y
+        let lastPageY = scrollView.contentSize.height - scrollView.frame.height - 1
+        
+        if currentOffY > lastPageY && loadMoreEnable {
+            loadMoreDataFromService()
+        }
+        
     }
 }
 

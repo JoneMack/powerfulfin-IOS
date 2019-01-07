@@ -52,21 +52,23 @@ class DSSearchViewController: DSTableViewController {
     override func rt_customBackItem(withTarget target: Any!, action: Selector!) -> UIBarButtonItem! {
         return nil
     }
+    override func loadMoreDataFromService() {
+        super.loadMoreDataFromService()
+        page += 1
+        loadSearchData(text: searView.searchBar.text!)
+    }
 }
 
 // MARK: - cell内容
 extension DSSearchViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return oragnationArray.count
-//        return 10
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DSSearchTableViewCell
         let orgation = oragnationArray[indexPath.row]
         cell.titleLabel?.text = orgation.name
         cell.detailLabel?.text = orgation.address
-//        cell.titleLabel?.text = "翡翠教育+++"
-//        cell.detailLabel?.text = "北京市海淀区中关村南路111号B座2109"
         return cell
     }
     // MARK:  cell点击，进入分期
@@ -80,8 +82,8 @@ extension DSSearchViewController {
         }else{
             DSApply.default.beginApply(orgation.id ?? "", fromController: self)
         }
-        
     }
+ 
 }
 
 // MARK: - 搜索框变化
@@ -118,6 +120,11 @@ extension DSSearchViewController {
                 self?.oragnationArray.removeAll()
             }
             self?.oragnationArray = (self?.oragnationArray ?? []) + (searchResult.list ?? [])
+            if (searchResult.list?.count ?? 0) < (Int(searchResult.pagesize ?? "10") ?? 10) {
+                self?.loadMoreEnable = false
+            }else{
+                self?.loadMoreEnable = true
+            }
             if self?.oragnationArray.count ?? 0 == 0 {
                 self?.showNoResultView()
             }else{

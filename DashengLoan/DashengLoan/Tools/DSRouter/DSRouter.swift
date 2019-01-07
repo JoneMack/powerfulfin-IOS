@@ -28,6 +28,8 @@ enum DSAction:String {
     case repaylist = "repaylist"
     /// 支付页
     case repay = "repay"
+    /// 扫描二维码
+    case qrapply = "qrapply"
 }
 class DSRouter {
     class func openURL(url:String?,complete:((Any)->Void)? = nil) {
@@ -49,9 +51,17 @@ class DSRouter {
                 return
             }
             let orderDetailVC = DSOrderDetailViewController()
-            orderDetailVC.orderId = (urlInfo.1)?["id"]
+            orderDetailVC.orderId = (urlInfo.1)?["lid"]
             UIApplication.shared.push(controller: orderDetailVC)
         case .messageList:
+            
+            if DSUserCenter.default.hasLogin == false {
+                DSRouter.loginWithController {
+                    DSRouter.openURL(url: url)
+                }
+                return
+            }
+            
             let messageVC = DSMessageViewController()
             UIApplication.shared.push(controller: messageVC)
         case .apply:
@@ -64,6 +74,9 @@ class DSRouter {
             if let id = urlInfo.1!["id"] {
                 DSApply.default.beginApply(id, fromController: UIApplication.shared.topViewController!)
             }
+        case .qrapply:
+            let scanVC = DSScanViewController()
+            UIApplication.shared.push(controller: scanVC)
         default: break
         }
     }
@@ -75,6 +88,9 @@ class DSRouter {
             if urlStr.hasPrefix(appHost) {
                 
                 var actions = parsingURLContentAction(url: urlStr, action: .messageList)
+                if actions.0 != .none { return actions}
+                
+                actions = parsingURLContentAction(url: urlStr, action: .qrapply)
                 if actions.0 != .none { return actions}
                 
                 actions = parsingURLContentAction(url: urlStr, action: .apply)
@@ -92,6 +108,7 @@ class DSRouter {
                 actions = parsingURLContentAction(url: urlStr, action: .repay)
                 if actions.0 != .none { return actions}
                
+                
             }
             
         }

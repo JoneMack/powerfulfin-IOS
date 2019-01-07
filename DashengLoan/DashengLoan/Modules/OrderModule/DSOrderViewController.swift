@@ -23,6 +23,8 @@ class DSOrderViewController: DSTableViewController {
         }else{
             showNoResultView()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(DSOrderViewController.loadOrederListData), name: DSApply.applyFinished, object: nil)
+
     }
     func configTableView() {
         tableView?.register(DSOrderTableViewCell.classForCoder(), forCellReuseIdentifier: cellIdentifier)

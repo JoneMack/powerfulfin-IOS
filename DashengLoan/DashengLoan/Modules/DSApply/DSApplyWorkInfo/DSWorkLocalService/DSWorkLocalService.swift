@@ -99,7 +99,7 @@ class DSWorkLocalService: DSApplyLocalService {
             workName.content = workInfo.work_name
             workAddress.province = workInfo.work_province ?? ""
             workAddress.city = workInfo.work_city ?? ""
-            workAddress.province = workInfo.work_area ?? ""
+            workAddress.area = workInfo.work_area ?? ""
             workAddress.address = (workInfo.work_province_name ?? "") + (workInfo.work_city_name ?? "") + (workInfo.work_area_name ?? "")
             wordAddress.content = workAddress.address
             workDetailAddress.content = workInfo.work_address
@@ -120,7 +120,7 @@ class DSWorkLocalService: DSApplyLocalService {
             schoolName.content = workInfo.school_name
             schoolAddressInfo.province = workInfo.school_province ?? ""
             schoolAddressInfo.city = workInfo.school_city ?? ""
-            schoolAddressInfo.province = workInfo.school_area ?? ""
+            schoolAddressInfo.area = workInfo.school_area ?? ""
             schoolAddressInfo.address = (workInfo.school_province_name ?? "") + (workInfo.school_city_name ?? "") + (workInfo.school_area_name ?? "")
             schoolAddress.content = schoolAddressInfo.address
             schoolDetailAddress.content = workInfo.school_address

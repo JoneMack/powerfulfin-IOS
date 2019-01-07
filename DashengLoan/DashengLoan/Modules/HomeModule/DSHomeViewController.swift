@@ -26,11 +26,11 @@ class DSHomeViewController: DSViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupNavigationView()
         configSubViews()
         firstLaunchReloadData()
         reloadViewStatus(false)
+        NotificationCenter.default.addObserver(self, selector: #selector(DSHomeViewController.reloadHomeData), name: DSApply.applyFinished, object: nil)
     }
     func configSubViews()  {
         view.addSubview(contentView)
@@ -72,7 +72,6 @@ class DSHomeViewController: DSViewController {
             contentView.addSubview(refreshControl)
         }
     }
-  
 }
 
 // MARK: - 导航栏
@@ -116,21 +115,32 @@ extension DSHomeViewController {
             let banner = homeInfo?.banner?[i]
             bannerArray.append(banner?.img ?? "")
         }
+        
         bannerView.loopView?.arrImage = bannerArray
-        newsView.titleLabel?.setTitle(title: homeInfo?.notice?.content ?? "")
+        var orY = bannerView.frame.maxY
+        if homeInfo?.notice?.content?.count == 0 {
+            newsView.isHidden = true
+        }else{
+            newsView.isHidden = false
+            newsView.titleLabel?.setTitle(title: homeInfo?.notice?.content ?? "")
+            orY = newsView.frame.maxY
+        }
         
         loanView?.removeFromSuperview()
         loanView =  DSHomeLoanView.loanView(loanStatus: homeInfo?.loan)
         loanView?.delegate = self
         contentView.addSubview(loanView!)
-        loanView?.frame = CGRect(x: 0, y: newsView.frame.maxY, width: XJDeviceInfo.screenWidth, height: 255)
+        loanView?.frame = CGRect(x: 0, y: orY, width: XJDeviceInfo.screenWidth, height: 255)
     }
 }
 // MARK: - 各页面跳转
 extension DSHomeViewController:DSHomeLoanButtonViewDelegate {
     func bottomBttonClicl(index: Int, action: String?) {
-        let actions = "powerfulfin://apply?id=300650"
-        DSRouter.openURL(url: actions)
+//        let actions = "powerfulfin://apply?id=300650"
+        DSRouter.openURL(url: action)
+    }
+    func searchButtonClick() {
+        showSearchViewController()
     }
     @objc fileprivate func showScanViewController()  {
         let scanVC = DSScanViewController()
@@ -138,7 +148,7 @@ extension DSHomeViewController:DSHomeLoanButtonViewDelegate {
     }
     @objc fileprivate func callCustomerService() {
         let phone = homeInfo?.customer_service?.phone
-        let phoneTitle = "呼叫:" + (phone ?? "")
+        let phoneTitle = "呼叫:" + (phone ?? "4000029691")
         
         let email = homeInfo?.customer_service?.email
         let emailTitle = "邮箱:" + (email ?? "")
@@ -176,6 +186,9 @@ extension DSHomeViewController:DSHomeBannerViewDelegate {
 // MARK: - 网络请求
 extension DSHomeViewController {
    @objc func reloadHomeData()  {
+    if self.refreshControl.isRefreshing == false {
+        XJToast.showToastAction()
+    }
         DSHomeDataService.loadHomeData {[weak self] (homeData, success) in
             self?.refreshControl.endRefreshing()
             if success == true {

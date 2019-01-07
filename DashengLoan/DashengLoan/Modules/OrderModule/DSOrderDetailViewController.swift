@@ -75,6 +75,7 @@ extension DSOrderDetailViewController {
             return cell
         }else if indexPath.section == 2 {
            let cell = tableView.dequeueReusableCell(withIdentifier: orderInfoIdentifier, for: indexPath) as! DSOrderInfoCell
+            cell.delegate = self
             cell.schoolNameLabel.text = orderInfo?.org_name
             cell.moneyLabel?.text = "￥\(orderInfo?.borrow_money ?? "")"
             var installment = "\(orderInfo?.installment ?? "")期"
@@ -87,6 +88,11 @@ extension DSOrderDetailViewController {
             cell.bankLabel.text = "\(orderInfo?.bank_account ?? "") \(orderInfo?.bank_name ?? "")"
             cell.applyTimeLabel.text = orderInfo?.create_time
             cell.sourceNameLabel.text = orderInfo?.resource_company
+            if orderInfo?.contract?.count ?? 0 > 0 {
+                cell.contactBtn.isHidden = false
+            }else{
+                cell.contactBtn.isHidden = true
+            }
             if (orderInfo?.audit_opinion) != nil {
                 cell.reasonLabel.text = orderInfo?.audit_opinion
                 cell.reasonTitleLabel.text = "拒绝原因"
@@ -127,11 +133,19 @@ extension DSOrderDetailViewController {
             navigationItem.title = "订单详情"
         }
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             let planVC = DSOrderPlanViewController()
             planVC.oid = self.orderId
             pushToNextViewController(planVC)
         }
+    }
+}
+extension DSOrderDetailViewController:DSOrderInfoCellDelegate {
+    func showContactViewAction() {
+        let webVC = DSWebViewController()
+        webVC.urlString = orderInfo?.contract ?? ""
+        pushToNextViewController(webVC)
     }
 }

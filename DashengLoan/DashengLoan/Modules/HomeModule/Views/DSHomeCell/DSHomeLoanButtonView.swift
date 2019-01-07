@@ -7,8 +7,9 @@
 //
 
 import UIKit
-protocol DSHomeLoanButtonViewDelegate:NSObjectProtocol {
+@objc protocol DSHomeLoanButtonViewDelegate:NSObjectProtocol {
     func bottomBttonClicl(index:Int,action:String?)
+    @objc optional func searchButtonClick() 
 }
 
 class DSHomeLoanButtonView: UIView {
