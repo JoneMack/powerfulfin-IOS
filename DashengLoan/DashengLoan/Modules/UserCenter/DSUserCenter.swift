@@ -13,6 +13,7 @@ import UIKit
     func userLogoutSuccess()
     @objc optional func userInfoChanged()
 }
+private let userKey = "user"
 class DSUserCenter: NSObject {
     static let `default` = DSUserCenter()
     fileprivate(set) var userInfo:DSUserInfo?
@@ -36,7 +37,7 @@ class DSUserCenter: NSObject {
     func applicationDidFinishLaunching() {
         
         do {
-            if let userJsonDic = UserDefaults.standard.value(forKey: "user") {
+            if let userJsonDic = UserDefaults.standard.value(forKey: userKey) {
                 let info = try XJDecoder.xj_decode(DSUserInfo.self, from: userJsonDic)
                 self.userInfo = info
                 noticeListenter(selector: #selector(DSUserStatusListener.userLoginSuccess))
@@ -67,7 +68,7 @@ extension DSUserCenter {
             let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(self.userInfo!)
             let json = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
-            UserDefaults.standard.set(json, forKey: "user")
+            UserDefaults.standard.set(json, forKey: userKey)
             UserDefaults.standard.synchronize()
         } catch {}
     }
@@ -87,12 +88,12 @@ extension DSUserCenter {
             let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(userInfo)
             let json = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
-            UserDefaults.standard.set(json, forKey: "user")
+            UserDefaults.standard.set(json, forKey: userKey)
             UserDefaults.standard.synchronize()
         } catch {}
     }
     func logoutFromLocalService() {
-        UserDefaults.standard.removeObject(forKey: "user")
+        UserDefaults.standard.removeObject(forKey: userKey)
         UserDefaults.standard.synchronize()
         if let cookies = HTTPCookieStorage.shared.cookies {
             for cookie in cookies {

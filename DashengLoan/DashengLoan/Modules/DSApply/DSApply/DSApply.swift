@@ -51,15 +51,20 @@ extension DSApply {
             NotificationCenter.default.post(name: DSApply.applyFinished, object: nil)
             beginController?.navigationController?.popToRootViewController(animated: true)
         }
-        if step != 7 {
+        if step > 0 && step < 7 {
             removeMiddleViewController()
         }
     }
     fileprivate func removeMiddleViewController(){
-           var controllers = beginController?.rt_navigationController.viewControllers
-           let topViewController = beginController?.rt_navigationController.topViewController
-        controllers?.removeObjects(from: beginController!, to: topViewController!)
-        beginController?.rt_navigationController.viewControllers = controllers!
+        
+        var controllers = beginController?.rt_navigationController?.viewControllers
+        let orgControllers = beginController?.rt_navigationController.rt_viewControllers
+        let count = (controllers?.count)!-1
+        let formIndex = (orgControllers?.index(of: beginController!))! + 1
+        if count > formIndex {
+            controllers?.removeSubrange(formIndex..<count)
+            beginController?.rt_navigationController?.viewControllers = controllers!
+        }
     }
     fileprivate func updateCurrentStep() {
         let topVC = beginController?.rt_navigationController.rt_topViewController

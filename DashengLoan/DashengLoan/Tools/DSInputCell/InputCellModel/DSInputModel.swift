@@ -30,8 +30,9 @@ class DSInputModel:NSObject {
     var subContent:String?
     var validater:DSTextValidater?
     
-    //仅用于DSRightButtonCell
+    //用于DSRightButtonCell和DSSelectorRightButtonCell
     var rightTitle:String?
+    var rightImage:String?
     
     //仅仅用于DSSelectorCell中，
     var alignment:NSNumber?

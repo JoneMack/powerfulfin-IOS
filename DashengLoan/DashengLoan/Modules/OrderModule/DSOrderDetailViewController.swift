@@ -137,7 +137,7 @@ extension DSOrderDetailViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             let planVC = DSOrderPlanViewController()
-            planVC.oid = self.orderId
+            planVC.lid = self.orderId
             pushToNextViewController(planVC)
         }
     }

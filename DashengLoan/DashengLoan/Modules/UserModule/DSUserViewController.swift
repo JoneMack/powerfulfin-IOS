@@ -172,7 +172,7 @@ extension DSUserViewController {
     }
     @objc fileprivate func logoutAction() {
         DSAccountDataService.logout()
-        DSUserCenter.`default`.logout()
+        DSUserCenter.default.logout()
     }
     
 }

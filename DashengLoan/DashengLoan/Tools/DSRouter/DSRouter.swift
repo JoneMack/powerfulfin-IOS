@@ -9,7 +9,18 @@
 
 import UIKit
 private let appHost = "powerfulfin"
-
+/*
+ 见接口文档首页
+ https://www.tapd.cn/55304220/documents/show/1155304220001000018?file_type=word
+ 
+ 立即申请：powerfulfin://apply?oid=123
+ 扫码申请：powerfulfin://qrapply
+ 消息列表：powerfulfin://msglist
+ 订单详情：powerfulfin://loandetail?lid=123
+ 分期协议/征信授权确认：powerfulfin://loanconfirm?lid=123
+ 还款计划表：powerfulfin://repaylist?lid=123
+ 去还款：powerfulfin://repay?lid=123
+ */
 /// 动作或者类型
 enum DSAction:String {
     //无动作
@@ -61,9 +72,24 @@ class DSRouter {
                 }
                 return
             }
-            
             let messageVC = DSMessageViewController()
             UIApplication.shared.push(controller: messageVC)
+        case .loanconfirm:
+            break
+        case .repay:
+            break
+        case .repaylist:
+            if DSUserCenter.default.hasLogin == false {
+                DSRouter.loginWithController {
+                    DSRouter.openURL(url: url)
+                }
+                return
+            }
+            if let id = urlInfo.1!["lid"] {
+                let planVC = DSOrderPlanViewController()
+                planVC.lid = id
+                UIApplication.shared.push(controller: planVC)
+            }
         case .apply:
             if DSUserCenter.default.hasLogin == false {
                 DSRouter.loginWithController {
@@ -71,9 +97,12 @@ class DSRouter {
                 }
                 return
             }
-            if let id = urlInfo.1!["id"] {
-                DSApply.default.beginApply(id, fromController: UIApplication.shared.topViewController!)
+            if let id = urlInfo.1!["oid"] {
+                let topViewController = UIApplication.shared.topViewController
+                
+                DSApply.default.beginApply(id, fromController: topViewController!)
             }
+            
         case .qrapply:
             let scanVC = DSScanViewController()
             UIApplication.shared.push(controller: scanVC)

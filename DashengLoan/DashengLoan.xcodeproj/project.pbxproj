@@ -47,6 +47,9 @@
 		350A010721E0B78900DFE703 /* DSUserMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010621E0B78900DFE703 /* DSUserMessageCell.swift */; };
 		350A010921E2E78D00DFE703 /* DSScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010821E2E78D00DFE703 /* DSScanViewController.swift */; };
 		350A010B21E2EBBD00DFE703 /* DSSacnBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010A21E2EBBD00DFE703 /* DSSacnBaseViewController.swift */; };
+		350A010D21E34C1200DFE703 /* DSSelectorRightButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010C21E34C1200DFE703 /* DSSelectorRightButtonCell.swift */; };
+		350A011021E3504100DFE703 /* DSApplyInfoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010F21E3504100DFE703 /* DSApplyInfoAlertView.swift */; };
+		350A011221E3507600DFE703 /* DSApplyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A011121E3507600DFE703 /* DSApplyInfo.swift */; };
 		350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A521D06E170055EFA6 /* CLLoopView.swift */; };
 		350A68A821D0769B0055EFA6 /* MarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A721D0769B0055EFA6 /* MarqueeView.swift */; };
 		350A68AA21D0A71E0055EFA6 /* DSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A921D0A71E0055EFA6 /* DSSearchView.swift */; };
@@ -221,6 +224,9 @@
 		350A010621E0B78900DFE703 /* DSUserMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserMessageCell.swift; sourceTree = "<group>"; };
 		350A010821E2E78D00DFE703 /* DSScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSScanViewController.swift; sourceTree = "<group>"; };
 		350A010A21E2EBBD00DFE703 /* DSSacnBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSacnBaseViewController.swift; sourceTree = "<group>"; };
+		350A010C21E34C1200DFE703 /* DSSelectorRightButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSelectorRightButtonCell.swift; sourceTree = "<group>"; };
+		350A010F21E3504100DFE703 /* DSApplyInfoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyInfoAlertView.swift; sourceTree = "<group>"; };
+		350A011121E3507600DFE703 /* DSApplyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyInfo.swift; sourceTree = "<group>"; };
 		350A68A521D06E170055EFA6 /* CLLoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoopView.swift; sourceTree = "<group>"; };
 		350A68A721D0769B0055EFA6 /* MarqueeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeView.swift; sourceTree = "<group>"; };
 		350A68A921D0A71E0055EFA6 /* DSSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchView.swift; sourceTree = "<group>"; };
@@ -489,6 +495,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		350A010E21E34FA000DFE703 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				350A010F21E3504100DFE703 /* DSApplyInfoAlertView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		350A68A421D06E040055EFA6 /* XJRoopView */ = {
 			isa = PBXGroup;
 			children = (
@@ -631,6 +645,7 @@
 				350A68E121D2406E0055EFA6 /* DSIdImageCell.swift */,
 				350A68F921D32BA30055EFA6 /* DSRightButtonCell.swift */,
 				350A691921D362700055EFA6 /* DSMutableImageCell.swift */,
+				350A010C21E34C1200DFE703 /* DSSelectorRightButtonCell.swift */,
 			);
 			path = DSInputCell;
 			sourceTree = "<group>";
@@ -747,6 +762,7 @@
 		350A691B21D364FC0055EFA6 /* DSApplyOrderInfo */ = {
 			isa = PBXGroup;
 			children = (
+				350A010E21E34FA000DFE703 /* Views */,
 				350A691E21D365610055EFA6 /* DSOrderLocalService */,
 				350A691C21D365470055EFA6 /* DSApplyOrderViewController.swift */,
 			);
@@ -757,6 +773,7 @@
 			isa = PBXGroup;
 			children = (
 				350A691F21D3658E0055EFA6 /* DSOrderLocalService.swift */,
+				350A011121E3507600DFE703 /* DSApplyInfo.swift */,
 				350A692121D365BF0055EFA6 /* order.plist */,
 			);
 			path = DSOrderLocalService;
@@ -1407,6 +1424,7 @@
 				3508778321CDEA94006580AD /* DSHomeSearchControl.swift in Sources */,
 				350A690B21D34CF90055EFA6 /* DSWorkViewController.swift in Sources */,
 				350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */,
+				350A011021E3504100DFE703 /* DSApplyInfoAlertView.swift in Sources */,
 				3548368221BA1765008AB78D /* DSTabBarController.swift in Sources */,
 				3508525421C352810095C391 /* DSLoactionManager.swift in Sources */,
 				3513215E21D6166A005AB183 /* DSUserBanksInfo.swift in Sources */,
@@ -1420,6 +1438,7 @@
 				350A68CB21D1CF590055EFA6 /* DSUserIdViewController.swift in Sources */,
 				350A68DC21D202800055EFA6 /* DSInputModel.swift in Sources */,
 				350A68B121D0B56E0055EFA6 /* DSHomeDataService.swift in Sources */,
+				350A010D21E34C1200DFE703 /* DSSelectorRightButtonCell.swift in Sources */,
 				350A68ED21D266E00055EFA6 /* DSDate.swift in Sources */,
 				350A68C121D106020055EFA6 /* DSRouter.swift in Sources */,
 				35552C7A21CB5DB6002033FC /* DSUserInfo.swift in Sources */,
@@ -1433,6 +1452,7 @@
 				3513216A21D6571B005AB183 /* DSUserWork.swift in Sources */,
 				350A68CF21D1D4DC0055EFA6 /* DSApplyDataService.swift in Sources */,
 				35A82B3921CB976B0009D5F2 /* DSPhoneButton.swift in Sources */,
+				350A011221E3507600DFE703 /* DSApplyInfo.swift in Sources */,
 				3513215221D4FAC3005AB183 /* DSImageInfo.swift in Sources */,
 				350A00D521DE2C7600DFE703 /* DSImage.swift in Sources */,
 				3513215821D5F9AE005AB183 /* DSPhoneViewController.swift in Sources */,

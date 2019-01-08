@@ -12,7 +12,6 @@ class DSWebViewController: DSViewController {
     fileprivate let webProgressKey:String = "estimatedProgress"
     fileprivate let webTitleKey:String = "title"
 
-    
     open var urlString:String = ""
     
     fileprivate let webView = WKWebView()
@@ -23,6 +22,11 @@ class DSWebViewController: DSViewController {
         configSubViews()
         loadRequest()
         
+    }
+    deinit {
+        webView.removeObserver(self, forKeyPath: webProgressKey)
+        webView.removeObserver(self, forKeyPath: webTitleKey)
+
     }
     func configSubViews()  {
         view.addSubview(webView)

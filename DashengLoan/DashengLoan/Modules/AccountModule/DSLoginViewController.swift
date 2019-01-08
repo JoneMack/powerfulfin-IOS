@@ -254,7 +254,7 @@ extension DSLoginViewController {
         if validateLoginEnable() == false {
             return
         }
-        view.resignFirstResponder()
+        view.endEditing(false)
     
         let type:NSInteger = loginTypeBtn.isSelected == false ? 1 : 2
         

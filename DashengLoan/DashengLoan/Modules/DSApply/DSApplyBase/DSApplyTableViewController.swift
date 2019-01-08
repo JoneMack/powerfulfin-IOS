@@ -33,6 +33,7 @@ class DSApplyTableViewController: DSTableViewController {
         footView = DSApplyFooterView(title: title)
         footView?.delegate = self
         tableView?.tableFooterView = footView
+       
     }
     override func tableViewType() -> UITableView.Style {
         return .grouped

@@ -11,18 +11,26 @@ import UIKit
 class DSApplyOrderViewController: DSApplyTableViewController {
     
     fileprivate var configer:DSUserOrderConfiger?
+    fileprivate let applyInfo = DSApplyInfo()
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = DSOrderLocalService()
         navigationItem.title = "订单资料"
         loadFooterView(title: "完成")
         footView?.showAgreement()
+        tableView?.tableFooterView = footView
         loadConfiger()
     }
- 
 }
 extension DSApplyOrderViewController {
-  
+    override func configCell(_ cell: DSInputTableViewCell, model: DSInputModel, indexPath: IndexPath) {
+        super.configCell(cell, model: model, indexPath: indexPath)
+        if model.title == "分期产品" {
+            if let rightCell = cell as? DSSelectorRightButtonCell {
+                rightCell.rightButton.isHidden = false
+            }
+        }
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let model = dataSource.cellMode(indexPath: indexPath)
         if model.title == "场景照片" || model.title == "培训协议" || model.title == "手持身份证照片" || model.title == "声明照片" {
@@ -54,6 +62,24 @@ extension DSApplyOrderViewController {
 
 // MARK: - 数据和日期选择
 extension DSApplyOrderViewController {
+    func inputCell(inputCell: DSInputTableViewCell, rightButtonClick rightBtn: UIButton) {
+        
+        let amountModel = dataSource.cellMode(indexPath: IndexPath(row: 1, section: 0))
+        if amountModel.content?.count == 0 {
+            XJToast.showToastAction(message: amountModel.placeholder!)
+            return
+        }
+        let model = dataSource.cellMode(indexPath: inputCell.indexPath)
+        if model.content?.count == 0 {
+            XJToast.showToastAction(message: model.placeholder!)
+            return
+        }
+        applyInfo.loanAmount = amountModel.content
+        let alertView =  DSApplyInfoAlertView()
+        alertView.applyInfo = applyInfo
+        alertView.showAlertController(from: self)
+        
+    }
    fileprivate func showDataPicker(dataArray:[String],mode:DSInputModel,indexPath:IndexPath)  {
         let dataPicker = XJDataPicker()
         dataPicker.dataArray = dataArray
@@ -75,10 +101,12 @@ extension DSApplyOrderViewController {
                 }
             }
         }else if model.title == "分期产品" {
-            for course in configer?.loanProducts ?? [] {
-                model.subContent = course.loan_product
+            for productInfo in configer?.loanProducts ?? [] {
+                model.subContent = productInfo.loan_product
+                 applyInfo.productInfo = productInfo
                 break
             }
+            
         }
     }
     

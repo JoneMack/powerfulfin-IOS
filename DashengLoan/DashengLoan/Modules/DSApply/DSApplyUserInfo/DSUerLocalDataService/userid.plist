@@ -7,7 +7,7 @@
 			<key>alignment</key>
 			<integer>2</integer>
 			<key>content</key>
-			<string>自动识别</string>
+			<string>重新识别</string>
 			<key>type</key>
 			<string>DSSelectorCell</string>
 			<key>title</key>

@@ -9,7 +9,7 @@
 import UIKit
 private let cellIdentifier = "DSPlanTableViewCell"
 class DSOrderPlanViewController: DSTableViewController {
-    var oid:String?
+    var lid:String?
     fileprivate var planArray:[DSPlanInfo] = []
     fileprivate var resultView:DSSearchResultView?
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ extension DSOrderPlanViewController {
         if refreshControl?.isRefreshing == false {
             XJToast.showToastAction()
         }
-        DSOrderDataService.getOrderPlanInfo(lid: self.oid!) {[weak self] (planInfo, success) in
+        DSOrderDataService.getOrderPlanInfo(lid: self.lid!) {[weak self] (planInfo, success) in
             if success {
                 self?.planArray.removeAll()
                 self?.planArray += planInfo?.loan_bill ?? []

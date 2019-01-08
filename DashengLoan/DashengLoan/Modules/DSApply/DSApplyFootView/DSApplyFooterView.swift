@@ -29,6 +29,7 @@ class DSApplyFooterView: UIView {
     
     convenience init(title:String) {
         self.init(frame: CGRect(x: 0, y: 0, width: XJDeviceInfo.screenWidth, height: 120))
+        translatesAutoresizingMaskIntoConstraints = false
         footBtn = DSButton(type: .custom)
         footBtn?.borderType = .back
         footBtn?.titleLabel?.font = UIFont.ds_font(ptSize: 17)
@@ -38,12 +39,8 @@ class DSApplyFooterView: UIView {
 
         footBtn?.addTarget(self, action: #selector(DSApplyFooterView.footButtonClick), for: .touchUpInside)
         addSubview(footBtn!)
-        footBtn?.snp.makeConstraints({ (maker) in
-            maker.top.equalTo(27)
-            maker.left.equalTo(15)
-            maker.right.equalTo(-15)
-            maker.height.equalTo(50)
-        })
+        footBtn?.frame = CGRect(x: 15, y: 27, width: XJDeviceInfo.screenWidth-30, height: 50)
+        
         self.title = title
     }
     @objc func footButtonClick() {
@@ -57,8 +54,12 @@ extension DSApplyFooterView {
         var orgFrame = frame
         orgFrame.size.height += 150
         frame = orgFrame
-        
-        
+        snp.remakeConstraints { (maker) in
+            maker.top.equalTo(orgFrame.minY)
+            maker.left.equalTo(0)
+            maker.width.equalTo(XJDeviceInfo.screenWidth)
+            maker.height.equalTo(orgFrame.height)
+        }
         
         trainButton = UIButton(type: .custom)
         configAgreementButton(btn: trainButton!)

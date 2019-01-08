@@ -24,10 +24,12 @@
 			<string>请输入分期金额</string>
 		</dict>
 		<dict>
+			<key>rightImage</key>
+			<string>apply_info_icon</string>
 			<key>servicename</key>
 			<string>loan_product</string>
 			<key>type</key>
-			<string>DSSelectorCell</string>
+			<string>DSSelectorRightButtonCell</string>
 			<key>title</key>
 			<string>分期产品</string>
 			<key>placeholder</key>

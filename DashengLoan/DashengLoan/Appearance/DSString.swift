@@ -55,8 +55,59 @@ extension String {
     }
    
 }
+
+
+// MARK: - 数学计算
 extension String {
+    /// 乘法
+    func multiplyingBy(_ value:String) -> String {
+        if value.count > 0 {
+            let numberA = NSDecimalNumber(string: self)
+            let numberB = NSDecimalNumber(string: value)
+            let result = numberA.multiplying(by: numberB)
+            return result.stringValue
+        }
+        return self
+    }
+    /// 除以
+    func dividingBy(_ value:String) -> String {
+        if value.count > 0 {
+            let numberA = NSDecimalNumber(string: self)
+            let numberB = NSDecimalNumber(string: value)
+            let result = numberA.dividing(by: numberB)
+            return result.stringValue
+        }
+        return self
+    }
+    /// 减法
+    func subtractingBy(_ value:String) -> String {
+        if value.count > 0 {
+            let numberA = NSDecimalNumber(string: self)
+            let numberB = NSDecimalNumber(string: value)
+            let result = numberA.subtracting(numberB)
+            return result.stringValue
+        }
+        return self
+    }
+    /// 加法
+    func addingBy(_ value:String) -> String {
+        if value.count > 0 {
+            let numberA = NSDecimalNumber(string: self)
+            let numberB = NSDecimalNumber(string: value)
+            let result = numberA.adding(numberB)
+            return result.stringValue
+        }
+        return self
+    }
+    
     func twoScaleValue() -> String {
+        /*
+         scale : 需要保留的精度。
+         raiseOnExactness : 为YES时在处理精确时如果有错误，就会抛出异常。
+         raiseOnOverflow  : YES时在计算精度向上溢出时会抛出异常，否则返回。
+         raiseOnUnderflow : YES时在计算精度向下溢出时会抛出异常，否则返回.
+         raiseOnDivideByZero : YES时。当除以0时会抛出异常，否则返回。
+         */
         let numberA = NSDecimalNumber(string: self)
         let numberHandler = NSDecimalNumberHandler(roundingMode: .plain, scale: 2, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)
         var valueString = numberA.rounding(accordingToBehavior: numberHandler).stringValue

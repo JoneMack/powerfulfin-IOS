@@ -9,7 +9,7 @@
 import UIKit
 extension UIApplication {
     var topViewController:UIViewController? {
-        return self.currentNavigationController?.viewControllers.last
+        return self.currentNavigationController?.rt_navigationController.rt_topViewController
     }
     var currentNavigationController:UINavigationController? {
         var parent: UIViewController?
