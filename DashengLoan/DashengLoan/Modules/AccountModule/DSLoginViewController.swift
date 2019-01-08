@@ -11,8 +11,8 @@ import SnapKit
 class DSLoginViewController: DSViewController {
     fileprivate let loginTypeBtn = UIButton(type: .custom)
     fileprivate let titleLabel = UILabel()
-    fileprivate let userNameTF = XJTextFiled()
-    fileprivate let passwordTF = XJTextFiled()
+    fileprivate let userNameTF = XJTextField()
+    fileprivate let passwordTF = XJTextField()
     fileprivate let codeBtn = UIButton(type: .custom)
     fileprivate let loginBtn = DSButton(type: .custom)
     

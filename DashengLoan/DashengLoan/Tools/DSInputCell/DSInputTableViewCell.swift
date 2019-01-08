@@ -37,7 +37,7 @@ class DSInputTableViewCell: DSTableViewCell {
     weak var delegate:DSInputTableViewCellDelegate?
     
     var titleLabel:UILabel!
-    var contentTextField:XJTextFiled!
+    var contentTextField:XJTextField!
     
     required override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -45,7 +45,7 @@ class DSInputTableViewCell: DSTableViewCell {
         titleLabel = UILabel()
         titleLabel.configLabel(color: .ds_blackText, font: .ds_font(ptSize: 15))
         contentView.addSubview(titleLabel)
-        contentTextField = XJTextFiled()
+        contentTextField = XJTextField()
         contentTextField.font = UIFont.ds_font(ptSize: 15)
         contentTextField.tintColor = .ds_blackText
         contentTextField.textColor = .ds_blackText
@@ -67,9 +67,11 @@ class DSInputTableViewCell: DSTableViewCell {
     }
     func configCellData(model:DSInputModel)  {
         titleLabel.text = model.title
-        contentTextField.validater = model.validater
         contentTextField.placeholder = model.placeholder
         contentTextField.text = model.content
+        contentTextField.keyboardType = model.keyboardType
+        contentTextField.validater = model.validater
+        
     }
 }
 extension DSInputTableViewCell {

@@ -40,8 +40,8 @@ class XJNetWork {
     //大圣分期 公共参数：lng，lat，version，phoneid，ssid，mac，_t
     class func request(_ requst:XJRequest,successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void)) {
         var paramrters = requst.parameters
-        paramrters["lng"] = DSLoactionManager.manager.longitude
-        paramrters["lat"] = DSLoactionManager.manager.latitude
+        paramrters["lng"] = DSLocationManager.manager.longitude
+        paramrters["lat"] = DSLocationManager.manager.latitude
         paramrters["version"] = XJDeviceInfo.appVersion
         paramrters["phoneid"] = XJDeviceInfo.deviceId
         let wifiInfo = XJDeviceInfo.wifiInfo

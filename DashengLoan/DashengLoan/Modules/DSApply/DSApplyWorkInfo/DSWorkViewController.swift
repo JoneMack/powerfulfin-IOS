@@ -67,7 +67,6 @@ extension DSWorkViewController {
         }else if model.title == "职位名称" {
             showDataPicker(dataArray: applyConfiger?.work_profession ?? [], mode: model, indexPath: indexPath)
         }else if model.title == "所在地" {
-            
             let addressPicker = DSAddressPicker()
             addressPicker.delegate = self
             addressPicker.tipsTitle = "请选择省市区"
@@ -95,6 +94,10 @@ extension DSWorkViewController {
             dataPicker.selectData = { [weak self] (data) in
                 mode.content = data
                 self?.tableView?.reloadRows(at: [indexPath], with: .automatic)
+                if mode.title == "职业" && data == "学生" {
+                    (self?.dataSource as! DSWorkLocalService).changeItem(index: 1)
+                    self?.tableView?.reloadSections(IndexSet(integer: 1), with: .automatic)
+                }
             }
         }
     }

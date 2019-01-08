@@ -7,53 +7,70 @@
 //
 
 import UIKit
-enum CellType : Int {
-    case normal = 0 //DSInputCell
-    case selector = 1 //DSSelectorCell
-    case idImage = 2 //DSIdImageCell
-    case rightBtn = 4 //DSRightButtonCell
-    case mutableImage = 5 //DSMutableImageCell
-}
 
+/*
+ //DSInputCell、DSSelectorCell、DSIdImageCell、DSRightButtonCell、DSMutableImageCell
+ */
 @objcMembers
 class DSInputModel:NSObject {
     var type:String = "DSInputCell"
     
     // 服务器字段名字
-    var servicename : String = ""
+    fileprivate(set) var servicename : String = ""
     
     
-    var title:String?
+    fileprivate(set) var title:String?
     
-    var placeholder:String?
-    var content:String?
-    var subContent:String?
-    var validater:DSTextValidater?
+    
+    fileprivate(set) var placeholder:String?
+    open var content:String?
+    open var subContent:String?
+    
+    fileprivate(set) var keyboardType:UIKeyboardType = .default
+    
+    fileprivate(set) var validater:DSTextValidater = DSNoramlValidater()
+    
     
     //用于DSRightButtonCell和DSSelectorRightButtonCell
-    var rightTitle:String?
-    var rightImage:String?
+    open var rightTitle:String?
+    open var rightImage:String?
     
     //仅仅用于DSSelectorCell中，
-    var alignment:NSNumber?
+    fileprivate(set) var alignment:NSNumber?
     
     // 用于DSMutableImageCell
     /// 照片信息
     var images:[DSImageInfo]?
     /// 多张上传的时候，最大上传数量
-    var maxcount:NSNumber?
-    var tipimage:String?
-    var tips:String?
+    fileprivate(set) var maxcount:NSNumber?
+    fileprivate(set) var tipimage:String?
+    fileprivate(set) var tips:String?
     
     
     
     convenience init(dic:[String:Any]) {
         self.init()
         setValuesForKeys(dic)
- 
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-
+        if key == "textValidater" {
+            if let num = value as? NSNumber {
+                if num.intValue == 1 {
+                    validater = DSNoramlValidater()
+                }else if num.intValue == 2 {
+                    validater = DSIdValidater()
+                }else if num.intValue == 3 {
+                    validater = DSPhoneValidater()
+                }else if num.intValue == 4 {
+                    validater = DSBankCodeValidater()
+                }
+            }
+            
+        }else if key == "keyboard" {
+            if let num = value as? NSNumber {
+                keyboardType = UIKeyboardType(rawValue: num.intValue) ?? .default
+            }
+        }
     }
 }

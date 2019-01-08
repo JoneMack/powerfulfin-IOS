@@ -49,12 +49,16 @@
 		<string>单位电话</string>
 		<key>placeholder</key>
 		<string>请输入单位电话</string>
+		<key>keyboard</key>
+		<integer>4</integer>
 	</dict>
 	<dict>
 		<key>type</key>
 		<string>DSInputCell</string>
 		<key>title</key>
 		<string>月收入</string>
+		<key>keyboard</key>
+		<integer>4</integer>
 		<key>placeholder</key>
 		<string>请输入月收入</string>
 	</dict>

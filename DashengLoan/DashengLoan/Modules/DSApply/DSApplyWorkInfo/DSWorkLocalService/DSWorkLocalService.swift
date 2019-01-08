@@ -38,6 +38,10 @@ class DSWorkLocalService: DSApplyLocalService {
         studentModels += loadSectionData(fileName: "student")
         unemployedModels += loadSectionData(fileName: "unemployed")
     }
+    
+    /// 切换tab
+    ///
+    /// - Parameter index: 0是在职 1 是学生 2 是待业
     func changeItem(index:Int)  {
         var monthInCome = ""
         

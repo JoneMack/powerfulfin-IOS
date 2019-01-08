@@ -65,12 +65,13 @@ extension DSApplyOrderViewController {
     func inputCell(inputCell: DSInputTableViewCell, rightButtonClick rightBtn: UIButton) {
         
         let amountModel = dataSource.cellMode(indexPath: IndexPath(row: 1, section: 0))
-        if amountModel.content?.count == 0 {
+        
+        if amountModel.content == nil || amountModel.content?.isEmpty == true || amountModel.content?.count == 0 {
             XJToast.showToastAction(message: amountModel.placeholder!)
             return
         }
         let model = dataSource.cellMode(indexPath: inputCell.indexPath)
-        if model.content?.count == 0 {
+        if model.content == nil || model.content?.isEmpty == true || model.content?.count == 0  {
             XJToast.showToastAction(message: model.placeholder!)
             return
         }
@@ -132,7 +133,6 @@ extension DSApplyOrderViewController {
     /// 获取配置信息
     func loadConfiger()  {
         XJToast.showToastAction()
-        self.schooId = "1"
         DSApplyDataService.getOrderConfiger(oid: self.schooId) {[weak self] (configer) in
             self?.configer = configer
             if let localDataSource = self?.dataSource as? DSOrderLocalService {

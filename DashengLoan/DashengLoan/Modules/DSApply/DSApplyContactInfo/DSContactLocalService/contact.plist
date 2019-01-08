@@ -10,6 +10,8 @@
 			<string>邮箱</string>
 			<key>placeholder</key>
 			<string>请输入邮箱</string>
+			<key>keyboard</key>
+			<integer>7</integer>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -26,6 +28,8 @@
 			<string>QQ号</string>
 			<key>placeholder</key>
 			<string>请输入QQ号</string>
+			<key>keyboard</key>
+			<integer>4</integer>
 		</dict>
 	</array>
 	<array>
@@ -84,6 +88,10 @@
 			<string>DSRightButtonCell</string>
 			<key>title</key>
 			<string>手机号码</string>
+			<key>keyboard</key>
+			<integer>4</integer>
+			<key>textValidater</key>
+			<integer>3</integer>
 			<key>placeholder</key>
 			<string>请输入紧急联系人的手机号码</string>
 		</dict>

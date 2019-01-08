@@ -25,7 +25,7 @@ class DSLocationViewController: DSViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "重新获取", style: .plain, target: self, action: #selector(DSLocationViewController.reloadUserLocation))
         view.backgroundColor = UIColor.ds_backgroundColor
         loadSubViews()
-        DSLoactionManager.manager.addListener(listen: self)
+        DSLocationManager.manager.addListener(listen: self)
         reloadUserLocation()
         if hasNext {
             loadFooterView("下一步")
@@ -67,8 +67,6 @@ class DSLocationViewController: DSViewController {
             maker.right.equalTo(0)
             maker.height.equalTo(0.5)
         }
-        
-        
         
         addressLabel = UILabel()
         addressLabel?.configLabel(color: .ds_blackText, font: .ds_font(ptSize: 14))
@@ -114,7 +112,7 @@ extension DSLocationViewController {
     /// 网络请求
     func loadUserLocationInfo()  {
         XJToast.showToastAction()
-        DSApplyDataService.getUserLocationInfo(organId: "1") {[weak self] (locationInfo) in
+        DSApplyDataService.getUserLocationInfo(organId: self.schooId) {[weak self] (locationInfo) in
             if locationInfo != nil {
                 self?.locationInfo = locationInfo
                 self?.updateUserLocationViewInfo(true)
@@ -126,8 +124,8 @@ extension DSLocationViewController {
     func updateUserLocationViewInfo(_ success:Bool) {
         if success {
             footerView?.footBtn?.isEnabled = true
-            let lat = DSLoactionManager.manager.latitude.twoScaleValue()
-            let lng = DSLoactionManager.manager.longitude.twoScaleValue()
+            let lat = DSLocationManager.manager.latitude.twoScaleValue()
+            let lng = DSLocationManager.manager.longitude.twoScaleValue()
             coordinateLabel?.text = "您当前位置坐标:(\(lat),\(lng))"
             addressLabel?.text = "地址：" + (locationInfo?.address ?? "")
             
@@ -159,13 +157,27 @@ extension DSLocationViewController {
 }
 extension DSLocationViewController:DSLocationDelegate,DSApplyFooterViewDelegate {
     @objc fileprivate func reloadUserLocation(){
-        DSLoactionManager.manager.updateUserLoaction()
+        DSLocationManager.manager.updateUserLoaction()
     }
     func userLocationDidUpdate(_ success: Bool, error: Error?) {
         if success {
             loadUserLocationInfo()
         }else{
-            updateUserLocationViewInfo(false)
+            if DSLocationManager.manager.authStatus == .denied {
+                let alertController = UIAlertController(title: "权限不足", message: "请在系统隐私设置中，允许本APP对您当前位置的访问", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "前往", style: .default, handler: { (action) in
+                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                        if UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.openURL(url)
+                        }
+                    }                }))
+                alertController.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+                present(alertController, animated: true, completion: nil)
+                
+                updateUserLocationViewInfo(false)
+            }else{
+                updateUserLocationViewInfo(false)
+            }
         }
     }
     func footViewClick(footBtn: UIButton) {

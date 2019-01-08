@@ -25,8 +25,10 @@ extension DSBankLocalService {
         let bankModel = cellMode(indexPath: IndexPath(row: 0, section: 0))
         let bankCodeModel = cellMode(indexPath: IndexPath(row: 1, section: 0))
         let phoneModel = cellMode(indexPath: IndexPath(row: 2, section: 0))
+        let bankCode = bankCodeModel.content?.replacingOccurrences(of: " ", with: "")
+        
         return ["bank_code":bankModel.subContent ?? "",
-            "bank_account":bankCodeModel.content ?? "",
+            "bank_account":bankCode ?? "",
             "phone":phoneModel.content ?? ""]
     }
     func getBindCardParaDic() -> [String:String] {

@@ -22,6 +22,10 @@
 			<string>DSInputCell</string>
 		</dict>
 		<dict>
+			<key>keyboard</key>
+			<integer>2</integer>
+			<key>textValidater</key>
+			<integer>2</integer>
 			<key>placeholder</key>
 			<string>请输入身份证号</string>
 			<key>type</key>

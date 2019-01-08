@@ -63,6 +63,8 @@
 		<string>DSInputCell</string>
 		<key>title</key>
 		<string>家庭月收入</string>
+		<key>keyboard</key>
+		<integer>4</integer>
 		<key>placeholder</key>
 		<string>请输入家庭月收入</string>
 	</dict>

@@ -8,16 +8,21 @@
 
 import UIKit
 import CommonCrypto
-enum DSPic:String {
-    case idcardface = "idcard_information_pic"
-    case idcardback = "idcard_national_pic"
-    case education = "edu_pic"
-    case scene = "scene_pic"
-    case person = "person_pic"
-    case contract = "train_contract_pic"
-    case statement = "train_statement_pic"
-    func url() -> String {
-        return self.rawValue + "_url"
+extension String {
+    public subscript(bounds: CountableRange<Int>) -> String {
+        
+        let string = self[index(startIndex, offsetBy: bounds.lowerBound) ..< index(startIndex, offsetBy: bounds.upperBound)]
+        return String(string)
+    }
+    
+    public subscript(bounds: CountableClosedRange<Int>) -> String {
+        let string = self[index(startIndex, offsetBy: bounds.lowerBound) ... index(startIndex, offsetBy: bounds.upperBound)]
+        return String(string)
+    }
+    
+    public subscript(index: Int) -> String {
+        let character = self[self.index(startIndex, offsetBy: index)]
+        return String(character)
     }
 }
 extension String {
@@ -53,6 +58,25 @@ extension String {
         let whitespace = NSCharacterSet.whitespacesAndNewlines
         return trimmingCharacters(in: whitespace)
     }
+    // 是否包含表情
+    var containsEmoji: Bool {
+        for scalar in unicodeScalars {
+            switch scalar.value {
+            case
+            0x00A0...0x00AF,
+            0x2030...0x204F,
+            0x2120...0x213F,
+            0x2190...0x21AF,
+            0x2310...0x329F,
+            0x1F000...0x1F9CF:
+                return true
+            default:
+                continue
+            }
+        }
+        return false
+    }
+    
    
 }
 

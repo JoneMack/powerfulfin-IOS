@@ -9,6 +9,8 @@
 		<string>家庭月收入</string>
 		<key>placeholder</key>
 		<string>请输入家庭月收入</string>
+		<key>keyboard</key>
+		<integer>4</integer>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -17,6 +19,8 @@
 		<string>机构电话</string>
 		<key>placeholder</key>
 		<string>请输入机构电话</string>
+		<key>keyboard</key>
+		<integer>4</integer>
 	</dict>
 </array>
 </plist>

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3508525421C352810095C391 /* DSLoactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508525321C352810095C391 /* DSLoactionManager.swift */; };
+		3508525421C352810095C391 /* DSLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508525321C352810095C391 /* DSLocationManager.swift */; };
 		3508778121CDD4AB006580AD /* XJGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778021CDD4AB006580AD /* XJGCDTimer.swift */; };
 		3508778321CDEA94006580AD /* DSHomeSearchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778221CDEA94006580AD /* DSHomeSearchControl.swift */; };
 		3508778521CE1613006580AD /* DSHomeBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778421CE1613006580AD /* DSHomeBannerView.swift */; };
@@ -50,6 +50,7 @@
 		350A010D21E34C1200DFE703 /* DSSelectorRightButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010C21E34C1200DFE703 /* DSSelectorRightButtonCell.swift */; };
 		350A011021E3504100DFE703 /* DSApplyInfoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010F21E3504100DFE703 /* DSApplyInfoAlertView.swift */; };
 		350A011221E3507600DFE703 /* DSApplyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A011121E3507600DFE703 /* DSApplyInfo.swift */; };
+		350A011421E457B500DFE703 /* XJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A011321E457B500DFE703 /* XJTextField.swift */; };
 		350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A521D06E170055EFA6 /* CLLoopView.swift */; };
 		350A68A821D0769B0055EFA6 /* MarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A721D0769B0055EFA6 /* MarqueeView.swift */; };
 		350A68AA21D0A71E0055EFA6 /* DSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A921D0A71E0055EFA6 /* DSSearchView.swift */; };
@@ -183,7 +184,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3508525321C352810095C391 /* DSLoactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLoactionManager.swift; sourceTree = "<group>"; };
+		3508525321C352810095C391 /* DSLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLocationManager.swift; sourceTree = "<group>"; };
 		3508525521C352BB0095C391 /* dashengLoan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dashengLoan-Bridging-Header.h"; sourceTree = "<group>"; };
 		3508778021CDD4AB006580AD /* XJGCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJGCDTimer.swift; sourceTree = "<group>"; };
 		3508778221CDEA94006580AD /* DSHomeSearchControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeSearchControl.swift; sourceTree = "<group>"; };
@@ -227,6 +228,7 @@
 		350A010C21E34C1200DFE703 /* DSSelectorRightButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSelectorRightButtonCell.swift; sourceTree = "<group>"; };
 		350A010F21E3504100DFE703 /* DSApplyInfoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyInfoAlertView.swift; sourceTree = "<group>"; };
 		350A011121E3507600DFE703 /* DSApplyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyInfo.swift; sourceTree = "<group>"; };
+		350A011321E457B500DFE703 /* XJTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJTextField.swift; sourceTree = "<group>"; };
 		350A68A521D06E170055EFA6 /* CLLoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoopView.swift; sourceTree = "<group>"; };
 		350A68A721D0769B0055EFA6 /* MarqueeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeView.swift; sourceTree = "<group>"; };
 		350A68A921D0A71E0055EFA6 /* DSSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchView.swift; sourceTree = "<group>"; };
@@ -381,7 +383,7 @@
 		3508525221C352510095C391 /* DSLocationManager */ = {
 			isa = PBXGroup;
 			children = (
-				3508525321C352810095C391 /* DSLoactionManager.swift */,
+				3508525321C352810095C391 /* DSLocationManager.swift */,
 			);
 			path = DSLocationManager;
 			sourceTree = "<group>";
@@ -1059,6 +1061,7 @@
 			isa = PBXGroup;
 			children = (
 				356E80B221CCC3F40052C6E2 /* DSTextValidate.swift */,
+				350A011321E457B500DFE703 /* XJTextField.swift */,
 			);
 			path = XJTextValidate;
 			sourceTree = "<group>";
@@ -1412,6 +1415,7 @@
 				3508778A21CE3006006580AD /* DSHomeLoanView.swift in Sources */,
 				3508779E21CF66AC006580AD /* DSUserDataSource.swift in Sources */,
 				3513218221DCD030005AB183 /* DSUserOrderConfiger.swift in Sources */,
+				350A011421E457B500DFE703 /* XJTextField.swift in Sources */,
 				350A010B21E2EBBD00DFE703 /* DSSacnBaseViewController.swift in Sources */,
 				3548366621BA158A008AB78D /* AppDelegate.swift in Sources */,
 				350A68BC21D0C53A0055EFA6 /* DSString.swift in Sources */,
@@ -1426,7 +1430,7 @@
 				350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */,
 				350A011021E3504100DFE703 /* DSApplyInfoAlertView.swift in Sources */,
 				3548368221BA1765008AB78D /* DSTabBarController.swift in Sources */,
-				3508525421C352810095C391 /* DSLoactionManager.swift in Sources */,
+				3508525421C352810095C391 /* DSLocationManager.swift in Sources */,
 				3513215E21D6166A005AB183 /* DSUserBanksInfo.swift in Sources */,
 				350A68B521D0B6520055EFA6 /* DSSearchData.swift in Sources */,
 				350A690421D33A960055EFA6 /* DSContactLocalService.swift in Sources */,

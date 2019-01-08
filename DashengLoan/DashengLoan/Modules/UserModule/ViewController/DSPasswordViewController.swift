@@ -10,8 +10,8 @@ import UIKit
 
 class DSPasswordViewController: DSViewController {
 
-    fileprivate var oldPasswordTextField:XJTextFiled?
-    fileprivate var newPasswordTextField:XJTextFiled?
+    fileprivate var oldPasswordTextField:XJTextField?
+    fileprivate var newPasswordTextField:XJTextField?
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "修改密码"
@@ -23,7 +23,7 @@ class DSPasswordViewController: DSViewController {
         var top:CGFloat = 0
         
         if DSUserCenter.default.userInfo?.has_password == "1" {
-            oldPasswordTextField = XJTextFiled()
+            oldPasswordTextField = XJTextField()
             oldPasswordTextField?.config(textColor: UIColor.ds_blackText, font: .ds_font(ptSize: 15))
             oldPasswordTextField?.validater = DSPasswordValidater()
             oldPasswordTextField?.isSecureTextEntry = true
@@ -46,7 +46,7 @@ class DSPasswordViewController: DSViewController {
             }
             top = 57
         }
-        newPasswordTextField = XJTextFiled()
+        newPasswordTextField = XJTextField()
         newPasswordTextField?.validater = DSPasswordValidater()
         newPasswordTextField?.placeholder = "请输入新密码(8-20个字符)"
         newPasswordTextField?.config(textColor: UIColor.ds_blackText, font: .ds_font(ptSize: 15))

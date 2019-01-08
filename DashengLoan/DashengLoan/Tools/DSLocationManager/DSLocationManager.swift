@@ -13,7 +13,7 @@ import CoreLocation
     func userLocationDidUpdate(_ success:Bool,error:Error?)
 }
 
-class DSLoactionManager: NSObject {
+class DSLocationManager: NSObject {
     
     fileprivate(set) var longitude: String = ""
     fileprivate(set) var latitude: String = ""
@@ -21,13 +21,15 @@ class DSLoactionManager: NSObject {
     let listeners:NSHashTable<DSLocationDelegate> = NSHashTable<DSLocationDelegate>(options: [.weakMemory,.objectPersonality])
     
     
-    static let manager = DSLoactionManager()
+    static let manager = DSLocationManager()
     
     override init() {
         super.init()
-        BMKLocationAuth.sharedInstance()?.checkPermision(withKey: "qP6Ofv37A0Zv4CHNKHnh5F7XWdkFxsuS", authDelegate: self)
+        BMKLocationAuth.sharedInstance()?.checkPermision(withKey: "qP6Ofv37A0Zv4CHNKHnh5F7XWdkFxsuS", authDelegate: self)        
     }
-   
+    var authStatus:CLAuthorizationStatus {
+        return CLLocationManager.authorizationStatus()
+    }
     fileprivate lazy var locService:BMKLocationManager  = {
         var service = BMKLocationManager()
         service.coordinateType = .BMK09LL
@@ -68,8 +70,7 @@ class DSLoactionManager: NSObject {
         }
     }
 }
-extension DSLoactionManager:BMKLocationAuthDelegate {
+extension DSLocationManager:BMKLocationAuthDelegate {
     func onCheckPermissionState(_ iError: BMKLocationAuthErrorCode) {
-        print("定位授权情况",iError.rawValue)
     }
 }

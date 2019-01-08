@@ -182,18 +182,6 @@ extension DSSacnBaseViewController {
     }
     /// 初始化设备状态
     fileprivate func setupCameraDevice() {
-        let width = scanSize().width
-        let height = scanSize().height
-        let orX =  (XJDeviceInfo.screenWidth-width)/2
-        let orY = (XJDeviceInfo.screenHeight-height)/2
-        let top = orY/XJDeviceInfo.screenHeight
-        let left = orX/XJDeviceInfo.screenWidth
-        let width1 = width/XJDeviceInfo.screenWidth
-        let height1 = height/XJDeviceInfo.screenHeight
-        
-       let captureMetadataOutput = AVCaptureMetadataOutput()
-        captureMetadataOutput.rectOfInterest = CGRect(x: top, y: left, width: width1, height: height1)
-        captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         
         captureSession = AVCaptureSession()
         captureSession?.sessionPreset = .high
@@ -208,6 +196,10 @@ extension DSSacnBaseViewController {
                 
             }
         }
+        
+        let captureMetadataOutput = AVCaptureMetadataOutput()
+        captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+        
         if captureSession!.canAddOutput(captureMetadataOutput) {
             captureSession!.addOutput(captureMetadataOutput)
         }
@@ -225,6 +217,38 @@ extension DSSacnBaseViewController {
         view.layer.insertSublayer(prviewLayer, at: 0)
         setupDeviceSuccess = true
         startScanRunning()
+        
+        captureMetadataOutput.rectOfInterest = coverToMetadataOutputRectOfInterest(rect: scanBoxView!.frame)
+
+    }
+    // 这个是把期望的扫面区域转换成Output 的坐标。计算方式参考下面博文
+    fileprivate func coverToMetadataOutputRectOfInterest(rect:CGRect) -> CGRect {
+        // 参考：https://www.jianshu.com/p/8bb3d8cb224e
+        let size = CGSize(width: XJDeviceInfo.screenWidth, height: XJDeviceInfo.screenHeight);
+        let  p1 = size.height/size.width;
+        let  p2 :CGFloat = 1920/1080
+        if (p1 < p2) {
+            let  fixHeight = size.width * p2;
+            let  fixPadding = (fixHeight - size.height)/2;
+            let orX = (rect.origin.y + fixPadding)/fixHeight
+            let orY = (size.width - (rect.width+rect.origin.x))/size.width
+            let width = rect.height/fixHeight
+            let height = rect.width/size.width
+            return CGRect(x: orX, y: orY, width: width, height: height)
+            
+        } else {
+            let fixWidth = size.height * (1/p2);
+            let fixPadding = (fixWidth - size.width)/2;
+            
+            let orX = rect.origin.y/size.height
+            let orY = (size.width - (rect.width+rect.origin.x) + fixPadding)/fixWidth
+            let width = rect.height/size.height
+            let height = rect.width/fixWidth
+            
+            return CGRect(x: orX, y: orY, width: width, height: height)
+        }
+        
+       
     }
     
 }

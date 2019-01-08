@@ -31,6 +31,7 @@ class DSHomeViewController: DSViewController {
         firstLaunchReloadData()
         reloadViewStatus(false)
         NotificationCenter.default.addObserver(self, selector: #selector(DSHomeViewController.reloadHomeData), name: DSApply.applyFinished, object: nil)
+        DSUserCenter.default.addListener(self)
     }
     func configSubViews()  {
         view.addSubview(contentView)
@@ -214,5 +215,16 @@ extension DSHomeViewController {
             reloadHomeData()
         }
     }
+    
+}
+extension DSHomeViewController:DSUserStatusListener {
+    func userLoginSuccess() {
+        reloadHomeData()
+    }
+    func userLogoutSuccess() {
+        reloadHomeData()
+    }
+    
+    
     
 }

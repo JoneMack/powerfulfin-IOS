@@ -17,6 +17,10 @@
 		<string>储蓄卡号</string>
 		<key>placeholder</key>
 		<string>请输入储蓄卡号</string>
+		<key>keyboard</key>
+		<integer>4</integer>
+		<key>textValidater</key>
+		<integer>4</integer>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -25,12 +29,18 @@
 		<string>手机号</string>
 		<key>placeholder</key>
 		<string>银行预留的手机号码</string>
+		<key>keyboard</key>
+		<integer>4</integer>
+		<key>textValidater</key>
+		<integer>3</integer>
 	</dict>
 	<dict>
 		<key>type</key>
 		<string>DSRightButtonCell</string>
 		<key>title</key>
 		<string>短信验证</string>
+		<key>keyboard</key>
+		<integer>4</integer>
 		<key>placeholder</key>
 		<string>请输入短信验证码</string>
 		<key>rightTitle</key>

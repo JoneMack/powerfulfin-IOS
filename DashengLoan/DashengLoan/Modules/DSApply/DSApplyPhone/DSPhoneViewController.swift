@@ -32,15 +32,7 @@ class DSPhoneViewController: DSViewController {
             loadFooterView("提交")
         }
         conanctManager.delegate = self
-        conanctManager.checkContactStoreAuthorization {[weak self] (status) in
-            if status == .denied {
-                self?.titleLabel?.text = "无法获取您的设备信息，请确认已打开允许读取通信录的权限"
-                self?.navigationItem.rightBarButtonItem?.isEnabled = false
-            }else{
-                self?.reloadUserPhoneBooks()
-                self?.navigationItem.rightBarButtonItem?.isEnabled = true
-            }
-        }
+        reloadUserPhoneBooks()
     }
     func addSubViews()  {
         backView = UIView()
@@ -88,6 +80,35 @@ class DSPhoneViewController: DSViewController {
     }
 
 }
+
+// MARK: - 重新获取数据
+extension DSPhoneViewController {
+    @objc fileprivate func reloadUserPhoneBooks()  {
+        
+        conanctManager.checkContactStoreAuthorization {[weak self] (status) in
+            if status == .denied {
+                self?.showAuthDenidedAlert()
+                self?.titleLabel?.text = "无法获取您的设备信息，请确认已打开允许读取通信录的权限"
+            }else{
+                self?.titleLabel?.text = "读取中···"
+                self?.conanctManager.readContactsFromContactStore()
+            }
+        }
+    }
+    fileprivate func showAuthDenidedAlert() {
+        let alertController = UIAlertController(title: "权限不足", message: "请在系统隐私设置中，允许本APP对您通信录的访问", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "前往", style: .default, handler: { (action) in
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.openURL(url)
+                }
+            }                }))
+        alertController.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - 本地数据读取成功回调
 extension DSPhoneViewController:DSContactsDelegate {
     func contacts(_ contacts: DSContacts, readContactsStoreFinish contatcsArray: [[String : AnyObject]]) {
         do {
@@ -102,13 +123,12 @@ extension DSPhoneViewController:DSContactsDelegate {
         }
     }
 }
+
+// MARK: - 网络请求，下一步点击
 extension DSPhoneViewController:DSApplyFooterViewDelegate {
-    @objc fileprivate func reloadUserPhoneBooks()  {
-        XJToast.showToastAction()
-        conanctManager.readContactsFromContactStore()
-    }
+    
     fileprivate func uploadUserPhoneBooks(booInfo:[String:String]) {
-        
+        XJToast.showToastAction()
         DSApplyDataService.uploadUserPhoneInfo(phoneInfo: booInfo) {[weak self] in
             self?.titleLabel?.text = "已成功获取您的设备信息"
             self?.footerView?.footBtn?.isEnabled = true

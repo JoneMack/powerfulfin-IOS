@@ -32,7 +32,13 @@ extension DSContactViewController {
         }else if model.title == "婚姻状况" {
             showDataPicker(dataArray: applyConfiger?.marital_status ?? [], mode: model, indexPath: indexPath)
         }else if model.title == "关系" {
-            showDataPicker(dataArray: applyConfiger?.relations ?? [], mode: model, indexPath: indexPath)
+            let marrageModel = dataSource.cellMode(indexPath: IndexPath(row: 0, section: 2))
+            if marrageModel.content?.contains("已婚") == true {
+                XJToast.showToastAction(message: "已婚情况下，只能填写配偶信息")
+                return
+            }else{
+                showDataPicker(dataArray: applyConfiger?.relations ?? [], mode: model, indexPath: indexPath)
+            }
         }else if model.title == "现居地址" {
             let addressPicker = DSAddressPicker()
             addressPicker.delegate = self
@@ -54,6 +60,13 @@ extension DSContactViewController:DSAddressPickerDelegate {
             dataPicker.selectData = { [weak self] (data) in
                 mode.content = data
                 self?.tableView?.reloadRows(at: [indexPath], with: .automatic)
+                if mode.title == "婚姻状况" && data.contains("已婚") {
+                    let relationIndex = IndexPath(row: 2, section: 2)
+                    let relationModel = self?.dataSource.cellMode(indexPath:relationIndex )
+                    relationModel?.content = "配偶"
+                    self?.tableView?.reloadRows(at: [relationIndex], with: .automatic)
+
+                }
             }
         }
     }

@@ -22,6 +22,8 @@
 			<string>分期金额</string>
 			<key>placeholder</key>
 			<string>请输入分期金额</string>
+			<key>keyboard</key>
+			<integer>4</integer>
 		</dict>
 		<dict>
 			<key>rightImage</key>

@@ -81,7 +81,6 @@ extension DSApplyInfo {
             self.amountPerPeriod = yAmount?.twoScaleValue()
             self.repayAmount = totleAccount
         }
-        
     }
 }
 
