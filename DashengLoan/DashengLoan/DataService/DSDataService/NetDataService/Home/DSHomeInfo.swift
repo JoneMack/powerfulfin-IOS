@@ -10,6 +10,8 @@ import UIKit
 
 /// 首页数据
 struct DSHomeInfo: Codable {
+    
+    var audit:DSAuditInfo?
     var banner:[DSHomeBanner]?
     var customer_service:DSCustomerService?
     var notice:DSHomeNotice?
@@ -64,4 +66,8 @@ struct DSLoanButtonInfo:Codable {
     var name:String?
     var url:String?
     var style:String?
+}
+struct DSAuditInfo:Codable {
+    var flag:String?
+    var list:[DSOrgation]?
 }

@@ -210,6 +210,7 @@ extension DSApplyDataService {
 
 // MARK: - 订单资料相关
 extension DSApplyDataService {
+    /// 获取订单配置信息
     class func getOrderConfiger(oid:String,complete:@escaping((DSUserOrderConfiger?)->Void)) {
         let requrst = XJRequest("v1/loan/config", method: .get, parameters: ["oid":oid])
         XJNetWork.request(requrst, successHandler: { (jsonInfo) in
@@ -221,6 +222,18 @@ extension DSApplyDataService {
             XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
         }
     }
+    static func getLoanSimpleInfo(money:String,productId:String,complete:@escaping((DSApplyInfo)->Void)) {
+        let requrst = XJRequest("v1/loan/calc", method: .get, parameters: ["borrow_money":money,"loan_product":productId])
+        XJNetWork.request(requrst, successHandler: { (jsonInfo) in
+            if let model = try? XJDecoder.xj_decode(DSApplyInfo.self, from: jsonInfo) {
+                complete(model)
+            }
+        }) { (error) in
+            XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
+        }
+        
+    }
+    /// 提交订单信息
     class func uploadUserOrderInfo(paramDic:[String:Any],complete:@escaping(()->Void)){
         let requrst = XJRequest("v1/loan/submit", method: .post, parameters: paramDic)
         XJNetWork.request(requrst, successHandler: { (jsonInfo) in

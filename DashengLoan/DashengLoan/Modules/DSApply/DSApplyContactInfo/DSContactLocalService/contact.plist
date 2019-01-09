@@ -19,7 +19,7 @@
 			<key>title</key>
 			<string>微信号</string>
 			<key>placeholder</key>
-			<string>请输入微信号</string>
+			<string>请输入微信号(选填)</string>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -27,7 +27,7 @@
 			<key>title</key>
 			<string>QQ号</string>
 			<key>placeholder</key>
-			<string>请输入QQ号</string>
+			<string>请输入QQ号(选填)</string>
 			<key>keyboard</key>
 			<integer>4</integer>
 		</dict>
@@ -84,6 +84,8 @@
 			<string>请选择与本人的关系</string>
 		</dict>
 		<dict>
+			<key>rightImage</key>
+			<string>apply_contact_icon</string>
 			<key>type</key>
 			<string>DSRightButtonCell</string>
 			<key>title</key>

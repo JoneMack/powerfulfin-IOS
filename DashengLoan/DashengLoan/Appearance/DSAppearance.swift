@@ -9,6 +9,11 @@
 import UIKit
 import IQKeyboardManagerSwift
 class DSAppearance {
+    static let appearance = DSAppearance()
+    // shifoushz
+    var isAudit:Bool = false
+    
+    
     class func applicationDidFinishLaunching() {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true

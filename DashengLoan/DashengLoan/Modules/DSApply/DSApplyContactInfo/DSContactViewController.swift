@@ -10,6 +10,8 @@ import UIKit
 
 class DSContactViewController: DSApplyTableViewController {
 
+    lazy var addressBookPicker = DSAddressBookPicker()
+    
     fileprivate var applyConfiger :DSApplyConfiger?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,18 @@ extension DSContactViewController {
 
 // MARK: - DataPicker,AddressPicker
 extension DSContactViewController:DSAddressPickerDelegate {
+    func inputCell(inputCell: DSInputTableViewCell, rightButtonClick rightBtn: UIButton) {
+        let indexPath = inputCell.indexPath!
+        let model = dataSource.cellMode(indexPath: indexPath)
+        if model.title == "手机号码" {
+            addressBookPicker.presentPage(onTarget: self) {[weak self] (contact) in
+                model.content = contact.phone!
+                self?.tableView?.reloadRows(at: [indexPath], with: .automatic)
+            }
+
+        }
+        
+    }
     func showDataPicker(dataArray:[String],mode:DSInputModel,indexPath:IndexPath)  {
         DispatchQueue.main.async {
             let dataPicker = XJDataPicker()

@@ -27,6 +27,8 @@ class DSUserOrderConfiger: Codable {
     /// 是否上传场景照片
     var school_pic_switch:Bool = true
     
+    var org:DSApplyOrgationInfo?
+    
 }
 
 struct DSLoanProductInfo:Codable {
@@ -50,12 +52,15 @@ struct DSLoanProductInfo:Codable {
     var resource_company:String?
     /// 资方id
     var resource:Int?
-    
-    
 }
 struct DSCourseInfo:Codable {
     var cid:Int?
     var class_name:String?
     var money_apply_max:Int?
     var money_apply_min:Int?
+}
+struct DSApplyOrgationInfo:Codable {
+    
+    var oid:Int?
+    var org_name:String?
 }

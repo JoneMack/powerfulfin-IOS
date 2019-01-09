@@ -51,6 +51,11 @@
 		350A011021E3504100DFE703 /* DSApplyInfoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010F21E3504100DFE703 /* DSApplyInfoAlertView.swift */; };
 		350A011221E3507600DFE703 /* DSApplyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A011121E3507600DFE703 /* DSApplyInfo.swift */; };
 		350A011421E457B500DFE703 /* XJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A011321E457B500DFE703 /* XJTextField.swift */; };
+		350A403921E58E0800092EDD /* DSAddressBookPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A403821E58E0800092EDD /* DSAddressBookPicker.swift */; };
+		350A404A21E5DFF000092EDD /* DSSignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A404921E5DFF000092EDD /* DSSignViewController.swift */; };
+		350A404C21E5E01600092EDD /* DSSignLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A404B21E5E01600092EDD /* DSSignLocalService.swift */; };
+		350A405021E5E05600092EDD /* sign.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A404F21E5E05600092EDD /* sign.plist */; };
+		350A405321E5E4ED00092EDD /* DSAuditDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405221E5E4ED00092EDD /* DSAuditDataService.swift */; };
 		350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A521D06E170055EFA6 /* CLLoopView.swift */; };
 		350A68A821D0769B0055EFA6 /* MarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A721D0769B0055EFA6 /* MarqueeView.swift */; };
 		350A68AA21D0A71E0055EFA6 /* DSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A921D0A71E0055EFA6 /* DSSearchView.swift */; };
@@ -229,6 +234,11 @@
 		350A010F21E3504100DFE703 /* DSApplyInfoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyInfoAlertView.swift; sourceTree = "<group>"; };
 		350A011121E3507600DFE703 /* DSApplyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyInfo.swift; sourceTree = "<group>"; };
 		350A011321E457B500DFE703 /* XJTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJTextField.swift; sourceTree = "<group>"; };
+		350A403821E58E0800092EDD /* DSAddressBookPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAddressBookPicker.swift; sourceTree = "<group>"; };
+		350A404921E5DFF000092EDD /* DSSignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSignViewController.swift; sourceTree = "<group>"; };
+		350A404B21E5E01600092EDD /* DSSignLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSignLocalService.swift; sourceTree = "<group>"; };
+		350A404F21E5E05600092EDD /* sign.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = sign.plist; sourceTree = "<group>"; };
+		350A405221E5E4ED00092EDD /* DSAuditDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAuditDataService.swift; sourceTree = "<group>"; };
 		350A68A521D06E170055EFA6 /* CLLoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoopView.swift; sourceTree = "<group>"; };
 		350A68A721D0769B0055EFA6 /* MarqueeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeView.swift; sourceTree = "<group>"; };
 		350A68A921D0A71E0055EFA6 /* DSSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchView.swift; sourceTree = "<group>"; };
@@ -505,6 +515,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		350A404221E5DF4100092EDD /* DSAudit */ = {
+			isa = PBXGroup;
+			children = (
+				350A404921E5DFF000092EDD /* DSSignViewController.swift */,
+				350A404B21E5E01600092EDD /* DSSignLocalService.swift */,
+				350A404F21E5E05600092EDD /* sign.plist */,
+			);
+			path = DSAudit;
+			sourceTree = "<group>";
+		};
+		350A405121E5E4CA00092EDD /* Audit */ = {
+			isa = PBXGroup;
+			children = (
+				350A405221E5E4ED00092EDD /* DSAuditDataService.swift */,
+			);
+			path = Audit;
+			sourceTree = "<group>";
+		};
 		350A68A421D06E040055EFA6 /* XJRoopView */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,6 +575,7 @@
 				3513216921D6571B005AB183 /* DSUserWork.swift */,
 				3513217F21DCBEFA005AB183 /* DSUserOrderInfo.swift */,
 				3513218121DCD030005AB183 /* DSUserOrderConfiger.swift */,
+				350A011121E3507600DFE703 /* DSApplyInfo.swift */,
 			);
 			path = LoanApply;
 			sourceTree = "<group>";
@@ -775,7 +804,6 @@
 			isa = PBXGroup;
 			children = (
 				350A691F21D3658E0055EFA6 /* DSOrderLocalService.swift */,
-				350A011121E3507600DFE703 /* DSApplyInfo.swift */,
 				350A692121D365BF0055EFA6 /* order.plist */,
 			);
 			path = DSOrderLocalService;
@@ -870,6 +898,7 @@
 			isa = PBXGroup;
 			children = (
 				3513217D21DC9BD8005AB183 /* DSContacts.swift */,
+				350A403821E58E0800092EDD /* DSAddressBookPicker.swift */,
 			);
 			path = DSAddressBook;
 			sourceTree = "<group>";
@@ -938,6 +967,7 @@
 		3548368721BA17F2008AB78D /* HomeModule */ = {
 			isa = PBXGroup;
 			children = (
+				350A404221E5DF4100092EDD /* DSAudit */,
 				35552C5B21C9E6FE002033FC /* Views */,
 				3548368821BA180E008AB78D /* DSHomeViewController.swift */,
 				350A010821E2E78D00DFE703 /* DSScanViewController.swift */,
@@ -1046,6 +1076,7 @@
 		35552C7C21CB63A4002033FC /* NetDataService */ = {
 			isa = PBXGroup;
 			children = (
+				350A405121E5E4CA00092EDD /* Audit */,
 				3513214C21D4DC54005AB183 /* Commom */,
 				350A68AF21D0B5480055EFA6 /* LoanPay */,
 				350A68AE21D0B53A0055EFA6 /* LoanOrder */,
@@ -1242,6 +1273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				350A691221D34FB00055EFA6 /* degree.plist in Resources */,
+				350A405021E5E05600092EDD /* sign.plist in Resources */,
 				350A692221D365BF0055EFA6 /* order.plist in Resources */,
 				350A68F821D326040055EFA6 /* bank.plist in Resources */,
 				3548366D21BA158B008AB78D /* Assets.xcassets in Resources */,
@@ -1342,6 +1374,7 @@
 				350A68F021D317460055EFA6 /* DSApplyFooterView.swift in Sources */,
 				35A82B3D21CBA87C0009D5F2 /* DSNetConfiger.swift in Sources */,
 				350A68BE21D0C8FE0055EFA6 /* DSAlertController.swift in Sources */,
+				350A404A21E5DFF000092EDD /* DSSignViewController.swift in Sources */,
 				350A010221E08EEF00DFE703 /* DSUseBankTableViewCell.swift in Sources */,
 				350A00E321DF03F000DFE703 /* DSUserOrderListInfo.swift in Sources */,
 				3548368621BA17B8008AB78D /* DSWebViewController.swift in Sources */,
@@ -1352,9 +1385,11 @@
 				3508778121CDD4AB006580AD /* XJGCDTimer.swift in Sources */,
 				350A68C721D110D00055EFA6 /* DSMessageViewController.swift in Sources */,
 				350A00FD21E052D000DFE703 /* DSBillDetailAlertView.swift in Sources */,
+				350A404C21E5E01600092EDD /* DSSignLocalService.swift in Sources */,
 				3548368021BA174D008AB78D /* DSTableViewController.swift in Sources */,
 				350A00FB21DF80BA00DFE703 /* DSOrderPlanInfo.swift in Sources */,
 				3508779B21CF62F0006580AD /* DSLogoutTableViewCell.swift in Sources */,
+				350A403921E58E0800092EDD /* DSAddressBookPicker.swift in Sources */,
 				3548368D21BA18F5008AB78D /* DSUserViewController.swift in Sources */,
 				350A68D621D202040055EFA6 /* DSUserIdLocalService.swift in Sources */,
 				3548368421BA177B008AB78D /* DSNavigationController.swift in Sources */,
@@ -1425,6 +1460,7 @@
 				350A00E621DF306A00DFE703 /* DSOrderInfoCell.swift in Sources */,
 				350A00DB21DEF2DB00DFE703 /* DSOrderTitleCell.swift in Sources */,
 				350A68A821D0769B0055EFA6 /* MarqueeView.swift in Sources */,
+				350A405321E5E4ED00092EDD /* DSAuditDataService.swift in Sources */,
 				3508778321CDEA94006580AD /* DSHomeSearchControl.swift in Sources */,
 				350A690B21D34CF90055EFA6 /* DSWorkViewController.swift in Sources */,
 				350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */,

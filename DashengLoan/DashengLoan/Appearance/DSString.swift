@@ -58,7 +58,7 @@ extension String {
         let whitespace = NSCharacterSet.whitespacesAndNewlines
         return trimmingCharacters(in: whitespace)
     }
-    // 是否包含表情
+    /// 是否包含表情
     var containsEmoji: Bool {
         for scalar in unicodeScalars {
             switch scalar.value {
@@ -75,6 +75,14 @@ extension String {
             }
         }
         return false
+    }
+    mutating func correctionPhoneNum() -> String {
+        self = replacingOccurrences(of: "(", with: "")
+        self = replacingOccurrences(of: ")", with: "")
+        self = replacingOccurrences(of: "+86", with: "")
+        self = replacingOccurrences(of: "-", with: "")
+        self = replacingOccurrences(of: " ", with: "")
+        return self
     }
     
    

@@ -16,6 +16,7 @@ class DSHomeViewController: DSViewController {
     fileprivate var loanView : DSHomeLoanView?
     fileprivate let refreshControl = UIRefreshControl()
     fileprivate var homeInfo :DSHomeInfo?
+    fileprivate var schoolListView:UIView?
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         newsView.titleLabel?.start()
@@ -61,8 +62,7 @@ class DSHomeViewController: DSViewController {
         loanView = DSHomeLoanView()
         contentView.addSubview(loanView!)
         loanView?.frame = CGRect(x: 0, y: newsView.frame.maxY, width: XJDeviceInfo.screenWidth, height: 255)
-        let height = XJDeviceInfo.screenHeight > (loanView?.frame.maxY)! ? XJDeviceInfo.screenHeight : (loanView?.frame.maxY)!
-        contentView.contentSize = CGSize(width: XJDeviceInfo.screenWidth, height: height)
+       
 
         refreshControl.tintColor = UIColor.white
         refreshControl.addTarget(self, action: #selector(DSHomeViewController.reloadHomeData), for: .valueChanged)
@@ -128,10 +128,23 @@ extension DSHomeViewController {
         }
         
         loanView?.removeFromSuperview()
-        loanView =  DSHomeLoanView.loanView(loanStatus: homeInfo?.loan)
-        loanView?.delegate = self
-        contentView.addSubview(loanView!)
-        loanView?.frame = CGRect(x: 0, y: orY, width: XJDeviceInfo.screenWidth, height: 255)
+        schoolListView?.removeFromSuperview()
+        if DSAppearance.appearance.isAudit == false {
+            loanView =  DSHomeLoanView.loanView(loanStatus: homeInfo?.loan)
+            loanView?.delegate = self
+            contentView.addSubview(loanView!)
+            loanView?.frame = CGRect(x: 0, y: orY, width: XJDeviceInfo.screenWidth, height: 255)
+            
+            let height = XJDeviceInfo.screenHeight > (loanView?.frame.maxY)! ? XJDeviceInfo.screenHeight : (loanView?.frame.maxY)!
+            contentView.contentSize = CGSize(width: XJDeviceInfo.screenWidth, height: height)
+
+        }else{
+            showJiaLanList(orY)
+            let height = XJDeviceInfo.screenHeight > (schoolListView?.frame.maxY)! ? XJDeviceInfo.screenHeight : (schoolListView?.frame.maxY)!
+            contentView.contentSize = CGSize(width: XJDeviceInfo.screenWidth, height: height)
+        }
+        
+        
     }
 }
 // MARK: - 各页面跳转
@@ -193,8 +206,13 @@ extension DSHomeViewController {
         DSHomeDataService.loadHomeData {[weak self] (homeData, success) in
             self?.refreshControl.endRefreshing()
             if success == true {
-                self?.reloadViewStatus(true)
                 self?.homeInfo = homeData
+                if homeData!.audit?.flag == "1" {
+                   DSAppearance.appearance.isAudit = true
+                }else{
+                    DSAppearance.appearance.isAudit = false
+                }
+                self?.reloadViewStatus(true)
                 self?.refreshViews()
             }else{
                 self?.reloadViewStatus(false)
@@ -204,7 +222,16 @@ extension DSHomeViewController {
     func reloadViewStatus(_ show:Bool)  {
         bannerView.isHidden = !show
         newsView.isHidden = !show
-        loanView?.isHidden = !show
+        if show == true {
+            if DSAppearance.appearance.isAudit {
+                loanView?.isHidden = true
+            }else{
+                loanView?.isHidden = false
+            }
+        }else{
+            loanView?.isHidden = true
+        }
+        
     }
     func firstLaunchReloadData()  {
         if DSUserCenter.default.firstLaunch {
@@ -224,7 +251,48 @@ extension DSHomeViewController:DSUserStatusListener {
     func userLogoutSuccess() {
         reloadHomeData()
     }
-    
-    
-    
+}
+
+// MARK: - jialoan
+extension DSHomeViewController {
+    func showJiaLanList(_ ory:CGFloat)  {
+        
+        schoolListView = UIView(frame: CGRect(x: 0, y: ory, width: XJDeviceInfo.screenWidth, height: 700))
+        contentView.addSubview(schoolListView!)
+        schoolListView?.backgroundColor = UIColor.white
+        
+        let titleLabel = UILabel(frame: CGRect(x: 15, y: 10, width: 200, height: 30))
+        titleLabel.configLabel(color: UIColor.ds_blackText, font: .ds_boldFont(ptSize: 16))
+        titleLabel.text = "申请机构"
+        schoolListView?.addSubview(titleLabel)
+        
+        let indexY:CGFloat = 40
+        let rowHeiht :CGFloat = 69
+        let count = homeInfo?.audit?.list?.count ?? 0
+        if let listArray = homeInfo?.audit?.list {
+            
+            for index in 0..<count {
+                let orgation = listArray[index]
+          
+                 let cell = DSSearchTableViewCell(style: .default, reuseIdentifier: "11")
+                cell.titleLabel?.text = orgation.name
+                cell.detailLabel?.text = orgation.address
+                cell.frame = CGRect(x: 0, y: indexY+(CGFloat(index) * rowHeiht), width: XJDeviceInfo.screenWidth, height: rowHeiht)
+                schoolListView?.addSubview(cell)
+                cell.tag = index
+                let tapGes = UITapGestureRecognizer(target: self, action: #selector(DSHomeViewController.showSignViewController(tap:)))
+                cell.addGestureRecognizer(tapGes)
+                
+            }
+        }
+        let height =  indexY + CGFloat(count) * rowHeiht + XJDeviceInfo.tabBarHeight
+        schoolListView?.frame = CGRect(x: 0, y: ory, width: XJDeviceInfo.screenWidth, height: height)
+        
+    }
+    @objc fileprivate func showSignViewController(tap:UITapGestureRecognizer)  {
+        let signVC = DSSignViewController()
+        let index = tap.view?.tag ?? 0
+        signVC.orgin = homeInfo?.audit?.list?[index]
+        pushToNextViewController(signVC)
+    }
 }

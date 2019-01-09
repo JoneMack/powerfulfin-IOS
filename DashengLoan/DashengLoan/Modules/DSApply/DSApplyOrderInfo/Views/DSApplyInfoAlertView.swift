@@ -12,11 +12,12 @@ class DSApplyInfoAlertView: KZAlertController {
 
     var applyInfo:DSApplyInfo! {
         didSet {
-            if applyInfo.isEqualAmount {
-                contentSize = CGSize(width: XJDeviceInfo.screenWidth * 0.75, height:194)
+            if applyInfo.content_two?.money != nil && applyInfo.content_two?.money?.count ?? 0 > 0 {
+                 contentSize = CGSize(width: XJDeviceInfo.screenWidth * 0.75, height:230)
             }else{
-                contentSize = CGSize(width: XJDeviceInfo.screenWidth * 0.75, height:230)
+                  contentSize = CGSize(width: XJDeviceInfo.screenWidth * 0.75, height:194)
             }
+        
         }
     }
     
@@ -67,12 +68,13 @@ class DSApplyInfoAlertView: KZAlertController {
             maker.centerY.equalTo(leftTitleLabel.snp.centerY)
         }
         
+        leftTitleLabel.text = applyInfo.content_one?.content
+        rightTitleLabel.text = applyInfo.content_one?.money
+        
         var tempView :UILabel = leftTitleLabel
         
-        if applyInfo.isEqualAmount {
-            leftTitleLabel.text = "每月还款"
-            rightTitleLabel.text = "￥\(applyInfo.amountPerPeriod ?? "")"
-        }else{
+        if applyInfo.content_two?.money != nil && applyInfo.content_two?.money?.count ?? 0 > 0 {
+            
             let yMonthLabel = UILabel()
             yMonthLabel.configLabel(color: .ds_gray8fText, font: .ds_boldFont(ptSize: 14))
             contentView.addSubview(yMonthLabel)
@@ -89,13 +91,12 @@ class DSApplyInfoAlertView: KZAlertController {
                 maker.centerY.equalTo(yMonthLabel.snp.centerY)
             }
             tempView = yMonthLabel
-            leftTitleLabel.text = "前\(applyInfo.xMonths ?? "")个月每月还款"
-            rightTitleLabel.text = "￥\(applyInfo.xAmount ?? "")"
-            yMonthLabel.text = "后\(applyInfo.yMonths ?? "")个月每月还款"
-            yAmountLabel.text = "￥\(applyInfo.yAmount ?? "")"
+            
+            yMonthLabel.text = applyInfo.content_two?.content
+            yAmountLabel.text = applyInfo.content_two?.money
         }
         titleLabel.text = applyInfo.title
-        tipsLabel.text = applyInfo.tips
+        tipsLabel.text = "以下为试算金额，实际还款以通知为准"
         
         
         let lineView = UIView.lineView()

@@ -152,7 +152,7 @@ extension DSBankViewController {
         }
     }
     override func footViewClick(footBtn: UIButton) {
-//        bindCardToService()
-        DSApply.default.showNextStep()
+        bindCardToService()
+//        DSApply.default.showNextStep()
     }
 }

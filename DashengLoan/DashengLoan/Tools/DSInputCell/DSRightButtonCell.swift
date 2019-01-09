@@ -21,6 +21,7 @@ class DSRightButtonCell: DSInputTableViewCell {
         rightButton.snp.makeConstraints { (maker) in
             maker.right.equalTo(-15)
             maker.top.bottom.equalTo(0)
+            maker.width.greaterThanOrEqualTo(60)
         }
     }
     

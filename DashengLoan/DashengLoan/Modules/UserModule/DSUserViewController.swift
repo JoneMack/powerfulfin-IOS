@@ -12,7 +12,7 @@ fileprivate let logoutCellIdentifier = "logoutCellIdentifier"
 class DSUserViewController: DSTableViewController {
     fileprivate let headerView = DSUserHeaderView()
     fileprivate let headerTopView = UIImageView()
-    fileprivate let dataSource = DSUserDataSource()
+    fileprivate lazy var dataSource = DSUserDataSource()
     override func viewDidLoad() {
         super.viewDidLoad()
         loadHeaderView()
@@ -60,14 +60,16 @@ extension DSUserViewController {
         return dataSource.numberOfRows(section)
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 2 {
+        
+        let cellModel = dataSource.cellModel(indexPath)
+
+        if cellModel?.text == "退出登录" {
             let cell = tableView.dequeueReusableCell(withIdentifier: logoutCellIdentifier, for: indexPath) as!  DSLogoutTableViewCell
             cell.titleLabel.text = (dataSource.cellModel(indexPath))?.text
             cell.showSpearator = false
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DSTableViewCell
-        let cellModel = dataSource.cellModel(indexPath)
         cell.textLabel?.text = cellModel?.text
         cell.imageView?.image = UIImage(named: (cellModel?.logo)!)
         if (indexPath.row >= dataSource.numberOfRows(indexPath.section)-1) {
@@ -104,9 +106,10 @@ extension DSUserViewController {
 extension DSUserViewController:DSUserStatusListener {
     
     @objc func reloadUserInfo() {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3) {
-            self.refreshControl?.endRefreshing()
-        }
+        dataSource.reloadData()
+        tableView?.reloadData()
+        self.refreshControl?.endRefreshing()
+        
     }
     func userLoginSuccess() {
         tableView?.reloadData()

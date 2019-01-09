@@ -11,7 +11,6 @@ import UIKit
 class DSApplyOrderViewController: DSApplyTableViewController {
     
     fileprivate var configer:DSUserOrderConfiger?
-    fileprivate let applyInfo = DSApplyInfo()
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = DSOrderLocalService()
@@ -30,6 +29,34 @@ extension DSApplyOrderViewController {
                 rightCell.rightButton.isHidden = false
             }
         }
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: XJDeviceInfo.screenWidth, height: 40))
+            view.backgroundColor = UIColor.white
+            let titleLabel = UILabel()
+            titleLabel.numberOfLines = 2
+            view.addSubview(titleLabel)
+            let name = self.configer?.org?.org_name ?? ""
+            
+            let attributedText = NSMutableAttributedString(string: "您正在\(name)申请培训分期", attributes: [NSAttributedString.Key.font:UIFont.ds_font(ptSize: 12),NSAttributedString.Key.foregroundColor:UIColor(hex: "777777")])
+            attributedText.addAttributes([NSAttributedString.Key.font:UIFont.ds_font(ptSize: 12),NSAttributedString.Key.foregroundColor:UIColor.ds_blueText], range: NSMakeRange(3, name.count))
+            
+            titleLabel.attributedText = attributedText
+            titleLabel.snp.makeConstraints { (maker) in
+                maker.left.equalTo(15)
+                maker.centerY.equalToSuperview()
+            }
+            return view
+            
+        }
+        return UIView()
+    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 40
+        }
+        return 10
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let model = dataSource.cellMode(indexPath: indexPath)
@@ -75,11 +102,13 @@ extension DSApplyOrderViewController {
             XJToast.showToastAction(message: model.placeholder!)
             return
         }
-        applyInfo.loanAmount = amountModel.content
+     getLoanSimpleInfo(money: amountModel.content!, productId: model.subContent!)
+        
+    }
+    fileprivate func showApplyInfoAlertView(_ applyInfo:DSApplyInfo) {
         let alertView =  DSApplyInfoAlertView()
         alertView.applyInfo = applyInfo
         alertView.showAlertController(from: self)
-        
     }
    fileprivate func showDataPicker(dataArray:[String],mode:DSInputModel,indexPath:IndexPath)  {
         let dataPicker = XJDataPicker()
@@ -103,11 +132,11 @@ extension DSApplyOrderViewController {
             }
         }else if model.title == "分期产品" {
             for productInfo in configer?.loanProducts ?? [] {
-                model.subContent = productInfo.loan_product
-                 applyInfo.productInfo = productInfo
-                break
+                if productInfo.name == model.content {
+                    model.subContent = productInfo.loan_product
+                    break
+                }
             }
-            
         }
     }
     
@@ -139,6 +168,12 @@ extension DSApplyOrderViewController {
                 localDataSource.updateOrderConfig((self?.configer)!)
                 self?.tableView?.reloadData()
             }
+        }
+    }
+    func getLoanSimpleInfo(money:String,productId:String)  {
+        XJToast.showToastAction()
+        DSApplyDataService.getLoanSimpleInfo(money: money, productId: productId) {[weak self] (applyInfo) in
+            self?.showApplyInfoAlertView(applyInfo)
         }
     }
     func uploadUserOrderInfos()  {

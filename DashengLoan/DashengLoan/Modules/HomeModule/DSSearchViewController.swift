@@ -74,13 +74,19 @@ extension DSSearchViewController {
     // MARK:  cell点击，进入分期
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         super.tableView(tableView, didSelectRowAt: indexPath)
-        let orgation = oragnationArray[indexPath.row]
         if DSUserCenter.default.hasLogin == false {
-            loginWithController {
-                DSApply.default.beginApply(orgation.id ?? "", fromController: self)
+            loginWithController { [weak self] in
+                self?.tableView(tableView, didSelectRowAt: indexPath)
             }
         }else{
-            DSApply.default.beginApply(orgation.id ?? "", fromController: self)
+            let orgation = oragnationArray[indexPath.row]
+            if DSAppearance.appearance.isAudit == true{
+                let signVC = DSSignViewController()
+                signVC.orgin = orgation
+                pushToNextViewController(signVC)
+            }else{
+                DSApply.default.beginApply(orgation.id ?? "", fromController: self)
+            }
         }
     }
  
