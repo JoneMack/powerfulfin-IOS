@@ -33,12 +33,16 @@ class DSUserIdLocalService: DSApplyLocalService {
             endDate.content = userInfo.end_date
             address.content = userInfo.address
             idPic.content = userInfo.idcard_information_pic_url
+
+            if authResult.content == "识别通过" {
+                return
+            }
             if userInfo.user_real == 3 {
-                authResult.content = "认证失败"
+                authResult.content = "识别未通过"
             }else if userInfo.user_real == 2 {
-               authResult.content = "认证成功"
+               authResult.content = "识别通过"
             }else{
-                authResult.content = "待认证"
+                authResult.content = "待识别"
             }
         }
     }

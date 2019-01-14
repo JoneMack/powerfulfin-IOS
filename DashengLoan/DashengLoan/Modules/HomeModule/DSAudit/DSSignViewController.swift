@@ -8,8 +8,11 @@
 
 import UIKit
 
+
 class DSSignViewController: DSApplyTableViewController {
     var orgin:DSOrgation?
+    static let siginSuccessNotice: NSNotification.Name = NSNotification.Name(rawValue: "DSSignSuccessNotice")
+
     fileprivate var classesArray = [DSAuditClassInfo]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +98,7 @@ extension DSSignViewController {
     func showAlertView()  {
         let alertView = UIAlertController(title: "提示", message: "您已经报名课程学习，机构稍后会联系您确认报名信息", preferredStyle: .alert)
         alertView.addAction(UIAlertAction(title: "确认", style: .default, handler: { (action) in
+            NotificationCenter.default.post(name: DSSignViewController.siginSuccessNotice, object: nil)
             self.popViewController()
         }))
         present(alertView, animated: true, completion: nil)

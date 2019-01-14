@@ -157,7 +157,9 @@ extension DSSacnBaseViewController {
             showOpenAuthAlert()
         }else if status == .notDetermined {//未设置的时候，发出询问
             AVCaptureDevice.requestAccess(for: .video) {[weak self] (suucess) in
-                self?.setupCameraDevice()
+                DispatchQueue.main.async {
+                    self?.setupCameraDevice()
+                }
             }
         }else if status == .authorized {//已经允许
             setupCameraDevice()

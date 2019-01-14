@@ -26,7 +26,10 @@ class DSOrderInfoCell: UITableViewCell {
     @IBOutlet weak var reasonLabel: UILabel!
     @IBOutlet weak var reasonTitleLabel: UILabel!
     
+    @IBOutlet weak var leftSpceConstraint: NSLayoutConstraint!
     @IBOutlet weak var contactBtn: DSButton!
+    
+    
     @IBAction func showContactView(_ sender: Any) {
         delegate?.showContactViewAction?()
     }

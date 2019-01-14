@@ -14,8 +14,9 @@ public enum XJHTTPMethod: String {
     case get = "GET"
 }
 
+
 // MARK: - 网络请求
-class XJRequest {
+open class XJRequest {
     var url :String = ""
     var method:XJHTTPMethod = .get
     var parameters:[String:Any] = [:]
@@ -28,9 +29,24 @@ class XJRequest {
         guard let parameter = parameters else {  return }
         self.parameters = parameter
         
-        guard let header = httpHeader else {  return }
-        self.httpHeader = header
+        if httpHeader == nil {
+            self.httpHeader = XJRequest.defaultHTTPHeaders
+        }else{
+            self.httpHeader = httpHeader
+        }
+        
     }
+    public static let defaultHTTPHeaders: HTTPHeaders = {
+        
+        var headers = SessionManager.defaultHTTPHeaders
+        headers["DS-User-Agent"] = XJRequest.ds_defaultUserAgent
+        return headers
+    }()
+    public static let ds_defaultUserAgent:String = {
+        //Bundle Identifier|App版本号|Build号|设备名字|机型|系统|版本|设备唯一标识号
+        var agent = "\(XJDeviceInfo.appBundleId)|\(XJDeviceInfo.appVersion)|\(XJDeviceInfo.appBuildVersion)|\(XJDeviceInfo.deviceName)|\(XJDeviceInfo.deviceType)|\(XJDeviceInfo.systemName)|\(XJDeviceInfo.systemVersion)|\(XJDeviceInfo.deviceId)"
+        return agent.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+    }()
 }
 
 
@@ -39,15 +55,7 @@ class XJNetWork {
     //请求
     //大圣分期 公共参数：lng，lat，version，phoneid，ssid，mac，_t
     class func request(_ requst:XJRequest,successHandler:@escaping((Any) ->Void),failHandler:@escaping((XJError)->Void)) {
-        var paramrters = requst.parameters
-        paramrters["lng"] = DSLocationManager.manager.longitude
-        paramrters["lat"] = DSLocationManager.manager.latitude
-        paramrters["version"] = XJDeviceInfo.appVersion
-        paramrters["phoneid"] = XJDeviceInfo.deviceId
-        let wifiInfo = XJDeviceInfo.wifiInfo
-        paramrters["ssid"] = wifiInfo.ssid
-        paramrters["mac"] = wifiInfo.mac
-        paramrters["_t"] = Date().milliStamp
+        let paramrters = configPublicParameters(parameters: requst.parameters)
         
         Alamofire.request(requst.url, method:HTTPMethod(rawValue: requst.method.rawValue)!, parameters: paramrters, headers: requst.httpHeader).responseJSON { (response) in
             handlerResult(response: response, successHandler: successHandler, failHandler: failHandler)
@@ -104,7 +112,29 @@ class XJNetWork {
         }
     }
 }
-
+extension XJNetWork {
+    // 增加公共参数
+    static fileprivate func configPublicParameters(parameters:[String:Any]) -> [String:Any] {
+        var paramDic = parameters
+        // 移除首尾空格
+        for (key,value) in paramDic {
+            if let stringValue = value as? String {
+                let aStr = stringValue.trimmingCharacters(in: .whitespaces)
+                paramDic[key] = aStr
+            }
+            
+        }
+        paramDic["lng"] = DSLocationManager.manager.longitude
+        paramDic["lat"] = DSLocationManager.manager.latitude
+        paramDic["version"] = XJDeviceInfo.appVersion
+        paramDic["phoneid"] = XJDeviceInfo.deviceId
+        let wifiInfo = XJDeviceInfo.wifiInfo
+        paramDic["ssid"] = wifiInfo.ssid
+        paramDic["mac"] = wifiInfo.mac
+        paramDic["_t"] = Date().milliStamp
+        return paramDic
+    }
+}
 // MARK: - 数据映射 Json->Model
 class XJDecoder {
     class func xj_decode<T:Decodable>(_ someClass: T.Type, from jsonDic: Any) throws -> T {

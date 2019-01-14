@@ -29,6 +29,7 @@ class DSViewController: UIViewController {
         }
     }
     func configNavigationBarApperance()  {
+        UINavigationBar.appearance().tintColor = UIColor.white
         navigationController?.navigationBar.setBackgroundImage(UIImage.ds_backgroundImage(CGSize(width: XJDeviceInfo.screenWidth, height: XJDeviceInfo.naivgaitonBarHeight)), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage.ds_backgroundImage(CGSize(width: XJDeviceInfo.screenWidth, height: 2))
         
@@ -45,8 +46,12 @@ extension DSViewController {
     func pushToNextViewController(_ viewController:UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
     }
-    func popViewController() {
-        navigationController?.popViewController(animated: true)
+    func popViewController(_ isRoot:Bool = false) {
+        if isRoot {
+            navigationController?.popToRootViewController(animated: true)
+        }else{
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     override func rt_customBackItem(withTarget target: Any!, action: Selector!) -> UIBarButtonItem! {

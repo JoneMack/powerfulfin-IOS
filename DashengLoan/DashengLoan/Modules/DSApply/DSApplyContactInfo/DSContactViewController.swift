@@ -13,6 +13,12 @@ class DSContactViewController: DSApplyTableViewController {
     lazy var addressBookPicker = DSAddressBookPicker()
     
     fileprivate var applyConfiger :DSApplyConfiger?
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UINavigationBar.appearance().tintColor = UIColor.white
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "联络信息"
@@ -55,10 +61,15 @@ extension DSContactViewController:DSAddressPickerDelegate {
     func inputCell(inputCell: DSInputTableViewCell, rightButtonClick rightBtn: UIButton) {
         let indexPath = inputCell.indexPath!
         let model = dataSource.cellMode(indexPath: indexPath)
+        let nameIndexPath = IndexPath(row: 1, section: 2)
+        
+        let nameModel = dataSource.cellMode(indexPath: nameIndexPath)
+        
         if model.title == "手机号码" {
             addressBookPicker.presentPage(onTarget: self) {[weak self] (contact) in
-                model.content = contact.phone!
-                self?.tableView?.reloadRows(at: [indexPath], with: .automatic)
+                model.content = contact.phone
+                nameModel.content = contact.name
+                self?.tableView?.reloadRows(at: [indexPath,nameIndexPath], with: .automatic)
             }
 
         }

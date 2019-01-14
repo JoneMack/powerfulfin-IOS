@@ -94,8 +94,14 @@ extension DSWorkViewController {
             dataPicker.selectData = { [weak self] (data) in
                 mode.content = data
                 self?.tableView?.reloadRows(at: [indexPath], with: .automatic)
-                if mode.title == "职业" && data == "学生" {
-                    (self?.dataSource as! DSWorkLocalService).changeItem(index: 1)
+                if mode.title == "职业" {
+                    if data == "学生" {
+                        (self?.dataSource as! DSWorkLocalService).changeItem(index: 1)
+                    }else if data == "农民" || data == "其他" {
+                        (self?.dataSource as! DSWorkLocalService).changeItem(index: 2)
+                    }else{
+                        (self?.dataSource as! DSWorkLocalService).changeItem(index: 0)
+                    }
                     self?.tableView?.reloadSections(IndexSet(integer: 1), with: .automatic)
                 }
             }

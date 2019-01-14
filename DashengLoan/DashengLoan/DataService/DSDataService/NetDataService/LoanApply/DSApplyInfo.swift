@@ -20,6 +20,22 @@ struct DSBillSimpleInfo:Codable {
     var money:String?
 }
 
+struct DSUserApplyStatusInfo:Codable {
+    /// 是否完成实名认证:1:待完成OR未认证，2：认证成功；3：认证失败
+    var user_real:Int?
+    /// 是否完成绑卡:1:待完成OR未认证，2：认证成功；3：认证失败
+    var user_bank:Int?
+    /// 是否完成联系人信息认证:1:待完成OR未认证，2：认证成功；3：认证失败
+    var user_contact:Int?
+    /// 是否完成工作信息认证:1:待完成OR未认证，2：认证成功；3：认证失败
+    var user_work:Int?
+    /// 是否完成通讯录认证:1:待完成OR未认证，2：认证成功；3：认证失败
+    var user_phonebook:Int?
+    /// 是否有订单在审核中，如果是审核中，则不能进行下一步
+    var user_loaning :Bool = false
+    
+}
+
 //
 //class DSApplyInfo: NSObject {
 //    var productInfo: DSLoanProductInfo? {

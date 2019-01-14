@@ -10,11 +10,21 @@ import UIKit
 
 class DSBillDetailAlertView: KZAlertController {
 
-    var billInfo :DSPlanInfo?
-    
-    fileprivate var contentSize:CGSize {
-        return CGSize(width: 272, height:276)
+    var billInfo :DSPlanInfo? {
+        didSet{
+            var height:CGFloat = 276
+            hasRepayedLabel = true
+            if billInfo?.repay_date == nil || billInfo?.repay_date?.isEmpty == true {
+                height -= 127
+                hasRepayedLabel = false
+            }
+           
+            contentSize = CGSize(width: 272, height:height)
+        }
     }
+    fileprivate var hasRepayedLabel = true
+    
+    fileprivate var contentSize:CGSize = CGSize(width: 272, height:276)
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(white: 0, alpha: 0.6)
@@ -53,41 +63,57 @@ class DSBillDetailAlertView: KZAlertController {
             maker.centerY.equalTo(shouldRepayMoneyLabel.snp.centerY)
         }
         
-        let repayMoneyLabel = UILabel()
-        repayMoneyLabel.configLabel(color: .ds_gray8fText, font: .ds_boldFont(ptSize: 14))
-        contentView.addSubview(repayMoneyLabel)
-        repayMoneyLabel.snp.makeConstraints { (maker) in
-            maker.left.equalTo(18)
-            maker.top.equalTo(shouldRepayMoneyLabel.snp.bottom).offset(17)
+        var maxY = shouldRepayDateLabel.snp.bottom
+        
+        if hasRepayedLabel {
+        
+            let repayMoneyLabel = UILabel()
+            repayMoneyLabel.configLabel(color: .ds_gray8fText, font: .ds_boldFont(ptSize: 14))
+            contentView.addSubview(repayMoneyLabel)
+            repayMoneyLabel.snp.makeConstraints { (maker) in
+                maker.left.equalTo(18)
+                maker.top.equalTo(maxY).offset(17)
+            }
+            
+            let repayDateLabel = UILabel()
+            repayDateLabel.configLabel(color: .ds_gray8fText, font: .ds_boldFont(ptSize: 14))
+            contentView.addSubview(repayDateLabel)
+            repayDateLabel.snp.makeConstraints { (maker) in
+                maker.right.equalTo(-18)
+                maker.centerY.equalTo(repayMoneyLabel.snp.centerY)
+            }
+            
+            
+            
+            maxY = repayMoneyLabel.snp.bottom
+            
+            let systemLabel = UILabel()
+            systemLabel.configLabel(color: .ds_gray8fText, font: .ds_boldFont(ptSize: 16))
+            contentView.addSubview(systemLabel)
+            systemLabel.snp.makeConstraints { (maker) in
+                maker.left.equalTo(18)
+                maker.top.equalTo(maxY).offset(29)
+            }
+            let bankLabel = UILabel()
+            bankLabel.configLabel(color: .ds_gray8fText, font: .ds_boldFont(ptSize: 14))
+            contentView.addSubview(bankLabel)
+            bankLabel.snp.makeConstraints { (maker) in
+                maker.left.equalTo(18)
+                maker.top.equalTo(systemLabel.snp.bottom).offset(17)
+            }
+            
+            repayMoneyLabel.text = "已还 \(billInfo?.repaid ?? "")"
+            repayDateLabel.text = billInfo?.repay_date
+            
+            systemLabel.text = billInfo?.repay_way
+            bankLabel.text = "\(billInfo?.repay_bank_account ?? "") \(billInfo?.repay_bank_name ?? "")"
+            maxY = bankLabel.snp.bottom
         }
-
-        let repayDateLabel = UILabel()
-        repayDateLabel.configLabel(color: .ds_gray8fText, font: .ds_boldFont(ptSize: 14))
-        contentView.addSubview(repayDateLabel)
-        repayDateLabel.snp.makeConstraints { (maker) in
-            maker.right.equalTo(-18)
-            maker.centerY.equalTo(repayMoneyLabel.snp.centerY)
-        }
-
-        let systemLabel = UILabel()
-        systemLabel.configLabel(color: .ds_gray8fText, font: .ds_boldFont(ptSize: 16))
-        contentView.addSubview(systemLabel)
-        systemLabel.snp.makeConstraints { (maker) in
-            maker.left.equalTo(18)
-            maker.top.equalTo(repayMoneyLabel.snp.bottom).offset(29)
-        }
-        let bankLabel = UILabel()
-        bankLabel.configLabel(color: .ds_gray8fText, font: .ds_boldFont(ptSize: 14))
-        contentView.addSubview(bankLabel)
-        bankLabel.snp.makeConstraints { (maker) in
-            maker.left.equalTo(18)
-            maker.top.equalTo(systemLabel.snp.bottom).offset(17)
-        }
-
+    
         let lineView = UIView.lineView()
         contentView.addSubview(lineView)
         lineView.snp.makeConstraints { (maker) in
-            maker.top.equalTo(bankLabel.snp.bottom).offset(16)
+            maker.top.equalTo(maxY).offset(16)
             maker.left.right.equalTo(0)
             maker.height.equalTo(0.5)
         }
@@ -104,26 +130,9 @@ class DSBillDetailAlertView: KZAlertController {
             maker.height.equalTo(55)
         }
         
-        titleLabel.text = "01/24期"
-        shouldRepayMoneyLabel.text = "应还 1000"
-        shouldRepayDateLabel.text = "2019-02-15"
-        
-        repayMoneyLabel.text = "已还 1000"
-        repayDateLabel.text = "2019-03-12"
-
-        systemLabel.text = "系统划扣"
-        bankLabel.text = "6222****2045 农业银行"
-        
-//        titleLabel.text = billInfo?.installment
-//        shouldRepayMoneyLabel.text = "应还 \(billInfo?.repay_need ?? "")"
-//        shouldRepayDateLabel.text = billInfo?.should_repay_date
-//
-//        repayMoneyLabel.text = "已还 \(billInfo?.repaid ?? "")"
-//        repayDateLabel.text = billInfo?.repay_date
-//
-//        systemLabel.text = billInfo?.repay_way
-//        bankLabel.text = "\(billInfo?.repay_bank_account ?? "") \(billInfo?.repay_bank_name ?? "")"
-        
+        titleLabel.text = billInfo?.installment
+        shouldRepayMoneyLabel.text = "应还 \(billInfo?.repay_need ?? "")"
+        shouldRepayDateLabel.text = billInfo?.should_repay_date
         
     }
 

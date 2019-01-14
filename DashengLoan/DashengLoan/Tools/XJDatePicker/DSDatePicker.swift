@@ -105,7 +105,15 @@ extension DSDatePicker {
         let year = calendar.component(.year, from: pickerDate)
         let month = calendar.component(.month, from: pickerDate)
         let day = calendar.component(.day, from: pickerDate)
-        let dateString = "\(year)-\(month)-\(day)"
+        var monthStr = month.description
+        if month < 10 {
+            monthStr = "0\(month)"
+        }
+        var dayStr = day.description
+        if day < 10 {
+            dayStr = "0\(day)"
+        }
+        let dateString = "\(year)-\(monthStr)-\(dayStr)"
         selectDateFinish?(dateString)
         dismissViewController()
         

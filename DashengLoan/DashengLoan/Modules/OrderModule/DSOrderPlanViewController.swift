@@ -53,34 +53,29 @@ extension DSOrderPlanViewController {
 }
 extension DSOrderPlanViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-//        return planArray.count
+        return planArray.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DSPlanTableViewCell
-        cell.timeLabel.text = "20190815"
-        cell.statusLabel.text = "待还款"
-        cell.moneyLabel.text = "￥1500"
-        cell.repayBtn.isHidden = false
-        cell.indexPath = indexPath
+    
+        let planInfo = planArray[indexPath.row]
+        cell.timeLabel.text = planInfo.should_repay_date
+        cell.statusLabel.text = planInfo.status_desp
+        cell.moneyLabel.text = "￥\(planInfo.repay_need ?? "")"
+        if planInfo.status == 2 {
+            cell.statusLabel.textColor = UIColor.ds_redText
+        }else{
+            cell.statusLabel.textColor = UIColor.ds_blackText
+        }
+        cell.repayBtn.isHidden = planInfo.repay_button == 1 ? false : true
         cell.delegate = self
-        
-//        let planInfo = planArray[indexPath.row]
-//        cell.timeLabel.text = planInfo.should_repay_date
-//        cell.statusLabel.text = planInfo.status_desp
-//        cell.moneyLabel.text = "￥\(planInfo.repay_need ?? "")"
-//        if planInfo.status == 2 {
-//            cell.statusLabel.textColor = UIColor.ds_redText
-//        }else{
-//            cell.statusLabel.textColor = UIColor.ds_blackText
-//        }
-//        cell.repayBtn.isHidden = planInfo.repay_button == 1 ? false : true
-//        cell.delegate = self
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         super.tableView(tableView, didSelectRowAt: indexPath)
         let alert = DSBillDetailAlertView()
+        let planInfo = planArray[indexPath.row]
+        alert.billInfo = planInfo
         alert.showAlertController(from: self)
         
     }

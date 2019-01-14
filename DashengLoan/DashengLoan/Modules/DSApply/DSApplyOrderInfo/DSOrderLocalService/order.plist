@@ -67,22 +67,6 @@
 		</dict>
 		<dict>
 			<key>servicename</key>
-			<string>train_contract_pic</string>
-			<key>type</key>
-			<string>DSMutableImageCell</string>
-			<key>tipimage</key>
-			<string>apply_loan_5</string>
-			<key>title</key>
-			<string>培训协议</string>
-			<key>tips</key>
-			<string>注：培训协议需要体现申请人、金额、签字等要素。上传图片文字清晰可辨认</string>
-			<key>maxcount</key>
-			<integer>9</integer>
-			<key>placeholder</key>
-			<string>请上传培训协议照片</string>
-		</dict>
-		<dict>
-			<key>servicename</key>
 			<string>person_pic</string>
 			<key>type</key>
 			<string>DSMutableImageCell</string>
@@ -112,6 +96,22 @@
 			<string>请上传声明照片</string>
 			<key>maxcount</key>
 			<integer>9</integer>
+		</dict>
+		<dict>
+			<key>servicename</key>
+			<string>train_contract_pic</string>
+			<key>type</key>
+			<string>DSMutableImageCell</string>
+			<key>tipimage</key>
+			<string>apply_loan_5</string>
+			<key>title</key>
+			<string>培训协议</string>
+			<key>tips</key>
+			<string>注：培训协议需要体现申请人、金额、签字等要素。上传图片文字清晰可辨认</string>
+			<key>maxcount</key>
+			<integer>9</integer>
+			<key>placeholder</key>
+			<string>请上传培训协议照片</string>
 		</dict>
 	</array>
 </array>

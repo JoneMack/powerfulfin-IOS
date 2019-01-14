@@ -23,7 +23,8 @@ class DSOrderViewController: DSTableViewController {
         }else{
             showNoResultView()
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(DSOrderViewController.loadOrederListData), name: DSApply.applyFinished, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(DSOrderViewController.loadOrederListData) , name: DSApply.applyFinished, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DSOrderViewController.loadOrederListData), name: DSSignViewController.siginSuccessNotice, object: nil)
 
     }
     func configTableView() {

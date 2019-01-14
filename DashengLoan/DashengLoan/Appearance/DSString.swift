@@ -77,12 +77,14 @@ extension String {
         return false
     }
     mutating func correctionPhoneNum() -> String {
-        self = replacingOccurrences(of: "(", with: "")
-        self = replacingOccurrences(of: ")", with: "")
-        self = replacingOccurrences(of: "+86", with: "")
-        self = replacingOccurrences(of: "-", with: "")
-        self = replacingOccurrences(of: " ", with: "")
-        return self
+        var oldString = self
+        oldString = oldString.replacingOccurrences(of: "(", with: "")
+        oldString = oldString.replacingOccurrences(of: ")", with: "")
+        oldString = oldString.replacingOccurrences(of: "+86", with: "")
+        oldString = oldString.replacingOccurrences(of: "-", with: "")
+        let array = oldString.components(separatedBy: CharacterSet.whitespaces)
+        oldString = array.joined(separator: "")
+        return oldString
     }
     
    

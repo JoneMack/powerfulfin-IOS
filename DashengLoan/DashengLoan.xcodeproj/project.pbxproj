@@ -56,6 +56,11 @@
 		350A404C21E5E01600092EDD /* DSSignLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A404B21E5E01600092EDD /* DSSignLocalService.swift */; };
 		350A405021E5E05600092EDD /* sign.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A404F21E5E05600092EDD /* sign.plist */; };
 		350A405321E5E4ED00092EDD /* DSAuditDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405221E5E4ED00092EDD /* DSAuditDataService.swift */; };
+		350A405721E72A2900092EDD /* DSApplySuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405621E72A2900092EDD /* DSApplySuccessController.swift */; };
+		350A405A21E72C2C00092EDD /* DSSuccessLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405921E72C2C00092EDD /* DSSuccessLocalService.swift */; };
+		350A405C21E72C3C00092EDD /* success.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A405B21E72C3C00092EDD /* success.plist */; };
+		350A405E21E72F0C00092EDD /* DSApplySuccessInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405D21E72F0C00092EDD /* DSApplySuccessInfo.swift */; };
+		350A406021E7502D00092EDD /* DSDisplayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405F21E7502D00092EDD /* DSDisplayViewCell.swift */; };
 		350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A521D06E170055EFA6 /* CLLoopView.swift */; };
 		350A68A821D0769B0055EFA6 /* MarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A721D0769B0055EFA6 /* MarqueeView.swift */; };
 		350A68AA21D0A71E0055EFA6 /* DSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A921D0A71E0055EFA6 /* DSSearchView.swift */; };
@@ -80,9 +85,6 @@
 		350A68DE21D22D150055EFA6 /* userid.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A68DD21D22D150055EFA6 /* userid.plist */; };
 		350A68E021D23E5C0055EFA6 /* DSSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68DF21D23E5C0055EFA6 /* DSSelectorCell.swift */; };
 		350A68E221D2406E0055EFA6 /* DSIdImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68E121D2406E0055EFA6 /* DSIdImageCell.swift */; };
-		350A68E621D25BC60055EFA6 /* KZAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350A68E521D25BC60055EFA6 /* KZAlert.framework */; };
-		350A68E721D25BEA0055EFA6 /* KZAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350A68E521D25BC60055EFA6 /* KZAlert.framework */; };
-		350A68E821D25BEA0055EFA6 /* KZAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 350A68E521D25BC60055EFA6 /* KZAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		350A68EB21D25C290055EFA6 /* DSDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68EA21D25C290055EFA6 /* DSDatePicker.swift */; };
 		350A68ED21D266E00055EFA6 /* DSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68EC21D266E00055EFA6 /* DSDate.swift */; };
 		350A68F021D317460055EFA6 /* DSApplyFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68EF21D317460055EFA6 /* DSApplyFooterView.swift */; };
@@ -106,6 +108,10 @@
 		350A692021D3658E0055EFA6 /* DSOrderLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A691F21D3658E0055EFA6 /* DSOrderLocalService.swift */; };
 		350A692221D365BF0055EFA6 /* order.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A692121D365BF0055EFA6 /* order.plist */; };
 		350A692521D37C830055EFA6 /* DSUserIdInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A692421D37C830055EFA6 /* DSUserIdInfo.swift */; };
+		350DD04C21E8906A00243DDC /* KZAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD04B21E8906A00243DDC /* KZAlert.framework */; };
+		350DD04D21E8907100243DDC /* KZAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD04B21E8906A00243DDC /* KZAlert.framework */; };
+		350DD04E21E8907100243DDC /* KZAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD04B21E8906A00243DDC /* KZAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		350DD05021EC32D100243DDC /* DSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350DD04F21EC32D100243DDC /* DSData.swift */; };
 		3513214721D4B120005AB183 /* XJImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214621D4B120005AB183 /* XJImagePicker.swift */; };
 		3513214921D4B527005AB183 /* DSImagePickerActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */; };
 		3513214B21D4D5FB005AB183 /* XJImageCompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214A21D4D5FB005AB183 /* XJImageCompress.swift */; };
@@ -181,7 +187,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				350A68E821D25BEA0055EFA6 /* KZAlert.framework in Embed Frameworks */,
+				350DD04E21E8907100243DDC /* KZAlert.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +245,12 @@
 		350A404B21E5E01600092EDD /* DSSignLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSignLocalService.swift; sourceTree = "<group>"; };
 		350A404F21E5E05600092EDD /* sign.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = sign.plist; sourceTree = "<group>"; };
 		350A405221E5E4ED00092EDD /* DSAuditDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAuditDataService.swift; sourceTree = "<group>"; };
+		350A405421E6E63A00092EDD /* dashengLoan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dashengLoan.entitlements; sourceTree = "<group>"; };
+		350A405621E72A2900092EDD /* DSApplySuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplySuccessController.swift; sourceTree = "<group>"; };
+		350A405921E72C2C00092EDD /* DSSuccessLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSuccessLocalService.swift; sourceTree = "<group>"; };
+		350A405B21E72C3C00092EDD /* success.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = success.plist; sourceTree = "<group>"; };
+		350A405D21E72F0C00092EDD /* DSApplySuccessInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplySuccessInfo.swift; sourceTree = "<group>"; };
+		350A405F21E7502D00092EDD /* DSDisplayViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDisplayViewCell.swift; sourceTree = "<group>"; };
 		350A68A521D06E170055EFA6 /* CLLoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoopView.swift; sourceTree = "<group>"; };
 		350A68A721D0769B0055EFA6 /* MarqueeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeView.swift; sourceTree = "<group>"; };
 		350A68A921D0A71E0055EFA6 /* DSSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchView.swift; sourceTree = "<group>"; };
@@ -263,7 +275,6 @@
 		350A68DD21D22D150055EFA6 /* userid.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = userid.plist; sourceTree = "<group>"; };
 		350A68DF21D23E5C0055EFA6 /* DSSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSelectorCell.swift; sourceTree = "<group>"; };
 		350A68E121D2406E0055EFA6 /* DSIdImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSIdImageCell.swift; sourceTree = "<group>"; };
-		350A68E521D25BC60055EFA6 /* KZAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KZAlert.framework; sourceTree = "<group>"; };
 		350A68EA21D25C290055EFA6 /* DSDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDatePicker.swift; sourceTree = "<group>"; };
 		350A68EC21D266E00055EFA6 /* DSDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDate.swift; sourceTree = "<group>"; };
 		350A68EF21D317460055EFA6 /* DSApplyFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyFooterView.swift; sourceTree = "<group>"; };
@@ -287,6 +298,8 @@
 		350A691F21D3658E0055EFA6 /* DSOrderLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderLocalService.swift; sourceTree = "<group>"; };
 		350A692121D365BF0055EFA6 /* order.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = order.plist; sourceTree = "<group>"; };
 		350A692421D37C830055EFA6 /* DSUserIdInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserIdInfo.swift; sourceTree = "<group>"; };
+		350DD04B21E8906A00243DDC /* KZAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KZAlert.framework; sourceTree = "<group>"; };
+		350DD04F21EC32D100243DDC /* DSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSData.swift; sourceTree = "<group>"; };
 		3513214621D4B120005AB183 /* XJImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJImagePicker.swift; sourceTree = "<group>"; };
 		3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSImagePickerActionSheet.swift; sourceTree = "<group>"; };
 		3513214A21D4D5FB005AB183 /* XJImageCompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJImageCompress.swift; sourceTree = "<group>"; };
@@ -368,6 +381,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35552C6521C9E814002033FC /* SystemConfiguration.framework in Frameworks */,
 				35552C6121C9E803002033FC /* CoreMedia.framework in Frameworks */,
 				35552C5F21C9E7FA002033FC /* libc++.tbd in Frameworks */,
 				35552C5D21C9E7EC002033FC /* libicucore.tbd in Frameworks */,
@@ -375,10 +389,9 @@
 				35552C6D21C9E848002033FC /* MobileCoreServices.framework in Frameworks */,
 				35552C6B21C9E840002033FC /* AVFoundation.framework in Frameworks */,
 				35552C6921C9E834002033FC /* AudioToolbox.framework in Frameworks */,
+				350DD04C21E8906A00243DDC /* KZAlert.framework in Frameworks */,
 				35552C6721C9E82B002033FC /* CoreTelephony.framework in Frameworks */,
-				350A68E621D25BC60055EFA6 /* KZAlert.framework in Frameworks */,
-				35552C6521C9E814002033FC /* SystemConfiguration.framework in Frameworks */,
-				350A68E721D25BEA0055EFA6 /* KZAlert.framework in Frameworks */,
+				350DD04D21E8907100243DDC /* KZAlert.framework in Frameworks */,
 				35552C6321C9E80B002033FC /* ImageIO.framework in Frameworks */,
 				35E810D421C3A7BD00B5714E /* opencv2.framework in Frameworks */,
 				35E810D521C3A7BD00B5714E /* libjpeg.a in Frameworks */,
@@ -533,6 +546,24 @@
 			path = Audit;
 			sourceTree = "<group>";
 		};
+		350A405521E71C7E00092EDD /* DSApplySuccess */ = {
+			isa = PBXGroup;
+			children = (
+				350A405821E72BE900092EDD /* DSSuccessLocalService */,
+				350A405621E72A2900092EDD /* DSApplySuccessController.swift */,
+			);
+			path = DSApplySuccess;
+			sourceTree = "<group>";
+		};
+		350A405821E72BE900092EDD /* DSSuccessLocalService */ = {
+			isa = PBXGroup;
+			children = (
+				350A405921E72C2C00092EDD /* DSSuccessLocalService.swift */,
+				350A405B21E72C3C00092EDD /* success.plist */,
+			);
+			path = DSSuccessLocalService;
+			sourceTree = "<group>";
+		};
 		350A68A421D06E040055EFA6 /* XJRoopView */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,6 +607,7 @@
 				3513217F21DCBEFA005AB183 /* DSUserOrderInfo.swift */,
 				3513218121DCD030005AB183 /* DSUserOrderConfiger.swift */,
 				350A011121E3507600DFE703 /* DSApplyInfo.swift */,
+				350A405D21E72F0C00092EDD /* DSApplySuccessInfo.swift */,
 			);
 			path = LoanApply;
 			sourceTree = "<group>";
@@ -626,6 +658,7 @@
 				3513215321D5F880005AB183 /* DSApplyLocation */,
 				3513215421D5F899005AB183 /* DSApplyPhone */,
 				350A691B21D364FC0055EFA6 /* DSApplyOrderInfo */,
+				350A405521E71C7E00092EDD /* DSApplySuccess */,
 			);
 			path = DSApply;
 			sourceTree = "<group>";
@@ -676,6 +709,7 @@
 				350A68E121D2406E0055EFA6 /* DSIdImageCell.swift */,
 				350A68F921D32BA30055EFA6 /* DSRightButtonCell.swift */,
 				350A691921D362700055EFA6 /* DSMutableImageCell.swift */,
+				350A405F21E7502D00092EDD /* DSDisplayViewCell.swift */,
 				350A010C21E34C1200DFE703 /* DSSelectorRightButtonCell.swift */,
 			);
 			path = DSInputCell;
@@ -700,7 +734,7 @@
 		350A68E421D25BB70055EFA6 /* KZAlert */ = {
 			isa = PBXGroup;
 			children = (
-				350A68E521D25BC60055EFA6 /* KZAlert.framework */,
+				350DD04B21E8906A00243DDC /* KZAlert.framework */,
 			);
 			path = KZAlert;
 			sourceTree = "<group>";
@@ -924,6 +958,7 @@
 		3548366421BA158A008AB78D /* dashengLoan */ = {
 			isa = PBXGroup;
 			children = (
+				350A405421E6E63A00092EDD /* dashengLoan.entitlements */,
 				35E810C821C3A79700B5714E /* Third */,
 				3595C61C21BE4C9800B90FD0 /* Tools */,
 				3548369521BA3EEA008AB78D /* Appearance */,
@@ -1029,6 +1064,7 @@
 				350A68B921D0B9650055EFA6 /* DSLabel.swift */,
 				350A68BB21D0C53A0055EFA6 /* DSString.swift */,
 				350A68EC21D266E00055EFA6 /* DSDate.swift */,
+				350DD04F21EC32D100243DDC /* DSData.swift */,
 				350A68BD21D0C8FE0055EFA6 /* DSAlertController.swift */,
 				3513215921D607E1005AB183 /* DSArray.swift */,
 			);
@@ -1246,6 +1282,11 @@
 					3548366121BA158A008AB78D = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1283,6 +1324,7 @@
 				350A00E721DF306A00DFE703 /* DSOrderInfoCell.xib in Resources */,
 				350A691621D352520055EFA6 /* student.plist in Resources */,
 				350A68DE21D22D150055EFA6 /* userid.plist in Resources */,
+				350A405C21E72C3C00092EDD /* success.plist in Resources */,
 				350A691821D353BF0055EFA6 /* unemployed.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1376,7 +1418,9 @@
 				350A68BE21D0C8FE0055EFA6 /* DSAlertController.swift in Sources */,
 				350A404A21E5DFF000092EDD /* DSSignViewController.swift in Sources */,
 				350A010221E08EEF00DFE703 /* DSUseBankTableViewCell.swift in Sources */,
+				350A405A21E72C2C00092EDD /* DSSuccessLocalService.swift in Sources */,
 				350A00E321DF03F000DFE703 /* DSUserOrderListInfo.swift in Sources */,
+				350A406021E7502D00092EDD /* DSDisplayViewCell.swift in Sources */,
 				3548368621BA17B8008AB78D /* DSWebViewController.swift in Sources */,
 				350A00EB21DF627600DFE703 /* DSPasswordViewController.swift in Sources */,
 				356E80B621CD05860052C6E2 /* DSBugly.swift in Sources */,
@@ -1422,6 +1466,7 @@
 				3513216121D62413005AB183 /* DSBanksPicker.swift in Sources */,
 				350A68D921D202550055EFA6 /* DSInputTableViewCell.swift in Sources */,
 				3513214721D4B120005AB183 /* XJImagePicker.swift in Sources */,
+				350A405E21E72F0C00092EDD /* DSApplySuccessInfo.swift in Sources */,
 				3548368F21BA1976008AB78D /* DSOrderViewController.swift in Sources */,
 				350A690021D32D6A0055EFA6 /* DSApplyLocalService.swift in Sources */,
 				3513216621D652A6005AB183 /* DSAddress.swift in Sources */,
@@ -1464,8 +1509,10 @@
 				3508778321CDEA94006580AD /* DSHomeSearchControl.swift in Sources */,
 				350A690B21D34CF90055EFA6 /* DSWorkViewController.swift in Sources */,
 				350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */,
+				350A405721E72A2900092EDD /* DSApplySuccessController.swift in Sources */,
 				350A011021E3504100DFE703 /* DSApplyInfoAlertView.swift in Sources */,
 				3548368221BA1765008AB78D /* DSTabBarController.swift in Sources */,
+				350DD05021EC32D100243DDC /* DSData.swift in Sources */,
 				3508525421C352810095C391 /* DSLocationManager.swift in Sources */,
 				3513215E21D6166A005AB183 /* DSUserBanksInfo.swift in Sources */,
 				350A68B521D0B6520055EFA6 /* DSSearchData.swift in Sources */,
@@ -1633,8 +1680,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = dashengLoan/dashengLoan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 48TW2EJWSZ;
+				DEVELOPMENT_TEAM = KFY5563N56;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1651,7 +1699,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/dashengLoan/Third/UDSafeSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dashengloan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dasheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/dashengLoan/dashengLoan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1667,8 +1715,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = dashengLoan/dashengLoan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 48TW2EJWSZ;
+				DEVELOPMENT_TEAM = KFY5563N56;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1685,7 +1734,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/dashengLoan/Third/UDSafeSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dashengloan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dasheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/dashengLoan/dashengLoan-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

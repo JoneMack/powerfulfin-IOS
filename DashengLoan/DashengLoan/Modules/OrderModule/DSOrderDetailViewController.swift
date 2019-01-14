@@ -85,12 +85,25 @@ extension DSOrderDetailViewController {
             cell.installmentLabel.text = installment
             cell.nameLabel.text = orderInfo?.full_name
             cell.phoneLabel.text = orderInfo?.phone
-            cell.bankLabel.text = "\(orderInfo?.bank_account ?? "") \(orderInfo?.bank_name ?? "")"
+            
+            var codeNum = ""
+            if let account = orderInfo?.bank_account {
+                if account.count > 8 {
+                    let count  = account.count - 1
+                    codeNum = account[0...3]
+                    codeNum = codeNum + "****"
+                    codeNum += account[count-3...count]
+                }
+            }
+            cell.bankLabel.text = "\(codeNum) \(orderInfo?.bank_name ?? "")"
+            
             cell.applyTimeLabel.text = orderInfo?.create_time
             cell.sourceNameLabel.text = orderInfo?.resource_company
             if orderInfo?.contract?.count ?? 0 > 0 {
+                cell.leftSpceConstraint.constant = 110
                 cell.contactBtn.isHidden = false
             }else{
+                cell.leftSpceConstraint.constant = 15
                 cell.contactBtn.isHidden = true
             }
             if (orderInfo?.audit_opinion) != nil {

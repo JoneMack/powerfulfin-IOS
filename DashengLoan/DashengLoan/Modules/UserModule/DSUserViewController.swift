@@ -72,6 +72,11 @@ extension DSUserViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DSTableViewCell
         cell.textLabel?.text = cellModel?.text
         cell.imageView?.image = UIImage(named: (cellModel?.logo)!)
+        if cellModel?.text == "关于" {
+            cell.detailTextLabel?.text = XJDeviceInfo.appVersion
+        }else{
+            cell.detailTextLabel?.text = ""
+        }
         if (indexPath.row >= dataSource.numberOfRows(indexPath.section)-1) {
              cell.showSpearator = false
         }else{
@@ -169,9 +174,35 @@ extension DSUserViewController {
         
     }
     @objc fileprivate func showAboutViewController() {
-        let webVC = DSWebViewController()
-        webVC.urlString = aboutUsURL
-        pushToNextViewController(webVC)
+            let webVC = DSWebViewController()
+            webVC.urlString = aboutUsURL
+            pushToNextViewController(webVC)
+//        let successView = DSApplySuccessController()
+//        var successInfo = DSApplySuccessInfo()
+//        successInfo.lid = 1111
+//        successInfo.account = "5000"
+//        successInfo.product_name = "等额分期9期"
+//        successInfo.resource_company = "富登小额贷款(四川)有限公司"
+//        var bankInfo = DSBankInfo()
+//        bankInfo.bank_account = "355522154215458"
+//        bankInfo.bank_name = "光大银行"
+//        successInfo.bank_info = bankInfo
+//        var applyInfo = DSApplyInfo()
+//        applyInfo.title = "每月15日为还款日"
+//         var one = DSBillSimpleInfo()
+//        one.content = "前9期每期还款"
+//        one.money = "￥123.33"
+//        applyInfo.content_one = one
+//
+//        var two = DSBillSimpleInfo()
+//        two.content = "后19期每期还款"
+//        two.money = "￥123.33"
+//        applyInfo.content_two = two
+//
+//        successInfo.repay_info = applyInfo
+//        successView.successInfo = successInfo
+//        pushToNextViewController(successView)
+
     }
     @objc fileprivate func logoutAction() {
         DSAccountDataService.logout()

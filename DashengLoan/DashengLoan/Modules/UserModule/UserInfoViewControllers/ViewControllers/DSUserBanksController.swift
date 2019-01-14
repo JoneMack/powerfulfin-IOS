@@ -12,22 +12,28 @@ class DSUserBanksController: DSTableViewController {
     
     fileprivate var userBanksInfo:DSUserBanksInfo?
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+         super.viewDidAppear(animated)
+         reloadBanksInfo()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "银行卡管理"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(DSUserBanksController.addNewBank))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(DSUserBanksController.addNewBank))
         configTableView()
         reloadBanksInfo()
     }
     func configTableView()  {
         tableView?.register(DSUseBankTableViewCell.classForCoder(), forCellReuseIdentifier: cellIdentifier)
-        tableView?.rowHeight = 55
+        tableView?.rowHeight = 57
         addRefreshControl(#selector(DSUserBanksController.reloadBanksInfo))
         self.refreshControl?.tintColor = UIColor.ds_darkText
     }
     @objc func addNewBank() {
-        
+        let bankVC = DSBankViewController()
+        bankVC.userName = userBanksInfo?.user_real?.full_name
+        bankVC.hasNext = false
+        pushToNextViewController(bankVC)
     }
     @objc func reloadBanksInfo() {
         if self.refreshControl?.isRefreshing == false {

@@ -17,7 +17,7 @@ class DSApplyBankCell: DSTableViewCell {
         selectionStyle = .none
         logo = UIImageView()
         nameLabel = UILabel()
-        nameLabel.configLabel(color: .ds_blackText, font: UIFont.ds_font(ptSize: 15))
+        nameLabel.configLabel(color: .ds_blackText, font: UIFont.ds_font(ptSize: 16))
         contentView.addSubview(logo)
         contentView.addSubview(nameLabel)
         logo.snp.makeConstraints { (maker) in

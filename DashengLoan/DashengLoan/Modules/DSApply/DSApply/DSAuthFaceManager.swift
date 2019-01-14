@@ -45,7 +45,9 @@ extension DSAuthFaceManager : UDIDSafeAuthDelegate {
                 let authResult = resultInfo["result_auth"] as? String
                 if authResult == "T" {
                     errorMsg = "认证成功"
-                    isAuthSuccessed = true }
+                    isAuthSuccessed = true
+                    
+                }
                 
                 userIdInfo.user_real = isAuthSuccessed ? 2 : 3
                 userIdInfo.full_name = resultInfo["id_name"] as? String

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>type</key>
+		<string>DSDisplayViewCell</string>
+		<key>title</key>
+		<string>申请金额</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>DSDisplayViewCell</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>DSDisplayViewCell</string>
+		<key>title</key>
+		<string>申请产品</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>DSDisplayViewCell</string>
+		<key>title</key>
+		<string>还款日</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>DSDisplayViewCell</string>
+		<key>title</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>DSDisplayViewCell</string>
+		<key>title</key>
+		<string>还款金额</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>DSDisplayViewCell</string>
+		<key>title</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>DSDisplayViewCell</string>
+		<key>title</key>
+		<string>银行卡</string>
+	</dict>
+	<dict>
+		<key>type</key>
+		<string>DSDisplayViewCell</string>
+		<key>title</key>
+		<string></string>
+	</dict>
+</array>
+</plist>

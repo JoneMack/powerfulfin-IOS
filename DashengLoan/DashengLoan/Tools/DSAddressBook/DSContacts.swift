@@ -54,6 +54,7 @@ class DSContacts: NSObject {
         }
     }
     func readContactsFromContactStore() {
+      
         if #available(iOS 9.0, *) {
             readContactsFromContactStoreIOS9()
         }else{

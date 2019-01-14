@@ -29,20 +29,48 @@ class XJDeviceInfo: NSObject {
         }
         return wifiInof
     }
-   
+   /// 设备唯一id
     static var deviceId: String {
         return XJUDID.xj_uuidForDeivce()
     }
+    static var deviceName:String {
+        return UIDevice.current.name
+    }
+    static var deviceModel:String{
+        return UIDevice.current.model
+    }
+    static var deviceType:String {
+        var systemInfo = utsname()
+        uname(&systemInfo)
+        let machineMirror = Mirror(reflecting: systemInfo.machine)
+        
+        let identifier = machineMirror.children.reduce("") { identifier,element in
+            
+            guard let value = element.value as? Int8, value != 0 else{ return identifier }
+            return identifier + String(UnicodeScalar(UInt8(value)))
+            
+        }
+        return identifier
+    }
+    
+    /// 系统的名字
     static var systemName:String {
         return UIDevice.current.systemName
     }
+    /// 系统的版本号
     static var systemVersion:String {
         return UIDevice.current.systemVersion
     }
-    
+    /// App Bundle Identifier
+    static var appBundleId:String {
+      
+        return Bundle.main.infoDictionary?[kCFBundleIdentifierKey as String] as? String ?? "Unknown"
+    }
+    /// app版本号
     static var appVersion:String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     }
+    /// app Build版本号
     static var appBuildVersion:String {
       return  Bundle.main.infoDictionary?["CFBundleVersion"] as! String
     }

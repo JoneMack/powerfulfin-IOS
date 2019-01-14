@@ -163,7 +163,6 @@
                     <constraint firstItem="d8r-lP-vXe" firstAttribute="leading" secondItem="Lb3-rA-8yV" secondAttribute="trailing" constant="33" id="Emt-al-juh"/>
                     <constraint firstItem="Gwc-tK-BWi" firstAttribute="top" secondItem="ctZ-a7-6dX" secondAttribute="bottom" constant="28" id="Gam-5F-5VP"/>
                     <constraint firstItem="KYj-Kn-EIS" firstAttribute="top" secondItem="9e2-bJ-yly" secondAttribute="bottom" constant="15" id="GbE-0w-ENj"/>
-                    <constraint firstItem="v31-gs-zSR" firstAttribute="leading" secondItem="jst-t9-8Va" secondAttribute="trailing" constant="10" id="HIB-nT-Xzl"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Oaf-F2-BCd" secondAttribute="trailing" constant="15" id="HhD-0H-dUe"/>
                     <constraint firstItem="jst-t9-8Va" firstAttribute="leading" secondItem="9e2-bJ-yly" secondAttribute="trailing" constant="33" id="JPE-zN-TYb"/>
                     <constraint firstItem="Oaf-F2-BCd" firstAttribute="leading" secondItem="KYj-Kn-EIS" secondAttribute="trailing" constant="33" id="LtH-r2-Dt0"/>
@@ -192,6 +191,7 @@
                     <constraint firstItem="a0g-HA-b7r" firstAttribute="leading" secondItem="MkC-d3-3Es" secondAttribute="trailing" constant="33" id="gzX-lW-IYV"/>
                     <constraint firstItem="VRx-GN-aBg" firstAttribute="leading" secondItem="ZNp-CK-04N" secondAttribute="trailing" constant="33" id="jKM-0e-dzt"/>
                     <constraint firstItem="a0g-HA-b7r" firstAttribute="centerY" secondItem="MkC-d3-3Es" secondAttribute="centerY" id="jk0-nO-cuJ"/>
+                    <constraint firstAttribute="trailing" secondItem="jst-t9-8Va" secondAttribute="trailing" constant="110" id="kFZ-Uz-dgC"/>
                     <constraint firstItem="Gwc-tK-BWi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="kPS-Kf-MIk"/>
                     <constraint firstItem="bCK-4u-aYv" firstAttribute="centerY" secondItem="uRo-hL-COG" secondAttribute="centerY" id="kaK-k4-do4"/>
                     <constraint firstItem="bCK-4u-aYv" firstAttribute="leading" secondItem="uRo-hL-COG" secondAttribute="trailing" constant="33" id="lzU-bG-aHW"/>
@@ -208,6 +208,7 @@
                 <outlet property="bankLabel" destination="fmD-ac-sJP" id="lBN-ku-XAS"/>
                 <outlet property="contactBtn" destination="v31-gs-zSR" id="U0Y-Lu-gfB"/>
                 <outlet property="installmentLabel" destination="a0g-HA-b7r" id="4ur-9j-ypY"/>
+                <outlet property="leftSpceConstraint" destination="kFZ-Uz-dgC" id="oNx-nF-seO"/>
                 <outlet property="moneyLabel" destination="d8r-lP-vXe" id="5ci-qv-4k3"/>
                 <outlet property="nameLabel" destination="bCK-4u-aYv" id="Avw-Nz-Zub"/>
                 <outlet property="phoneLabel" destination="VRx-GN-aBg" id="gxN-4A-EPl"/>
@@ -216,7 +217,7 @@
                 <outlet property="schoolNameLabel" destination="5rV-Zp-sUp" id="dyI-cw-Fx2"/>
                 <outlet property="sourceNameLabel" destination="jst-t9-8Va" id="7Ly-2p-qqm"/>
             </connections>
-            <point key="canvasLocation" x="-2045" y="62"/>
+            <point key="canvasLocation" x="-2301" y="54"/>
         </tableViewCell>
     </objects>
 </document>

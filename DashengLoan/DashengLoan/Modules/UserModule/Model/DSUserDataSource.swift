@@ -33,12 +33,12 @@ class DSUserDataSource: NSObject {
         let logoutModel = DSUserCellModel(text: "退出登录", logo: "", action: Selector(("logoutAction")))
         
         if DSAppearance.appearance.isAudit {
-            let section2 = [passModel,messageModel,aboutModel]
+            let section2 = [passModel,aboutModel]
             let section3 = [logoutModel]
             dataArray = [section2,section3]
         }else{
             let section1 = [userinfo,bankModel]
-            let section2 = [passModel,messageModel,serModel,aboutModel]
+            let section2 = [passModel,serModel,aboutModel]
             let section3 = [logoutModel]
             dataArray = [section1,section2,section3]
         }

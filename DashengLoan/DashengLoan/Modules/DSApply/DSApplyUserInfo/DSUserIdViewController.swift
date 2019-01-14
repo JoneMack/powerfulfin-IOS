@@ -48,7 +48,7 @@ class DSUserIdViewController: DSApplyTableViewController {
     }
     func reloadUserIdPic() {
         loadPicCount = 0
-        loadUserIdImageFromService()
+        loadUserIdImageFromService(false)
     }
     
 }
@@ -79,6 +79,9 @@ extension DSUserIdViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = dataSource.cellMode(indexPath: indexPath)
         if model.title == "身份信息" {
+            if hasNext == false {
+                DSApply.default.beginController = self
+            }
             DSApply.default.beginAuthFace()
         }
         if model.title == "有限期限" {
@@ -153,7 +156,7 @@ extension DSUserIdViewController  {
     }
   
     
-    fileprivate func loadUserIdImageFromService(){
+    fileprivate func loadUserIdImageFromService(_ uploadAll:Bool){
         
         DSApplyDataService.getUserIdPic(order: self.orderId ?? "") {[weak self] (success, userInfo) in
             if success {
@@ -162,15 +165,36 @@ extension DSUserIdViewController  {
                 self?.userIdInfo?.idcard_information_pic = userInfo!.idcard_information_pic
                 self?.userIdInfo?.idcard_information_pic_url = userInfo!.idcard_information_pic_url
                 self?.tableView?.reloadData()
+                if uploadAll {
+                    self?.footViewClick(footBtn: (self?.footView?.footBtn)!)
+                }
             }else{
                 self?.loadPicCount += 1
                 if self?.loadPicCount ?? 3 < 3 {
-                    self?.loadUserIdImageFromService()
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
+                        self?.loadUserIdImageFromService(uploadAll)
+                    })
                 }
             }
         }
     }
     fileprivate func uploadUserIdInfo(complete:@escaping(()->Void)) {
+        
+        if self.userIdInfo?.idcard_information_pic == nil || self.userIdInfo?.idcard_information_pic?.isEmpty == true {
+            if loadPicCount > 0 && self.orderId != nil && self.orderId?.isEmpty == false {
+                loadPicCount = 0
+                XJToast.showToastAction()
+                loadUserIdImageFromService(true)
+            }else{
+                XJToast.showToastAction(message: "请重新选择上传身份证正面照")
+            }
+            return
+        }
+        if self.userIdInfo?.idcard_national_pic == nil || self.userIdInfo?.idcard_national_pic?.isEmpty == true {
+            XJToast.showToastAction(message: "请重新选择上传身份证反面照")
+            return
+        }
+        
         var paraDic = dataSource.getDataInfo()
         paraDic["udcredit_order"] = orderId ?? ""
         paraDic["idcard_information_pic"] = self.userIdInfo?.idcard_information_pic

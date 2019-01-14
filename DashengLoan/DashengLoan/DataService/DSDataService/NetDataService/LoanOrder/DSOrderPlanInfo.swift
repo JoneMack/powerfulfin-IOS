@@ -15,7 +15,7 @@ struct DSOrderPlanInfo: Codable {
 }
 struct DSPlanInfo:Codable {
     /// 期数id
-    var bill_id:String?
+    var bill_id:Int?
     /// 应还日期
     var should_repay_date:String?
     /// 当期还款状态id

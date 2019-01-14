@@ -16,7 +16,11 @@ class DSTextValidater: NSObject {
      var validateBlock:((Bool)->Void)?
     
     func textFiled(_ textFiled:UITextField, textShouldChanged newText:String?, oldText:String?) {
-        let result  = validateInput(newText)
+        
+        var result  = validateInput(newText)
+        if newText?.count ?? 0 < oldText?.count ?? 0{
+            result = true
+        }
         var finaleText = newText
         
         if result == false {
@@ -121,7 +125,11 @@ class DSNoramlValidater: DSTextValidater {
 class DSBankCodeValidater: DSTextValidater {
     override func textFiled(_ textFiled:UITextField, textShouldChanged newText:String?, oldText:String?) {
         
-        let realBankNum = newText?.replacingOccurrences(of: " ", with: "") ?? ""
+        var realBankNum = newText ?? ""
+        
+        while realBankNum.contains(" ") {
+            realBankNum = realBankNum.replacingOccurrences(of: " ", with: "")
+        }
         
         let result  = validateInput(realBankNum)
         
@@ -145,12 +153,12 @@ class DSBankCodeValidater: DSTextValidater {
                 anewText = anewText[length..<totleCount]
                 totleCount = anewText.count
             }
+            if targetNum.last == " "{
+                targetNum = targetNum[0...targetNum.count-2]
+            }
             finaleText = targetNum
             textFiled.text = targetNum
         }
-        
-        
-        
         let status = validate(finaleText).enable
         validateBlock?(status)
     }
@@ -172,7 +180,8 @@ class DSBankCodeValidater: DSTextValidater {
         }
         let scan: Scanner = Scanner(string: text ?? "")
         var val:Int = 0
-        return scan.scanInt(&val) && scan.isAtEnd
+        let can = scan.scanInt(&val) && scan.isAtEnd
+        return can
         
     }
 }

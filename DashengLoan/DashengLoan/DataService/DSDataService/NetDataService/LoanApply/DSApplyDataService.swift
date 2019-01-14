@@ -20,6 +20,17 @@ class DSApplyDataService {
             XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
         }
     }
+    static func getUserStatus(complete:@escaping((DSUserApplyStatusInfo?,Bool)->Void)) {
+        let request = XJRequest("v1/user/userstatus", method: .get)
+        XJNetWork.request(request, successHandler: { (jsonInfo) in
+            if let model = try? XJDecoder.xj_decode(DSUserApplyStatusInfo.self, from: jsonInfo) {
+                complete(model,true)
+            }
+        }) { (error) in
+            complete(nil,false)
+            XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
+        }
+    }
     class func getAddressList(province:String? = nil,city:String? = nil,  complete:@escaping(([DSAddress]?,Bool)->Void)) {
         var request:XJRequest!
         if province == nil && city == nil {
@@ -234,10 +245,12 @@ extension DSApplyDataService {
         
     }
     /// 提交订单信息
-    class func uploadUserOrderInfo(paramDic:[String:Any],complete:@escaping(()->Void)){
+    class func uploadUserOrderInfo(paramDic:[String:Any],complete:@escaping((DSApplySuccessInfo)->Void)){
         let requrst = XJRequest("v1/loan/submit", method: .post, parameters: paramDic)
         XJNetWork.request(requrst, successHandler: { (jsonInfo) in
-           complete()
+            if let model = try? XJDecoder.xj_decode(DSApplySuccessInfo.self, from: jsonInfo) {
+                complete(model)
+            }
         }) { (error) in
             XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
         }

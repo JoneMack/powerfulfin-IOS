@@ -81,7 +81,7 @@ extension DSApplyOrderViewController {
             }
             showDataPicker(dataArray: titles, mode: model, indexPath: indexPath)
         }else if model.title == "开课日期" {
-            showDatePicker(minDate: nil, maxDate: nil, indexPath: indexPath)
+            showDatePicker(minDate: Date(), maxDate: nil, indexPath: indexPath)
         }
         
     }
@@ -139,8 +139,6 @@ extension DSApplyOrderViewController {
             }
         }
     }
-    
-    
     fileprivate func showDatePicker(minDate:Date?,maxDate:Date?,indexPath:IndexPath) {
         let model = dataSource.cellMode(indexPath: indexPath)
         
@@ -177,18 +175,36 @@ extension DSApplyOrderViewController {
         }
     }
     func uploadUserOrderInfos()  {
+        
         XJToast.showToastAction()
-
         var paraDic = (dataSource as! DSOrderLocalService).getOrderDataInfo()
         paraDic["oid"] = self.schooId
-        DSApplyDataService.uploadUserOrderInfo(paramDic: paraDic) {
-            DSApply.default.showNextStep()
+        DSApplyDataService.uploadUserOrderInfo(paramDic: paraDic) {[weak self] (successInfo) in
+            self?.showSuccessView(successInfo)
         }
     }
 }
 extension DSApplyOrderViewController {
     override func footViewClick(footBtn: UIButton) {
+        if footView?.trainButton?.isSelected == false {
+            XJToast.showToastAction(message: "请先阅读以及同意分期贷款培训协议")
+            return
+        }
+        if footView?.dutyButton?.isSelected == false {
+            XJToast.showToastAction(message: "请先阅读以及同意数字证书申请及使用责任书")
+            return
+        }
         uploadUserOrderInfos()
+    }
+    fileprivate func showSuccessView(_ successInfo:DSApplySuccessInfo){
+        let amountModel = dataSource.cellMode(indexPath: IndexPath(row: 1, section: 0))
+        let produceModel = dataSource.cellMode(indexPath: IndexPath(row: 2, section: 0))
+        var sucInfo = successInfo
+        sucInfo.account = amountModel.content
+        sucInfo.product_name = produceModel.content
+        let successView = DSApplySuccessController()
+        successView.successInfo = sucInfo
+        pushToNextViewController(successView)
     }
     func footViewShowTrainAgreement() {
         DSRouter.openURL(url: agreementURL)

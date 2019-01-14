@@ -47,6 +47,12 @@ class DSRouter {
         let urlInfo = parsingURL(url: url)
         
         if urlInfo.0 == .none {
+            if url == nil || url?.isEmpty == true {
+                return
+            }
+            let webView = DSWebViewController()
+            webView.urlString = url!
+            UIApplication.shared.push(controller: webView)
             return
         }
         switch urlInfo.0 {

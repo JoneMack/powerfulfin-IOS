@@ -39,20 +39,23 @@ class DSWorkLocalService: DSApplyLocalService {
         unemployedModels += loadSectionData(fileName: "unemployed")
     }
     
-    /// 切换tab
+    /// 切换tab 0是在职 1 是学生 2 是待业
     ///
     /// - Parameter index: 0是在职 1 是学生 2 是待业
     func changeItem(index:Int)  {
         var monthInCome = ""
         
         if cuttentIndex == 2 {//当前是学生
-            monthInCome = studentModels.last?.content ?? ""
+            monthInCome = studentModels.last?.content ?? "2000"
         }else if cuttentIndex == 3 {//当前是待业
-            monthInCome = unemployedModels.first?.content ?? ""
+            monthInCome = unemployedModels.first?.content ?? "2000"
         }else{//当前是在职
-            monthInCome = incumbentModels.last?.content ?? ""
+            monthInCome = incumbentModels.last?.content ?? "2000"
         }
-        
+        if monthInCome.hasSuffix(".00") {
+            let count = monthInCome.count - 1
+            monthInCome = monthInCome[0...count-2]
+        }
         if index == 1 {//选中的是学生
             studentModels.last?.content = monthInCome
             models[1] = studentModels
@@ -79,6 +82,11 @@ class DSWorkLocalService: DSApplyLocalService {
             eduModel.content = workInfo.highest_education
             eduPicModel.content = workInfo.edu_pic_url
             eduPicModel.subContent = workInfo.edu_pic
+             var monthInCome = workInfo.monthly_income ?? "2000"
+            if monthInCome.hasSuffix(".00") {
+                let count = monthInCome.count - 4
+                monthInCome = monthInCome[0...count]
+            }
             
             var imageInfo = DSImageInfo()
             imageInfo.url = workInfo.edu_pic_url ?? ""
@@ -110,7 +118,7 @@ class DSWorkLocalService: DSApplyLocalService {
             workTime.content = workInfo.work_entry_time
             workProfession.content = workInfo.work_profession
             workPhone.content = workInfo.work_contact
-            workIncome.content = workInfo.monthly_income
+            workIncome.content = monthInCome
             
             
             let schoolName = studentModels[0]
@@ -132,11 +140,11 @@ class DSWorkLocalService: DSApplyLocalService {
             schoolMajor.content = workInfo.school_major
             schoolSystem.content = workInfo.education_system
             schoolTime.content = workInfo.entrance_time
-            schoolIncom.content = workInfo.monthly_income
+            schoolIncom.content = monthInCome
             
             let trainIncom = unemployedModels[0]
             let trainPhone = unemployedModels[1]
-            trainIncom.content = workInfo.monthly_income
+            trainIncom.content = monthInCome
             trainPhone.content = workInfo.train_contact
         }
     }

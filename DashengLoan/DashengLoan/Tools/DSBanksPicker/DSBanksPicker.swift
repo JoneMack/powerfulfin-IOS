@@ -30,7 +30,7 @@ class DSBanksPicker: KZAlertController {
         contentView.viewWillDisappear(false)
     }
     func loadSubViews()  {
-        tableView = UITableView(frame: .zero, style: .grouped)
+        tableView = UITableView(frame: .zero, style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -83,8 +83,9 @@ extension DSBanksPicker :UITableViewDelegate,UITableViewDataSource {
         clostBtn.addTarget(self, action: #selector(DSBanksPicker.dismissViewController), for: .touchUpInside)
         headerView.addSubview(clostBtn)
         clostBtn.snp.makeConstraints { (maker) in
-            maker.left.equalTo(15)
+            maker.left.equalTo(0)
             maker.top.bottom.equalTo(0)
+            maker.width.equalTo(60)
         }
         let titleLabel = UILabel()
         titleLabel.configLabel(color: UIColor.ds_blackText, font: .ds_font(ptSize: 16))

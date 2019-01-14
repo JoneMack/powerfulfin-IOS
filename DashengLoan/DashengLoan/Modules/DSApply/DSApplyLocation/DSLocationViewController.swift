@@ -131,7 +131,7 @@ extension DSLocationViewController {
             
             var distanceText:String = ""
             if let name = locationInfo?.org_name {
-                distanceText = "据您报名的\(name)\(locationInfo?.distance ?? "")km"
+                distanceText = "距您报名的\(name)\(locationInfo?.distance ?? "")km"
             }else{
                 distanceText = "距离您报名的机构0km"
             }

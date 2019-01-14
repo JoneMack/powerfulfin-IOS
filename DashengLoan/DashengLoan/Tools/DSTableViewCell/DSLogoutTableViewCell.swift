@@ -11,7 +11,7 @@ import UIKit
 class DSLogoutTableViewCell: DSTableViewCell {
     public let titleLabel = UILabel()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: .value2, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(titleLabel)
         titleLabel.font = UIFont.ds_boldFont(ptSize: 14)
         titleLabel.textColor = UIColor.ds_blackText

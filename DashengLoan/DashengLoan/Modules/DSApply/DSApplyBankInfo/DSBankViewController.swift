@@ -16,7 +16,11 @@ class DSBankViewController: DSApplyTableViewController {
         super.viewDidLoad()
         navigationItem.title = "银行卡"
         dataSource = DSBankLocalService()
-        loadFooterView(title: "下一步")
+        if hasNext {
+            loadFooterView(title: "下一步")
+        }else{
+            loadFooterView(title: "提交")
+        }
         bankPicker = DSBanksPicker()
     }
     override func tableViewType() -> UITableView.Style {
@@ -73,9 +77,7 @@ extension DSBankViewController {
         titlelabel.text = "注：短信验证码由各支付机构单独发送，请注意查收"
         return headerSectionView
     }
-    override func configCell(_ cell: DSInputTableViewCell, model: DSInputModel, indexPath: IndexPath) {
-        super.configCell(cell, model: model, indexPath: indexPath)
-    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let model = dataSource.cellMode(indexPath: indexPath)
@@ -147,12 +149,15 @@ extension DSBankViewController {
     func bindCardToService()  {
         var paramDic = (dataSource as! DSBankLocalService).getBindCardParaDic()
         paramDic["serialnumber"] = serialnumber ?? ""
-        DSApplyDataService.bindBankCard(cardInfo: paramDic) {
-            DSApply.default.showNextStep()
+        DSApplyDataService.bindBankCard(cardInfo: paramDic) {[weak self] in
+            if self?.hasNext == true{
+                self?.popViewController()
+            }else{
+                DSApply.default.showNextStep()
+            }
         }
     }
     override func footViewClick(footBtn: UIButton) {
         bindCardToService()
-//        DSApply.default.showNextStep()
     }
 }

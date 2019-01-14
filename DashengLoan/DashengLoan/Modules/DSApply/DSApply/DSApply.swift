@@ -19,7 +19,7 @@ class DSApply: NSObject {
     //人脸识别SDK
     fileprivate let authFaceManager = DSAuthFaceManager()
     //初始进来的页面
-    fileprivate weak var beginController:UIViewController?
+     weak var beginController:UIViewController?
   
     fileprivate var step:Int = 0
     func beginApply(_ schooId:String ,fromController:UIViewController)  {

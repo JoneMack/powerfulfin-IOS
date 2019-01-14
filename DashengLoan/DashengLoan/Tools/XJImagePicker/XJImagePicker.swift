@@ -127,18 +127,30 @@ extension XJImagePicker:TZImagePickerControllerDelegate {
         if assets.count > 0 {
             let image = photos.first
             if let asset = assets.first as? PHAsset {
+                print(asset.mediaSubtypes)
+                   var isHEIC = false
+                if let UTI =  asset.value(forKey: "uniformTypeIdentifier") as? String {
+                    if UTI == "public.heif" || UTI == "public.heic" {
+                        isHEIC = true
+                    }
+                }
                 TZImageManager.default()?.getOriginalPhotoData(with: asset, completion: {[weak self] (origainalData, info, isDegraded) in
+                    
+                    var data  = origainalData!
+                    
+                    if isHEIC == true {
+                    if #available(iOS 10.0, *) {
+                        if let ciimage = CIImage(data: origainalData!) {
+                                data = CIContext().jpegRepresentation(of: ciimage, colorSpace: ciimage.colorSpace!, options: [:])!
+                            }
+                        }
+                    }
                     print((origainalData! as NSData).length/1000)
-                    self?.selectorHandler?([image!],[origainalData!])
+                    print((origainalData! as NSData).imageFormat)
+                    self?.selectorHandler?([image!],[data])
                 })
             }
         }
-//        if photos.count > 0 {
-//            let image = photos.first
-////            if isSelectOriginalPhoto {
-////                image = image?.compressImageQuality(0.7)
-////            }
-//        }
     }
     
 }

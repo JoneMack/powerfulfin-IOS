@@ -30,9 +30,11 @@ class DSTableViewCell: UITableViewCell {
         }
     }
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: .value1, reuseIdentifier: reuseIdentifier)
         textLabel?.font = UIFont.ds_font(ptSize: 14)
         textLabel?.textColor = UIColor.ds_blackText
+        detailTextLabel?.font = UIFont.ds_font(ptSize: 12)
+        detailTextLabel?.textColor = UIColor.ds_lightGrayText
         contentView.addSubview(separatorView)
         separatorView.snp.makeConstraints { (maker) in
             maker.left.equalTo(leftSpearatorSpace)

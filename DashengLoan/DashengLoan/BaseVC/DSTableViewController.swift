@@ -15,7 +15,9 @@ class DSTableViewController: DSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadTableView()
+        
     }
     open func tableViewType() -> UITableView.Style {
         return .plain

@@ -20,7 +20,7 @@ class DSBankListViewController: DSTableViewController {
     }
     func configTableView()  {
         tableView?.register(DSApplyBankCell.classForCoder(), forCellReuseIdentifier: cellIdentifier)
-        tableView?.rowHeight = 55
+        tableView?.rowHeight = 57
     }
     func loadFooterView(title:String)  {
         footView = DSApplyFooterView(title: title)

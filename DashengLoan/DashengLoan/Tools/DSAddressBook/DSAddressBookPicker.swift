@@ -48,10 +48,9 @@ extension DSAddressBookPicker :ABPeoplePickerNavigationControllerDelegate {
         
         var contactInfo = DSContact()
 
-        
-        let firstName = ABRecordCopyValue(person, kABPersonFirstNameProperty);
-        if let name = firstName?.takeRetainedValue() as? String {
-             contactInfo.name = name
+        let compositeName = ABRecordCopyCompositeName(person)
+        if let name = compositeName?.takeRetainedValue() as String? {
+           contactInfo.name = name
         }
         
         if let unmanagedPhones = ABRecordCopyValue(person, kABPersonPhoneProperty) {

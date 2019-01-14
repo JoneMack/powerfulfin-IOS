@@ -7,15 +7,15 @@
 	<key>navigationBarTitleColor</key>
 	<string>ffffff</string>
 	<key>navigationBarColor</key>
-	<string>0AAAF5</string>
+	<string>ea4934</string>
 	<key>-------OCR-------</key>
 	<string></string>
 	<key>ocr_title</key>
 	<string>身份证扫描</string>
 	<key>ocr_manual_buttonTitleColor</key>
-	<string>0AAAF5</string>
+	<string>ea4934</string>
 	<key>ocr_agreement_buttonTitleColor</key>
-	<string>0AAAF5</string>
+	<string>ea4934</string>
 	<key>ocr_checkbox_fillColor</key>
 	<string>323f52</string>
 	<key>-------OCR信息核验-------</key>
@@ -25,11 +25,11 @@
 	<key>ocr_result_titleColor</key>
 	<string>ffffff</string>
 	<key>ocr_result_startButtonBGColor</key>
-	<string>0AAAF5</string>
+	<string>ea4934</string>
 	<key>ocr_result_startButtonTitleColor</key>
 	<string>ffffff</string>
 	<key>ocr_result_changeButtonTitleColor</key>
-	<string>0AAAF5</string>
+	<string>ea4934</string>
 	<key>ocr_result_nameColor</key>
 	<string>383838</string>
 	<key>ocr_result_explainColor</key>
@@ -39,29 +39,29 @@
 	<key>live_title</key>
 	<string>刷脸</string>
 	<key>live_checkbox_fillColor</key>
-	<string>0AAAF5</string>
+	<string>ea4934</string>
 	<key>live_backgroundColor</key>
 	<string>ffffff</string>
 	<key>live_fillLineColor</key>
-	<string>0AAAF5</string>
+	<string>ea4934</string>
 	<key>live_dashLineColor</key>
-	<string>0AAAF5</string>
+	<string>ea4934</string>
 	<key>live_bubbleBGColor</key>
-	<string>0AAAF5</string>
+	<string>ea4934</string>
 	<key>live_bubbleTitleColor</key>
 	<string>ffffff</string>
 	<key>-------简版-------</key>
 	<string></string>
 	<key>ocr_simple_nextButtonBGColor</key>
-	<string>0AAAF5</string>
+	<string>ea4934</string>
 	<key>ocr_simple_nextButtonTitleColor</key>
 	<string>ffffff</string>
 	<key>ocr_simple_inputTitleBGColor</key>
-	<string>0AAAF5</string>
+	<string>ea4934</string>
 	<key>ocr_simple_inputTitleTextColor</key>
 	<string>ffffff</string>
 	<key>ocr_simple_startButtonBGColor</key>
-	<string>0AAAF5</string>
+	<string>ea4934</string>
 	<key>ocr_simple_startButtonTitleColor</key>
 	<string>ffffff</string>
 	<key>-------视频存证-------</key>

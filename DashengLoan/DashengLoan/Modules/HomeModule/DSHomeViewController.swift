@@ -191,9 +191,7 @@ extension DSHomeViewController:DSHomeLoanButtonViewDelegate {
 extension DSHomeViewController:DSHomeBannerViewDelegate {
     func bannerView(_ bannerView:DSHomeBannerView, didSelectedIndex index:Int) {
         if let homeBanner = homeInfo?.banner?[index] {
-            if let url = homeBanner.url {
-                DSRouter.openURL(url: url)
-            }
+             DSRouter.openURL(url: homeBanner.url)
         }
     }
 }
@@ -290,9 +288,17 @@ extension DSHomeViewController {
         
     }
     @objc fileprivate func showSignViewController(tap:UITapGestureRecognizer)  {
-        let signVC = DSSignViewController()
-        let index = tap.view?.tag ?? 0
-        signVC.orgin = homeInfo?.audit?.list?[index]
-        pushToNextViewController(signVC)
+        if DSUserCenter.default.hasLogin == false {
+            loginWithController {[weak self] in
+                self?.showSignViewController(tap: tap)
+            }
+            return
+        }else{
+            
+            let signVC = DSSignViewController()
+            let index = tap.view?.tag ?? 0
+            signVC.orgin = homeInfo?.audit?.list?[index]
+            pushToNextViewController(signVC)
+        }
     }
 }
