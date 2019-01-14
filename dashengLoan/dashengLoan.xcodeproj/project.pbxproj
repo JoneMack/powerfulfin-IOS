@@ -1,0 +1,1769 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3508525421C352810095C391 /* DSLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508525321C352810095C391 /* DSLocationManager.swift */; };
+		3508778121CDD4AB006580AD /* XJGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778021CDD4AB006580AD /* XJGCDTimer.swift */; };
+		3508778321CDEA94006580AD /* DSHomeSearchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778221CDEA94006580AD /* DSHomeSearchControl.swift */; };
+		3508778521CE1613006580AD /* DSHomeBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778421CE1613006580AD /* DSHomeBannerView.swift */; };
+		3508778721CE2739006580AD /* DSHomeNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778621CE2739006580AD /* DSHomeNewsView.swift */; };
+		3508778A21CE3006006580AD /* DSHomeLoanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778921CE3006006580AD /* DSHomeLoanView.swift */; };
+		3508778F21CE4126006580AD /* DSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508778E21CE4126006580AD /* DSButton.swift */; };
+		3508779121CE480F006580AD /* DSHomeLoanButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779021CE480F006580AD /* DSHomeLoanButtonView.swift */; };
+		3508779421CF27CD006580AD /* DSUserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779321CF27CD006580AD /* DSUserHeaderView.swift */; };
+		3508779621CF3841006580AD /* DSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779521CF3841006580AD /* DSImageView.swift */; };
+		3508779921CF5DE9006580AD /* DSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779821CF5DE9006580AD /* DSTableViewCell.swift */; };
+		3508779B21CF62F0006580AD /* DSLogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779A21CF62F0006580AD /* DSLogoutTableViewCell.swift */; };
+		3508779E21CF66AC006580AD /* DSUserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508779D21CF66AC006580AD /* DSUserDataSource.swift */; };
+		350877A121CF81F7006580AD /* DSOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350877A021CF81F7006580AD /* DSOrderTableViewCell.swift */; };
+		350A00D121DE0AE900DFE703 /* DSApplyBankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00D021DE0AE900DFE703 /* DSApplyBankCell.swift */; };
+		350A00D321DE2C3A00DFE703 /* DSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00D221DE2C3A00DFE703 /* DSColor.swift */; };
+		350A00D521DE2C7600DFE703 /* DSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00D421DE2C7600DFE703 /* DSImage.swift */; };
+		350A00D721DE2C9100DFE703 /* DSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00D621DE2C9100DFE703 /* DSFont.swift */; };
+		350A00D921DE31D700DFE703 /* DSOrderDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00D821DE31D700DFE703 /* DSOrderDetailHeadView.swift */; };
+		350A00DB21DEF2DB00DFE703 /* DSOrderTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00DA21DEF2DB00DFE703 /* DSOrderTitleCell.swift */; };
+		350A00DD21DEF2EA00DFE703 /* DSOrderPlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00DC21DEF2EA00DFE703 /* DSOrderPlanCell.swift */; };
+		350A00E121DF032500DFE703 /* DSOrderDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00E021DF032500DFE703 /* DSOrderDataService.swift */; };
+		350A00E321DF03F000DFE703 /* DSUserOrderListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00E221DF03F000DFE703 /* DSUserOrderListInfo.swift */; };
+		350A00E621DF306A00DFE703 /* DSOrderInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00E421DF306A00DFE703 /* DSOrderInfoCell.swift */; };
+		350A00E721DF306A00DFE703 /* DSOrderInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 350A00E521DF306A00DFE703 /* DSOrderInfoCell.xib */; };
+		350A00E921DF3F4000DFE703 /* DSSearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00E821DF3F4000DFE703 /* DSSearchResultView.swift */; };
+		350A00EB21DF627600DFE703 /* DSPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00EA21DF627600DFE703 /* DSPasswordViewController.swift */; };
+		350A00ED21DF646800DFE703 /* DSTextField+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00EC21DF646800DFE703 /* DSTextField+Appearance.swift */; };
+		350A00EF21DF72EF00DFE703 /* DSOrderPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00EE21DF72EF00DFE703 /* DSOrderPlanViewController.swift */; };
+		350A00F221DF734200DFE703 /* DSUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00F121DF734200DFE703 /* DSUserInfoViewController.swift */; };
+		350A00F521DF738100DFE703 /* DSUserBanksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00F421DF738100DFE703 /* DSUserBanksController.swift */; };
+		350A00F721DF7DED00DFE703 /* DSPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00F621DF7DED00DFE703 /* DSPlanTableViewCell.swift */; };
+		350A00FB21DF80BA00DFE703 /* DSOrderPlanInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00FA21DF80BA00DFE703 /* DSOrderPlanInfo.swift */; };
+		350A00FD21E052D000DFE703 /* DSBillDetailAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00FC21E052D000DFE703 /* DSBillDetailAlertView.swift */; };
+		350A010021E06FC700DFE703 /* DSUserIdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A00FF21E06FC700DFE703 /* DSUserIdTableViewCell.swift */; };
+		350A010221E08EEF00DFE703 /* DSUseBankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010121E08EEF00DFE703 /* DSUseBankTableViewCell.swift */; };
+		350A010421E0B47C00DFE703 /* DSUserMessageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010321E0B47C00DFE703 /* DSUserMessageInfo.swift */; };
+		350A010721E0B78900DFE703 /* DSUserMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010621E0B78900DFE703 /* DSUserMessageCell.swift */; };
+		350A010921E2E78D00DFE703 /* DSScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010821E2E78D00DFE703 /* DSScanViewController.swift */; };
+		350A010B21E2EBBD00DFE703 /* DSSacnBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010A21E2EBBD00DFE703 /* DSSacnBaseViewController.swift */; };
+		350A010D21E34C1200DFE703 /* DSSelectorRightButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010C21E34C1200DFE703 /* DSSelectorRightButtonCell.swift */; };
+		350A011021E3504100DFE703 /* DSApplyInfoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A010F21E3504100DFE703 /* DSApplyInfoAlertView.swift */; };
+		350A011221E3507600DFE703 /* DSApplyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A011121E3507600DFE703 /* DSApplyInfo.swift */; };
+		350A011421E457B500DFE703 /* XJTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A011321E457B500DFE703 /* XJTextField.swift */; };
+		350A403921E58E0800092EDD /* DSAddressBookPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A403821E58E0800092EDD /* DSAddressBookPicker.swift */; };
+		350A404A21E5DFF000092EDD /* DSSignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A404921E5DFF000092EDD /* DSSignViewController.swift */; };
+		350A404C21E5E01600092EDD /* DSSignLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A404B21E5E01600092EDD /* DSSignLocalService.swift */; };
+		350A405021E5E05600092EDD /* sign.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A404F21E5E05600092EDD /* sign.plist */; };
+		350A405321E5E4ED00092EDD /* DSAuditDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405221E5E4ED00092EDD /* DSAuditDataService.swift */; };
+		350A405721E72A2900092EDD /* DSApplySuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405621E72A2900092EDD /* DSApplySuccessController.swift */; };
+		350A405A21E72C2C00092EDD /* DSSuccessLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405921E72C2C00092EDD /* DSSuccessLocalService.swift */; };
+		350A405C21E72C3C00092EDD /* success.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A405B21E72C3C00092EDD /* success.plist */; };
+		350A405E21E72F0C00092EDD /* DSApplySuccessInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405D21E72F0C00092EDD /* DSApplySuccessInfo.swift */; };
+		350A406021E7502D00092EDD /* DSDisplayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405F21E7502D00092EDD /* DSDisplayViewCell.swift */; };
+		350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A521D06E170055EFA6 /* CLLoopView.swift */; };
+		350A68A821D0769B0055EFA6 /* MarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A721D0769B0055EFA6 /* MarqueeView.swift */; };
+		350A68AA21D0A71E0055EFA6 /* DSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A921D0A71E0055EFA6 /* DSSearchView.swift */; };
+		350A68B121D0B56E0055EFA6 /* DSHomeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68B021D0B56E0055EFA6 /* DSHomeDataService.swift */; };
+		350A68B321D0B59B0055EFA6 /* DSHomeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68B221D0B59B0055EFA6 /* DSHomeInfo.swift */; };
+		350A68B521D0B6520055EFA6 /* DSSearchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68B421D0B6520055EFA6 /* DSSearchData.swift */; };
+		350A68B821D0B8BC0055EFA6 /* DSSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68B721D0B8BC0055EFA6 /* DSSearchTableViewCell.swift */; };
+		350A68BA21D0B9650055EFA6 /* DSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68B921D0B9650055EFA6 /* DSLabel.swift */; };
+		350A68BC21D0C53A0055EFA6 /* DSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68BB21D0C53A0055EFA6 /* DSString.swift */; };
+		350A68BE21D0C8FE0055EFA6 /* DSAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68BD21D0C8FE0055EFA6 /* DSAlertController.swift */; };
+		350A68C121D106020055EFA6 /* DSRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68C021D106020055EFA6 /* DSRouter.swift */; };
+		350A68C421D10ED50055EFA6 /* DSOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68C321D10ED50055EFA6 /* DSOrderDetailViewController.swift */; };
+		350A68C721D110D00055EFA6 /* DSMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68C621D110D00055EFA6 /* DSMessageViewController.swift */; };
+		350A68CB21D1CF590055EFA6 /* DSUserIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68CA21D1CF590055EFA6 /* DSUserIdViewController.swift */; };
+		350A68CD21D1CF930055EFA6 /* DSApply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68CC21D1CF930055EFA6 /* DSApply.swift */; };
+		350A68CF21D1D4DC0055EFA6 /* DSApplyDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68CE21D1D4DC0055EFA6 /* DSApplyDataService.swift */; };
+		350A68D121D1D5170055EFA6 /* DSApplyConfiger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68D021D1D5170055EFA6 /* DSApplyConfiger.swift */; };
+		350A68D321D1DE2A0055EFA6 /* DSAuthFaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68D221D1DE2A0055EFA6 /* DSAuthFaceManager.swift */; };
+		350A68D621D202040055EFA6 /* DSUserIdLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68D521D202040055EFA6 /* DSUserIdLocalService.swift */; };
+		350A68D921D202550055EFA6 /* DSInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68D821D202550055EFA6 /* DSInputTableViewCell.swift */; };
+		350A68DC21D202800055EFA6 /* DSInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68DB21D202800055EFA6 /* DSInputModel.swift */; };
+		350A68DE21D22D150055EFA6 /* userid.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A68DD21D22D150055EFA6 /* userid.plist */; };
+		350A68E021D23E5C0055EFA6 /* DSSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68DF21D23E5C0055EFA6 /* DSSelectorCell.swift */; };
+		350A68E221D2406E0055EFA6 /* DSIdImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68E121D2406E0055EFA6 /* DSIdImageCell.swift */; };
+		350A68EB21D25C290055EFA6 /* DSDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68EA21D25C290055EFA6 /* DSDatePicker.swift */; };
+		350A68ED21D266E00055EFA6 /* DSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68EC21D266E00055EFA6 /* DSDate.swift */; };
+		350A68F021D317460055EFA6 /* DSApplyFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68EF21D317460055EFA6 /* DSApplyFooterView.swift */; };
+		350A68F321D322080055EFA6 /* DSBankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68F221D322080055EFA6 /* DSBankViewController.swift */; };
+		350A68F621D325EB0055EFA6 /* DSBankLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68F521D325EB0055EFA6 /* DSBankLocalService.swift */; };
+		350A68F821D326040055EFA6 /* bank.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A68F721D326040055EFA6 /* bank.plist */; };
+		350A68FA21D32BA30055EFA6 /* DSRightButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68F921D32BA30055EFA6 /* DSRightButtonCell.swift */; };
+		350A68FD21D32D400055EFA6 /* DSApplyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68FC21D32D400055EFA6 /* DSApplyTableViewController.swift */; };
+		350A690021D32D6A0055EFA6 /* DSApplyLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68FF21D32D6A0055EFA6 /* DSApplyLocalService.swift */; };
+		350A690421D33A960055EFA6 /* DSContactLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A690321D33A960055EFA6 /* DSContactLocalService.swift */; };
+		350A690621D33AB30055EFA6 /* DSContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A690521D33AB30055EFA6 /* DSContactViewController.swift */; };
+		350A690821D33B7C0055EFA6 /* contact.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A690721D33B7C0055EFA6 /* contact.plist */; };
+		350A690B21D34CF90055EFA6 /* DSWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A690A21D34CF90055EFA6 /* DSWorkViewController.swift */; };
+		350A690E21D34D340055EFA6 /* DSWorkLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A690D21D34D340055EFA6 /* DSWorkLocalService.swift */; };
+		350A691221D34FB00055EFA6 /* degree.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A691121D34FB00055EFA6 /* degree.plist */; };
+		350A691421D350390055EFA6 /* incumbent.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A691321D350390055EFA6 /* incumbent.plist */; };
+		350A691621D352520055EFA6 /* student.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A691521D352520055EFA6 /* student.plist */; };
+		350A691821D353BF0055EFA6 /* unemployed.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A691721D353BF0055EFA6 /* unemployed.plist */; };
+		350A691A21D362700055EFA6 /* DSMutableImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A691921D362700055EFA6 /* DSMutableImageCell.swift */; };
+		350A691D21D365470055EFA6 /* DSApplyOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A691C21D365470055EFA6 /* DSApplyOrderViewController.swift */; };
+		350A692021D3658E0055EFA6 /* DSOrderLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A691F21D3658E0055EFA6 /* DSOrderLocalService.swift */; };
+		350A692221D365BF0055EFA6 /* order.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A692121D365BF0055EFA6 /* order.plist */; };
+		350A692521D37C830055EFA6 /* DSUserIdInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A692421D37C830055EFA6 /* DSUserIdInfo.swift */; };
+		350DD04C21E8906A00243DDC /* KZAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD04B21E8906A00243DDC /* KZAlert.framework */; };
+		350DD04D21E8907100243DDC /* KZAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD04B21E8906A00243DDC /* KZAlert.framework */; };
+		350DD04E21E8907100243DDC /* KZAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD04B21E8906A00243DDC /* KZAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		350DD05021EC32D100243DDC /* DSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350DD04F21EC32D100243DDC /* DSData.swift */; };
+		3513214721D4B120005AB183 /* XJImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214621D4B120005AB183 /* XJImagePicker.swift */; };
+		3513214921D4B527005AB183 /* DSImagePickerActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */; };
+		3513214B21D4D5FB005AB183 /* XJImageCompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214A21D4D5FB005AB183 /* XJImageCompress.swift */; };
+		3513214E21D4DC8D005AB183 /* DSCommonDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214D21D4DC8D005AB183 /* DSCommonDataService.swift */; };
+		3513215221D4FAC3005AB183 /* DSImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513215121D4FAC3005AB183 /* DSImageInfo.swift */; };
+		3513215621D5F9A1005AB183 /* DSLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513215521D5F9A1005AB183 /* DSLocationViewController.swift */; };
+		3513215821D5F9AE005AB183 /* DSPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513215721D5F9AE005AB183 /* DSPhoneViewController.swift */; };
+		3513215A21D607E1005AB183 /* DSArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513215921D607E1005AB183 /* DSArray.swift */; };
+		3513215C21D613D4005AB183 /* DSBankListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513215B21D613D4005AB183 /* DSBankListViewController.swift */; };
+		3513215E21D6166A005AB183 /* DSUserBanksInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513215D21D6166A005AB183 /* DSUserBanksInfo.swift */; };
+		3513216121D62413005AB183 /* DSBanksPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216021D62413005AB183 /* DSBanksPicker.swift */; };
+		3513216421D642CE005AB183 /* XJDataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216321D642CE005AB183 /* XJDataPicker.swift */; };
+		3513216621D652A6005AB183 /* DSAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216521D652A6005AB183 /* DSAddress.swift */; };
+		3513216821D65500005AB183 /* DSUserContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216721D65500005AB183 /* DSUserContact.swift */; };
+		3513216A21D6571B005AB183 /* DSUserWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216921D6571B005AB183 /* DSUserWork.swift */; };
+		3513216D21D65AD5005AB183 /* XJSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216C21D65AD5005AB183 /* XJSegmentedControl.swift */; };
+		3513217021D72231005AB183 /* DSWorkHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513216F21D72231005AB183 /* DSWorkHeaderView.swift */; };
+		3513217321D73CBD005AB183 /* XJMutailDataPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217221D73CBD005AB183 /* XJMutailDataPicker.swift */; };
+		3513217521D74785005AB183 /* DSAddressPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217421D74785005AB183 /* DSAddressPicker.swift */; };
+		3513217721D75158005AB183 /* DSDataPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217621D75158005AB183 /* DSDataPickerCell.swift */; };
+		3513217C21DC6400005AB183 /* DSUserLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217B21DC6400005AB183 /* DSUserLocationInfo.swift */; };
+		3513217E21DC9BD8005AB183 /* DSContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217D21DC9BD8005AB183 /* DSContacts.swift */; };
+		3513218021DCBEFA005AB183 /* DSUserOrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513217F21DCBEFA005AB183 /* DSUserOrderInfo.swift */; };
+		3513218221DCD030005AB183 /* DSUserOrderConfiger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513218121DCD030005AB183 /* DSUserOrderConfiger.swift */; };
+		3548366621BA158A008AB78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548366521BA158A008AB78D /* AppDelegate.swift */; };
+		3548366D21BA158B008AB78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3548366C21BA158B008AB78D /* Assets.xcassets */; };
+		3548367E21BA1709008AB78D /* DSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548367D21BA1709008AB78D /* DSViewController.swift */; };
+		3548368021BA174D008AB78D /* DSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548367F21BA174D008AB78D /* DSTableViewController.swift */; };
+		3548368221BA1765008AB78D /* DSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368121BA1765008AB78D /* DSTabBarController.swift */; };
+		3548368421BA177B008AB78D /* DSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368321BA177B008AB78D /* DSNavigationController.swift */; };
+		3548368621BA17B8008AB78D /* DSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368521BA17B8008AB78D /* DSWebViewController.swift */; };
+		3548368921BA180E008AB78D /* DSHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368821BA180E008AB78D /* DSHomeViewController.swift */; };
+		3548368D21BA18F5008AB78D /* DSUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368C21BA18F5008AB78D /* DSUserViewController.swift */; };
+		3548368F21BA1976008AB78D /* DSOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548368E21BA1976008AB78D /* DSOrderViewController.swift */; };
+		3548369421BA3BE0008AB78D /* XJNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548369321BA3BE0008AB78D /* XJNetWork.swift */; };
+		3548369721BA3F05008AB78D /* DSAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3548369621BA3F05008AB78D /* DSAppearance.swift */; };
+		35552C5D21C9E7EC002033FC /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C5C21C9E7EB002033FC /* libicucore.tbd */; };
+		35552C5F21C9E7FA002033FC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C5E21C9E7FA002033FC /* libc++.tbd */; };
+		35552C6121C9E803002033FC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6021C9E803002033FC /* CoreMedia.framework */; };
+		35552C6321C9E80B002033FC /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6221C9E80B002033FC /* ImageIO.framework */; };
+		35552C6521C9E814002033FC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6421C9E814002033FC /* SystemConfiguration.framework */; };
+		35552C6721C9E82B002033FC /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6621C9E82A002033FC /* CoreTelephony.framework */; };
+		35552C6921C9E834002033FC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6821C9E834002033FC /* AudioToolbox.framework */; };
+		35552C6B21C9E840002033FC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6A21C9E840002033FC /* AVFoundation.framework */; };
+		35552C6D21C9E848002033FC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6C21C9E848002033FC /* MobileCoreServices.framework */; };
+		35552C6F21C9E90B002033FC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35552C6E21C9E90A002033FC /* CoreMotion.framework */; };
+		35552C7521CA444C002033FC /* DSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35552C7421CA444C002033FC /* DSLoginViewController.swift */; };
+		35552C7821CB5D15002033FC /* DSUserCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35552C7721CB5D15002033FC /* DSUserCenter.swift */; };
+		35552C7A21CB5DB6002033FC /* DSUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35552C7921CB5DB6002033FC /* DSUserInfo.swift */; };
+		35552C7E21CB63D8002033FC /* DSAccountDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35552C7D21CB63D8002033FC /* DSAccountDataService.swift */; };
+		35552C8021CB6F78002033FC /* UIApplication+Convenient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35552C7F21CB6F78002033FC /* UIApplication+Convenient.swift */; };
+		356E80B021CC87FD0052C6E2 /* XJToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356E80AF21CC87FD0052C6E2 /* XJToast.swift */; };
+		356E80B321CCC3F40052C6E2 /* DSTextValidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356E80B221CCC3F40052C6E2 /* DSTextValidate.swift */; };
+		356E80B621CD05860052C6E2 /* DSBugly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356E80B521CD05860052C6E2 /* DSBugly.swift */; };
+		3595C61721BE08B100B90FD0 /* DSSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C61621BE08B000B90FD0 /* DSSearchViewController.swift */; };
+		3595C62221BE4CB100B90FD0 /* XJDeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C61E21BE4CB100B90FD0 /* XJDeviceInfo.swift */; };
+		3595C62321BE4CB100B90FD0 /* XJKeyChainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C62021BE4CB100B90FD0 /* XJKeyChainStore.swift */; };
+		3595C62421BE4CB100B90FD0 /* XJUDID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595C62121BE4CB100B90FD0 /* XJUDID.swift */; };
+		35A82B3921CB976B0009D5F2 /* DSPhoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3821CB976B0009D5F2 /* DSPhoneButton.swift */; };
+		35A82B3B21CBA39A0009D5F2 /* DSAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3A21CBA39A0009D5F2 /* DSAgreementView.swift */; };
+		35A82B3D21CBA87C0009D5F2 /* DSNetConfiger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3C21CBA87C0009D5F2 /* DSNetConfiger.swift */; };
+		35E810D221C3A7BD00B5714E /* UDIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E810CD21C3A7BC00B5714E /* UDIDSDK.a */; };
+		35E810D321C3A7BD00B5714E /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35E810CF21C3A7BC00B5714E /* Resource.bundle */; };
+		35E810D421C3A7BD00B5714E /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E810D021C3A7BC00B5714E /* opencv2.framework */; };
+		35E810D521C3A7BD00B5714E /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E810D121C3A7BC00B5714E /* libjpeg.a */; };
+		5B8BEE818A3E9F2FA247588B /* Pods_dashengLoan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		350A68E921D25BEA0055EFA6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				350DD04E21E8907100243DDC /* KZAlert.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3508525321C352810095C391 /* DSLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLocationManager.swift; sourceTree = "<group>"; };
+		3508525521C352BB0095C391 /* dashengLoan-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dashengLoan-Bridging-Header.h"; sourceTree = "<group>"; };
+		3508778021CDD4AB006580AD /* XJGCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJGCDTimer.swift; sourceTree = "<group>"; };
+		3508778221CDEA94006580AD /* DSHomeSearchControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeSearchControl.swift; sourceTree = "<group>"; };
+		3508778421CE1613006580AD /* DSHomeBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeBannerView.swift; sourceTree = "<group>"; };
+		3508778621CE2739006580AD /* DSHomeNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeNewsView.swift; sourceTree = "<group>"; };
+		3508778921CE3006006580AD /* DSHomeLoanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeLoanView.swift; sourceTree = "<group>"; };
+		3508778E21CE4126006580AD /* DSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSButton.swift; sourceTree = "<group>"; };
+		3508779021CE480F006580AD /* DSHomeLoanButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeLoanButtonView.swift; sourceTree = "<group>"; };
+		3508779321CF27CD006580AD /* DSUserHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserHeaderView.swift; sourceTree = "<group>"; };
+		3508779521CF3841006580AD /* DSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSImageView.swift; sourceTree = "<group>"; };
+		3508779821CF5DE9006580AD /* DSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTableViewCell.swift; sourceTree = "<group>"; };
+		3508779A21CF62F0006580AD /* DSLogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLogoutTableViewCell.swift; sourceTree = "<group>"; };
+		3508779D21CF66AC006580AD /* DSUserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserDataSource.swift; sourceTree = "<group>"; };
+		350877A021CF81F7006580AD /* DSOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderTableViewCell.swift; sourceTree = "<group>"; };
+		350A00D021DE0AE900DFE703 /* DSApplyBankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyBankCell.swift; sourceTree = "<group>"; };
+		350A00D221DE2C3A00DFE703 /* DSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColor.swift; sourceTree = "<group>"; };
+		350A00D421DE2C7600DFE703 /* DSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSImage.swift; sourceTree = "<group>"; };
+		350A00D621DE2C9100DFE703 /* DSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSFont.swift; sourceTree = "<group>"; };
+		350A00D821DE31D700DFE703 /* DSOrderDetailHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderDetailHeadView.swift; sourceTree = "<group>"; };
+		350A00DA21DEF2DB00DFE703 /* DSOrderTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderTitleCell.swift; sourceTree = "<group>"; };
+		350A00DC21DEF2EA00DFE703 /* DSOrderPlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderPlanCell.swift; sourceTree = "<group>"; };
+		350A00E021DF032500DFE703 /* DSOrderDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderDataService.swift; sourceTree = "<group>"; };
+		350A00E221DF03F000DFE703 /* DSUserOrderListInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserOrderListInfo.swift; sourceTree = "<group>"; };
+		350A00E421DF306A00DFE703 /* DSOrderInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderInfoCell.swift; sourceTree = "<group>"; };
+		350A00E521DF306A00DFE703 /* DSOrderInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSOrderInfoCell.xib; sourceTree = "<group>"; };
+		350A00E821DF3F4000DFE703 /* DSSearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchResultView.swift; sourceTree = "<group>"; };
+		350A00EA21DF627600DFE703 /* DSPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSPasswordViewController.swift; sourceTree = "<group>"; };
+		350A00EC21DF646800DFE703 /* DSTextField+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DSTextField+Appearance.swift"; sourceTree = "<group>"; };
+		350A00EE21DF72EF00DFE703 /* DSOrderPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderPlanViewController.swift; sourceTree = "<group>"; };
+		350A00F121DF734200DFE703 /* DSUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserInfoViewController.swift; sourceTree = "<group>"; };
+		350A00F421DF738100DFE703 /* DSUserBanksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserBanksController.swift; sourceTree = "<group>"; };
+		350A00F621DF7DED00DFE703 /* DSPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSPlanTableViewCell.swift; sourceTree = "<group>"; };
+		350A00FA21DF80BA00DFE703 /* DSOrderPlanInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderPlanInfo.swift; sourceTree = "<group>"; };
+		350A00FC21E052D000DFE703 /* DSBillDetailAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSBillDetailAlertView.swift; sourceTree = "<group>"; };
+		350A00FF21E06FC700DFE703 /* DSUserIdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserIdTableViewCell.swift; sourceTree = "<group>"; };
+		350A010121E08EEF00DFE703 /* DSUseBankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUseBankTableViewCell.swift; sourceTree = "<group>"; };
+		350A010321E0B47C00DFE703 /* DSUserMessageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserMessageInfo.swift; sourceTree = "<group>"; };
+		350A010621E0B78900DFE703 /* DSUserMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserMessageCell.swift; sourceTree = "<group>"; };
+		350A010821E2E78D00DFE703 /* DSScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSScanViewController.swift; sourceTree = "<group>"; };
+		350A010A21E2EBBD00DFE703 /* DSSacnBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSacnBaseViewController.swift; sourceTree = "<group>"; };
+		350A010C21E34C1200DFE703 /* DSSelectorRightButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSelectorRightButtonCell.swift; sourceTree = "<group>"; };
+		350A010F21E3504100DFE703 /* DSApplyInfoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyInfoAlertView.swift; sourceTree = "<group>"; };
+		350A011121E3507600DFE703 /* DSApplyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyInfo.swift; sourceTree = "<group>"; };
+		350A011321E457B500DFE703 /* XJTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJTextField.swift; sourceTree = "<group>"; };
+		350A403821E58E0800092EDD /* DSAddressBookPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAddressBookPicker.swift; sourceTree = "<group>"; };
+		350A404921E5DFF000092EDD /* DSSignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSignViewController.swift; sourceTree = "<group>"; };
+		350A404B21E5E01600092EDD /* DSSignLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSignLocalService.swift; sourceTree = "<group>"; };
+		350A404F21E5E05600092EDD /* sign.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = sign.plist; sourceTree = "<group>"; };
+		350A405221E5E4ED00092EDD /* DSAuditDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAuditDataService.swift; sourceTree = "<group>"; };
+		350A405421E6E63A00092EDD /* dashengLoan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dashengLoan.entitlements; sourceTree = "<group>"; };
+		350A405621E72A2900092EDD /* DSApplySuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplySuccessController.swift; sourceTree = "<group>"; };
+		350A405921E72C2C00092EDD /* DSSuccessLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSuccessLocalService.swift; sourceTree = "<group>"; };
+		350A405B21E72C3C00092EDD /* success.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = success.plist; sourceTree = "<group>"; };
+		350A405D21E72F0C00092EDD /* DSApplySuccessInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplySuccessInfo.swift; sourceTree = "<group>"; };
+		350A405F21E7502D00092EDD /* DSDisplayViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDisplayViewCell.swift; sourceTree = "<group>"; };
+		350A68A521D06E170055EFA6 /* CLLoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoopView.swift; sourceTree = "<group>"; };
+		350A68A721D0769B0055EFA6 /* MarqueeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeView.swift; sourceTree = "<group>"; };
+		350A68A921D0A71E0055EFA6 /* DSSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchView.swift; sourceTree = "<group>"; };
+		350A68B021D0B56E0055EFA6 /* DSHomeDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeDataService.swift; sourceTree = "<group>"; };
+		350A68B221D0B59B0055EFA6 /* DSHomeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeInfo.swift; sourceTree = "<group>"; };
+		350A68B421D0B6520055EFA6 /* DSSearchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchData.swift; sourceTree = "<group>"; };
+		350A68B721D0B8BC0055EFA6 /* DSSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchTableViewCell.swift; sourceTree = "<group>"; };
+		350A68B921D0B9650055EFA6 /* DSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLabel.swift; sourceTree = "<group>"; };
+		350A68BB21D0C53A0055EFA6 /* DSString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSString.swift; sourceTree = "<group>"; };
+		350A68BD21D0C8FE0055EFA6 /* DSAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAlertController.swift; sourceTree = "<group>"; };
+		350A68C021D106020055EFA6 /* DSRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSRouter.swift; sourceTree = "<group>"; };
+		350A68C321D10ED50055EFA6 /* DSOrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderDetailViewController.swift; sourceTree = "<group>"; };
+		350A68C621D110D00055EFA6 /* DSMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSMessageViewController.swift; sourceTree = "<group>"; };
+		350A68CA21D1CF590055EFA6 /* DSUserIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserIdViewController.swift; sourceTree = "<group>"; };
+		350A68CC21D1CF930055EFA6 /* DSApply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApply.swift; sourceTree = "<group>"; };
+		350A68CE21D1D4DC0055EFA6 /* DSApplyDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyDataService.swift; sourceTree = "<group>"; };
+		350A68D021D1D5170055EFA6 /* DSApplyConfiger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyConfiger.swift; sourceTree = "<group>"; };
+		350A68D221D1DE2A0055EFA6 /* DSAuthFaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAuthFaceManager.swift; sourceTree = "<group>"; };
+		350A68D521D202040055EFA6 /* DSUserIdLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserIdLocalService.swift; sourceTree = "<group>"; };
+		350A68D821D202550055EFA6 /* DSInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSInputTableViewCell.swift; sourceTree = "<group>"; };
+		350A68DB21D202800055EFA6 /* DSInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSInputModel.swift; sourceTree = "<group>"; };
+		350A68DD21D22D150055EFA6 /* userid.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = userid.plist; sourceTree = "<group>"; };
+		350A68DF21D23E5C0055EFA6 /* DSSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSelectorCell.swift; sourceTree = "<group>"; };
+		350A68E121D2406E0055EFA6 /* DSIdImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSIdImageCell.swift; sourceTree = "<group>"; };
+		350A68EA21D25C290055EFA6 /* DSDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDatePicker.swift; sourceTree = "<group>"; };
+		350A68EC21D266E00055EFA6 /* DSDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDate.swift; sourceTree = "<group>"; };
+		350A68EF21D317460055EFA6 /* DSApplyFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyFooterView.swift; sourceTree = "<group>"; };
+		350A68F221D322080055EFA6 /* DSBankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSBankViewController.swift; sourceTree = "<group>"; };
+		350A68F521D325EB0055EFA6 /* DSBankLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSBankLocalService.swift; sourceTree = "<group>"; };
+		350A68F721D326040055EFA6 /* bank.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = bank.plist; sourceTree = "<group>"; };
+		350A68F921D32BA30055EFA6 /* DSRightButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSRightButtonCell.swift; sourceTree = "<group>"; };
+		350A68FC21D32D400055EFA6 /* DSApplyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyTableViewController.swift; sourceTree = "<group>"; };
+		350A68FF21D32D6A0055EFA6 /* DSApplyLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyLocalService.swift; sourceTree = "<group>"; };
+		350A690321D33A960055EFA6 /* DSContactLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSContactLocalService.swift; sourceTree = "<group>"; };
+		350A690521D33AB30055EFA6 /* DSContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSContactViewController.swift; sourceTree = "<group>"; };
+		350A690721D33B7C0055EFA6 /* contact.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = contact.plist; sourceTree = "<group>"; };
+		350A690A21D34CF90055EFA6 /* DSWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSWorkViewController.swift; sourceTree = "<group>"; };
+		350A690D21D34D340055EFA6 /* DSWorkLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSWorkLocalService.swift; sourceTree = "<group>"; };
+		350A691121D34FB00055EFA6 /* degree.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = degree.plist; sourceTree = "<group>"; };
+		350A691321D350390055EFA6 /* incumbent.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = incumbent.plist; sourceTree = "<group>"; };
+		350A691521D352520055EFA6 /* student.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = student.plist; sourceTree = "<group>"; };
+		350A691721D353BF0055EFA6 /* unemployed.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = unemployed.plist; sourceTree = "<group>"; };
+		350A691921D362700055EFA6 /* DSMutableImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSMutableImageCell.swift; sourceTree = "<group>"; };
+		350A691C21D365470055EFA6 /* DSApplyOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplyOrderViewController.swift; sourceTree = "<group>"; };
+		350A691F21D3658E0055EFA6 /* DSOrderLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderLocalService.swift; sourceTree = "<group>"; };
+		350A692121D365BF0055EFA6 /* order.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = order.plist; sourceTree = "<group>"; };
+		350A692421D37C830055EFA6 /* DSUserIdInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserIdInfo.swift; sourceTree = "<group>"; };
+		350DD04B21E8906A00243DDC /* KZAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KZAlert.framework; sourceTree = "<group>"; };
+		350DD04F21EC32D100243DDC /* DSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSData.swift; sourceTree = "<group>"; };
+		3513214621D4B120005AB183 /* XJImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJImagePicker.swift; sourceTree = "<group>"; };
+		3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSImagePickerActionSheet.swift; sourceTree = "<group>"; };
+		3513214A21D4D5FB005AB183 /* XJImageCompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJImageCompress.swift; sourceTree = "<group>"; };
+		3513214D21D4DC8D005AB183 /* DSCommonDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSCommonDataService.swift; sourceTree = "<group>"; };
+		3513215121D4FAC3005AB183 /* DSImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSImageInfo.swift; sourceTree = "<group>"; };
+		3513215521D5F9A1005AB183 /* DSLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLocationViewController.swift; sourceTree = "<group>"; };
+		3513215721D5F9AE005AB183 /* DSPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSPhoneViewController.swift; sourceTree = "<group>"; };
+		3513215921D607E1005AB183 /* DSArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSArray.swift; sourceTree = "<group>"; };
+		3513215B21D613D4005AB183 /* DSBankListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSBankListViewController.swift; sourceTree = "<group>"; };
+		3513215D21D6166A005AB183 /* DSUserBanksInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserBanksInfo.swift; sourceTree = "<group>"; };
+		3513216021D62413005AB183 /* DSBanksPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSBanksPicker.swift; sourceTree = "<group>"; };
+		3513216321D642CE005AB183 /* XJDataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJDataPicker.swift; sourceTree = "<group>"; };
+		3513216521D652A6005AB183 /* DSAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAddress.swift; sourceTree = "<group>"; };
+		3513216721D65500005AB183 /* DSUserContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserContact.swift; sourceTree = "<group>"; };
+		3513216921D6571B005AB183 /* DSUserWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserWork.swift; sourceTree = "<group>"; };
+		3513216C21D65AD5005AB183 /* XJSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJSegmentedControl.swift; sourceTree = "<group>"; };
+		3513216F21D72231005AB183 /* DSWorkHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSWorkHeaderView.swift; sourceTree = "<group>"; };
+		3513217221D73CBD005AB183 /* XJMutailDataPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJMutailDataPicker.swift; sourceTree = "<group>"; };
+		3513217421D74785005AB183 /* DSAddressPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAddressPicker.swift; sourceTree = "<group>"; };
+		3513217621D75158005AB183 /* DSDataPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDataPickerCell.swift; sourceTree = "<group>"; };
+		3513217B21DC6400005AB183 /* DSUserLocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserLocationInfo.swift; sourceTree = "<group>"; };
+		3513217D21DC9BD8005AB183 /* DSContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSContacts.swift; sourceTree = "<group>"; };
+		3513217F21DCBEFA005AB183 /* DSUserOrderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserOrderInfo.swift; sourceTree = "<group>"; };
+		3513218121DCD030005AB183 /* DSUserOrderConfiger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserOrderConfiger.swift; sourceTree = "<group>"; };
+		3548366221BA158A008AB78D /* dashengLoan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dashengLoan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3548366521BA158A008AB78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3548366C21BA158B008AB78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3548367121BA158B008AB78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3548367D21BA1709008AB78D /* DSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSViewController.swift; sourceTree = "<group>"; };
+		3548367F21BA174D008AB78D /* DSTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTableViewController.swift; sourceTree = "<group>"; };
+		3548368121BA1765008AB78D /* DSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTabBarController.swift; sourceTree = "<group>"; };
+		3548368321BA177B008AB78D /* DSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSNavigationController.swift; sourceTree = "<group>"; };
+		3548368521BA17B8008AB78D /* DSWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSWebViewController.swift; sourceTree = "<group>"; };
+		3548368821BA180E008AB78D /* DSHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeViewController.swift; sourceTree = "<group>"; };
+		3548368C21BA18F5008AB78D /* DSUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserViewController.swift; sourceTree = "<group>"; };
+		3548368E21BA1976008AB78D /* DSOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSOrderViewController.swift; sourceTree = "<group>"; };
+		3548369321BA3BE0008AB78D /* XJNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJNetWork.swift; sourceTree = "<group>"; };
+		3548369621BA3F05008AB78D /* DSAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAppearance.swift; sourceTree = "<group>"; };
+		35552C5C21C9E7EB002033FC /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		35552C5E21C9E7FA002033FC /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		35552C6021C9E803002033FC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		35552C6221C9E80B002033FC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		35552C6421C9E814002033FC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		35552C6621C9E82A002033FC /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		35552C6821C9E834002033FC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		35552C6A21C9E840002033FC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		35552C6C21C9E848002033FC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		35552C6E21C9E90A002033FC /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		35552C7421CA444C002033FC /* DSLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLoginViewController.swift; sourceTree = "<group>"; };
+		35552C7721CB5D15002033FC /* DSUserCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserCenter.swift; sourceTree = "<group>"; };
+		35552C7921CB5DB6002033FC /* DSUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserInfo.swift; sourceTree = "<group>"; };
+		35552C7D21CB63D8002033FC /* DSAccountDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAccountDataService.swift; sourceTree = "<group>"; };
+		35552C7F21CB6F78002033FC /* UIApplication+Convenient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Convenient.swift"; sourceTree = "<group>"; };
+		356E80AF21CC87FD0052C6E2 /* XJToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJToast.swift; sourceTree = "<group>"; };
+		356E80B221CCC3F40052C6E2 /* DSTextValidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTextValidate.swift; sourceTree = "<group>"; };
+		356E80B521CD05860052C6E2 /* DSBugly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSBugly.swift; sourceTree = "<group>"; };
+		3595C61621BE08B000B90FD0 /* DSSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchViewController.swift; sourceTree = "<group>"; };
+		3595C61E21BE4CB100B90FD0 /* XJDeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJDeviceInfo.swift; sourceTree = "<group>"; };
+		3595C62021BE4CB100B90FD0 /* XJKeyChainStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJKeyChainStore.swift; sourceTree = "<group>"; };
+		3595C62121BE4CB100B90FD0 /* XJUDID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJUDID.swift; sourceTree = "<group>"; };
+		35A82B3821CB976B0009D5F2 /* DSPhoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSPhoneButton.swift; sourceTree = "<group>"; };
+		35A82B3A21CBA39A0009D5F2 /* DSAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAgreementView.swift; sourceTree = "<group>"; };
+		35A82B3C21CBA87C0009D5F2 /* DSNetConfiger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSNetConfiger.swift; sourceTree = "<group>"; };
+		35E810CA21C3A7BC00B5714E /* UDIDSafeDataDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeDataDefine.h; sourceTree = "<group>"; };
+		35E810CB21C3A7BC00B5714E /* UDIDSafeOCREngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeOCREngine.h; sourceTree = "<group>"; };
+		35E810CC21C3A7BC00B5714E /* UDIDSafeAuthEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeAuthEngine.h; sourceTree = "<group>"; };
+		35E810CD21C3A7BC00B5714E /* UDIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = UDIDSDK.a; sourceTree = "<group>"; };
+		35E810CE21C3A7BC00B5714E /* UDIDSafeVideoRecodeEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeVideoRecodeEngine.h; sourceTree = "<group>"; };
+		35E810CF21C3A7BC00B5714E /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
+		35E810D021C3A7BC00B5714E /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		35E810D121C3A7BC00B5714E /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
+		3983E1025C0C766D236DECD0 /* Pods-dashengLoan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dashengLoan.release.xcconfig"; path = "Target Support Files/Pods-dashengLoan/Pods-dashengLoan.release.xcconfig"; sourceTree = "<group>"; };
+		6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dashengLoan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5886AFB4089C0531919489B /* Pods-dashengLoan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dashengLoan.debug.xcconfig"; path = "Target Support Files/Pods-dashengLoan/Pods-dashengLoan.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3548365F21BA158A008AB78D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35552C6521C9E814002033FC /* SystemConfiguration.framework in Frameworks */,
+				35552C6121C9E803002033FC /* CoreMedia.framework in Frameworks */,
+				35552C5F21C9E7FA002033FC /* libc++.tbd in Frameworks */,
+				35552C5D21C9E7EC002033FC /* libicucore.tbd in Frameworks */,
+				35552C6F21C9E90B002033FC /* CoreMotion.framework in Frameworks */,
+				35552C6D21C9E848002033FC /* MobileCoreServices.framework in Frameworks */,
+				35552C6B21C9E840002033FC /* AVFoundation.framework in Frameworks */,
+				35552C6921C9E834002033FC /* AudioToolbox.framework in Frameworks */,
+				350DD04C21E8906A00243DDC /* KZAlert.framework in Frameworks */,
+				35552C6721C9E82B002033FC /* CoreTelephony.framework in Frameworks */,
+				350DD04D21E8907100243DDC /* KZAlert.framework in Frameworks */,
+				35552C6321C9E80B002033FC /* ImageIO.framework in Frameworks */,
+				35E810D421C3A7BD00B5714E /* opencv2.framework in Frameworks */,
+				35E810D521C3A7BD00B5714E /* libjpeg.a in Frameworks */,
+				35E810D221C3A7BD00B5714E /* UDIDSDK.a in Frameworks */,
+				5B8BEE818A3E9F2FA247588B /* Pods_dashengLoan.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3508525221C352510095C391 /* DSLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				3508525321C352810095C391 /* DSLocationManager.swift */,
+			);
+			path = DSLocationManager;
+			sourceTree = "<group>";
+		};
+		3508777F21CDD494006580AD /* XJGCDTimer */ = {
+			isa = PBXGroup;
+			children = (
+				3508778021CDD4AB006580AD /* XJGCDTimer.swift */,
+			);
+			path = XJGCDTimer;
+			sourceTree = "<group>";
+		};
+		3508778821CE2FB7006580AD /* DSHomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				3508778921CE3006006580AD /* DSHomeLoanView.swift */,
+				3508779021CE480F006580AD /* DSHomeLoanButtonView.swift */,
+			);
+			path = DSHomeCell;
+			sourceTree = "<group>";
+		};
+		3508778D21CE410C006580AD /* DSButton */ = {
+			isa = PBXGroup;
+			children = (
+				3508778E21CE4126006580AD /* DSButton.swift */,
+			);
+			path = DSButton;
+			sourceTree = "<group>";
+		};
+		3508779221CF27B8006580AD /* DSUerHeadView */ = {
+			isa = PBXGroup;
+			children = (
+				3508779321CF27CD006580AD /* DSUserHeaderView.swift */,
+			);
+			path = DSUerHeadView;
+			sourceTree = "<group>";
+		};
+		3508779721CF5DCF006580AD /* DSTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3508779821CF5DE9006580AD /* DSTableViewCell.swift */,
+				3508779A21CF62F0006580AD /* DSLogoutTableViewCell.swift */,
+			);
+			path = DSTableViewCell;
+			sourceTree = "<group>";
+		};
+		3508779C21CF6661006580AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3508779D21CF66AC006580AD /* DSUserDataSource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3508779F21CF818C006580AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				350877A021CF81F7006580AD /* DSOrderTableViewCell.swift */,
+				350A00D821DE31D700DFE703 /* DSOrderDetailHeadView.swift */,
+				350A00DA21DEF2DB00DFE703 /* DSOrderTitleCell.swift */,
+				350A00DC21DEF2EA00DFE703 /* DSOrderPlanCell.swift */,
+				350A00E421DF306A00DFE703 /* DSOrderInfoCell.swift */,
+				350A00E521DF306A00DFE703 /* DSOrderInfoCell.xib */,
+				350A00E821DF3F4000DFE703 /* DSSearchResultView.swift */,
+				350A00F621DF7DED00DFE703 /* DSPlanTableViewCell.swift */,
+				350A00FC21E052D000DFE703 /* DSBillDetailAlertView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		350A00CF21DE0ABF00DFE703 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				350A00D021DE0AE900DFE703 /* DSApplyBankCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		350A00F021DF731600DFE703 /* UserInfoViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				350A00FE21E06F9E00DFE703 /* Views */,
+				350A00F321DF736600DFE703 /* ViewControllers */,
+				350A00F121DF734200DFE703 /* DSUserInfoViewController.swift */,
+			);
+			path = UserInfoViewControllers;
+			sourceTree = "<group>";
+		};
+		350A00F321DF736600DFE703 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				350A00F421DF738100DFE703 /* DSUserBanksController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		350A00FE21E06F9E00DFE703 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				350A00FF21E06FC700DFE703 /* DSUserIdTableViewCell.swift */,
+				350A010121E08EEF00DFE703 /* DSUseBankTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		350A010521E0B76500DFE703 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				350A010621E0B78900DFE703 /* DSUserMessageCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		350A010E21E34FA000DFE703 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				350A010F21E3504100DFE703 /* DSApplyInfoAlertView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		350A404221E5DF4100092EDD /* DSAudit */ = {
+			isa = PBXGroup;
+			children = (
+				350A404921E5DFF000092EDD /* DSSignViewController.swift */,
+				350A404B21E5E01600092EDD /* DSSignLocalService.swift */,
+				350A404F21E5E05600092EDD /* sign.plist */,
+			);
+			path = DSAudit;
+			sourceTree = "<group>";
+		};
+		350A405121E5E4CA00092EDD /* Audit */ = {
+			isa = PBXGroup;
+			children = (
+				350A405221E5E4ED00092EDD /* DSAuditDataService.swift */,
+			);
+			path = Audit;
+			sourceTree = "<group>";
+		};
+		350A405521E71C7E00092EDD /* DSApplySuccess */ = {
+			isa = PBXGroup;
+			children = (
+				350A405821E72BE900092EDD /* DSSuccessLocalService */,
+				350A405621E72A2900092EDD /* DSApplySuccessController.swift */,
+			);
+			path = DSApplySuccess;
+			sourceTree = "<group>";
+		};
+		350A405821E72BE900092EDD /* DSSuccessLocalService */ = {
+			isa = PBXGroup;
+			children = (
+				350A405921E72C2C00092EDD /* DSSuccessLocalService.swift */,
+				350A405B21E72C3C00092EDD /* success.plist */,
+			);
+			path = DSSuccessLocalService;
+			sourceTree = "<group>";
+		};
+		350A68A421D06E040055EFA6 /* XJRoopView */ = {
+			isa = PBXGroup;
+			children = (
+				350A68A721D0769B0055EFA6 /* MarqueeView.swift */,
+				350A68A521D06E170055EFA6 /* CLLoopView.swift */,
+			);
+			path = XJRoopView;
+			sourceTree = "<group>";
+		};
+		350A68AB21D0B5180055EFA6 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				35552C7921CB5DB6002033FC /* DSUserInfo.swift */,
+				350A010321E0B47C00DFE703 /* DSUserMessageInfo.swift */,
+				35552C7D21CB63D8002033FC /* DSAccountDataService.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		350A68AC21D0B5230055EFA6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				350A68B021D0B56E0055EFA6 /* DSHomeDataService.swift */,
+				350A68B221D0B59B0055EFA6 /* DSHomeInfo.swift */,
+				350A68B421D0B6520055EFA6 /* DSSearchData.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		350A68AD21D0B52D0055EFA6 /* LoanApply */ = {
+			isa = PBXGroup;
+			children = (
+				350A68CE21D1D4DC0055EFA6 /* DSApplyDataService.swift */,
+				3513217B21DC6400005AB183 /* DSUserLocationInfo.swift */,
+				3513215D21D6166A005AB183 /* DSUserBanksInfo.swift */,
+				350A692421D37C830055EFA6 /* DSUserIdInfo.swift */,
+				350A68D021D1D5170055EFA6 /* DSApplyConfiger.swift */,
+				3513216521D652A6005AB183 /* DSAddress.swift */,
+				3513216721D65500005AB183 /* DSUserContact.swift */,
+				3513216921D6571B005AB183 /* DSUserWork.swift */,
+				3513217F21DCBEFA005AB183 /* DSUserOrderInfo.swift */,
+				3513218121DCD030005AB183 /* DSUserOrderConfiger.swift */,
+				350A011121E3507600DFE703 /* DSApplyInfo.swift */,
+				350A405D21E72F0C00092EDD /* DSApplySuccessInfo.swift */,
+			);
+			path = LoanApply;
+			sourceTree = "<group>";
+		};
+		350A68AE21D0B53A0055EFA6 /* LoanOrder */ = {
+			isa = PBXGroup;
+			children = (
+				350A00E021DF032500DFE703 /* DSOrderDataService.swift */,
+				350A00E221DF03F000DFE703 /* DSUserOrderListInfo.swift */,
+				350A00FA21DF80BA00DFE703 /* DSOrderPlanInfo.swift */,
+			);
+			path = LoanOrder;
+			sourceTree = "<group>";
+		};
+		350A68AF21D0B5480055EFA6 /* LoanPay */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoanPay;
+			sourceTree = "<group>";
+		};
+		350A68B621D0B8A50055EFA6 /* DSSearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				350A68B721D0B8BC0055EFA6 /* DSSearchTableViewCell.swift */,
+			);
+			path = DSSearchCell;
+			sourceTree = "<group>";
+		};
+		350A68BF21D1051E0055EFA6 /* DSRouter */ = {
+			isa = PBXGroup;
+			children = (
+				350A68C021D106020055EFA6 /* DSRouter.swift */,
+			);
+			path = DSRouter;
+			sourceTree = "<group>";
+		};
+		350A68C221D10EB00055EFA6 /* DSApply */ = {
+			isa = PBXGroup;
+			children = (
+				350A68C821D1CE0E0055EFA6 /* DSApply */,
+				350A68FB21D32D1B0055EFA6 /* DSApplyBase */,
+				350A68EE21D317310055EFA6 /* DSApplyFootView */,
+				350A68C921D1CE1D0055EFA6 /* DSApplyUserInfo */,
+				350A68F121D321CE0055EFA6 /* DSApplyBankInfo */,
+				350A690121D33A280055EFA6 /* DSApplyContactInfo */,
+				350A690921D34C340055EFA6 /* DSApplyWorkInfo */,
+				3513215321D5F880005AB183 /* DSApplyLocation */,
+				3513215421D5F899005AB183 /* DSApplyPhone */,
+				350A691B21D364FC0055EFA6 /* DSApplyOrderInfo */,
+				350A405521E71C7E00092EDD /* DSApplySuccess */,
+			);
+			path = DSApply;
+			sourceTree = "<group>";
+		};
+		350A68C521D110AC0055EFA6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				350A010521E0B76500DFE703 /* Views */,
+				350A68C621D110D00055EFA6 /* DSMessageViewController.swift */,
+				350A00EA21DF627600DFE703 /* DSPasswordViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		350A68C821D1CE0E0055EFA6 /* DSApply */ = {
+			isa = PBXGroup;
+			children = (
+				350A68D221D1DE2A0055EFA6 /* DSAuthFaceManager.swift */,
+				350A68CC21D1CF930055EFA6 /* DSApply.swift */,
+			);
+			path = DSApply;
+			sourceTree = "<group>";
+		};
+		350A68C921D1CE1D0055EFA6 /* DSApplyUserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				350A68D421D1FF3D0055EFA6 /* DSUerLocalDataService */,
+				350A68CA21D1CF590055EFA6 /* DSUserIdViewController.swift */,
+			);
+			path = DSApplyUserInfo;
+			sourceTree = "<group>";
+		};
+		350A68D421D1FF3D0055EFA6 /* DSUerLocalDataService */ = {
+			isa = PBXGroup;
+			children = (
+				350A68D521D202040055EFA6 /* DSUserIdLocalService.swift */,
+				350A68DD21D22D150055EFA6 /* userid.plist */,
+			);
+			path = DSUerLocalDataService;
+			sourceTree = "<group>";
+		};
+		350A68D721D2021F0055EFA6 /* DSInputCell */ = {
+			isa = PBXGroup;
+			children = (
+				350A68DA21D202600055EFA6 /* InputCellModel */,
+				350A68D821D202550055EFA6 /* DSInputTableViewCell.swift */,
+				350A68DF21D23E5C0055EFA6 /* DSSelectorCell.swift */,
+				350A68E121D2406E0055EFA6 /* DSIdImageCell.swift */,
+				350A68F921D32BA30055EFA6 /* DSRightButtonCell.swift */,
+				350A691921D362700055EFA6 /* DSMutableImageCell.swift */,
+				350A405F21E7502D00092EDD /* DSDisplayViewCell.swift */,
+				350A010C21E34C1200DFE703 /* DSSelectorRightButtonCell.swift */,
+			);
+			path = DSInputCell;
+			sourceTree = "<group>";
+		};
+		350A68DA21D202600055EFA6 /* InputCellModel */ = {
+			isa = PBXGroup;
+			children = (
+				350A68DB21D202800055EFA6 /* DSInputModel.swift */,
+			);
+			path = InputCellModel;
+			sourceTree = "<group>";
+		};
+		350A68E321D25B5F0055EFA6 /* XJDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				350A68EA21D25C290055EFA6 /* DSDatePicker.swift */,
+			);
+			path = XJDatePicker;
+			sourceTree = "<group>";
+		};
+		350A68E421D25BB70055EFA6 /* KZAlert */ = {
+			isa = PBXGroup;
+			children = (
+				350DD04B21E8906A00243DDC /* KZAlert.framework */,
+			);
+			path = KZAlert;
+			sourceTree = "<group>";
+		};
+		350A68EE21D317310055EFA6 /* DSApplyFootView */ = {
+			isa = PBXGroup;
+			children = (
+				350A68EF21D317460055EFA6 /* DSApplyFooterView.swift */,
+			);
+			path = DSApplyFootView;
+			sourceTree = "<group>";
+		};
+		350A68F121D321CE0055EFA6 /* DSApplyBankInfo */ = {
+			isa = PBXGroup;
+			children = (
+				350A00CF21DE0ABF00DFE703 /* View */,
+				350A68F421D325CA0055EFA6 /* DSBankLocalService */,
+				350A68F221D322080055EFA6 /* DSBankViewController.swift */,
+				3513215B21D613D4005AB183 /* DSBankListViewController.swift */,
+			);
+			path = DSApplyBankInfo;
+			sourceTree = "<group>";
+		};
+		350A68F421D325CA0055EFA6 /* DSBankLocalService */ = {
+			isa = PBXGroup;
+			children = (
+				350A68F521D325EB0055EFA6 /* DSBankLocalService.swift */,
+				350A68F721D326040055EFA6 /* bank.plist */,
+			);
+			path = DSBankLocalService;
+			sourceTree = "<group>";
+		};
+		350A68FB21D32D1B0055EFA6 /* DSApplyBase */ = {
+			isa = PBXGroup;
+			children = (
+				350A68FE21D32D4D0055EFA6 /* DSApplyService */,
+				350A68FC21D32D400055EFA6 /* DSApplyTableViewController.swift */,
+			);
+			path = DSApplyBase;
+			sourceTree = "<group>";
+		};
+		350A68FE21D32D4D0055EFA6 /* DSApplyService */ = {
+			isa = PBXGroup;
+			children = (
+				350A68FF21D32D6A0055EFA6 /* DSApplyLocalService.swift */,
+			);
+			path = DSApplyService;
+			sourceTree = "<group>";
+		};
+		350A690121D33A280055EFA6 /* DSApplyContactInfo */ = {
+			isa = PBXGroup;
+			children = (
+				350A690221D33A6B0055EFA6 /* DSContactLocalService */,
+				350A690521D33AB30055EFA6 /* DSContactViewController.swift */,
+			);
+			path = DSApplyContactInfo;
+			sourceTree = "<group>";
+		};
+		350A690221D33A6B0055EFA6 /* DSContactLocalService */ = {
+			isa = PBXGroup;
+			children = (
+				350A690321D33A960055EFA6 /* DSContactLocalService.swift */,
+				350A690721D33B7C0055EFA6 /* contact.plist */,
+			);
+			path = DSContactLocalService;
+			sourceTree = "<group>";
+		};
+		350A690921D34C340055EFA6 /* DSApplyWorkInfo */ = {
+			isa = PBXGroup;
+			children = (
+				3513216E21D7221A005AB183 /* Views */,
+				350A690C21D34CFE0055EFA6 /* DSWorkLocalService */,
+				350A690A21D34CF90055EFA6 /* DSWorkViewController.swift */,
+			);
+			path = DSApplyWorkInfo;
+			sourceTree = "<group>";
+		};
+		350A690C21D34CFE0055EFA6 /* DSWorkLocalService */ = {
+			isa = PBXGroup;
+			children = (
+				350A690D21D34D340055EFA6 /* DSWorkLocalService.swift */,
+				350A691121D34FB00055EFA6 /* degree.plist */,
+				350A691321D350390055EFA6 /* incumbent.plist */,
+				350A691521D352520055EFA6 /* student.plist */,
+				350A691721D353BF0055EFA6 /* unemployed.plist */,
+			);
+			path = DSWorkLocalService;
+			sourceTree = "<group>";
+		};
+		350A691B21D364FC0055EFA6 /* DSApplyOrderInfo */ = {
+			isa = PBXGroup;
+			children = (
+				350A010E21E34FA000DFE703 /* Views */,
+				350A691E21D365610055EFA6 /* DSOrderLocalService */,
+				350A691C21D365470055EFA6 /* DSApplyOrderViewController.swift */,
+			);
+			path = DSApplyOrderInfo;
+			sourceTree = "<group>";
+		};
+		350A691E21D365610055EFA6 /* DSOrderLocalService */ = {
+			isa = PBXGroup;
+			children = (
+				350A691F21D3658E0055EFA6 /* DSOrderLocalService.swift */,
+				350A692121D365BF0055EFA6 /* order.plist */,
+			);
+			path = DSOrderLocalService;
+			sourceTree = "<group>";
+		};
+		350A692321D369750055EFA6 /* XJToast */ = {
+			isa = PBXGroup;
+			children = (
+				356E80AF21CC87FD0052C6E2 /* XJToast.swift */,
+			);
+			path = XJToast;
+			sourceTree = "<group>";
+		};
+		3513214521D4AF8D005AB183 /* XJImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				3513214621D4B120005AB183 /* XJImagePicker.swift */,
+				3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */,
+				3513214A21D4D5FB005AB183 /* XJImageCompress.swift */,
+			);
+			path = XJImagePicker;
+			sourceTree = "<group>";
+		};
+		3513214C21D4DC54005AB183 /* Commom */ = {
+			isa = PBXGroup;
+			children = (
+				3513214D21D4DC8D005AB183 /* DSCommonDataService.swift */,
+				3513215121D4FAC3005AB183 /* DSImageInfo.swift */,
+			);
+			path = Commom;
+			sourceTree = "<group>";
+		};
+		3513215321D5F880005AB183 /* DSApplyLocation */ = {
+			isa = PBXGroup;
+			children = (
+				3513215521D5F9A1005AB183 /* DSLocationViewController.swift */,
+			);
+			path = DSApplyLocation;
+			sourceTree = "<group>";
+		};
+		3513215421D5F899005AB183 /* DSApplyPhone */ = {
+			isa = PBXGroup;
+			children = (
+				3513215721D5F9AE005AB183 /* DSPhoneViewController.swift */,
+			);
+			path = DSApplyPhone;
+			sourceTree = "<group>";
+		};
+		3513215F21D623F8005AB183 /* DSBanksPicker */ = {
+			isa = PBXGroup;
+			children = (
+				3513216021D62413005AB183 /* DSBanksPicker.swift */,
+			);
+			path = DSBanksPicker;
+			sourceTree = "<group>";
+		};
+		3513216221D642B3005AB183 /* XJDataPicker */ = {
+			isa = PBXGroup;
+			children = (
+				3513216321D642CE005AB183 /* XJDataPicker.swift */,
+			);
+			path = XJDataPicker;
+			sourceTree = "<group>";
+		};
+		3513216B21D65A62005AB183 /* XJSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				3513216C21D65AD5005AB183 /* XJSegmentedControl.swift */,
+			);
+			path = XJSegmentedControl;
+			sourceTree = "<group>";
+		};
+		3513216E21D7221A005AB183 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3513216F21D72231005AB183 /* DSWorkHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3513217121D72B9D005AB183 /* XJMutailDataPicker */ = {
+			isa = PBXGroup;
+			children = (
+				3513217221D73CBD005AB183 /* XJMutailDataPicker.swift */,
+				3513217421D74785005AB183 /* DSAddressPicker.swift */,
+				3513217621D75158005AB183 /* DSDataPickerCell.swift */,
+			);
+			path = XJMutailDataPicker;
+			sourceTree = "<group>";
+		};
+		3513217821DC51D3005AB183 /* DSAddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				3513217D21DC9BD8005AB183 /* DSContacts.swift */,
+				350A403821E58E0800092EDD /* DSAddressBookPicker.swift */,
+			);
+			path = DSAddressBook;
+			sourceTree = "<group>";
+		};
+		3548365921BA158A008AB78D = {
+			isa = PBXGroup;
+			children = (
+				3548366421BA158A008AB78D /* dashengLoan */,
+				3548366321BA158A008AB78D /* Products */,
+				AB16DBBE55B14A38F6F4E78F /* Pods */,
+				BE286E756130561079BDAB8B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3548366321BA158A008AB78D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3548366221BA158A008AB78D /* dashengLoan.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3548366421BA158A008AB78D /* dashengLoan */ = {
+			isa = PBXGroup;
+			children = (
+				350A405421E6E63A00092EDD /* dashengLoan.entitlements */,
+				35E810C821C3A79700B5714E /* Third */,
+				3595C61C21BE4C9800B90FD0 /* Tools */,
+				3548369521BA3EEA008AB78D /* Appearance */,
+				3548369021BA3B9E008AB78D /* DataService */,
+				3548367821BA15C2008AB78D /* Modules */,
+				3548367721BA15B4008AB78D /* BaseVC */,
+				3548366521BA158A008AB78D /* AppDelegate.swift */,
+				3508525521C352BB0095C391 /* dashengLoan-Bridging-Header.h */,
+				3548366C21BA158B008AB78D /* Assets.xcassets */,
+				3548367121BA158B008AB78D /* Info.plist */,
+			);
+			path = dashengLoan;
+			sourceTree = "<group>";
+		};
+		3548367721BA15B4008AB78D /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				3548367D21BA1709008AB78D /* DSViewController.swift */,
+				3548367F21BA174D008AB78D /* DSTableViewController.swift */,
+				3548368121BA1765008AB78D /* DSTabBarController.swift */,
+				3548368321BA177B008AB78D /* DSNavigationController.swift */,
+				3548368521BA17B8008AB78D /* DSWebViewController.swift */,
+				350A010A21E2EBBD00DFE703 /* DSSacnBaseViewController.swift */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		3548367821BA15C2008AB78D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				350A68C221D10EB00055EFA6 /* DSApply */,
+				35552C7621CB5CFC002033FC /* UserCenter */,
+				35552C7021CA43D3002033FC /* AccountModule */,
+				3548368B21BA18D1008AB78D /* UserModule */,
+				3548368A21BA18C6008AB78D /* OrderModule */,
+				3548368721BA17F2008AB78D /* HomeModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3548368721BA17F2008AB78D /* HomeModule */ = {
+			isa = PBXGroup;
+			children = (
+				350A404221E5DF4100092EDD /* DSAudit */,
+				35552C5B21C9E6FE002033FC /* Views */,
+				3548368821BA180E008AB78D /* DSHomeViewController.swift */,
+				350A010821E2E78D00DFE703 /* DSScanViewController.swift */,
+				3595C61621BE08B000B90FD0 /* DSSearchViewController.swift */,
+			);
+			path = HomeModule;
+			sourceTree = "<group>";
+		};
+		3548368A21BA18C6008AB78D /* OrderModule */ = {
+			isa = PBXGroup;
+			children = (
+				3508779F21CF818C006580AD /* Views */,
+				3548368E21BA1976008AB78D /* DSOrderViewController.swift */,
+				350A68C321D10ED50055EFA6 /* DSOrderDetailViewController.swift */,
+				350A00EE21DF72EF00DFE703 /* DSOrderPlanViewController.swift */,
+			);
+			path = OrderModule;
+			sourceTree = "<group>";
+		};
+		3548368B21BA18D1008AB78D /* UserModule */ = {
+			isa = PBXGroup;
+			children = (
+				350A00F021DF731600DFE703 /* UserInfoViewControllers */,
+				350A68C521D110AC0055EFA6 /* ViewController */,
+				3508779C21CF6661006580AD /* Model */,
+				3508779221CF27B8006580AD /* DSUerHeadView */,
+				3548368C21BA18F5008AB78D /* DSUserViewController.swift */,
+			);
+			path = UserModule;
+			sourceTree = "<group>";
+		};
+		3548369021BA3B9E008AB78D /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				35552C7B21CB6393002033FC /* DSDataService */,
+				3548369221BA3BE0008AB78D /* XJNetWork */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		3548369221BA3BE0008AB78D /* XJNetWork */ = {
+			isa = PBXGroup;
+			children = (
+				3548369321BA3BE0008AB78D /* XJNetWork.swift */,
+			);
+			path = XJNetWork;
+			sourceTree = "<group>";
+		};
+		3548369521BA3EEA008AB78D /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				3548369621BA3F05008AB78D /* DSAppearance.swift */,
+				350A00D221DE2C3A00DFE703 /* DSColor.swift */,
+				350A00EC21DF646800DFE703 /* DSTextField+Appearance.swift */,
+				350A00D421DE2C7600DFE703 /* DSImage.swift */,
+				350A00D621DE2C9100DFE703 /* DSFont.swift */,
+				35552C7F21CB6F78002033FC /* UIApplication+Convenient.swift */,
+				3508779521CF3841006580AD /* DSImageView.swift */,
+				350A68B921D0B9650055EFA6 /* DSLabel.swift */,
+				350A68BB21D0C53A0055EFA6 /* DSString.swift */,
+				350A68EC21D266E00055EFA6 /* DSDate.swift */,
+				350DD04F21EC32D100243DDC /* DSData.swift */,
+				350A68BD21D0C8FE0055EFA6 /* DSAlertController.swift */,
+				3513215921D607E1005AB183 /* DSArray.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
+		35552C5B21C9E6FE002033FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				350A68B621D0B8A50055EFA6 /* DSSearchCell */,
+				3508778821CE2FB7006580AD /* DSHomeCell */,
+				3508778221CDEA94006580AD /* DSHomeSearchControl.swift */,
+				3508778421CE1613006580AD /* DSHomeBannerView.swift */,
+				3508778621CE2739006580AD /* DSHomeNewsView.swift */,
+				350A68A921D0A71E0055EFA6 /* DSSearchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35552C7021CA43D3002033FC /* AccountModule */ = {
+			isa = PBXGroup;
+			children = (
+				35A82B3721CB97440009D5F2 /* Views */,
+				35552C7421CA444C002033FC /* DSLoginViewController.swift */,
+			);
+			path = AccountModule;
+			sourceTree = "<group>";
+		};
+		35552C7621CB5CFC002033FC /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				35552C7721CB5D15002033FC /* DSUserCenter.swift */,
+			);
+			path = UserCenter;
+			sourceTree = "<group>";
+		};
+		35552C7B21CB6393002033FC /* DSDataService */ = {
+			isa = PBXGroup;
+			children = (
+				35552C7C21CB63A4002033FC /* NetDataService */,
+			);
+			path = DSDataService;
+			sourceTree = "<group>";
+		};
+		35552C7C21CB63A4002033FC /* NetDataService */ = {
+			isa = PBXGroup;
+			children = (
+				350A405121E5E4CA00092EDD /* Audit */,
+				3513214C21D4DC54005AB183 /* Commom */,
+				350A68AF21D0B5480055EFA6 /* LoanPay */,
+				350A68AE21D0B53A0055EFA6 /* LoanOrder */,
+				350A68AD21D0B52D0055EFA6 /* LoanApply */,
+				350A68AC21D0B5230055EFA6 /* Home */,
+				350A68AB21D0B5180055EFA6 /* User */,
+				35A82B3C21CBA87C0009D5F2 /* DSNetConfiger.swift */,
+			);
+			path = NetDataService;
+			sourceTree = "<group>";
+		};
+		356E80B121CCC3C40052C6E2 /* XJTextValidate */ = {
+			isa = PBXGroup;
+			children = (
+				356E80B221CCC3F40052C6E2 /* DSTextValidate.swift */,
+				350A011321E457B500DFE703 /* XJTextField.swift */,
+			);
+			path = XJTextValidate;
+			sourceTree = "<group>";
+		};
+		356E80B421CD056F0052C6E2 /* BuglyManager */ = {
+			isa = PBXGroup;
+			children = (
+				356E80B521CD05860052C6E2 /* DSBugly.swift */,
+			);
+			path = BuglyManager;
+			sourceTree = "<group>";
+		};
+		3595C61C21BE4C9800B90FD0 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				3513217821DC51D3005AB183 /* DSAddressBook */,
+				3513217121D72B9D005AB183 /* XJMutailDataPicker */,
+				3513216B21D65A62005AB183 /* XJSegmentedControl */,
+				3513216221D642B3005AB183 /* XJDataPicker */,
+				3513215F21D623F8005AB183 /* DSBanksPicker */,
+				3513214521D4AF8D005AB183 /* XJImagePicker */,
+				350A68D721D2021F0055EFA6 /* DSInputCell */,
+				350A692321D369750055EFA6 /* XJToast */,
+				350A68E321D25B5F0055EFA6 /* XJDatePicker */,
+				350A68BF21D1051E0055EFA6 /* DSRouter */,
+				350A68A421D06E040055EFA6 /* XJRoopView */,
+				3508779721CF5DCF006580AD /* DSTableViewCell */,
+				3508778D21CE410C006580AD /* DSButton */,
+				3508777F21CDD494006580AD /* XJGCDTimer */,
+				356E80B121CCC3C40052C6E2 /* XJTextValidate */,
+				3508525221C352510095C391 /* DSLocationManager */,
+				3595C61D21BE4CB100B90FD0 /* XJDeviceInfo */,
+				3595C61F21BE4CB100B90FD0 /* XJKeyChainStore */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		3595C61D21BE4CB100B90FD0 /* XJDeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				3595C61E21BE4CB100B90FD0 /* XJDeviceInfo.swift */,
+			);
+			path = XJDeviceInfo;
+			sourceTree = "<group>";
+		};
+		3595C61F21BE4CB100B90FD0 /* XJKeyChainStore */ = {
+			isa = PBXGroup;
+			children = (
+				3595C62021BE4CB100B90FD0 /* XJKeyChainStore.swift */,
+				3595C62121BE4CB100B90FD0 /* XJUDID.swift */,
+			);
+			path = XJKeyChainStore;
+			sourceTree = "<group>";
+		};
+		35A82B3721CB97440009D5F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35A82B3821CB976B0009D5F2 /* DSPhoneButton.swift */,
+				35A82B3A21CBA39A0009D5F2 /* DSAgreementView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35E810C821C3A79700B5714E /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				350A68E421D25BB70055EFA6 /* KZAlert */,
+				356E80B421CD056F0052C6E2 /* BuglyManager */,
+				35E810C921C3A7BC00B5714E /* UDSafeSDK */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		35E810C921C3A7BC00B5714E /* UDSafeSDK */ = {
+			isa = PBXGroup;
+			children = (
+				35E810CA21C3A7BC00B5714E /* UDIDSafeDataDefine.h */,
+				35E810CB21C3A7BC00B5714E /* UDIDSafeOCREngine.h */,
+				35E810CC21C3A7BC00B5714E /* UDIDSafeAuthEngine.h */,
+				35E810CD21C3A7BC00B5714E /* UDIDSDK.a */,
+				35E810CE21C3A7BC00B5714E /* UDIDSafeVideoRecodeEngine.h */,
+				35E810CF21C3A7BC00B5714E /* Resource.bundle */,
+				35E810D021C3A7BC00B5714E /* opencv2.framework */,
+				35E810D121C3A7BC00B5714E /* libjpeg.a */,
+			);
+			path = UDSafeSDK;
+			sourceTree = "<group>";
+		};
+		AB16DBBE55B14A38F6F4E78F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5886AFB4089C0531919489B /* Pods-dashengLoan.debug.xcconfig */,
+				3983E1025C0C766D236DECD0 /* Pods-dashengLoan.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BE286E756130561079BDAB8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35552C6E21C9E90A002033FC /* CoreMotion.framework */,
+				35552C6C21C9E848002033FC /* MobileCoreServices.framework */,
+				35552C6A21C9E840002033FC /* AVFoundation.framework */,
+				35552C6821C9E834002033FC /* AudioToolbox.framework */,
+				35552C6621C9E82A002033FC /* CoreTelephony.framework */,
+				35552C6421C9E814002033FC /* SystemConfiguration.framework */,
+				35552C6221C9E80B002033FC /* ImageIO.framework */,
+				35552C6021C9E803002033FC /* CoreMedia.framework */,
+				35552C5E21C9E7FA002033FC /* libc++.tbd */,
+				35552C5C21C9E7EB002033FC /* libicucore.tbd */,
+				6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3548366121BA158A008AB78D /* dashengLoan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3548367421BA158B008AB78D /* Build configuration list for PBXNativeTarget "dashengLoan" */;
+			buildPhases = (
+				17E080DFEF4AB86C7BF55C20 /* [CP] Check Pods Manifest.lock */,
+				3548365E21BA158A008AB78D /* Sources */,
+				3548365F21BA158A008AB78D /* Frameworks */,
+				3548366021BA158A008AB78D /* Resources */,
+				7B3C4F6A13E0A043BE4176FB /* [CP] Embed Pods Frameworks */,
+				356E80B721CD06ED0052C6E2 /* ShellScript */,
+				350A68E921D25BEA0055EFA6 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dashengLoan;
+			productName = dashengLoan;
+			productReference = 3548366221BA158A008AB78D /* dashengLoan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3548365A21BA158A008AB78D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DS;
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = powerfulfin;
+				TargetAttributes = {
+					3548366121BA158A008AB78D = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 3548365D21BA158A008AB78D /* Build configuration list for PBXProject "dashengLoan" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3548365921BA158A008AB78D;
+			productRefGroup = 3548366321BA158A008AB78D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3548366121BA158A008AB78D /* dashengLoan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3548366021BA158A008AB78D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				350A691221D34FB00055EFA6 /* degree.plist in Resources */,
+				350A405021E5E05600092EDD /* sign.plist in Resources */,
+				350A692221D365BF0055EFA6 /* order.plist in Resources */,
+				350A68F821D326040055EFA6 /* bank.plist in Resources */,
+				3548366D21BA158B008AB78D /* Assets.xcassets in Resources */,
+				35E810D321C3A7BD00B5714E /* Resource.bundle in Resources */,
+				350A690821D33B7C0055EFA6 /* contact.plist in Resources */,
+				350A691421D350390055EFA6 /* incumbent.plist in Resources */,
+				350A00E721DF306A00DFE703 /* DSOrderInfoCell.xib in Resources */,
+				350A691621D352520055EFA6 /* student.plist in Resources */,
+				350A68DE21D22D150055EFA6 /* userid.plist in Resources */,
+				350A405C21E72C3C00092EDD /* success.plist in Resources */,
+				350A691821D353BF0055EFA6 /* unemployed.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17E080DFEF4AB86C7BF55C20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dashengLoan-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		356E80B721CD06ED0052C6E2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n#\n# Copyright 2016 Bugly, Tencent. All rights reserved.\n#\n# V1.4.0\n#\n# 2016.08.03\n#\n#\n#\n######################################################\n# 1. 脚本集成到Xcode工程的Target\n######################################################\n#\n# --- Copy the SCRIPT to the Run Script of Build Phases in the Xcode project ---\n#\n# #\nBUGLY_APP_ID=\"d601f14874\"\n# #\nBUGLY_APP_KEY=\"c56e2879-81ed-4fe9-bdc1-9ac166ac01e2\"\n# #\nBUNDLE_IDENTIFIER=\"com.powerfulfin.dashengloan\"\n# #\nUPLOAD_DSYM_ONLY=1\n#\n# # 脚本默认配置的版本格式为CFBundleShortVersionString(CFBundleVersion),  如果你修改默认的版本格式, 请设置此变量, 如果不想修改, 请忽略此设置\n# CUSTOMIZED_APP_VERSION=\"\"\n#\n# # Debug模式编译是否上传，1＝上传 0＝不上传，默认不上传\n# UPLOAD_DEBUG_SYMBOLS=0\n#\n# # 模拟器编译是否上传，1=上传 0=不上传，默认不上传\n# UPLOAD_SIMULATOR_SYMBOLS=0\n#\n# #只有Archive操作时上传, 1=支持Archive上传 0=所有Release模式编译都上传\n# UPLOAD_ARCHIVE_ONLY=0\n#\n# #\n# source dSYMUpload.sh\n#\n# --- END OF SCRIPT ---\n#\n#\n#\n#\n#######################################################\n# 2. 脚本根据输入参数处理\n#######################################################\n#\n# #命令行下输入应用基本信息, .dSYM文件的父目录路径, 输出文件目录即可\n#\n# sh dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir>\n#\n# #\n#\n# #注意:\n# # 1. dSYMUpload.sh会调用buglySymboliOS.jar进行.dSYM解析，所以依赖Java运行时环境\n# # 2. dSYMUpload.sh和buglySymboliOS.jar的文件路径需一致\n#\n#\n\n#\n# --- CONTENT OF SCRIPT ---\n#\n\n# Bugly服务域名\nBUGLY_DSYM_UPLOAD_DOMAIN=\"api.bugly.qq.com\"\n\n# 注意jar工具的路径跟dSYMUpload.sh脚本路径一致, 请务必保证jar路径的正确性\nBUGLY_SYMBOL_JAR_PATH=\"dsymtool/buglySymboliOS.jar\"\n# 查找添加到系统目录的jar工具\nif [ ! -f \"${BUGLY_SYMBOL_JAR_PATH}\" ]; then\nBUGLY_SYMBOL_JAR_PATH=\"$HOME/bin/buglySymboliOS.jar\"\nfi\n\n# 打印错误信息\nfunction exitWithMessage(){\necho \"--------------------------------\"\necho \"${1}\"\necho \"--------------------------------\"\nexit ${2}\n}\n\n# 上传bSYMBOL文件\nfunction dSYMUpload() {\nP_APP_ID=\"$1\"\nP_APP_KEY=\"$2\"\nP_APP_BUNDLE_ID=\"$3\"\nP_APP_VERSION=\"$4\"\nP_BSYMBOL_ZIP_FILE=\"$5\"\n\n#\nP_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE##*/}\nP_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE_NAME//&/_}\nP_BSYMBOL_ZIP_FILE_NAME=\"${P_BSYMBOL_ZIP_FILE_NAME// /_}\"\n\nDSYM_UPLOAD_URL=\"https://${BUGLY_DSYM_UPLOAD_DOMAIN}/openapi/file/upload/symbol?app_id=${P_APP_ID}&app_key=${P_APP_KEY}\"\necho \"dSYM upload url: ${DSYM_UPLOAD_URL}\"\n\necho \"-----------------------------\"\nSTATUS=$(/usr/bin/curl -k \"${DSYM_UPLOAD_URL}\" --form \"api_version=1\" --form \"app_id=${P_APP_ID}\" --form \"app_key=${P_APP_KEY}\" --form \"symbolType=2\"  --form \"bundleId=${BUNDLE_IDENTIFIER}\" --form \"productVersion=${BUGLY_APP_VERSION}\" --form \"fileName=${P_BSYMBOL_ZIP_FILE_NAME}\" --form \"file=@${P_BSYMBOL_ZIP_FILE}\" --verbose)\necho \"-----------------------------\"\n\nUPLOAD_RESULT=\"FAILTURE\"\necho \"Bugly server response: ${STATUS}\"\nif [ ! \"${STATUS}\" ]; then\necho \"Error: Failed to upload the zip archive file.\"\nelif [[ \"${STATUS}\" == *\"{\\\"reponseCode\\\":\\\"0\\\"}\"* ]]; then\necho \"Success to upload the dSYM for the app [${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION}]\"\nUPLOAD_RESULT=\"SUCCESS\"\nelse\necho \"Error: Failed to upload the zip archive file to Bugly.\"\nfi\n\n#Remove temp dSYM archive\n#echo \"Remove temporary zip archive: ${DSYM_ZIP_FPATH}\"\n#/bin/rm -f \"${DSYM_ZIP_FPATH}\"\n\nif [ \"$?\" -ne 0 ]; then\nexitWithMessage \"Error: Failed to remove temporary zip archive.\" 0\nfi\n\necho \"--------------------------------\"\necho \"${UPLOAD_RESULT} - dSYM upload complete.\"\n\nif [[ \"${UPLOAD_RESULT}\" == \"FAILTURE\" ]]; then\necho \"--------------------------------\"\necho \"Failed to upload the dSYM\"\necho \"Please check the script and try it again.\"\nfi\n}\n\n# .dSYM解析为bSYMBOL文件\nfunction dSYMParse() {\nDSYM_FILE=\"$1\"\nDSYM_SYMBOL_FILE=\"$2\"\n\necho \"--------------------------------\"\necho \"Extract symbol info from .dSYM file. to ${DSYM_SYMBOL_FILE}\"\n(/usr/bin/java -Xms512m -Xmx1024m -Dfile.encoding=UTF8 -jar \"${BUGLY_SYMBOL_JAR_PATH}\" -i \"${DSYM_FILE}\" -o \"${DSYM_SYMBOL_FILE}\" ) || exitWithMessage \"Error: Failed to extract symbols.\" 1\necho \"--------------------------------\"\n\n}\n\n# 执行\nfunction run() {\n\nCONFIG_BUGLY_APP_ID=\"$1\"\nCONFIG_BUGLY_APP_KEY=\"$2\"\n\nCONFIG_BUGLY_APP_BUNDLE_IDENTIFIER=\"$3\"\nCONFIG_BUGLY_APP_VERSION=\"$4\"\nCONFIG_DSYM_SOURCE_DIR=\"$5\"\nCONFIG_DSYM_DEST_DIR=\"$6\"\nCONFIG_UPLOAD_DSYM_ONLY=\"$7\"\n\n# 检查必须参数是否设置\nif [ ! \"${CONFIG_BUGLY_APP_ID}\" ]; then\nexitWithMessage \"Error: Bugly App ID not defined. Please set 'BUGLY_APP_ID' \" 0\nfi\n\nif [[ \"${CONFIG_BUGLY_APP_ID}\" == *\"App ID\"* ]]; then\nexitWithMessage \"Error: Bugly App ID not defined.\" 0\nfi\n\nif [ ! \"${CONFIG_BUGLY_APP_KEY}\" ]; then\nexitWithMessage \"Error: Bugly App Key not defined.\" 0\nfi\n\nif [ ! \"${CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER}\" ]; then\nexitWithMessage \"Error: Bundle Identifier not defined.\" 0\nfi\n\nif [ ! \"${CONFIG_BUGLY_APP_VERSION}\" ]; then\nexitWithMessage \"Error: App Version not defined.\" 0\nfi\n\nif [ ! -e \"${CONFIG_DSYM_SOURCE_DIR}\" ]; then\nexitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_SOURCE_DIR}\" 0\nfi\n\nif [ ! \"${CONFIG_DSYM_DEST_DIR}\" ]; then\nexitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_DEST_DIR}\" 0\nfi\n\nif [ ! -e \"${CONFIG_DSYM_DEST_DIR}\" ]; then\nmkdir ${CONFIG_DSYM_DEST_DIR}\nfi\n\nDSYM_FOLDER=\"${CONFIG_DSYM_SOURCE_DIR}\"\nIFS=$'\\n'\n\necho \"Scaning dSYM FOLDER: ${DSYM_FOLDER} ...\"\nRET=\"F\"\n\n#\nfor dsymFile in $(find \"$DSYM_FOLDER\" -name '*.dSYM'); do\nRET=\"T\"\necho \"Found dSYM file: $dsymFile\"\n\nDSYM_FILE_NAME=${dsymFile##*/}\nDSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_FILE_NAME}.zip\"\nDSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_SYMBOL_ZIP_FILE_NAME// /_}\"\nDSYM_SYMBOL_ZIP_FILE=${CONFIG_DSYM_DEST_DIR}/${DSYM_SYMBOL_ZIP_FILE_NAME}\n\nif [ $CONFIG_UPLOAD_DSYM_ONLY -eq 1 ]; then\nif [ -e $DSYM_SYMBOL_ZIP_FILE ]; then\nrm -f $DSYM_SYMBOL_ZIP_FILE\nfi\n# 如果只上传dSYM，直接压缩dSYM目录\nzip -r -j $DSYM_SYMBOL_ZIP_FILE $dsymFile -x *.plist\nelse\n# 使用符号表工具来生成Symbol文件\ndSYMParse $dsymFile $DSYM_SYMBOL_ZIP_FILE\nfi\n\n# 上传\ndSYMUpload $CONFIG_BUGLY_APP_ID $CONFIG_BUGLY_APP_KEY $CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER $CONFIG_BUGLY_APP_VERSION $DSYM_SYMBOL_ZIP_FILE\ndone\n\nif [ $RET = \"F\" ]; then\nexitWithMessage \"No .dSYM found in ${DSYM_FOLDER}\" 0\nfi\n}\n\n# 在Xcode工程中执行\nfunction runInXcode(){\necho \"Uploading dSYM to Bugly in Xcode ...\"\n\necho \"Info.Plist : ${INFOPLIST_FILE}\"\n\nBUNDLE_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' \"${INFOPLIST_FILE}\")\nBUNDLE_SHORT_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' \"${INFOPLIST_FILE}\")\n\n# 组装Bugly默认识别的版本信息(格式为CFBundleShortVersionString(CFBundleVersion), 例如: 1.0(1))\nif [ ! \"${CUSTOMIZED_APP_VERSION}\" ]; then\nBUGLY_APP_VERSION=\"${BUNDLE_SHORT_VERSION}(${BUNDLE_VERSION})\"\nelse\nBUGLY_APP_VERSION=\"${CUSTOMIZED_APP_VERSION}\"\nfi\n\necho \"--------------------------------\"\necho \"Prepare application information.\"\necho \"--------------------------------\"\n\necho \"Product Name: ${PRODUCT_NAME}\"\necho \"Bundle Identifier: ${BUNDLE_IDENTIFIER}\"\necho \"Version: ${BUNDLE_SHORT_VERSION}\"\necho \"Build: ${BUNDLE_VERSION}\"\n\necho \"Bugly App ID: ${BUGLY_APP_ID}\"\necho \"Bugly App key: ${BUGLY_APP_KEY}\"\necho \"Bugly App Version: ${BUGLY_APP_VERSION}\"\n\necho \"--------------------------------\"\necho \"Check the arguments ...\"\n\n##检查模拟器编译是否允许上传符号\nif [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\nif [ $UPLOAD_SIMULATOR_SYMBOLS -eq 0 ]; then\nexitWithMessage \"Warning: Build for simulator and skipping to upload. \\nYou can modify 'UPLOAD_SIMULATOR_SYMBOLS' to 1 in the script.\" 0\nfi\nfi\n\n##检查是否是Release模式编译\nif [ \"${CONFIGURATION=}\" == \"Debug\" ]; then\nif [ $UPLOAD_DEBUG_SYMBOLS -eq 0 ]; then\nexitWithMessage \"Warning: Build for debug mode and skipping to upload. \\nYou can modify 'UPLOAD_DEBUG_SYMBOLS' to 1 in the script.\" 0\nfi\nfi\n\n##检查是否Archive操作\nif [ $UPLOAD_ARCHIVE_ONLY -eq 1 ]; then\nif [[ \"$TARGET_BUILD_DIR\" == *\"/Archive\"* ]]; then\necho \"Archive the package\"\nelse\nexitWithMessage \"Warning: Build for NOT Archive mode and skipping to upload. \\nYou can modify 'UPLOAD_ARCHIVE_ONLY' to 0 in the script.\" 0\nfi\nfi\n\n#\nrun ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${BUILD_DIR}/BuglySymbolTemp ${UPLOAD_DSYM_ONLY}\n}\n\n# 根据Xcode的环境变量判断是否处于Xcode环境\nINFO_PLIST_FILE=\"${INFOPLIST_FILE}\"\n\nBuildInXcode=\"F\"\nif [ -f \"${INFO_PLIST_FILE}\" ]; then\nBuildInXcode=\"T\"\nfi\n\nif [ $BuildInXcode = \"T\" ]; then\nrunInXcode\nelse\necho \"\\nUsage: dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir> [upload_dsym_only]\\n\"\n# 你可以在此处直接设置BuglyAppID和BuglyAppKey，排除不常变参数的输入\nBUGLY_APP_ID=\"$1\"\nBUGLY_APP_KEY=\"$2\"\nBUNDLE_IDENTIFIER=\"$3\"\nBUGLY_APP_VERSION=\"$4\"\nDWARF_DSYM_FOLDER_PATH=\"$5\"\nSYMBOL_OUTPUT_PATH=\"$6\"\nUPLOAD_DSYM_ONLY=$7\nrun ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${SYMBOL_OUTPUT_PATH} ${UPLOAD_DSYM_ONLY}\nfi\n\n";
+		};
+		7B3C4F6A13E0A043BE4176FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dashengLoan/Pods-dashengLoan-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RTRootNavigationController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dashengLoan/Pods-dashengLoan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3548365E21BA158A008AB78D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3513214921D4B527005AB183 /* DSImagePickerActionSheet.swift in Sources */,
+				3595C62221BE4CB100B90FD0 /* XJDeviceInfo.swift in Sources */,
+				350A00D321DE2C3A00DFE703 /* DSColor.swift in Sources */,
+				350A68F021D317460055EFA6 /* DSApplyFooterView.swift in Sources */,
+				35A82B3D21CBA87C0009D5F2 /* DSNetConfiger.swift in Sources */,
+				350A68BE21D0C8FE0055EFA6 /* DSAlertController.swift in Sources */,
+				350A404A21E5DFF000092EDD /* DSSignViewController.swift in Sources */,
+				350A010221E08EEF00DFE703 /* DSUseBankTableViewCell.swift in Sources */,
+				350A405A21E72C2C00092EDD /* DSSuccessLocalService.swift in Sources */,
+				350A00E321DF03F000DFE703 /* DSUserOrderListInfo.swift in Sources */,
+				350A406021E7502D00092EDD /* DSDisplayViewCell.swift in Sources */,
+				3548368621BA17B8008AB78D /* DSWebViewController.swift in Sources */,
+				350A00EB21DF627600DFE703 /* DSPasswordViewController.swift in Sources */,
+				356E80B621CD05860052C6E2 /* DSBugly.swift in Sources */,
+				3513215C21D613D4005AB183 /* DSBankListViewController.swift in Sources */,
+				3513218021DCBEFA005AB183 /* DSUserOrderInfo.swift in Sources */,
+				3508778121CDD4AB006580AD /* XJGCDTimer.swift in Sources */,
+				350A68C721D110D00055EFA6 /* DSMessageViewController.swift in Sources */,
+				350A00FD21E052D000DFE703 /* DSBillDetailAlertView.swift in Sources */,
+				350A404C21E5E01600092EDD /* DSSignLocalService.swift in Sources */,
+				3548368021BA174D008AB78D /* DSTableViewController.swift in Sources */,
+				350A00FB21DF80BA00DFE703 /* DSOrderPlanInfo.swift in Sources */,
+				3508779B21CF62F0006580AD /* DSLogoutTableViewCell.swift in Sources */,
+				350A403921E58E0800092EDD /* DSAddressBookPicker.swift in Sources */,
+				3548368D21BA18F5008AB78D /* DSUserViewController.swift in Sources */,
+				350A68D621D202040055EFA6 /* DSUserIdLocalService.swift in Sources */,
+				3548368421BA177B008AB78D /* DSNavigationController.swift in Sources */,
+				3508778521CE1613006580AD /* DSHomeBannerView.swift in Sources */,
+				3508778721CE2739006580AD /* DSHomeNewsView.swift in Sources */,
+				3508779921CF5DE9006580AD /* DSTableViewCell.swift in Sources */,
+				3548369721BA3F05008AB78D /* DSAppearance.swift in Sources */,
+				350A00EF21DF72EF00DFE703 /* DSOrderPlanViewController.swift in Sources */,
+				350A010921E2E78D00DFE703 /* DSScanViewController.swift in Sources */,
+				350A692021D3658E0055EFA6 /* DSOrderLocalService.swift in Sources */,
+				350877A121CF81F7006580AD /* DSOrderTableViewCell.swift in Sources */,
+				350A690621D33AB30055EFA6 /* DSContactViewController.swift in Sources */,
+				350A691A21D362700055EFA6 /* DSMutableImageCell.swift in Sources */,
+				3548368921BA180E008AB78D /* DSHomeViewController.swift in Sources */,
+				35552C7521CA444C002033FC /* DSLoginViewController.swift in Sources */,
+				350A68FA21D32BA30055EFA6 /* DSRightButtonCell.swift in Sources */,
+				35552C7821CB5D15002033FC /* DSUserCenter.swift in Sources */,
+				350A00D921DE31D700DFE703 /* DSOrderDetailHeadView.swift in Sources */,
+				350A68AA21D0A71E0055EFA6 /* DSSearchView.swift in Sources */,
+				3508778F21CE4126006580AD /* DSButton.swift in Sources */,
+				350A00E121DF032500DFE703 /* DSOrderDataService.swift in Sources */,
+				3508779421CF27CD006580AD /* DSUserHeaderView.swift in Sources */,
+				35552C8021CB6F78002033FC /* UIApplication+Convenient.swift in Sources */,
+				3595C62421BE4CB100B90FD0 /* XJUDID.swift in Sources */,
+				350A68B821D0B8BC0055EFA6 /* DSSearchTableViewCell.swift in Sources */,
+				350A00DD21DEF2EA00DFE703 /* DSOrderPlanCell.swift in Sources */,
+				350A00F721DF7DED00DFE703 /* DSPlanTableViewCell.swift in Sources */,
+				350A68D321D1DE2A0055EFA6 /* DSAuthFaceManager.swift in Sources */,
+				3513217321D73CBD005AB183 /* XJMutailDataPicker.swift in Sources */,
+				3513216121D62413005AB183 /* DSBanksPicker.swift in Sources */,
+				350A68D921D202550055EFA6 /* DSInputTableViewCell.swift in Sources */,
+				3513214721D4B120005AB183 /* XJImagePicker.swift in Sources */,
+				350A405E21E72F0C00092EDD /* DSApplySuccessInfo.swift in Sources */,
+				3548368F21BA1976008AB78D /* DSOrderViewController.swift in Sources */,
+				350A690021D32D6A0055EFA6 /* DSApplyLocalService.swift in Sources */,
+				3513216621D652A6005AB183 /* DSAddress.swift in Sources */,
+				3595C61721BE08B100B90FD0 /* DSSearchViewController.swift in Sources */,
+				3513215621D5F9A1005AB183 /* DSLocationViewController.swift in Sources */,
+				3513214E21D4DC8D005AB183 /* DSCommonDataService.swift in Sources */,
+				350A68D121D1D5170055EFA6 /* DSApplyConfiger.swift in Sources */,
+				350A690E21D34D340055EFA6 /* DSWorkLocalService.swift in Sources */,
+				35552C7E21CB63D8002033FC /* DSAccountDataService.swift in Sources */,
+				3513216421D642CE005AB183 /* XJDataPicker.swift in Sources */,
+				3513217021D72231005AB183 /* DSWorkHeaderView.swift in Sources */,
+				3513215A21D607E1005AB183 /* DSArray.swift in Sources */,
+				350A010421E0B47C00DFE703 /* DSUserMessageInfo.swift in Sources */,
+				350A00E921DF3F4000DFE703 /* DSSearchResultView.swift in Sources */,
+				350A010021E06FC700DFE703 /* DSUserIdTableViewCell.swift in Sources */,
+				350A68FD21D32D400055EFA6 /* DSApplyTableViewController.swift in Sources */,
+				350A68EB21D25C290055EFA6 /* DSDatePicker.swift in Sources */,
+				3513216821D65500005AB183 /* DSUserContact.swift in Sources */,
+				350A68F621D325EB0055EFA6 /* DSBankLocalService.swift in Sources */,
+				350A68F321D322080055EFA6 /* DSBankViewController.swift in Sources */,
+				3513217E21DC9BD8005AB183 /* DSContacts.swift in Sources */,
+				3595C62321BE4CB100B90FD0 /* XJKeyChainStore.swift in Sources */,
+				3508779121CE480F006580AD /* DSHomeLoanButtonView.swift in Sources */,
+				350A010721E0B78900DFE703 /* DSUserMessageCell.swift in Sources */,
+				3513217521D74785005AB183 /* DSAddressPicker.swift in Sources */,
+				3508778A21CE3006006580AD /* DSHomeLoanView.swift in Sources */,
+				3508779E21CF66AC006580AD /* DSUserDataSource.swift in Sources */,
+				3513218221DCD030005AB183 /* DSUserOrderConfiger.swift in Sources */,
+				350A011421E457B500DFE703 /* XJTextField.swift in Sources */,
+				350A010B21E2EBBD00DFE703 /* DSSacnBaseViewController.swift in Sources */,
+				3548366621BA158A008AB78D /* AppDelegate.swift in Sources */,
+				350A68BC21D0C53A0055EFA6 /* DSString.swift in Sources */,
+				3508779621CF3841006580AD /* DSImageView.swift in Sources */,
+				350A68E021D23E5C0055EFA6 /* DSSelectorCell.swift in Sources */,
+				3513214B21D4D5FB005AB183 /* XJImageCompress.swift in Sources */,
+				350A00E621DF306A00DFE703 /* DSOrderInfoCell.swift in Sources */,
+				350A00DB21DEF2DB00DFE703 /* DSOrderTitleCell.swift in Sources */,
+				350A68A821D0769B0055EFA6 /* MarqueeView.swift in Sources */,
+				350A405321E5E4ED00092EDD /* DSAuditDataService.swift in Sources */,
+				3508778321CDEA94006580AD /* DSHomeSearchControl.swift in Sources */,
+				350A690B21D34CF90055EFA6 /* DSWorkViewController.swift in Sources */,
+				350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */,
+				350A405721E72A2900092EDD /* DSApplySuccessController.swift in Sources */,
+				350A011021E3504100DFE703 /* DSApplyInfoAlertView.swift in Sources */,
+				3548368221BA1765008AB78D /* DSTabBarController.swift in Sources */,
+				350DD05021EC32D100243DDC /* DSData.swift in Sources */,
+				3508525421C352810095C391 /* DSLocationManager.swift in Sources */,
+				3513215E21D6166A005AB183 /* DSUserBanksInfo.swift in Sources */,
+				350A68B521D0B6520055EFA6 /* DSSearchData.swift in Sources */,
+				350A690421D33A960055EFA6 /* DSContactLocalService.swift in Sources */,
+				350A68BA21D0B9650055EFA6 /* DSLabel.swift in Sources */,
+				350A691D21D365470055EFA6 /* DSApplyOrderViewController.swift in Sources */,
+				350A68CD21D1CF930055EFA6 /* DSApply.swift in Sources */,
+				3513217C21DC6400005AB183 /* DSUserLocationInfo.swift in Sources */,
+				3548369421BA3BE0008AB78D /* XJNetWork.swift in Sources */,
+				350A68CB21D1CF590055EFA6 /* DSUserIdViewController.swift in Sources */,
+				350A68DC21D202800055EFA6 /* DSInputModel.swift in Sources */,
+				350A68B121D0B56E0055EFA6 /* DSHomeDataService.swift in Sources */,
+				350A010D21E34C1200DFE703 /* DSSelectorRightButtonCell.swift in Sources */,
+				350A68ED21D266E00055EFA6 /* DSDate.swift in Sources */,
+				350A68C121D106020055EFA6 /* DSRouter.swift in Sources */,
+				35552C7A21CB5DB6002033FC /* DSUserInfo.swift in Sources */,
+				3513217721D75158005AB183 /* DSDataPickerCell.swift in Sources */,
+				350A00ED21DF646800DFE703 /* DSTextField+Appearance.swift in Sources */,
+				350A00D721DE2C9100DFE703 /* DSFont.swift in Sources */,
+				350A00D121DE0AE900DFE703 /* DSApplyBankCell.swift in Sources */,
+				3548367E21BA1709008AB78D /* DSViewController.swift in Sources */,
+				35A82B3B21CBA39A0009D5F2 /* DSAgreementView.swift in Sources */,
+				350A68C421D10ED50055EFA6 /* DSOrderDetailViewController.swift in Sources */,
+				3513216A21D6571B005AB183 /* DSUserWork.swift in Sources */,
+				350A68CF21D1D4DC0055EFA6 /* DSApplyDataService.swift in Sources */,
+				35A82B3921CB976B0009D5F2 /* DSPhoneButton.swift in Sources */,
+				350A011221E3507600DFE703 /* DSApplyInfo.swift in Sources */,
+				3513215221D4FAC3005AB183 /* DSImageInfo.swift in Sources */,
+				350A00D521DE2C7600DFE703 /* DSImage.swift in Sources */,
+				3513215821D5F9AE005AB183 /* DSPhoneViewController.swift in Sources */,
+				356E80B021CC87FD0052C6E2 /* XJToast.swift in Sources */,
+				3513216D21D65AD5005AB183 /* XJSegmentedControl.swift in Sources */,
+				350A68E221D2406E0055EFA6 /* DSIdImageCell.swift in Sources */,
+				350A00F521DF738100DFE703 /* DSUserBanksController.swift in Sources */,
+				356E80B321CCC3F40052C6E2 /* DSTextValidate.swift in Sources */,
+				350A68B321D0B59B0055EFA6 /* DSHomeInfo.swift in Sources */,
+				350A00F221DF734200DFE703 /* DSUserInfoViewController.swift in Sources */,
+				350A692521D37C830055EFA6 /* DSUserIdInfo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3548367221BA158B008AB78D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3548367321BA158B008AB78D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3548367521BA158B008AB78D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5886AFB4089C0531919489B /* Pods-dashengLoan.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = dashengLoan/dashengLoan.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KFY5563N56;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dashengLoan/Third/UDSafeSDK",
+					"$(PROJECT_DIR)/dashengLoan/Third/KZAlert",
+				);
+				INFOPLIST_FILE = dashengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dashengLoan/Third/UDSafeSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dasheng;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/dashengLoan/dashengLoan-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3548367621BA158B008AB78D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3983E1025C0C766D236DECD0 /* Pods-dashengLoan.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = dashengLoan/dashengLoan.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KFY5563N56;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dashengLoan/Third/UDSafeSDK",
+					"$(PROJECT_DIR)/dashengLoan/Third/KZAlert",
+				);
+				INFOPLIST_FILE = dashengLoan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/dashengLoan/Third/UDSafeSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dasheng;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/dashengLoan/dashengLoan-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3548365D21BA158A008AB78D /* Build configuration list for PBXProject "dashengLoan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3548367221BA158B008AB78D /* Debug */,
+				3548367321BA158B008AB78D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3548367421BA158B008AB78D /* Build configuration list for PBXNativeTarget "dashengLoan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3548367521BA158B008AB78D /* Debug */,
+				3548367621BA158B008AB78D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3548365A21BA158A008AB78D /* Project object */;
+}

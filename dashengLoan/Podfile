@@ -1,0 +1,15 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+
+target 'dashengLoan' do
+    use_frameworks!
+
+    pod 'Alamofire'                     #网络请求
+    pod 'AlamofireImage'                #图片加载请求
+    pod 'SnapKit'                       #布局
+    pod 'IQKeyboardManagerSwift'        #键盘
+    pod 'BMKLocationKit'                #百度地图定位
+    pod 'Bugly'                         #腾讯bug收集
+    pod 'RTRootNavigationController'    #自定义导航栏
+    pod 'TZImagePickerController'       #图片选择器。OC版
+end

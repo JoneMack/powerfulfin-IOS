@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>DSSelectorCell</string>
+			<key>title</key>
+			<string>学历</string>
+			<key>placeholder</key>
+			<string>请选择学历</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>DSSelectorCell</string>
+			<key>title</key>
+			<string>职业</string>
+			<key>placeholder</key>
+			<string>请选择职业</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>type</key>
+			<string>DSMutableImageCell</string>
+			<key>title</key>
+			<string>学历证明</string>
+			<key>placeholder</key>
+			<string>请上传学历证明照片</string>
+			<key>servicename</key>
+			<string>edu_pic</string>
+			<key>maxcount</key>
+			<integer>1</integer>
+			<key>tipimage</key>
+			<string>apply_loan_3</string>
+			<key>tips</key>
+			<string>注:请上传学生证、学信网截图或者其他证明材料</string>
+		</dict>
+	</array>
+</array>
+</plist>
