@@ -1,6 +1,0 @@
-framework module KZAlert {
-  umbrella header "KZAlert.h"
-
-  export *
-  module * { export * }
-}
