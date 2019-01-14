@@ -112,6 +112,7 @@
 		350DD04D21E8907100243DDC /* KZAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD04B21E8906A00243DDC /* KZAlert.framework */; };
 		350DD04E21E8907100243DDC /* KZAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD04B21E8906A00243DDC /* KZAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		350DD05021EC32D100243DDC /* DSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350DD04F21EC32D100243DDC /* DSData.swift */; };
+		350DD05221EC921000243DDC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD05121EC921000243DDC /* opencv2.framework */; };
 		3513214721D4B120005AB183 /* XJImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214621D4B120005AB183 /* XJImagePicker.swift */; };
 		3513214921D4B527005AB183 /* DSImagePickerActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */; };
 		3513214B21D4D5FB005AB183 /* XJImageCompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214A21D4D5FB005AB183 /* XJImageCompress.swift */; };
@@ -173,9 +174,7 @@
 		35A82B3921CB976B0009D5F2 /* DSPhoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3821CB976B0009D5F2 /* DSPhoneButton.swift */; };
 		35A82B3B21CBA39A0009D5F2 /* DSAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3A21CBA39A0009D5F2 /* DSAgreementView.swift */; };
 		35A82B3D21CBA87C0009D5F2 /* DSNetConfiger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3C21CBA87C0009D5F2 /* DSNetConfiger.swift */; };
-		35E810D221C3A7BD00B5714E /* UDIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E810CD21C3A7BC00B5714E /* UDIDSDK.a */; };
 		35E810D321C3A7BD00B5714E /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35E810CF21C3A7BC00B5714E /* Resource.bundle */; };
-		35E810D421C3A7BD00B5714E /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E810D021C3A7BC00B5714E /* opencv2.framework */; };
 		35E810D521C3A7BD00B5714E /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E810D121C3A7BC00B5714E /* libjpeg.a */; };
 		5B8BEE818A3E9F2FA247588B /* Pods_dashengLoan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */; };
 /* End PBXBuildFile section */
@@ -300,6 +299,7 @@
 		350A692421D37C830055EFA6 /* DSUserIdInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserIdInfo.swift; sourceTree = "<group>"; };
 		350DD04B21E8906A00243DDC /* KZAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KZAlert.framework; sourceTree = "<group>"; };
 		350DD04F21EC32D100243DDC /* DSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSData.swift; sourceTree = "<group>"; };
+		350DD05121EC921000243DDC /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		3513214621D4B120005AB183 /* XJImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJImagePicker.swift; sourceTree = "<group>"; };
 		3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSImagePickerActionSheet.swift; sourceTree = "<group>"; };
 		3513214A21D4D5FB005AB183 /* XJImageCompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJImageCompress.swift; sourceTree = "<group>"; };
@@ -366,10 +366,8 @@
 		35E810CA21C3A7BC00B5714E /* UDIDSafeDataDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeDataDefine.h; sourceTree = "<group>"; };
 		35E810CB21C3A7BC00B5714E /* UDIDSafeOCREngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeOCREngine.h; sourceTree = "<group>"; };
 		35E810CC21C3A7BC00B5714E /* UDIDSafeAuthEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeAuthEngine.h; sourceTree = "<group>"; };
-		35E810CD21C3A7BC00B5714E /* UDIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = UDIDSDK.a; sourceTree = "<group>"; };
 		35E810CE21C3A7BC00B5714E /* UDIDSafeVideoRecodeEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeVideoRecodeEngine.h; sourceTree = "<group>"; };
 		35E810CF21C3A7BC00B5714E /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
-		35E810D021C3A7BC00B5714E /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		35E810D121C3A7BC00B5714E /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
 		3983E1025C0C766D236DECD0 /* Pods-dashengLoan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dashengLoan.release.xcconfig"; path = "Target Support Files/Pods-dashengLoan/Pods-dashengLoan.release.xcconfig"; sourceTree = "<group>"; };
 		6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dashengLoan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -391,11 +389,10 @@
 				35552C6921C9E834002033FC /* AudioToolbox.framework in Frameworks */,
 				350DD04C21E8906A00243DDC /* KZAlert.framework in Frameworks */,
 				35552C6721C9E82B002033FC /* CoreTelephony.framework in Frameworks */,
+				350DD05221EC921000243DDC /* opencv2.framework in Frameworks */,
 				350DD04D21E8907100243DDC /* KZAlert.framework in Frameworks */,
 				35552C6321C9E80B002033FC /* ImageIO.framework in Frameworks */,
-				35E810D421C3A7BD00B5714E /* opencv2.framework in Frameworks */,
 				35E810D521C3A7BD00B5714E /* libjpeg.a in Frameworks */,
-				35E810D221C3A7BD00B5714E /* UDIDSDK.a in Frameworks */,
 				5B8BEE818A3E9F2FA247588B /* Pods_dashengLoan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1205,13 +1202,12 @@
 		35E810C921C3A7BC00B5714E /* UDSafeSDK */ = {
 			isa = PBXGroup;
 			children = (
+				350DD05121EC921000243DDC /* opencv2.framework */,
 				35E810CA21C3A7BC00B5714E /* UDIDSafeDataDefine.h */,
 				35E810CB21C3A7BC00B5714E /* UDIDSafeOCREngine.h */,
 				35E810CC21C3A7BC00B5714E /* UDIDSafeAuthEngine.h */,
-				35E810CD21C3A7BC00B5714E /* UDIDSDK.a */,
 				35E810CE21C3A7BC00B5714E /* UDIDSafeVideoRecodeEngine.h */,
 				35E810CF21C3A7BC00B5714E /* Resource.bundle */,
-				35E810D021C3A7BC00B5714E /* opencv2.framework */,
 				35E810D121C3A7BC00B5714E /* libjpeg.a */,
 			);
 			path = UDSafeSDK;
