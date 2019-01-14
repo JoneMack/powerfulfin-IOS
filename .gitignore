@@ -5,4 +5,4 @@ DerivedData/
 *.opencv2.framework
 *.Bugly.framework
 dashengLoan/Pods/Bugly/
-dashengLoan/dashengLoan/Third/UDSafeSDK/
+dashengLoan/dashengLoan/Third/UDSafeSDK/opencv2.framework
