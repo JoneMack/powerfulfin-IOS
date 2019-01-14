@@ -142,9 +142,9 @@ static dispatch_once_t onceToken;
             // 有可能是PHCollectionList类的的对象，过滤掉
             if (![collection isKindOfClass:[PHAssetCollection class]]) continue;
             // 过滤空相册
-            if (collection.estimatedAssetCount <= 0) continue;
+            if (collection.estimatedAssetCount <= 0 && ![self isCameraRollAlbum:collection]) continue;
             PHFetchResult *fetchResult = [PHAsset fetchAssetsInAssetCollection:collection options:option];
-            if (fetchResult.count < 1) continue;
+            if (fetchResult.count < 1 && ![self isCameraRollAlbum:collection]) continue;
             
             if ([self.pickerDelegate respondsToSelector:@selector(isAlbumCanSelect:result:)]) {
                 if (![self.pickerDelegate isAlbumCanSelect:collection.localizedTitle result:fetchResult]) {
@@ -161,7 +161,9 @@ static dispatch_once_t onceToken;
             }
         }
     }
-    if (completion && albumArr.count > 0) completion(albumArr);
+    if (completion) {
+        completion(albumArr);
+    }
 }
 
 #pragma mark - Get Assets
@@ -345,7 +347,7 @@ static dispatch_once_t onceToken;
     } else {
         PHAsset *phAsset = (PHAsset *)asset;
         CGFloat aspectRatio = phAsset.pixelWidth / (CGFloat)phAsset.pixelHeight;
-        CGFloat pixelWidth = photoWidth * TZScreenScale * 1.5;
+        CGFloat pixelWidth = photoWidth * TZScreenScale;
         // 超宽图片
         if (aspectRatio > 1.8) {
             pixelWidth = pixelWidth * aspectRatio;
@@ -421,8 +423,15 @@ static dispatch_once_t onceToken;
 }
 
 - (PHImageRequestID)getOriginalPhotoWithAsset:(PHAsset *)asset newCompletion:(void (^)(UIImage *photo,NSDictionary *info,BOOL isDegraded))completion {
+    return [self getOriginalPhotoWithAsset:asset progressHandler:nil newCompletion:completion];
+}
+
+- (PHImageRequestID)getOriginalPhotoWithAsset:(PHAsset *)asset progressHandler:(void (^)(double progress, NSError *error, BOOL *stop, NSDictionary *info))progressHandler newCompletion:(void (^)(UIImage *photo,NSDictionary *info,BOOL isDegraded))completion {
     PHImageRequestOptions *option = [[PHImageRequestOptions alloc]init];
     option.networkAccessAllowed = YES;
+    if (progressHandler) {
+        [option setProgressHandler:progressHandler];
+    }
     option.resizeMode = PHImageRequestOptionsResizeModeFast;
     return [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFit options:option resultHandler:^(UIImage *result, NSDictionary *info) {
         BOOL downloadFinined = (![[info objectForKey:PHImageCancelledKey] boolValue] && ![info objectForKey:PHImageErrorKey]);
