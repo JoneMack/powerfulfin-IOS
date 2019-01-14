@@ -113,6 +113,7 @@
 		350DD04E21E8907100243DDC /* KZAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD04B21E8906A00243DDC /* KZAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		350DD05021EC32D100243DDC /* DSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350DD04F21EC32D100243DDC /* DSData.swift */; };
 		350DD05221EC921000243DDC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD05121EC921000243DDC /* opencv2.framework */; };
+		350DD05421EC947000243DDC /* UDIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD05321EC947000243DDC /* UDIDSDK.a */; };
 		3513214721D4B120005AB183 /* XJImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214621D4B120005AB183 /* XJImagePicker.swift */; };
 		3513214921D4B527005AB183 /* DSImagePickerActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */; };
 		3513214B21D4D5FB005AB183 /* XJImageCompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214A21D4D5FB005AB183 /* XJImageCompress.swift */; };
@@ -300,6 +301,7 @@
 		350DD04B21E8906A00243DDC /* KZAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KZAlert.framework; sourceTree = "<group>"; };
 		350DD04F21EC32D100243DDC /* DSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSData.swift; sourceTree = "<group>"; };
 		350DD05121EC921000243DDC /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		350DD05321EC947000243DDC /* UDIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = UDIDSDK.a; sourceTree = "<group>"; };
 		3513214621D4B120005AB183 /* XJImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJImagePicker.swift; sourceTree = "<group>"; };
 		3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSImagePickerActionSheet.swift; sourceTree = "<group>"; };
 		3513214A21D4D5FB005AB183 /* XJImageCompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJImageCompress.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				350DD05421EC947000243DDC /* UDIDSDK.a in Frameworks */,
 				35552C6521C9E814002033FC /* SystemConfiguration.framework in Frameworks */,
 				35552C6121C9E803002033FC /* CoreMedia.framework in Frameworks */,
 				35552C5F21C9E7FA002033FC /* libc++.tbd in Frameworks */,
@@ -1202,6 +1205,7 @@
 		35E810C921C3A7BC00B5714E /* UDSafeSDK */ = {
 			isa = PBXGroup;
 			children = (
+				350DD05321EC947000243DDC /* UDIDSDK.a */,
 				350DD05121EC921000243DDC /* opencv2.framework */,
 				35E810CA21C3A7BC00B5714E /* UDIDSafeDataDefine.h */,
 				35E810CB21C3A7BC00B5714E /* UDIDSafeOCREngine.h */,
