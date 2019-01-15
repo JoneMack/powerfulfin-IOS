@@ -149,6 +149,9 @@ class DSLoginViewController: DSViewController {
             maker.height.equalTo(0.5)
             maker.bottom.equalTo(passwordTF.snp_bottomMargin).offset(0)
         }
+        
+       
+        
     }
     fileprivate func loadLoginAndAgreementView() {
         loginBtn.setTitle("登录/注册", for: .normal)
@@ -180,7 +183,26 @@ class DSLoginViewController: DSViewController {
             maker.bottom.equalTo(-XJDeviceInfo.tabbarSpaceInX-46)
         }
     }
-    
+    @objc func showPasswordAction(btn:UIButton){
+        btn.isSelected = !btn.isSelected
+        passwordTF.isSecureTextEntry = btn.isSelected
+        if (passwordTF.isFirstResponder) { //becomeFirstResponder
+            
+        }
+//        passwordTF.becomeFirstResponder()
+        
+//        var pwd = passwordTF.text?.removeWhiteSpace()
+//        pwd = pwd?.removeAllSapce
+//        let array = pwd?.components(separatedBy: CharacterSet.whitespaces)
+//        pwd = array?.joined(separator: "")
+//        passwordTF.text = nil
+//        print(pwd!)
+//
+//        passwordTF.text = pwd
+//        print(passwordTF.text!)
+//
+     
+    }
     /// 取消登录
     @objc func cancelLoginAction(){
         navigationController?.dismiss(animated: true, completion: nil)
@@ -203,6 +225,16 @@ extension DSLoginViewController {
             passwordTF.isSecureTextEntry = true
             passwordTF.validater = DSPasswordValidater()
             loginBtn.setTitle("登录", for: .normal)
+            
+            let rightBtn = UIButton(type: .custom)
+            rightBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 56)
+            rightBtn.setImage(UIImage(named: "pwd_show_icon"), for: .normal)
+            rightBtn.setImage(UIImage(named: "pwd_hidden_icon"), for: .selected)
+            rightBtn.isSelected = true
+            rightBtn.addTarget(self, action: #selector(DSLoginViewController.showPasswordAction(btn:)), for: .touchUpInside)
+            passwordTF.rightView = rightBtn
+            passwordTF.rightViewMode = .always
+            
         }else{
             titleLabel.text = "手机号验证码登录"
             loginBtn.setTitle("登录/注册", for: .normal)
@@ -213,6 +245,7 @@ extension DSLoginViewController {
             if codeBtn.isHidden == true && userNameTF.validateText().enable == true {
                 codeBtn.isHidden = false
             }
+            passwordTF.rightView = nil
         }
     }
 }

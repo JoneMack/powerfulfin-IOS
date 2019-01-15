@@ -102,8 +102,16 @@ extension DSPasswordViewController {
 
         DSAccountDataService.updateUserPassword(oldPwd: oldPwd, newPwd: newPwd) {[weak self] (success) in
             if success {
-                self?.popViewController()
+                self?.showSuccessAlertView()
             }
         }
+    }
+    fileprivate func showSuccessAlertView(){
+        let alertView = UIAlertController(title: "提示", message: "密码修改成功", preferredStyle: .alert)
+        alertView.addAction(UIAlertAction(title: "确定", style: .default, handler: {[weak self] (action) in
+            self?.popViewController()
+        }))
+        present(alertView, animated: true, completion: nil)
+        
     }
 }

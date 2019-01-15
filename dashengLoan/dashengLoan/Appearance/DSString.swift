@@ -58,6 +58,9 @@ extension String {
         let whitespace = NSCharacterSet.whitespacesAndNewlines
         return trimmingCharacters(in: whitespace)
     }
+    var removeAllSapce: String {
+        return self.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
+    }
     /// 是否包含表情
     var containsEmoji: Bool {
         for scalar in unicodeScalars {
