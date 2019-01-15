@@ -53,6 +53,7 @@ class DSRouter {
             let webView = DSWebViewController()
             webView.urlString = url!
             UIApplication.shared.push(controller: webView)
+            complete?(true)
             return
         }
         switch urlInfo.0 {
@@ -70,6 +71,7 @@ class DSRouter {
             let orderDetailVC = DSOrderDetailViewController()
             orderDetailVC.orderId = (urlInfo.1)?["lid"]
             UIApplication.shared.push(controller: orderDetailVC)
+            complete?(true)
         case .messageList:
             
             if DSUserCenter.default.hasLogin == false {
@@ -80,6 +82,7 @@ class DSRouter {
             }
             let messageVC = DSMessageViewController()
             UIApplication.shared.push(controller: messageVC)
+            complete?(true)
         case .loanconfirm:
             break
         case .repay:
@@ -95,6 +98,7 @@ class DSRouter {
                 let planVC = DSOrderPlanViewController()
                 planVC.lid = id
                 UIApplication.shared.push(controller: planVC)
+                complete?(true)
             }
         case .apply:
             if DSUserCenter.default.hasLogin == false {
@@ -105,13 +109,14 @@ class DSRouter {
             }
             if let id = urlInfo.1!["oid"] {
                 let topViewController = UIApplication.shared.topViewController
-                
                 DSApply.default.beginApply(id, fromController: topViewController!)
+                complete?(true)
             }
             
         case .qrapply:
             let scanVC = DSScanViewController()
             UIApplication.shared.push(controller: scanVC)
+            complete?(true)
         default: break
         }
     }

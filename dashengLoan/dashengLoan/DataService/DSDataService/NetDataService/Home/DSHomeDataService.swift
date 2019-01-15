@@ -7,13 +7,13 @@
 //
 
 import UIKit
-
+import HandyJSON
 class DSHomeDataService {
     class func loadHomeData(complete:@escaping((DSHomeInfo?,Bool) -> Void)) {
         let paraDic = ["school_mac":XJDeviceInfo.wifiInfo.mac]
         let request = XJRequest("v1/index/index", method: .get,parameters:paraDic)
         XJNetWork.request(request, successHandler: { (jsonInfo) in
-            if let homeInfo = try? XJDecoder.xj_decode(DSHomeInfo.self, from: jsonInfo) {
+            if  let homeInfo = DSHomeInfo.deserialize(from: jsonInfo as? [String : Any]) {
                 complete(homeInfo,true)
             }
         }) { (error) in
@@ -24,7 +24,7 @@ class DSHomeDataService {
     class func searchSchools(name:String,page:Int = 1,complete:@escaping((DSSearchData)->Void)) {
         let request = XJRequest("v1/search/school", method: .get, parameters: ["keyword":name,"page":page])
         XJNetWork.request(request, successHandler: { (jsonInfo) in
-            if let homeInfo = try? XJDecoder.xj_decode(DSSearchData.self, from: jsonInfo) {
+            if  let homeInfo = DSSearchData.deserialize(from: jsonInfo as? [String : Any]) {
                 complete(homeInfo)
             }
         }) { (error) in

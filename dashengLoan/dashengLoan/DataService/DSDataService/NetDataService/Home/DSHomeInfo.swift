@@ -7,9 +7,9 @@
 //
 
 import UIKit
-
+import HandyJSON
 /// 首页数据
-struct DSHomeInfo: Codable {
+struct DSHomeInfo: HandyJSON {
     
     var audit:DSAuditInfo?
     var banner:[DSHomeBanner]?
@@ -19,25 +19,26 @@ struct DSHomeInfo: Codable {
 }
 
 /// banner
-struct DSHomeBanner:Codable {
+struct DSHomeBanner:HandyJSON {
     var img:String?
     var url:String?
 }
 
 /// 客服热线
-struct DSCustomerService:Codable {
+struct DSCustomerService:HandyJSON {
     var phone:String?
     var email:String?
 }
 
 /// 大圣快报
-struct DSHomeNotice:Codable {
+struct DSHomeNotice:HandyJSON {
     var content:String?
     var url:String?
 }
 
 /// 分期信息
-struct DSHomeLoanInfo:Codable {
+struct DSHomeLoanInfo:HandyJSON {
+   
     /// 状态值 0 是未分期。 1 是审核中 2是还款中
     var status:String?
     
@@ -58,16 +59,16 @@ struct DSHomeLoanInfo:Codable {
     /// 推荐的学校id
     var school_id:String?
     /// 推荐的学校名字
-    var school_name:String
+    var school_name:String?
     /// 要展示的按钮
     var buttons:[DSLoanButtonInfo]?
 }
-struct DSLoanButtonInfo:Codable {
+struct DSLoanButtonInfo:HandyJSON {
     var name:String?
     var url:String?
     var style:String?
 }
-struct DSAuditInfo:Codable {
-    var flag:String?
+struct DSAuditInfo:HandyJSON {
+    var flag:Int?
     var list:[DSOrgation]?
 }

@@ -7,15 +7,15 @@
 //
 
 import UIKit
-
-struct DSSearchData: Codable {
+import HandyJSON
+struct DSSearchData: HandyJSON {
     var total:String?
     var page:String?
     var pagesize:String?
     var list:[DSOrgation]?
     
 }
-struct DSOrgation :Codable {
+struct DSOrgation :HandyJSON {
     var id:String?
     var name:String?
     var address:String?

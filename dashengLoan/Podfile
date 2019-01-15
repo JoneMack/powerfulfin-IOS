@@ -12,4 +12,5 @@ target 'dashengLoan' do
     pod 'Bugly'                         #腾讯bug收集
     pod 'RTRootNavigationController'    #自定义导航栏
     pod 'TZImagePickerController'       #图片选择器。OC版
+    pod 'HandyJSON'                     # model 映射
 end

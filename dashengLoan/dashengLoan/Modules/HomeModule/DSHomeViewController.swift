@@ -33,6 +33,10 @@ class DSHomeViewController: DSViewController {
         reloadViewStatus(false)
         NotificationCenter.default.addObserver(self, selector: #selector(DSHomeViewController.reloadHomeData), name: DSApply.applyFinished, object: nil)
         DSUserCenter.default.addListener(self)
+        
+        if DSLocationManager.manager.authStatus == .authorizedAlways || DSLocationManager.manager.authStatus == .authorizedWhenInUse {
+            DSLocationManager.manager.updateUserLoaction()
+        }
     }
     func configSubViews()  {
         view.addSubview(contentView)
@@ -205,7 +209,7 @@ extension DSHomeViewController {
             self?.refreshControl.endRefreshing()
             if success == true {
                 self?.homeInfo = homeData
-                if homeData!.audit?.flag == "1" {
+                if homeData!.audit?.flag == 1 {
                    DSAppearance.appearance.isAudit = true
                 }else{
                     DSAppearance.appearance.isAudit = false

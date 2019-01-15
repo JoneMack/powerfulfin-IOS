@@ -43,8 +43,8 @@ open class XJRequest {
         return headers
     }()
     public static let ds_defaultUserAgent:String = {
-        //Bundle Identifier|App版本号|Build号|设备名字|机型|系统|版本|设备唯一标识号
-        var agent = "\(XJDeviceInfo.appBundleId)|\(XJDeviceInfo.appVersion)|\(XJDeviceInfo.appBuildVersion)|\(XJDeviceInfo.deviceName)|\(XJDeviceInfo.deviceType)|\(XJDeviceInfo.systemName)|\(XJDeviceInfo.systemVersion)|\(XJDeviceInfo.deviceId)"
+        //Bundle Identifier|渠道号|App版本号|Build号|设备名字|机型|系统|版本|设备唯一标识号
+        var agent = "\(XJDeviceInfo.appBundleId)|\(XJDeviceInfo.channel)|\(XJDeviceInfo.appVersion)|\(XJDeviceInfo.appBuildVersion)|\(XJDeviceInfo.deviceName)|\(XJDeviceInfo.deviceType)|\(XJDeviceInfo.systemName)|\(XJDeviceInfo.systemVersion)|\(XJDeviceInfo.deviceId)"
         return agent.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
     }()
 }

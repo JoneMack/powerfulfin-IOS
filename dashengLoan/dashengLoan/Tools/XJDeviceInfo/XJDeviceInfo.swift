@@ -70,6 +70,9 @@ class XJDeviceInfo: NSObject {
     static var appVersion:String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     }
+    static var channel:String {
+        return Bundle.main.infoDictionary?["DSDownloadChannel"] as? String ?? "1"
+    }
     /// app Build版本号
     static var appBuildVersion:String {
       return  Bundle.main.infoDictionary?["CFBundleVersion"] as! String

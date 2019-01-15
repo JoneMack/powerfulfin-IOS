@@ -99,19 +99,29 @@ extension DSWebViewController {
 }
 
 extension DSWebViewController:WKUIDelegate {
-    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-
-
-    }
-    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        print(navigationResponse.response.url?.absoluteString ?? "")
-        decisionHandler(.allow)
-
-    }
     ///
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        print(navigationAction.request.url?.absoluteString ?? "")
-        decisionHandler(.allow)
+        if let url = navigationAction.request.url?.absoluteString {
+           let result =  DSRouter.parsingURL(url: url)
+            if result.0 == .none || result.0 == .web {
+                decisionHandler(.allow)
+            }else{
+                
+                DSRouter.openURL(url: url) {[weak self] (info) in
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1, execute: {
+                        var controllers = self?.rt_navigationController?.viewControllers
+                        let count = (controllers?.count)!-1
+                        let index = count - 1
+                        controllers?.removeSubrange(index..<count)
+                        self?.rt_navigationController?.viewControllers = controllers!
+                    })
+                }
+                decisionHandler(.cancel)
+            }
+        }else{
+            decisionHandler(.allow)
+        }
+        
     }
 }
 extension DSWebViewController:WKNavigationDelegate {
