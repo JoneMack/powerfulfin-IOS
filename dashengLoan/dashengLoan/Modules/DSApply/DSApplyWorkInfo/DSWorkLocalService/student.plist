@@ -8,7 +8,9 @@
 		<key>title</key>
 		<string>学校</string>
 		<key>placeholder</key>
-		<string>请选择学校</string>
+		<string>请输入学校名称</string>
+		<key>servicename</key>
+		<string>school_name</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -25,6 +27,8 @@
 		<string></string>
 		<key>placeholder</key>
 		<string>请输入学校详细地址，精确到门牌号</string>
+		<key>servicename</key>
+		<string>school_address</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -33,6 +37,10 @@
 		<string>学校电话</string>
 		<key>placeholder</key>
 		<string>请输入学校电话</string>
+		<key>keyboard</key>
+		<integer>4</integer>
+		<key>servicename</key>
+		<string>school_contact</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -41,6 +49,8 @@
 		<string>专业名称</string>
 		<key>placeholder</key>
 		<string>请输入专业名称</string>
+		<key>servicename</key>
+		<string>school_major</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -49,6 +59,8 @@
 		<string>入学年份</string>
 		<key>placeholder</key>
 		<string>请选择入学年份</string>
+		<key>servicename</key>
+		<string>entrance_time</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -57,16 +69,20 @@
 		<string>学制</string>
 		<key>placeholder</key>
 		<string>请输入学制</string>
+		<key>servicename</key>
+		<string>education_system</string>
 	</dict>
 	<dict>
 		<key>type</key>
 		<string>DSInputCell</string>
 		<key>title</key>
-		<string>家庭月收入</string>
+		<string>月收入</string>
 		<key>keyboard</key>
 		<integer>4</integer>
 		<key>placeholder</key>
 		<string>请输入家庭月收入</string>
+		<key>servicename</key>
+		<string>monthly_income</string>
 	</dict>
 </array>
 </plist>

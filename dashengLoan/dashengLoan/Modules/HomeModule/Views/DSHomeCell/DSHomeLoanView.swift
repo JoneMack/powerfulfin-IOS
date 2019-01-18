@@ -46,7 +46,7 @@ class DSHomeLoanView: UIView {
         addSubview(descLabbel)
         descLabbel.font = UIFont.ds_font(ptSize: 13)
         descLabbel.textColor = UIColor.ds_darkText
-        
+        descLabbel.textAlignment = .center
         let lineView = UIView.lineView()
         addSubview(lineView)
         lineView.snp.makeConstraints { (maker) in
@@ -106,6 +106,8 @@ class DSHomeLoanLogoView: DSHomeLoanView {
         })
         descLabbel.snp.makeConstraints { (maker) in
             maker.centerX.equalToSuperview()
+            maker.left.equalTo(15)
+            maker.right.equalTo(-15)
             maker.top.equalTo(nameLabel!.snp_bottomMargin).offset(15)
         }
     }

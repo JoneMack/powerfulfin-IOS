@@ -21,8 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,BMKLocationAuthDelegate {
         window?.rootViewController = DSTabBarController()
         DSUserCenter.default.applicationDidFinishLaunching()
         
-
-        
         window?.makeKeyAndVisible()
         return true
     }

@@ -19,7 +19,7 @@ class DSUserBanksController: DSTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "银行卡管理"
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(DSUserBanksController.addNewBank))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(DSUserBanksController.addNewBank))
         configTableView()
         reloadBanksInfo()
     }

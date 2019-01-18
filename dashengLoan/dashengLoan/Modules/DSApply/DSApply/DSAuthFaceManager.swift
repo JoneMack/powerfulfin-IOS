@@ -20,7 +20,6 @@ class DSAuthFaceManager:NSObject {
         super.init()
         authEngine.delegate = self
         authEngine.showInfo = true
-        
     }
     func showFaceAuthEngine(from controller:UIViewController) {
         authEngine.startIdSafe(withUserName: "", identityNumber: "", in: controller)

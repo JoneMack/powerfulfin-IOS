@@ -52,7 +52,31 @@ class DSContactLocalService: DSApplyLocalService {
         let addressModel = models[1][1]
         addressModel.content = addressInfo.address
     }
-    
+    override func checkUploadParameters(_ showTips: Bool) -> DSApplyParamtersChecker {
+        var checker = DSApplyParamtersChecker()
+        
+        let emailModel = models[0][0]
+        checker = checkeModelContentParamters(model: emailModel, show: showTips, checker: checker)
+        if checker.canUpload == false {
+            return checker
+        }
+        for index in 1...2 {
+            let sectionModels = models[index]
+            let count = sectionModels.count - 1
+            for idx in 0...count {
+                let model = sectionModels[idx]
+                checker = checkeModelContentParamters(model: model, show: showTips, checker: checker)
+                if checker.canUpload == false {
+                    return checker
+                }
+            }
+        }
+        checker.paramters["home_province"] = addressInfo.province
+        checker.paramters["home_city"] = addressInfo.city
+        checker.paramters["home_area"] = addressInfo.area
+        return checker
+        
+    }
     override func getDataInfo() -> [String : String] {
         let emailModel = models[0][0]
         let wechatModel = models[0][1]

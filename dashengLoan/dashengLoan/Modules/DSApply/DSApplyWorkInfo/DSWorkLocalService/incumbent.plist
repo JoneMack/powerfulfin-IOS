@@ -9,6 +9,8 @@
 		<string>单位名称</string>
 		<key>placeholder</key>
 		<string>请输入单位名称</string>
+		<key>servicename</key>
+		<string>work_name</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -25,6 +27,8 @@
 		<string>单位地址</string>
 		<key>placeholder</key>
 		<string>请输入单位详细地址</string>
+		<key>servicename</key>
+		<string>work_address</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -33,6 +37,8 @@
 		<string>入职日期</string>
 		<key>placeholder</key>
 		<string>请选择入职日期</string>
+		<key>servicename</key>
+		<string>work_entry_time</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -41,6 +47,8 @@
 		<string>职位名称</string>
 		<key>placeholder</key>
 		<string>请选择职位名称</string>
+		<key>servicename</key>
+		<string>work_profession</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -51,6 +59,8 @@
 		<string>请输入单位电话</string>
 		<key>keyboard</key>
 		<integer>4</integer>
+		<key>servicename</key>
+		<string>work_contact</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -61,6 +71,8 @@
 		<integer>4</integer>
 		<key>placeholder</key>
 		<string>请输入月收入</string>
+		<key>servicename</key>
+		<string>monthly_income</string>
 	</dict>
 </array>
 </plist>

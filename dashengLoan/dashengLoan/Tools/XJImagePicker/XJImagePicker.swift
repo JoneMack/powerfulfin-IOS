@@ -145,8 +145,8 @@ extension XJImagePicker:TZImagePickerControllerDelegate {
                             }
                         }
                     }
-                    print((origainalData! as NSData).length/1000)
-                    print((origainalData! as NSData).imageFormat)
+//                    print((origainalData! as NSData).length/1000)
+//                    print((origainalData! as NSData).imageFormat)
                     self?.selectorHandler?([image!],[data])
                 })
             }

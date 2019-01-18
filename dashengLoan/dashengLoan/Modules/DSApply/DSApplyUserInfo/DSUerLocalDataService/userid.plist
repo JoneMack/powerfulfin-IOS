@@ -20,8 +20,12 @@
 			<string>姓名</string>
 			<key>type</key>
 			<string>DSInputCell</string>
+			<key>servicename</key>
+			<string>full_name</string>
 		</dict>
 		<dict>
+			<key>servicename</key>
+			<string>identity_number</string>
 			<key>keyboard</key>
 			<integer>2</integer>
 			<key>textValidater</key>
@@ -34,6 +38,8 @@
 			<string>身份证</string>
 		</dict>
 		<dict>
+			<key>servicename</key>
+			<string>nationality</string>
 			<key>placeholder</key>
 			<string>请输入民族</string>
 			<key>type</key>
@@ -42,6 +48,8 @@
 			<string>民族</string>
 		</dict>
 		<dict>
+			<key>servicename</key>
+			<string>issuing_authority</string>
 			<key>title</key>
 			<string>签发机关</string>
 			<key>placeholder</key>
@@ -50,6 +58,8 @@
 			<string>DSInputCell</string>
 		</dict>
 		<dict>
+			<key>servicename</key>
+			<string>start_date</string>
 			<key>title</key>
 			<string>有限期限</string>
 			<key>placeholder</key>
@@ -58,12 +68,16 @@
 			<string>DSSelectorCell</string>
 		</dict>
 		<dict>
+			<key>servicename</key>
+			<string>end_date</string>
 			<key>type</key>
 			<string>DSSelectorCell</string>
 			<key>placeholder</key>
 			<string>请选择身份证结束时间</string>
 		</dict>
 		<dict>
+			<key>servicename</key>
+			<string>address</string>
 			<key>type</key>
 			<string>DSInputCell</string>
 			<key>title</key>
@@ -72,6 +86,8 @@
 			<string>请填写身份证地址</string>
 		</dict>
 		<dict>
+			<key>servicename</key>
+			<string>bank_code</string>
 			<key>title</key>
 			<string>身份证照</string>
 			<key>type</key>

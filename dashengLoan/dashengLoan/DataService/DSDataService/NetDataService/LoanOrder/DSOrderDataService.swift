@@ -14,7 +14,7 @@ class DSOrderDataService {
         let request = XJRequest("v1/loan/list", method: .get)
         XJNetWork.request(request, successHandler: { (jsonInfo) in
             if let model = try? XJDecoder.xj_decode(DSUserOrderListInfo.self, from: jsonInfo) {
-                complete(model,true)
+                complete(model,true) 
             }
         }) { (error) in
             complete(nil,false)

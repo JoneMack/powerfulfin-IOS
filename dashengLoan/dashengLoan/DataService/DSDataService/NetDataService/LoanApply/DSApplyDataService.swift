@@ -176,9 +176,10 @@ extension DSApplyDataService {
     class func getUserWork(complete:@escaping((DSUserWork)->Void)){
         let requrst = XJRequest("v1/user/getuserwork", method: .get)
         XJNetWork.request(requrst, successHandler: { (jsonInfo) in
-            if let model = try? XJDecoder.xj_decode(DSUserWork.self, from: jsonInfo) {
+            if  let model = DSUserWork.deserialize(from: jsonInfo as? [String : Any]) {
                 complete(model)
             }
+
         }) { (error) in
             XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
         }

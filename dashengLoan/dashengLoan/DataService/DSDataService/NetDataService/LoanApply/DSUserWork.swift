@@ -7,7 +7,8 @@
 //
 
 import UIKit
-struct DSUserWork:Codable {
+import HandyJSON
+struct DSUserWork:HandyJSON {
     /// 最高学历
     var highest_education:String?
     /// 职业

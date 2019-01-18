@@ -52,7 +52,7 @@ extension DSUserInfoViewController {
 
         let degreeModel = DSUseIdInfoModel(logo: "user_icon_4", title: "学历及职业", detail: "最高学历以及目前工作情况")
         let locationModel = DSUseIdInfoModel(logo: "user_icon_5", title: "当前位置", detail: "请授权允许获取您的当前位置")
-        let bookModel = DSUseIdInfoModel(logo: "user_icon_6", title: "通讯录", detail: "请授权允许获取您的手机通讯录")
+        let bookModel = DSUseIdInfoModel(logo: "user_icon_6", title: "设备信息", detail: "请授权允许获取您的手机通讯录")
 
         dataArray.append(nameModel)
         dataArray.append(bankModel)

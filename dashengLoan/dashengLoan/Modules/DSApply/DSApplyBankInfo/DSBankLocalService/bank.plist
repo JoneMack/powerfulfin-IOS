@@ -9,6 +9,8 @@
 		<string>发卡行</string>
 		<key>placeholder</key>
 		<string>请选择发卡行</string>
+		<key>servicename</key>
+		<string>bank_code</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -21,6 +23,8 @@
 		<integer>4</integer>
 		<key>textValidater</key>
 		<integer>4</integer>
+		<key>servicename</key>
+		<string>bank_account</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -33,6 +37,8 @@
 		<integer>4</integer>
 		<key>textValidater</key>
 		<integer>3</integer>
+		<key>servicename</key>
+		<string>phone</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -45,6 +51,8 @@
 		<string>请输入短信验证码</string>
 		<key>rightTitle</key>
 		<string>获取验证码</string>
+		<key>servicename</key>
+		<string>vcode</string>
 	</dict>
 </array>
 </plist>

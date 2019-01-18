@@ -33,6 +33,7 @@ class DSOrderDetailViewController: DSTableViewController {
         addRefreshControl(#selector(DSOrderDetailViewController.reloadOrderDetailInfo))
         tableView?.sendSubviewToBack(headerTopView)
 
+        tableView?.estimatedRowHeight  = 50
         tableView?.register(DSOrderTitleCell.classForCoder(), forCellReuseIdentifier: orderTitleIdentifier)
         tableView?.register(DSOrderPlanCell.classForCoder(), forCellReuseIdentifier: orderPlanIdentifier)
         tableView?.register(UINib(nibName: "DSOrderInfoCell", bundle: nil), forCellReuseIdentifier: orderInfoIdentifier)
@@ -106,7 +107,7 @@ extension DSOrderDetailViewController {
                 cell.leftSpceConstraint.constant = 15
                 cell.contactBtn.isHidden = true
             }
-            if (orderInfo?.audit_opinion) != nil {
+            if (orderInfo?.audit_opinion) != nil && orderInfo?.audit_opinion?.isEmpty == false {
                 cell.reasonLabel.text = orderInfo?.audit_opinion
                 cell.reasonTitleLabel.text = "拒绝原因"
             }else{
@@ -128,7 +129,8 @@ extension DSOrderDetailViewController {
         }else if indexPath.section == 1 {
             return 46
         }else if indexPath.section == 2 {
-            return 390
+            return UITableView.automaticDimension
+//            return 390
         }
         return 0
     }

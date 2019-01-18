@@ -19,20 +19,42 @@ class DSApply: NSObject {
     //人脸识别SDK
     fileprivate let authFaceManager = DSAuthFaceManager()
     //初始进来的页面
-     weak var beginController:UIViewController?
-  
+    fileprivate weak var beginController:UIViewController?
     fileprivate var step:Int = 0
-    func beginApply(_ schooId:String ,fromController:UIViewController)  {
+    func beginApply(_ schooId:String ,fromController:UIViewController?)  {
         self.schooId = schooId
         self.schooId = "1"
         self.beginController = fromController
         step = 0
+        updateBeginController()
         showNextStep()
+    }
+    fileprivate func updateBeginController() {
+        
+        if beginController == nil {
+            let navigation = UIApplication.shared.currentNavigationController
+            if let viewControlelr = navigation?.topViewController {
+               
+                let controllers = viewControlelr.rt_navigationController.rt_viewControllers
+                let count = (controllers?.count ?? 1)-1
+                for index in (0...count).reversed() {
+                    if let controller = controllers?[index] {
+                        if controller.isKind(of: DSApplyTableViewController.classForCoder()) || controller.isKind(of: DSBankListViewController.classForCoder()) || controller.isKind(of: DSLocationViewController.classForCoder()) || controller.isKind(of: DSPhoneViewController.classForCoder()) {
+                        }else{
+                            beginController = controller
+                            break
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 // MARK: - 额，步骤管理
 extension DSApply {
     func showNextStep() {
+        updateBeginController()
+
         updateCurrentStep()
         if step == 0 {
            showUserIdView()
@@ -57,7 +79,6 @@ extension DSApply {
         }
     }
     fileprivate func removeMiddleViewController(){
-        
         var controllers = beginController?.rt_navigationController?.viewControllers
         let orgControllers = beginController?.rt_navigationController.rt_viewControllers
         let count = (controllers?.count)!-1
@@ -86,7 +107,6 @@ extension DSApply {
         }else if topVC?.isKind(of: DSApplyOrderViewController.classForCoder()) ?? false {
             step = 7
         }
-        
     }
   
     
@@ -126,6 +146,7 @@ extension DSApply {
         }
         authFaceManager.authFinish = {[weak self] (isSuccess,userInfo,eremsg) in
             if isSuccess {
+                self?.updateBeginController()
                 if let userVC = self?.beginController?.rt_navigationController.rt_topViewController as? DSUserIdViewController {
                     userVC.orderId = self?.faceAuthConfig?.order
                     userVC.updateUserIdInfo(userInfo: userInfo)
@@ -136,6 +157,7 @@ extension DSApply {
     }
     /// 展示用户信息页面
     fileprivate func showUserIdView() {
+        
         if (beginController?.rt_navigationController.rt_topViewController.isKind(of: DSUserIdViewController.classForCoder()))! == true {
             return
         }

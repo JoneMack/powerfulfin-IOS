@@ -36,6 +36,7 @@ class DSOrderInfoCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        reasonLabel.numberOfLines = 0
         contactBtn.borderType = .gray
     }
 }

@@ -15,9 +15,9 @@ class DSApplyOrderViewController: DSApplyTableViewController {
         super.viewDidLoad()
         dataSource = DSOrderLocalService()
         navigationItem.title = "订单资料"
-        loadFooterView(title: "完成")
-        footView?.showAgreement()
-        tableView?.tableFooterView = footView
+//        loadFooterView(title: "完成")
+//        footView?.showAgreement()
+//        tableView?.tableFooterView = nil
         loadConfiger()
     }
 }
@@ -57,6 +57,23 @@ extension DSApplyOrderViewController {
             return 40
         }
         return 10
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == 1 {
+            let footerView =  DSApplyFooterView()
+            footerView.loadButton(title: "完成")
+            footerView.delegate = self
+            footerView.showAgreement()
+            footView = footerView
+            return footerView
+        }
+        return nil
+    }
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 1 {
+            return 270
+        }
+        return 0.01
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let model = dataSource.cellMode(indexPath: indexPath)
@@ -175,9 +192,12 @@ extension DSApplyOrderViewController {
         }
     }
     func uploadUserOrderInfos()  {
-        
+        let checker = dataSource.checkUploadParameters(true)
+        if checker.canUpload == false {
+            return
+        }
         XJToast.showToastAction()
-        var paraDic = (dataSource as! DSOrderLocalService).getOrderDataInfo()
+        var paraDic = checker.paramters
         paraDic["oid"] = self.schooId
         DSApplyDataService.uploadUserOrderInfo(paramDic: paraDic) {[weak self] (successInfo) in
             self?.showSuccessView(successInfo)
@@ -194,6 +214,7 @@ extension DSApplyOrderViewController {
             XJToast.showToastAction(message: "请先阅读以及同意数字证书申请及使用责任书")
             return
         }
+        
         uploadUserOrderInfos()
     }
     fileprivate func showSuccessView(_ successInfo:DSApplySuccessInfo){

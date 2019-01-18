@@ -29,37 +29,39 @@ class DSApplyFooterView: UIView {
     
     convenience init(title:String) {
         self.init(frame: CGRect(x: 0, y: 0, width: XJDeviceInfo.screenWidth, height: 120))
-        translatesAutoresizingMaskIntoConstraints = false
+//        translatesAutoresizingMaskIntoConstraints = false
+        
+        loadButton(title: title)
+        self.title = title
+    }
+    @objc func footButtonClick() {
+        delegate?.footViewClick!(footBtn: footBtn!)
+    }
+}
+extension DSApplyFooterView {
+     func loadButton(title:String) {
+        
         footBtn = DSButton(type: .custom)
         footBtn?.borderType = .back
         footBtn?.titleLabel?.font = UIFont.ds_font(ptSize: 17)
         footBtn?.layer.cornerRadius = 10
         footBtn?.layer.masksToBounds = true
         footBtn?.setTitle(title, for: .normal)
-
+        
         footBtn?.addTarget(self, action: #selector(DSApplyFooterView.footButtonClick), for: .touchUpInside)
         addSubview(footBtn!)
         footBtn?.frame = CGRect(x: 15, y: 27, width: XJDeviceInfo.screenWidth-30, height: 50)
-        
-        self.title = title
     }
-    @objc func footButtonClick() {
-        delegate?.footViewClick!(footBtn: footBtn!)
-    }
-    
-
-}
-extension DSApplyFooterView {
     func showAgreement() {
-        var orgFrame = frame
-        orgFrame.size.height += 150
-        frame = orgFrame
-        snp.remakeConstraints { (maker) in
-            maker.top.equalTo(orgFrame.minY)
-            maker.left.equalTo(0)
-            maker.width.equalTo(XJDeviceInfo.screenWidth)
-            maker.height.equalTo(orgFrame.height)
-        }
+//        var orgFrame = frame
+//        orgFrame.size.height += 150
+//        frame = orgFrame
+//        snp.remakeConstraints { (maker) in
+//            maker.top.equalTo(orgFrame.minY)
+//            maker.left.equalTo(0)
+//            maker.width.equalTo(XJDeviceInfo.screenWidth)
+//            maker.height.equalTo(orgFrame.height)
+//        }
         
         trainButton = UIButton(type: .custom)
         configAgreementButton(btn: trainButton!)

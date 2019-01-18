@@ -6,11 +6,13 @@
 		<key>type</key>
 		<string>DSInputCell</string>
 		<key>title</key>
-		<string>家庭月收入</string>
+		<string>月收入</string>
 		<key>placeholder</key>
 		<string>请输入家庭月收入</string>
 		<key>keyboard</key>
 		<integer>4</integer>
+		<key>servicename</key>
+		<string>monthly_income</string>
 	</dict>
 	<dict>
 		<key>type</key>
@@ -21,6 +23,8 @@
 		<string>请输入机构电话</string>
 		<key>keyboard</key>
 		<integer>4</integer>
+		<key>servicename</key>
+		<string>train_contact</string>
 	</dict>
 </array>
 </plist>

@@ -24,7 +24,6 @@ class DSOrderPlanViewController: DSTableViewController {
         tableView?.register(DSPlanTableViewCell.classForCoder(), forCellReuseIdentifier: cellIdentifier)
         addRefreshControl(#selector(DSOrderPlanViewController.reloadPlanData))
         self.refreshControl?.tintColor = UIColor.ds_darkText
-        
     }
     
 }

@@ -13,6 +13,7 @@ class DSUserIdLocalService: DSApplyLocalService {
     override func fileName() -> String {
          return "userid"
     }
+    
     override func reloadData(info: Any) {
         if let userInfo = info as? DSUserIdInfo {
             let nameModel = cellMode(indexPath: IndexPath(row: 1, section: 0))
@@ -46,26 +47,19 @@ class DSUserIdLocalService: DSApplyLocalService {
             }
         }
     }
-    override func getDataInfo() -> [String : String] {
-        let nameModel = cellMode(indexPath: IndexPath(row: 1, section: 0))
-        let idModel = cellMode(indexPath: IndexPath(row: 2, section: 0))
-        let nativeModel = cellMode(indexPath: IndexPath(row: 3, section: 0))
-        let authorityModel = cellMode(indexPath: IndexPath(row: 4, section: 0))
-        let starDate = cellMode(indexPath: IndexPath(row: 5, section: 0))
-        let endDate = cellMode(indexPath: IndexPath(row: 6, section: 0))
-        let address = cellMode(indexPath: IndexPath(row: 7, section: 0))
+    override func checkUploadParameters(_ showTips: Bool) -> DSApplyParamtersChecker {
+        var checker = DSApplyParamtersChecker()
+        let sectionOne = models[0]
+        let count  = sectionOne.count - 2
         
-        var paraDic = [String:String]()
-        paraDic["full_name"] = nameModel.content
-        paraDic["identity_number"] = idModel.content
-        paraDic["nationality"] = nativeModel.content
-        paraDic["issuing_authority"] = authorityModel.content
-        paraDic["start_date"] = starDate.content
-        paraDic["end_date"] = endDate.content
-        paraDic["address"] = address.content
-        return paraDic
-        
+        for index in 1...count {
+            let model = sectionOne[index]
+            checker = checkeModelContentParamters(model: model, show: showTips, checker: checker)
+            if checker.canUpload == false {
+                return checker
+            }
+        }
+        return checker
     }
-    
 }
 

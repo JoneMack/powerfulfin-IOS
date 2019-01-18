@@ -11,6 +11,14 @@ import UIKit
 class DSWorkViewController: DSApplyTableViewController {
     
     fileprivate var applyConfiger :DSApplyConfiger?
+    fileprivate lazy var yearsArray:[String] = {
+       let maxYear = Date().year()
+        var years = [String]()
+        for year in 2000 ... maxYear {
+            years.append("\(year)年")
+        }
+        return years
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = DSWorkLocalService()
@@ -66,7 +74,7 @@ extension DSWorkViewController {
             showDataPicker(dataArray: applyConfiger?.profession ?? [], mode: model, indexPath: indexPath)
         }else if model.title == "职位名称" {
             showDataPicker(dataArray: applyConfiger?.work_profession ?? [], mode: model, indexPath: indexPath)
-        }else if model.title == "所在地" {
+        }else if model.title == "所在地" || model.title == "学校地址"{
             let addressPicker = DSAddressPicker()
             addressPicker.delegate = self
             addressPicker.tipsTitle = "请选择省市区"
@@ -77,6 +85,8 @@ extension DSWorkViewController {
             let totle :Double = -years * yearSecond            
             let minDate = Date(timeIntervalSinceNow: TimeInterval(totle))
             showDatePicker(minDate: minDate, maxDate: Date(), indexPath: indexPath)
+        }else if  model.title == "入学年份" {
+            showDataPicker(dataArray: self.yearsArray, mode: model, indexPath: indexPath)
         }
     }
 }
@@ -135,12 +145,22 @@ extension DSWorkViewController:DSWorkHeaderViewDelegate,DSAddressPickerDelegate 
     }
     func addressPicker(_ addressPicker: DSAddressPicker, didSelectedAddress province: DSAddress, city: DSAddress, area: DSAddress) {
         if let localDataSource = dataSource as? DSWorkLocalService {
-            localDataSource.workAddress.province = province.areaid?.description ?? ""
-            localDataSource.workAddress.city = city.areaid?.description ?? ""
-            localDataSource.workAddress.area = area.areaid?.description ?? ""
-            localDataSource.workAddress.address = area.joinname ?? ""
-            localDataSource.updateWordAddress()
-            tableView?.reloadRows(at: [IndexPath(row: 1, section: 1)], with: .automatic)
+            if localDataSource.cuttentIndex == 1 {
+                localDataSource.workAddress.province = province.areaid?.description ?? ""
+                localDataSource.workAddress.city = city.areaid?.description ?? ""
+                localDataSource.workAddress.area = area.areaid?.description ?? ""
+                localDataSource.workAddress.address = area.joinname ?? ""
+                localDataSource.updateWordAddress()
+                tableView?.reloadRows(at: [IndexPath(row: 1, section: 1)], with: .automatic)
+            }else if localDataSource.cuttentIndex == 2 {
+                localDataSource.schoolAddressInfo.province = province.areaid?.description ?? ""
+                localDataSource.schoolAddressInfo.city = city.areaid?.description ?? ""
+                localDataSource.schoolAddressInfo.area = area.areaid?.description ?? ""
+                localDataSource.schoolAddressInfo.address = area.joinname ?? ""
+                localDataSource.updateSchoolAddress()
+                tableView?.reloadRows(at: [IndexPath(row: 1, section: 1)], with: .automatic)
+            }
+            
         }
     }
 }
@@ -162,9 +182,13 @@ extension DSWorkViewController {
         }
     }
     func uploadUserWorkInfo()  {
+        let checker = dataSource.checkUploadParameters(true)
+        if checker.canUpload == false {
+            return
+        }
         XJToast.showToastAction()
-        let paraDic = dataSource.getDataInfo()
-        DSApplyDataService.uploadUserWork(workInfo: paraDic) {[weak self] in
+        let paraDic = checker.paramters
+        DSApplyDataService.uploadUserWork(workInfo: paraDic as! [String : String]) {[weak self] in
             if self?.hasNext == true {
                 DSApply.default.showNextStep()
             }else{

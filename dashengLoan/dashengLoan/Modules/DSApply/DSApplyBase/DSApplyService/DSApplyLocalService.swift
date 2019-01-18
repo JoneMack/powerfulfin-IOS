@@ -69,6 +69,9 @@ class DSApplyLocalService: NSObject {
     func getDataInfo() -> [String:String] {
         return [:]
     }
+    func checkUploadParameters(_ showTips:Bool = false) -> DSApplyParamtersChecker {
+        return DSApplyParamtersChecker()
+    }
 }
 extension DSApplyLocalService {
     func numberOfSections() -> Int {
@@ -141,5 +144,73 @@ extension DSApplyLocalService {
         
         return rowHeight
     }
+    
+}
+extension DSApplyLocalService {
+     func checkeModelContentParamters(model:DSInputModel,show:Bool,checker:DSApplyParamtersChecker) -> DSApplyParamtersChecker {
+        var oldChecker = checker
+        if model.content == nil || model.content?.isEmpty == true {
+            if show == true {
+                XJToast.showToastAction(message: model.placeholder!)
+            }
+            oldChecker.canUpload = false
+        }else{
+            oldChecker.canUpload = true
+            oldChecker.paramters[model.servicename] = model.content
+        }
+        return oldChecker
+    }
+    
+     func checkeModelSubContentParamters(model:DSInputModel,show:Bool,checker:DSApplyParamtersChecker) -> DSApplyParamtersChecker {
+        var oldChecker = checker
+        if model.subContent == nil || model.subContent?.isEmpty == true {
+            if show == true {
+                XJToast.showToastAction(message: model.placeholder!)
+            }
+            oldChecker.canUpload = false
+        }else{
+            oldChecker.canUpload = true
+            oldChecker.paramters[model.servicename] = model.subContent
+        }
+        return oldChecker
+    }
+    
+     func checkeModelImageParamters(model:DSInputModel,show:Bool,checker:DSApplyParamtersChecker) -> DSApplyParamtersChecker {
+        var oldChecker = checker
+        
+        let images = model.images!
+        var imageInfos = [String]()
+        for imageInfo in images {
+            if imageInfo.type != defaultImageType {
+                imageInfos.append(imageInfo.path ?? "")
+            }
+        }
+        
+        if imageInfos.count == 0 {
+            if show == true {
+                XJToast.showToastAction(message: model.placeholder!)
+            }
+            oldChecker.canUpload = false
+        }else{
+            oldChecker.canUpload = true
+            let jsonImage = getImagesJsonArray(from: imageInfos)
+            oldChecker.paramters[model.servicename] = jsonImage
+        }
+        return oldChecker
+    }
+    fileprivate func getImagesJsonArray(from images:[String]) -> String {
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: images, options: .prettyPrinted)
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                return jsonString
+            }
+        } catch {}
+        return ""
+    }
+}
+
+struct DSApplyParamtersChecker {
+    var canUpload = false
+    var paramters = [String:Any]()
     
 }

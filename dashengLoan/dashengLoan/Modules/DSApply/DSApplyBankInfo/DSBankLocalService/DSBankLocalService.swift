@@ -18,6 +18,31 @@ class DSBankLocalService: DSApplyLocalService {
    override func loadLocalData() {
         super.loadLocalData()
     }
+    
+    override func checkUploadParameters(_ showTips: Bool) -> DSApplyParamtersChecker {
+        var checker = DSApplyParamtersChecker()
+        let sectionOne = models[0]
+        let count = sectionOne.count - 1
+        
+        for index in 0...count {
+            let model = sectionOne[index]
+            if index == 0 {
+                checker = checkeModelSubContentParamters(model: model, show: showTips, checker: checker)
+            }else if index == 1{
+                checker = checkeModelContentParamters(model: model, show: showTips, checker: checker)
+                var bankNum = model.content
+                bankNum = bankNum?.replacingOccurrences(of: " ", with: "")
+                checker.paramters[model.servicename] = bankNum
+            }else{
+                checker = checkeModelContentParamters(model: model, show: showTips, checker: checker)
+
+            }
+            if checker.canUpload == false {
+                return checker
+            }
+        }
+        return checker
+    }
 }
 extension DSBankLocalService {
     
@@ -36,6 +61,5 @@ extension DSBankLocalService {
         let codeModel = cellMode(indexPath: IndexPath(row: 3, section: 0))
         pardDic["vcode"] = codeModel.content
         return pardDic
-        
     }
 }

@@ -12,6 +12,8 @@
 			<string>请输入邮箱</string>
 			<key>keyboard</key>
 			<integer>7</integer>
+			<key>servicename</key>
+			<string>email</string>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -20,6 +22,8 @@
 			<string>微信号</string>
 			<key>placeholder</key>
 			<string>请输入微信号(选填)</string>
+			<key>servicename</key>
+			<string>wechat</string>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -30,6 +34,8 @@
 			<string>请输入QQ号(选填)</string>
 			<key>keyboard</key>
 			<integer>4</integer>
+			<key>servicename</key>
+			<string>qq</string>
 		</dict>
 	</array>
 	<array>
@@ -40,6 +46,8 @@
 			<string>住房情况</string>
 			<key>placeholder</key>
 			<string>请选择您的住房情况</string>
+			<key>servicename</key>
+			<string>house_status</string>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -48,6 +56,8 @@
 			<string>现居地址</string>
 			<key>placeholder</key>
 			<string>请选择省市地址</string>
+			<key>servicename</key>
+			<string>home_province</string>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -56,6 +66,8 @@
 			<string></string>
 			<key>placeholder</key>
 			<string>请输入详细地址</string>
+			<key>servicename</key>
+			<string>home_address</string>
 		</dict>
 	</array>
 	<array>
@@ -66,6 +78,8 @@
 			<string>婚姻状况</string>
 			<key>placeholder</key>
 			<string>请选择婚姻状况</string>
+			<key>servicename</key>
+			<string>marriage_status</string>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -74,6 +88,8 @@
 			<string>姓名</string>
 			<key>placeholder</key>
 			<string>请输入紧急联系人的姓名</string>
+			<key>servicename</key>
+			<string>contact_person</string>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -82,6 +98,8 @@
 			<string>关系</string>
 			<key>placeholder</key>
 			<string>请选择与本人的关系</string>
+			<key>servicename</key>
+			<string>contact_person_relation</string>
 		</dict>
 		<dict>
 			<key>rightImage</key>
@@ -96,6 +114,8 @@
 			<integer>3</integer>
 			<key>placeholder</key>
 			<string>请输入紧急联系人的手机号码</string>
+			<key>servicename</key>
+			<string>contact_person_phone</string>
 		</dict>
 	</array>
 </array>

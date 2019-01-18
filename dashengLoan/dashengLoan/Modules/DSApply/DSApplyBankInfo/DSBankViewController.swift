@@ -147,13 +147,21 @@ extension DSBankViewController {
 // MARK: - footView代理
 extension DSBankViewController {
     func bindCardToService()  {
-        var paramDic = (dataSource as! DSBankLocalService).getBindCardParaDic()
+        let checker = dataSource.checkUploadParameters(true)
+        if checker.canUpload == false {
+            return
+        }
+        if serialnumber == nil || serialnumber?.isEmpty == true {
+            XJToast.showToastAction(message: "请先获取验证码")
+            return
+        }
+        var paramDic = checker.paramters as! [String :String]        
         paramDic["serialnumber"] = serialnumber ?? ""
         DSApplyDataService.bindBankCard(cardInfo: paramDic) {[weak self] in
-            if self?.hasNext == true{
-                self?.popViewController()
-            }else{
+            if self?.hasNext == true {
                 DSApply.default.showNextStep()
+            }else{
+                self?.popViewController()
             }
         }
     }

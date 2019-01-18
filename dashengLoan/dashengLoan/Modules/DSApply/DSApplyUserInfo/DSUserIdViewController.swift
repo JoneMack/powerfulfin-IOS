@@ -80,7 +80,7 @@ extension DSUserIdViewController {
         let model = dataSource.cellMode(indexPath: indexPath)
         if model.title == "身份信息" {
             if hasNext == false {
-                DSApply.default.beginController = self
+//                DSApply.default.beginController = self
             }
             DSApply.default.beginAuthFace()
         }
@@ -180,6 +180,10 @@ extension DSUserIdViewController  {
     }
     fileprivate func uploadUserIdInfo(complete:@escaping(()->Void)) {
         
+        let checker = dataSource.checkUploadParameters(true)
+        if checker.canUpload == false {
+            return
+        }
         if self.userIdInfo?.idcard_information_pic == nil || self.userIdInfo?.idcard_information_pic?.isEmpty == true {
             if loadPicCount > 0 && self.orderId != nil && self.orderId?.isEmpty == false {
                 loadPicCount = 0
@@ -194,8 +198,7 @@ extension DSUserIdViewController  {
             XJToast.showToastAction(message: "请重新选择上传身份证反面照")
             return
         }
-        
-        var paraDic = dataSource.getDataInfo()
+        var paraDic = checker.paramters as! [String :String]
         paraDic["udcredit_order"] = orderId ?? ""
         paraDic["idcard_information_pic"] = self.userIdInfo?.idcard_information_pic
         paraDic["idcard_national_pic"] = self.userIdInfo?.idcard_national_pic

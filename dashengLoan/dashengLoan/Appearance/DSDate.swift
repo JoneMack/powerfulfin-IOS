@@ -10,6 +10,7 @@ import UIKit
 
 
 extension Date {
+    /// 当前的年月日
     static func date(_ dateStr:String) -> Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -22,6 +23,13 @@ extension Date {
         let date = dastDate?.addingTimeInterval(TimeInterval(interval))
         return date!
     }
+    func year() ->Int {
+        let calendar = NSCalendar.current
+        let com = calendar.dateComponents([.year,.month,.day], from: self)
+        return com.year!
+    }
+
+    
     ///  当前时间戳，秒级
     var timeStamp : String {
         let timeInterval: TimeInterval = self.timeIntervalSince1970
@@ -34,5 +42,6 @@ extension Date {
         let millisecond = CLongLong(round(timeInterval*1000))
         return "\(millisecond)"
     }
+    
    
 }

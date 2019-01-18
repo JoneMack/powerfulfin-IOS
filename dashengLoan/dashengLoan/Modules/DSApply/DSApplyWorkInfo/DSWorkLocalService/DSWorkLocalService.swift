@@ -15,10 +15,13 @@ class DSWorkLocalService: DSApplyLocalService {
     var imagesArray = [DSImageInfo]()
     var maxCount = 1
     
-    
+    /// 在职
     fileprivate var incumbentModels = [DSInputModel]()
+    /// 学生
     fileprivate var studentModels = [DSInputModel]()
+    /// 待业
     fileprivate var unemployedModels = [DSInputModel]()
+    /// 1是在职 2 是学生 3 是待业
     fileprivate(set) var cuttentIndex = 1
     override init() {
         super.init()
@@ -68,31 +71,41 @@ class DSWorkLocalService: DSApplyLocalService {
         }
         cuttentIndex = index + 1
     }
+    
     func updateWordAddress()  {
         let wordAddress = incumbentModels[1]
         wordAddress.content = workAddress.address
     }
+    
+    func updateSchoolAddress()  {
+        let wordAddress = studentModels[1]
+        wordAddress.content = schoolAddressInfo.address
+    }
+   // MARK: - 刷新数据
     override func reloadData(info: Any) {
         if let workInfo = info as? DSUserWork {
-            let wordModel = models[0][0]
-            let eduModel = models[0][1]
+            let eduModel = models[0][0]
+            let workModel = models[0][1]
             let eduPicModel = models[2][0]
             
-            wordModel.content = workInfo.profession
+            workModel.content = workInfo.profession
             eduModel.content = workInfo.highest_education
             eduPicModel.content = workInfo.edu_pic_url
             eduPicModel.subContent = workInfo.edu_pic
+            
+            var imageInfo = DSImageInfo()
+            imageInfo.type = eduModel.servicename
+            imageInfo.url =  workInfo.edu_pic_url
+            imageInfo.path = workInfo.edu_pic
+            addImageInfo(imageInfo: imageInfo, atIndexPath: IndexPath(row: 0, section: 2))
+            
              var monthInCome = workInfo.monthly_income ?? "2000"
             if monthInCome.hasSuffix(".00") {
                 let count = monthInCome.count - 4
                 monthInCome = monthInCome[0...count]
             }
             
-            var imageInfo = DSImageInfo()
-            imageInfo.url = workInfo.edu_pic_url ?? ""
-            imageInfo.path = workInfo.edu_pic ?? ""
-            imageInfo.type = "edu_pic"
-            replaceImageInfo(imageInfo: imageInfo, atIndex: 0, atIndexPath: IndexPath(row: 0, section: 2))
+      
             
             if workInfo.working_status == "2" {
                 changeItem(index: 1)
@@ -126,8 +139,8 @@ class DSWorkLocalService: DSApplyLocalService {
             let schoolDetailAddress = studentModels[2]
             let schoolPhone = studentModels[3]
             let schoolMajor = studentModels[4]
-            let schoolSystem = studentModels[5]
-            let schoolTime = studentModels[6]
+            let schoolTime = studentModels[5]
+            let schoolSystem = studentModels[6]
             let schoolIncom = studentModels[7]
             schoolName.content = workInfo.school_name
             schoolAddressInfo.province = workInfo.school_province ?? ""
@@ -139,7 +152,11 @@ class DSWorkLocalService: DSApplyLocalService {
             schoolPhone.content = workInfo.school_contact
             schoolMajor.content = workInfo.school_major
             schoolSystem.content = workInfo.education_system
-            schoolTime.content = workInfo.entrance_time
+            if workInfo.entrance_time?.hasSuffix("年") == false {
+                schoolTime.content = "\(workInfo.entrance_time ?? "")年"
+            }else{
+                schoolTime.content = workInfo.entrance_time
+            }
             schoolIncom.content = monthInCome
             
             let trainIncom = unemployedModels[0]
@@ -148,62 +165,109 @@ class DSWorkLocalService: DSApplyLocalService {
             trainPhone.content = workInfo.train_contact
         }
     }
-    override func getDataInfo() -> [String : String] {
-        let wordModel = models[0][0]
-        let eduModel = models[0][1]
-        let eduPicModel = models[2][0]
+    
+    // MARK: - 获取要上传的参数
+    override func checkUploadParameters(_ showTips: Bool) -> DSApplyParamtersChecker {
+        var checker = DSApplyParamtersChecker()
         
-        let workName = incumbentModels[0]
-//        let wordAddress = incumbentModels[1]
-        let workDetailAddress = incumbentModels[2]
-        let workTime = incumbentModels[3]
-        let workProfession = incumbentModels[4]
-        let workPhone = incumbentModels[5]
-        let workIncome = incumbentModels[6]
-        
-//        let schoolName = studentModels[0]
-        let schoolAddress = studentModels[2]
-        let schoolPhone = studentModels[3]
-        let schoolMajor = studentModels[4]
-        let schoolSystem = studentModels[5]
-        let schoolTime = studentModels[6]
-        let schoolIncom = studentModels[7]
-        
-        let trainIncom = unemployedModels[0]
-        let trainPhone = unemployedModels[1]
-        
-        var income = workIncome.content ?? ""
-        
-        if cuttentIndex == 2 {
-            income = schoolIncom.content ?? ""
-        }else if cuttentIndex == 3 {
-            income = trainIncom.content ?? ""
+        let eduModel = models[0][0]
+        checker = checkeModelContentParamters(model: eduModel, show: showTips, checker: checker)
+        if checker.canUpload == false {
+            return checker
         }
         
-        return ["highest_education":eduModel.content ?? "",
-                "profession":wordModel.content ?? "",
-                "working_status":cuttentIndex.description,
-                "monthly_income":income,
-                "edu_pic":eduPicModel.images?[0].path ?? "",
-                "work_name":workName.content ?? "",
-                "work_province":workAddress.province,
-                "work_city":workAddress.city,
-                "work_area":workAddress.area,
-                "work_address":workDetailAddress.content ?? "",
-                "work_entry_time":workTime.content ?? "",
-                "work_profession":workProfession.content ?? "",
-                "work_contact":workPhone.content ?? "",
-                "school_name":workName.content ?? "",
-                "school_province":schoolAddressInfo.province,
-                "school_city":schoolAddressInfo.city,
-                "school_area":schoolAddressInfo.area,
-                "school_address":schoolAddress.content ?? "",
-                "school_contact":schoolPhone.content ?? "",
-                "school_major":schoolMajor.content ?? "",
-                "education_system":schoolSystem.content ?? "",
-                "entrance_time":schoolTime.content ?? "",
-                "train_contact":trainPhone.content ?? ""
-        ]
+        let professionModel = models[0][1]
+        checker = checkeModelContentParamters(model: professionModel, show: showTips, checker: checker)
+        if checker.canUpload == false {
+            return checker
+        }
+        
+        checker.paramters["working_status"] = cuttentIndex.description
+        if cuttentIndex == 1 {
+            let workName = incumbentModels[0]
+            checker = checkeModelContentParamters(model: workName, show: showTips, checker: checker)
+            if checker.canUpload == false {
+                return checker
+            }
+            if workAddress.province.isEmpty == true {
+                let workAddress = incumbentModels[1]
+                if showTips {
+                    XJToast.showToastAction(message: workAddress.placeholder!)
+                }
+                checker.canUpload = false
+                return checker
+            }else{
+                checker.paramters["work_province"] = workAddress.province
+                checker.paramters["work_city"] = workAddress.city
+                checker.paramters["work_area"] = workAddress.area
+            }
+            let count = incumbentModels.count - 1
+            for index in 2...count {
+                let model = incumbentModels[index]
+                checker = checkeModelContentParamters(model: model, show: showTips, checker: checker)
+                if checker.canUpload == false {
+                    return checker
+                }
+            }
+            
+        }else if cuttentIndex == 2 {
+            let schoolName = studentModels[0]
+            checker = checkeModelContentParamters(model: schoolName, show: showTips, checker: checker)
+            if checker.canUpload == false {
+                return checker
+            }
+            if schoolAddressInfo.province.isEmpty == true {
+                let schoolAddress = studentModels[1]
+                if showTips {
+                    XJToast.showToastAction(message: schoolAddress.placeholder!)
+                }
+                checker.canUpload = false
+                return checker
+            }else{
+                checker.paramters["school_province"] = schoolAddressInfo.province
+                checker.paramters["school_city"] = schoolAddressInfo.city
+                checker.paramters["school_area"] = schoolAddressInfo.area
+            }
+            
+            let count = studentModels.count - 1
+            for index in 2...count {
+                let model = studentModels[index]
+                checker = checkeModelContentParamters(model: model, show: showTips, checker: checker)
+                if checker.canUpload == false {
+                    return checker
+                }
+            }
+            let yearModel = studentModels[5]
+            var yeas = yearModel.content ?? ""
+            if yeas.hasSuffix("年") == true {
+                yeas = yeas.replacingOccurrences(of: "年", with: "")
+            }
+            checker.paramters[yearModel.servicename] = yeas
+            
+            
+        }else if cuttentIndex == 3 {
+            let count = unemployedModels.count - 1
+            for index in 0...count {
+                let model = unemployedModels[index]
+                checker = checkeModelContentParamters(model: model, show: showTips, checker: checker)
+                if checker.canUpload == false {
+                    return checker
+                }
+            }
+        }
+        
+        let edupicModel = models[2][0]
+        let images = edupicModel.images?.first
+        if images?.type == defaultImageType {
+            checker.canUpload = false
+            if showTips {
+                XJToast.showToastAction(message: edupicModel.placeholder!)
+            }
+            return checker
+        }
+        edupicModel.subContent = images?.path
+        checker.paramters[edupicModel.servicename] = images?.path
+        
+        return checker
     }
-    
 }

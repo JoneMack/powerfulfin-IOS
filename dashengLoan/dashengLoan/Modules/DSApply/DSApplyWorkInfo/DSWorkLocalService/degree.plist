@@ -10,6 +10,8 @@
 			<string>学历</string>
 			<key>placeholder</key>
 			<string>请选择学历</string>
+			<key>servicename</key>
+			<string>highest_education</string>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -18,6 +20,8 @@
 			<string>职业</string>
 			<key>placeholder</key>
 			<string>请选择职业</string>
+			<key>servicename</key>
+			<string>profession</string>
 		</dict>
 	</array>
 	<array>

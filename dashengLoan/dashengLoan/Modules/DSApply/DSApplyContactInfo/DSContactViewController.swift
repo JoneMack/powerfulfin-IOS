@@ -126,8 +126,12 @@ extension DSContactViewController {
         }
     }
     func uploadUserContactInfoToService()  {
+        let checker = dataSource.checkUploadParameters(true)
+        if checker.canUpload == false {
+            return
+        }
         XJToast.showToastAction()
-        let paraDic = dataSource.getDataInfo()
+        let paraDic = checker.paramters as! [String:String]
         DSApplyDataService.uploadUserContact(contactInfo: paraDic) {[weak self] in
             if self?.hasNext == true {
                 DSApply.default.showNextStep()

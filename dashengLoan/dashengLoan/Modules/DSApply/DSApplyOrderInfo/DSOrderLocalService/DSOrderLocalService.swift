@@ -13,53 +13,43 @@ class DSOrderLocalService: DSApplyLocalService {
         return "order"
     }
     // MARK: 获取订单信息
-    func getOrderDataInfo() -> [String:Any] {
-        var paramDic = [String:Any]()
+    override func checkUploadParameters(_ showTips: Bool) -> DSApplyParamtersChecker {
+        var checker = DSApplyParamtersChecker()
+        
         let courseModel = models[0][0]
+        checker = checkeModelSubContentParamters(model: courseModel, show: showTips, checker: checker)
+        if checker.canUpload == false {
+            return checker
+        }
+
         let moneyModel = models[0][1]
+        checker = checkeModelContentParamters(model: moneyModel, show: showTips, checker: checker)
+        if checker.canUpload == false {
+            return checker
+        }
+        
         let productModel = models[0][2]
-    
+        checker = checkeModelSubContentParamters(model: productModel, show: showTips, checker: checker)
+        if checker.canUpload == false {
+            return checker
+        }
+        
         let secotonModels = models[1]
+        
         for model in secotonModels {
             if model.title == "开课日期" {
-                paramDic[model.servicename] = model.content ?? ""
-            }
-            if model.title == "场景照片" {
-                let imageInfos = getImagesPath(from: model.images!)
-                paramDic[model.servicename] = imageInfos
-            }
-            if model.title == "培训协议" {
-                let imageInfos = getImagesPath(from: model.images!)
-                paramDic[model.servicename] = imageInfos
-            }
-            if model.title == "手持身份证照片" {
-                let imageInfos = getImagesPath(from: model.images!)
-                paramDic[model.servicename] = imageInfos
-            }
-            if model.title == "声明照片" {
-                let imageInfos = getImagesPath(from: model.images!)
-                paramDic[model.servicename] = imageInfos
+                checker = checkeModelContentParamters(model: model, show: showTips, checker: checker)
+                if checker.canUpload == false {
+                    return checker
+                }
+            }else{
+                checker = checkeModelImageParamters(model: model, show: showTips, checker: checker)
+                if checker.canUpload == false {
+                    return checker
+                }
             }
         }
-        paramDic[courseModel.servicename] = courseModel.subContent ?? ""
-        paramDic[moneyModel.servicename] = moneyModel.content ?? ""
-        paramDic[productModel.servicename] = productModel.subContent ?? ""
-        return paramDic
-    }
-    func getImagesPath(from images:[DSImageInfo]) -> String {
-        var imageInfos = [String]()
-        for imageInfo in images {
-            if imageInfo.type != defaultImageType {
-                imageInfos.append(imageInfo.path ?? "")
-            }
-        }
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: imageInfos, options: .prettyPrinted)
-            if let jsonString = String(data: jsonData, encoding: .utf8) {
-                return jsonString
-            }
-        } catch {}
-        return ""
+        return checker
     }
 }
 // MARK: - 配置更新
@@ -104,3 +94,4 @@ extension DSOrderLocalService {
         }
     }
 }
+

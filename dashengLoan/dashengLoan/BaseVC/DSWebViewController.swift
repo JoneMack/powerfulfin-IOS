@@ -127,8 +127,13 @@ extension DSWebViewController:WKUIDelegate {
 extension DSWebViewController:WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         
-        if let webError =  (error as NSError).userInfo[NSURLErrorFailingURLStringErrorKey] as? String {
-            showErrorLoadTips("\"\(webError)\"加载失败")
+        if let url =  (error as NSError).userInfo[NSURLErrorFailingURLStringErrorKey] as? String {
+            let result =  DSRouter.parsingURL(url: url)
+            if result.0 == .none || result.0 == .web {
+                showErrorLoadTips("\"\(url)\"加载失败")
+            }else{
+                showErrorLoadTips("跳转中...")
+            }
         }
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
