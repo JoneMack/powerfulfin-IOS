@@ -17,7 +17,7 @@ class DSUserViewController: DSTableViewController {
         super.viewDidLoad()
         loadHeaderView()
         configTableView()
-        DSUserCenter.`default`.addListener(self)
+        DSUserCenter.default.addListener(self)
     }
     func loadHeaderView() {
         headerView.frame = CGRect(x: 0, y: 0, width: XJDeviceInfo.screenWidth, height: 179)
@@ -73,7 +73,7 @@ extension DSUserViewController {
         cell.textLabel?.text = cellModel?.text
         cell.imageView?.image = UIImage(named: (cellModel?.logo)!)
         if cellModel?.text == "关于" {
-            cell.detailTextLabel?.text = XJDeviceInfo.appVersion
+            cell.detailTextLabel?.text = XJDeviceInfo.appVersion + "(\(XJDeviceInfo.appBuildVersion))"
         }else{
             cell.detailTextLabel?.text = ""
         }

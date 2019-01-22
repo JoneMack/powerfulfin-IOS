@@ -14,6 +14,7 @@ public enum XJHTTPMethod: String {
     case get = "GET"
 }
 
+let userAgentKey = "userAgentKey"
 
 // MARK: - 网络请求
 open class XJRequest {
@@ -34,12 +35,15 @@ open class XJRequest {
         }else{
             self.httpHeader = httpHeader
         }
-        
     }
     public static let defaultHTTPHeaders: HTTPHeaders = {
         
         var headers = SessionManager.defaultHTTPHeaders
+        if let ua = UserDefaults.standard.value(forKey: userAgentKey) as? String {
+            headers["User-Agent"] = ua
+        }
         headers["DS-User-Agent"] = XJRequest.ds_defaultUserAgent
+        
         return headers
     }()
     public static let ds_defaultUserAgent:String = {

@@ -15,10 +15,20 @@ class DSAppearance {
     
     
     class func applicationDidFinishLaunching() {
+        let webView = UIWebView()
+        let ua = webView.stringByEvaluatingJavaScript(from: "navigator.userAgent") ?? ""
+        UserDefaults.standard.setValue(ua, forKey: userAgentKey)
+        UserDefaults.standard.synchronize()
+        
+//        UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+//        NSString *userAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+//        NSString *newUserAgent = [userAgent stringByAppendingString:@" native_iOS"];//自定义需要拼接的字符串
+//        NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:newUserAgent, @"UserAgent", nil];
+//        [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
+        
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.toolbarTintColor = UIColor.ds_blackText
-        
         DSBugly.startBugly()
     }
     static var isFirstLaunch:Bool {

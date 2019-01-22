@@ -81,7 +81,7 @@ extension DSOrderDetailViewController {
             cell.moneyLabel?.text = "￥\(orderInfo?.borrow_money ?? "")"
             var installment = "\(orderInfo?.installment ?? "")期"
             if orderInfo?.repay_need ?? 0 > 0 {
-                installment += "(当前待还\(orderInfo?.repay_need?.description ?? "")期)"
+                installment += "(\(orderInfo?.repay_now ?? ""))"
             }
             cell.installmentLabel.text = installment
             cell.nameLabel.text = orderInfo?.full_name

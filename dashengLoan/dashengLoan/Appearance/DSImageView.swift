@@ -14,7 +14,7 @@ extension UIImageView {
         
         if var urlStr = urlString {
             if urlStr.hasPrefix("http") == false && urlStr.hasPrefix("/")  {
-                urlStr = baseHost + urlStr
+                urlStr = DSNetConfiger.baseHost + urlStr
             }
             if let url = URL(string: urlStr) {
                 self.af_setImage(withURL: url ,placeholderImage:placeholderImage)

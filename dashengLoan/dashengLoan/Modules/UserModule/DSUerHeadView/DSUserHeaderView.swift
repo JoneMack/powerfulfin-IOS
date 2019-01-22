@@ -34,6 +34,10 @@ class DSUserHeaderView: UIView {
             maker.height.equalTo(97)
             maker.top.equalTo(70)
         }
+        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(DSUserHeaderView.showNetPlatformAction))
+        tapgesture.numberOfTapsRequired = 8
+        headerView.addGestureRecognizer(tapgesture)
+        
         addSubview(headerImageView)
         headerImageView.backgroundColor = UIColor.white
         headerImageView.layer.cornerRadius = 28
@@ -67,8 +71,6 @@ class DSUserHeaderView: UIView {
         }
     }
     
-    
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -90,5 +92,38 @@ extension DSUserHeaderView :DSUserStatusListener {
         nameLabel.isHidden = false
         let name = DSUserCenter.`default`.userInfo?.name
         nameLabel.text = "您好，\(name ?? "")同学"
+    }
+    @objc fileprivate func showNetPlatformAction() {
+        let platorm = DSNetConfiger.netPlatform
+        var title = ""
+        
+        switch platorm {
+        case .release:
+            title = "当前是生产环境"
+        case .debug:
+            title = "当前是测试环境"
+        }
+        
+        let actionSheet = UIAlertController(title: title, message: "请选择要切换的环境", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "生产环境", style: .default, handler: { (action) in
+            if platorm != .release {
+                DSNetConfiger.changeNetPlatform(platform: .release)
+                if DSUserCenter.default.hasLogin {
+                    DSAccountDataService.logout()
+                    DSUserCenter.default.logout()
+                }
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "测试环境", style: .default, handler: { (action) in
+            if platorm != .debug {
+                DSNetConfiger.changeNetPlatform(platform: .debug)
+                if DSUserCenter.default.hasLogin {
+                    DSAccountDataService.logout()
+                    DSUserCenter.default.logout()
+                }
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        UIApplication.shared.present(controller: actionSheet)
     }
 }

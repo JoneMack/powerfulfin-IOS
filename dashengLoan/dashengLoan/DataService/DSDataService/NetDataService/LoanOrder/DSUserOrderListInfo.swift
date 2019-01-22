@@ -36,6 +36,9 @@ struct DSOrderInfo:Codable {
     var installment:String?
     /// 待还期数
     var repay_need:Int?
+    /// 待还期数描述
+    var repay_now:String?
+    
     /// 机构名称
     var org_name:String?
     /// 用户姓名
