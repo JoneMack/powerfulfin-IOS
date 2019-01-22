@@ -78,7 +78,11 @@ class XJNetWork {
         
         Alamofire.upload(multipartFormData: { (multipartFormData) in
                 multipartFormData.append(imageData!, withName: imageName, fileName: imageName, mimeType: "image/png")
-        }, to: request.url) { (encodingResult) in
+            let parameters = XJNetWork.baseParameters()
+            for (key, value) in parameters {
+                multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+            }
+        }, to: request.url,headers:XJRequest.defaultHTTPHeaders) { (encodingResult) in
             switch encodingResult {
             case .success(let upload,_,_) :
                 upload.uploadProgress(closure: { (progerss) in
@@ -127,15 +131,33 @@ extension XJNetWork {
             }
             
         }
-        paramDic["lng"] = DSLocationManager.manager.longitude
-        paramDic["lat"] = DSLocationManager.manager.latitude
-        paramDic["version"] = XJDeviceInfo.appVersion
-        paramDic["phoneid"] = XJDeviceInfo.deviceId
-        let wifiInfo = XJDeviceInfo.wifiInfo
-        paramDic["ssid"] = wifiInfo.ssid
-        paramDic["mac"] = wifiInfo.mac
-        paramDic["_t"] = Date().milliStamp
+        let baseParam = baseParameters()
+        for (key,value) in baseParam {
+            paramDic[key] = value
+        }
+        
+//        paramDic["lng"] = DSLocationManager.manager.longitude
+//        paramDic["lat"] = DSLocationManager.manager.latitude
+//        paramDic["version"] = XJDeviceInfo.appVersion
+//        paramDic["phoneid"] = XJDeviceInfo.deviceId
+//        let wifiInfo = XJDeviceInfo.wifiInfo
+//        paramDic["ssid"] = wifiInfo.ssid
+//        paramDic["mac"] = wifiInfo.mac
+//        paramDic["_t"] = Date().milliStamp
         return paramDic
+    }
+    static fileprivate func baseParameters() -> [String:String] {
+        var baseParam = [String:String]()
+        baseParam["lng"] = DSLocationManager.manager.longitude
+        baseParam["lat"] = DSLocationManager.manager.latitude
+        baseParam["version"] = XJDeviceInfo.appVersion
+        baseParam["phoneid"] = XJDeviceInfo.deviceId
+        let wifiInfo = XJDeviceInfo.wifiInfo
+        baseParam["ssid"] = wifiInfo.ssid
+        baseParam["mac"] = wifiInfo.mac
+        baseParam["_t"] = Date().milliStamp
+        return baseParam
+        
     }
 }
 // MARK: - 数据映射 Json->Model
