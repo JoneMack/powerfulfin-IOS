@@ -11,6 +11,7 @@ fileprivate let cellIdentifier = "DSUserCellIdentifier"
 fileprivate let logoutCellIdentifier = "logoutCellIdentifier"
 class DSUserViewController: DSTableViewController {
     fileprivate let headerView = DSUserHeaderView()
+    fileprivate var footerView:DSUserFooterView!
     fileprivate let headerTopView = UIImageView()
     fileprivate lazy var dataSource = DSUserDataSource()
     override func viewDidLoad() {
@@ -35,6 +36,10 @@ class DSUserViewController: DSTableViewController {
      
         addRefreshControl(#selector(DSUserViewController.reloadUserInfo))
         tableView?.sendSubviewToBack(headerTopView)
+        
+        footerView = DSUserFooterView()
+        footerView.frame = CGRect(x: 0, y: 0, width: XJDeviceInfo.screenWidth, height: 130)
+        tableView?.tableFooterView = footerView
     }
     fileprivate func configTableView()  {
         tableView?.register(DSTableViewCell.classForCoder(), forCellReuseIdentifier: cellIdentifier)
@@ -72,11 +77,11 @@ extension DSUserViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DSTableViewCell
         cell.textLabel?.text = cellModel?.text
         cell.imageView?.image = UIImage(named: (cellModel?.logo)!)
-        if cellModel?.text == "关于" {
-            cell.detailTextLabel?.text = XJDeviceInfo.appVersion + "(\(XJDeviceInfo.appBuildVersion))"
-        }else{
-            cell.detailTextLabel?.text = ""
-        }
+//        if cellModel?.text == "关于" {
+//            cell.detailTextLabel?.text = XJDeviceInfo.appVersion + "(\(XJDeviceInfo.appBuildVersion))"
+//        }else{
+//            cell.detailTextLabel?.text = ""
+//        }
         if (indexPath.row >= dataSource.numberOfRows(indexPath.section)-1) {
              cell.showSpearator = false
         }else{
@@ -114,12 +119,14 @@ extension DSUserViewController:DSUserStatusListener {
         dataSource.reloadData()
         tableView?.reloadData()
         self.refreshControl?.endRefreshing()
-        
     }
     func userLoginSuccess() {
+        footerView.remakeVersonLabelConstraints()
         tableView?.reloadData()
+        
     }
     func userLogoutSuccess() {
+        footerView.remakeVersonLabelConstraints()
         tableView?.reloadData()
     }
 }

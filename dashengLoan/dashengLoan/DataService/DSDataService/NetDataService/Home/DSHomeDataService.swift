@@ -11,7 +11,7 @@ import HandyJSON
 class DSHomeDataService {
     class func loadHomeData(complete:@escaping((DSHomeInfo?,Bool) -> Void)) {
         let paraDic = ["school_mac":XJDeviceInfo.wifiInfo.mac]
-        let request = XJRequest("v1/index/index", method: .get,parameters:paraDic)
+        let request = XJRequest("v1/index/index", method: .post,parameters:paraDic)
         XJNetWork.request(request, successHandler: { (jsonInfo) in
             if  let homeInfo = DSHomeInfo.deserialize(from: jsonInfo as? [String : Any]) {
                 complete(homeInfo,true)

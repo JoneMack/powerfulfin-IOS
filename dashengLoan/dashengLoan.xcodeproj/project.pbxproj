@@ -174,6 +174,7 @@
 		35A82B3921CB976B0009D5F2 /* DSPhoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3821CB976B0009D5F2 /* DSPhoneButton.swift */; };
 		35A82B3B21CBA39A0009D5F2 /* DSAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3A21CBA39A0009D5F2 /* DSAgreementView.swift */; };
 		35A82B3D21CBA87C0009D5F2 /* DSNetConfiger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3C21CBA87C0009D5F2 /* DSNetConfiger.swift */; };
+		35CE8ED521F704A700B6E81F /* DSUserFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE8ED421F704A700B6E81F /* DSUserFooterView.swift */; };
 		35E810D321C3A7BD00B5714E /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35E810CF21C3A7BC00B5714E /* Resource.bundle */; };
 		35E810D521C3A7BD00B5714E /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E810D121C3A7BC00B5714E /* libjpeg.a */; };
 		5B8BEE818A3E9F2FA247588B /* Pods_dashengLoan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */; };
@@ -364,6 +365,7 @@
 		35A82B3821CB976B0009D5F2 /* DSPhoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSPhoneButton.swift; sourceTree = "<group>"; };
 		35A82B3A21CBA39A0009D5F2 /* DSAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAgreementView.swift; sourceTree = "<group>"; };
 		35A82B3C21CBA87C0009D5F2 /* DSNetConfiger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSNetConfiger.swift; sourceTree = "<group>"; };
+		35CE8ED421F704A700B6E81F /* DSUserFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserFooterView.swift; sourceTree = "<group>"; };
 		35E810CA21C3A7BC00B5714E /* UDIDSafeDataDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeDataDefine.h; sourceTree = "<group>"; };
 		35E810CB21C3A7BC00B5714E /* UDIDSafeOCREngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeOCREngine.h; sourceTree = "<group>"; };
 		35E810CC21C3A7BC00B5714E /* UDIDSafeAuthEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeAuthEngine.h; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				3508779321CF27CD006580AD /* DSUserHeaderView.swift */,
+				35CE8ED421F704A700B6E81F /* DSUserFooterView.swift */,
 			);
 			path = DSUerHeadView;
 			sourceTree = "<group>";
@@ -1551,6 +1554,7 @@
 				3513216D21D65AD5005AB183 /* XJSegmentedControl.swift in Sources */,
 				350A68E221D2406E0055EFA6 /* DSIdImageCell.swift in Sources */,
 				350A00F521DF738100DFE703 /* DSUserBanksController.swift in Sources */,
+				35CE8ED521F704A700B6E81F /* DSUserFooterView.swift in Sources */,
 				356E80B321CCC3F40052C6E2 /* DSTextValidate.swift in Sources */,
 				350A68B321D0B59B0055EFA6 /* DSHomeInfo.swift in Sources */,
 				350A00F221DF734200DFE703 /* DSUserInfoViewController.swift in Sources */,
