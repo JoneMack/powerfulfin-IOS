@@ -175,6 +175,8 @@
 		35A82B3B21CBA39A0009D5F2 /* DSAgreementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3A21CBA39A0009D5F2 /* DSAgreementView.swift */; };
 		35A82B3D21CBA87C0009D5F2 /* DSNetConfiger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A82B3C21CBA87C0009D5F2 /* DSNetConfiger.swift */; };
 		35CE8ED521F704A700B6E81F /* DSUserFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE8ED421F704A700B6E81F /* DSUserFooterView.swift */; };
+		35CE8ED821F71C1800B6E81F /* JPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE8ED721F71C1800B6E81F /* JPushManager.swift */; };
+		35CE8EDB21F810E500B6E81F /* UMCAnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE8EDA21F810E500B6E81F /* UMCAnalyticsManager.swift */; };
 		35E810D321C3A7BD00B5714E /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35E810CF21C3A7BC00B5714E /* Resource.bundle */; };
 		35E810D521C3A7BD00B5714E /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E810D121C3A7BC00B5714E /* libjpeg.a */; };
 		5B8BEE818A3E9F2FA247588B /* Pods_dashengLoan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5537C6871699AD2CFFB6F3 /* Pods_dashengLoan.framework */; };
@@ -366,6 +368,8 @@
 		35A82B3A21CBA39A0009D5F2 /* DSAgreementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSAgreementView.swift; sourceTree = "<group>"; };
 		35A82B3C21CBA87C0009D5F2 /* DSNetConfiger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSNetConfiger.swift; sourceTree = "<group>"; };
 		35CE8ED421F704A700B6E81F /* DSUserFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSUserFooterView.swift; sourceTree = "<group>"; };
+		35CE8ED721F71C1800B6E81F /* JPushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPushManager.swift; sourceTree = "<group>"; };
+		35CE8EDA21F810E500B6E81F /* UMCAnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UMCAnalyticsManager.swift; sourceTree = "<group>"; };
 		35E810CA21C3A7BC00B5714E /* UDIDSafeDataDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeDataDefine.h; sourceTree = "<group>"; };
 		35E810CB21C3A7BC00B5714E /* UDIDSafeOCREngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeOCREngine.h; sourceTree = "<group>"; };
 		35E810CC21C3A7BC00B5714E /* UDIDSafeAuthEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDIDSafeAuthEngine.h; sourceTree = "<group>"; };
@@ -1195,9 +1199,27 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		35CE8ED621F7185800B6E81F /* JPush */ = {
+			isa = PBXGroup;
+			children = (
+				35CE8ED721F71C1800B6E81F /* JPushManager.swift */,
+			);
+			path = JPush;
+			sourceTree = "<group>";
+		};
+		35CE8ED921F810D700B6E81F /* UMCAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				35CE8EDA21F810E500B6E81F /* UMCAnalyticsManager.swift */,
+			);
+			path = UMCAnalytics;
+			sourceTree = "<group>";
+		};
 		35E810C821C3A79700B5714E /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				35CE8ED921F810D700B6E81F /* UMCAnalytics */,
+				35CE8ED621F7185800B6E81F /* JPush */,
 				350A68E421D25BB70055EFA6 /* KZAlert */,
 				356E80B421CD056F0052C6E2 /* BuglyManager */,
 				35E810C921C3A7BC00B5714E /* UDSafeSDK */,
@@ -1289,6 +1311,9 @@
 						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -1461,6 +1486,7 @@
 				350A00D921DE31D700DFE703 /* DSOrderDetailHeadView.swift in Sources */,
 				350A68AA21D0A71E0055EFA6 /* DSSearchView.swift in Sources */,
 				3508778F21CE4126006580AD /* DSButton.swift in Sources */,
+				35CE8EDB21F810E500B6E81F /* UMCAnalyticsManager.swift in Sources */,
 				350A00E121DF032500DFE703 /* DSOrderDataService.swift in Sources */,
 				3508779421CF27CD006580AD /* DSUserHeaderView.swift in Sources */,
 				35552C8021CB6F78002033FC /* UIApplication+Convenient.swift in Sources */,
@@ -1513,6 +1539,7 @@
 				350A00DB21DEF2DB00DFE703 /* DSOrderTitleCell.swift in Sources */,
 				350A68A821D0769B0055EFA6 /* MarqueeView.swift in Sources */,
 				350A405321E5E4ED00092EDD /* DSAuditDataService.swift in Sources */,
+				35CE8ED821F71C1800B6E81F /* JPushManager.swift in Sources */,
 				3508778321CDEA94006580AD /* DSHomeSearchControl.swift in Sources */,
 				350A690B21D34CF90055EFA6 /* DSWorkViewController.swift in Sources */,
 				350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */,

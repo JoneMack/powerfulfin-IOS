@@ -17,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,BMKLocationAuthDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        DSAppearance.applicationDidFinishLaunching()
+        DSAppearance.applicationDidFinishLaunching(launchOptions)
+        JPushManager.applicationDidFinishLaunching(launchOptions, delegate: self)
         window?.rootViewController = DSTabBarController()
         DSUserCenter.default.applicationDidFinishLaunching()
-        
         window?.makeKeyAndVisible()
         return true
     }
@@ -46,7 +46,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate,BMKLocationAuthDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
+// MARK: - 推送通知
+extension AppDelegate : JPUSHRegisterDelegate {
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        JPushManager.registerDevice(deviceToken)
+    }
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("注册通知h失败\(error)")
+    }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if UIApplication.shared.applicationState == .inactive {
+            JPushManager.handleRemoteNotificationInfo(noticeInfo: userInfo)
+        }
+        completionHandler(.newData)
+    }
+  
+    @available(iOS 10.0, *)
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, willPresent notification: UNNotification!, withCompletionHandler completionHandler: ((Int) -> Void)!) {
+
+        completionHandler(Int(UNNotificationPresentationOptions.alert.rawValue))
+    }
+    
+    @available(iOS 10.0, *)
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
+        
+        if response.notification.request.trigger?.isKind(of: UNPushNotificationTrigger.classForCoder()) ?? false {
+            let userInfo = response.notification.request.content.userInfo
+            JPushManager.handleRemoteNotificationInfo(noticeInfo: userInfo)
+        }
+        
+        completionHandler()
+    }
+    
+    @available(iOS 10.0, *)
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, openSettingsFor notification: UNNotification?) {
+        if notification?.request.trigger?.isKind(of: UNPushNotificationTrigger.classForCoder()) ?? false {
+            
+        }
+        print("接受到通知")
+    }
+  
+    
+    
+}

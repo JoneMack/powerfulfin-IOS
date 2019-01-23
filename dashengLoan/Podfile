@@ -13,4 +13,9 @@ target 'dashengLoan' do
     pod 'RTRootNavigationController'    #自定义导航栏
     pod 'TZImagePickerController'       #图片选择器。OC版
     pod 'HandyJSON'                     # model 映射
+    pod 'JPush'
+    
+    pod 'UMCCommon'
+    pod 'UMCSecurityPlugins'
+    pod 'UMCAnalytics'
 end

@@ -18,14 +18,17 @@ class DSAccountDataService {
     ///   - type: 登录方式：1 手机号+验证码，2是用户名+密码
     ///   - complete: 用户信息
     class func login(userName:String,password:String,type:NSInteger=1,complete:@escaping((DSUserInfo)-> Void)) {
-        var request:XJRequest
         
+        var parameters = [String:Any]()
+        parameters["phone"] = userName
+        parameters["pushid"] = JPushManager.registrationID
         if type == 1 {
-            request = XJRequest("v1/login/login", method: .post, parameters: ["phone":userName,"vcode":password])
+            parameters["vcode"] = password
         }else{
-            request = XJRequest("v1/login/login", method: .post, parameters: ["phone":userName,"password":password])
+            parameters["password"] = password
         }
-        
+      let request = XJRequest("v1/login/login", method: .post, parameters: parameters)
+
         XJNetWork.request(request, successHandler: { (jsonInfo) in
             
             if let userInfo = try? XJDecoder.xj_decode(DSUserInfo.self, from: jsonInfo) {

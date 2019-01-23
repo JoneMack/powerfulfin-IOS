@@ -26,7 +26,7 @@ class DSNetConfiger {
         let platform = DSNetConfiger.netPlatform
         switch platform {
         case .release:
-            return "http://app.powerfulfin.com/app/"
+            return "https://app.powerfulfin.com/app/"
         case .debug:
             return "http://test.app.powerfulfin.com/app/"
         }

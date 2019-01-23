@@ -4,5 +4,7 @@ DerivedData/
 
 *.opencv2.framework
 *.Bugly.framework
+*.libjcore-ios-1.2.6.a
 dashengLoan/Pods/Bugly/
 dashengLoan/dashengLoan/Third/UDSafeSDK/opencv2.framework
+libjcore-ios-1.2.6.a
