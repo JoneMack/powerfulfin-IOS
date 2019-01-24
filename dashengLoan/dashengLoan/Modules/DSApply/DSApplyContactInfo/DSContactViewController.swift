@@ -99,7 +99,10 @@ extension DSContactViewController:DSAddressPickerDelegate {
         (dataSource as! DSContactLocalService).addressInfo.province = province.areaid?.description ?? ""
         (dataSource as! DSContactLocalService).addressInfo.city = city.areaid?.description ?? ""
         (dataSource as! DSContactLocalService).addressInfo.area = area.areaid?.description ?? ""
-        (dataSource as! DSContactLocalService).addressInfo.address = area.joinname ?? ""
+        
+        var name = area.joinname
+        name = name?.replacingOccurrences(of: ",", with: "-")
+        (dataSource as! DSContactLocalService).addressInfo.address = name ?? ""
         (dataSource as! DSContactLocalService).updateHomeAddress()
         self.tableView?.reloadRows(at: [IndexPath(row: 1, section: 1)], with: .automatic)
         

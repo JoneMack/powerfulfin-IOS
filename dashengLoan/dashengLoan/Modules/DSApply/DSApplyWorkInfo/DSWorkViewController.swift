@@ -149,14 +149,19 @@ extension DSWorkViewController:DSWorkHeaderViewDelegate,DSAddressPickerDelegate 
                 localDataSource.workAddress.province = province.areaid?.description ?? ""
                 localDataSource.workAddress.city = city.areaid?.description ?? ""
                 localDataSource.workAddress.area = area.areaid?.description ?? ""
-                localDataSource.workAddress.address = area.joinname ?? ""
+                var name = area.joinname
+                name = name?.replacingOccurrences(of: ",", with: "-")
+                localDataSource.workAddress.address = name ?? ""
                 localDataSource.updateWordAddress()
                 tableView?.reloadRows(at: [IndexPath(row: 1, section: 1)], with: .automatic)
+                
             }else if localDataSource.cuttentIndex == 2 {
                 localDataSource.schoolAddressInfo.province = province.areaid?.description ?? ""
                 localDataSource.schoolAddressInfo.city = city.areaid?.description ?? ""
                 localDataSource.schoolAddressInfo.area = area.areaid?.description ?? ""
-                localDataSource.schoolAddressInfo.address = area.joinname ?? ""
+                var name = area.joinname
+                name = name?.replacingOccurrences(of: ",", with: "-")
+                localDataSource.schoolAddressInfo.address = name ?? ""
                 localDataSource.updateSchoolAddress()
                 tableView?.reloadRows(at: [IndexPath(row: 1, section: 1)], with: .automatic)
             }

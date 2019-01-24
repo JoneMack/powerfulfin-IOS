@@ -125,7 +125,7 @@ class DSWorkLocalService: DSApplyLocalService {
             workAddress.province = workInfo.work_province ?? ""
             workAddress.city = workInfo.work_city ?? ""
             workAddress.area = workInfo.work_area ?? ""
-            workAddress.address = (workInfo.work_province_name ?? "") + (workInfo.work_city_name ?? "") + (workInfo.work_area_name ?? "")
+            workAddress.address = "\(workInfo.work_province_name ?? "")-\(workInfo.work_city_name ?? "")-\(workInfo.work_area_name ?? "")"
             wordAddress.content = workAddress.address
             workDetailAddress.content = workInfo.work_address
             workTime.content = workInfo.work_entry_time
@@ -146,7 +146,7 @@ class DSWorkLocalService: DSApplyLocalService {
             schoolAddressInfo.province = workInfo.school_province ?? ""
             schoolAddressInfo.city = workInfo.school_city ?? ""
             schoolAddressInfo.area = workInfo.school_area ?? ""
-            schoolAddressInfo.address = (workInfo.school_province_name ?? "") + (workInfo.school_city_name ?? "") + (workInfo.school_area_name ?? "")
+            schoolAddressInfo.address = "\(workInfo.school_province_name ?? "")-\(workInfo.school_city_name ?? "")-\(workInfo.school_area_name ?? "")"
             schoolAddress.content = schoolAddressInfo.address
             schoolDetailAddress.content = workInfo.school_address
             schoolPhone.content = workInfo.school_contact
@@ -243,7 +243,6 @@ class DSWorkLocalService: DSApplyLocalService {
                 yeas = yeas.replacingOccurrences(of: "年", with: "")
             }
             checker.paramters[yearModel.servicename] = yeas
-            
             
         }else if cuttentIndex == 3 {
             let count = unemployedModels.count - 1

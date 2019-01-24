@@ -36,7 +36,7 @@ class DSContactLocalService: DSApplyLocalService {
             addressInfo.province = contactInfo.home_province ?? ""
             addressInfo.city = contactInfo.home_city ?? ""
             addressInfo.area = contactInfo.home_area ?? ""
-            addressInfo.address = (contactInfo.home_province_name ?? "") + (contactInfo.home_city_name ?? "") + (contactInfo.home_area_name ?? "")
+            addressInfo.address = "\(contactInfo.home_province_name ?? "")-\(contactInfo.home_city_name ?? "")-\(contactInfo.home_area_name ?? "")"
             
             addressModel.content = addressInfo.address
             addressDetailModel.content = contactInfo.home_address
