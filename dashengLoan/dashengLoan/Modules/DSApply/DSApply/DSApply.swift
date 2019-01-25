@@ -22,8 +22,9 @@ class DSApply: NSObject {
     fileprivate weak var beginController:UIViewController?
     fileprivate var step:Int = 0
     func beginApply(_ schooId:String ,fromController:UIViewController?)  {
+        
+        
         self.schooId = schooId
-        self.schooId = "1"
         self.beginController = fromController
         step = 0
         updateBeginController()

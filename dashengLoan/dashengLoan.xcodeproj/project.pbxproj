@@ -1716,7 +1716,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = dashengLoan/dashengLoan.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: xiang hao (KFY5563N56)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KFY5563N56;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1736,6 +1737,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dasheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = dashengDistributionProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/dashengLoan/dashengLoan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1751,7 +1753,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = dashengLoan/dashengLoan.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: xiang hao (KFY5563N56)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KFY5563N56;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1771,6 +1774,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.powerfulfin.dasheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = dashengDistributionProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/dashengLoan/dashengLoan-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -6,5 +6,10 @@
 	<string>ad-hoc</string>
 	<key>compileBitcode</key>
 	<false/>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>com.powerfulfin.dasheng</key>
+		<string>dashenghocProfile</string>
+	</dict>
 </dict>
 </plist>

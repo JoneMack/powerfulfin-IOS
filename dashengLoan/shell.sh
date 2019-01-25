@@ -15,7 +15,7 @@ project_name=dashengLoan
 scheme_name=dashengLoan
 
 #打包模式 Debug/Release
-development_mode=Debug
+development_mode=Release
 
 #build文件夹路径
 build_path=${project_path}/build
@@ -106,8 +106,8 @@ if [ $number == 1 ];then
 #验证并上传到App Store
 # 将-u 后面的XXX替换成自己的AppleID的账号，-p后面的XXX替换成自己的密码
 altoolPath="/Applications/Xcode.app/Contents/Applications/Application Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Versions/A/Support/altool"
-"$altoolPath" --validate-app -f ${exportIpaPath}/${scheme_name}.ipa -u XXX -p XXX -t ios --output-format xml
-"$altoolPath" --upload-app -f ${exportIpaPath}/${scheme_name}.ipa -u  XXX -p XXX -t ios --output-format xml
+"$altoolPath" --validate-app -f ${exportIpaPath}/${scheme_name}.ipa -u runnyios@126.com -p Haoxiang1984 -t ios --output-format xml
+"$altoolPath" --upload-app -f ${exportIpaPath}/${scheme_name}.ipa -u  runnyios@126.com -p Haoxiang1984 -t ios --output-format xml
 else
 
 #上传到Fir
