@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-struct DSApplySuccessInfo:Codable {
+import HandyJSON
+struct DSApplySuccessInfo:HandyJSON {
     /// 订单号
     var lid:Int?
     /// 公司名称

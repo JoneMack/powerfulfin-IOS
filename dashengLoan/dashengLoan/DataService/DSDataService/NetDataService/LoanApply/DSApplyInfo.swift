@@ -7,15 +7,15 @@
 //
 
 import UIKit
-
+import HandyJSON
 /// 分期预算详情
-struct DSApplyInfo:Codable {
+struct DSApplyInfo:HandyJSON {
     var title:String?
     var content_one:DSBillSimpleInfo?
     var content_two:DSBillSimpleInfo?
 }
 
-struct DSBillSimpleInfo:Codable {
+struct DSBillSimpleInfo:HandyJSON {
     var content:String?
     var money:String?
 }

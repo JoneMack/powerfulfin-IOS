@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import HandyJSON
 class DSApplyDataService {
     /// 获取配置 : 1 ,2 ,3,4
     class func getApplyConifer(part:Int,complete:@escaping((DSApplyConfiger)->Void)) {
@@ -41,8 +41,10 @@ class DSApplyDataService {
             request = XJRequest("v1/area/area", method: .get,parameters:["city":city!])
         }
         XJNetWork.request(request, successHandler: { (jsonInfo) in
-            if let model = try? XJDecoder.xj_decode([DSAddress].self, from: jsonInfo) {
-                complete(model,true)
+            if let model = [DSAddress].deserialize(from: jsonInfo as? [Any]) {
+                complete(model as? [DSAddress],true)
+            }else{
+                print("数据映射失败")
             }
         }) { (error) in
             XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
@@ -98,9 +100,10 @@ extension DSApplyDataService {
     class func getBindsBakCards(complete:@escaping((DSUserBanksInfo?,Bool)-> Void)){
         let requrst = XJRequest("v1/bank/banks", method: .get)
         XJNetWork.request(requrst, successHandler: { (jsonInfo) in
-            if let model = try? XJDecoder.xj_decode(DSUserBanksInfo.self, from: jsonInfo) {
+            if let model = DSUserBanksInfo.deserialize(from: jsonInfo  as? [String : Any]) {
                 complete(model,true)
             }
+ 
         }) { (error) in
             complete(nil,false)
             XJToast.showToastAction(message: "\(error.errorMsg)(\(error.code))")
@@ -226,7 +229,7 @@ extension DSApplyDataService {
     class func getOrderConfiger(oid:String,complete:@escaping((DSUserOrderConfiger?)->Void)) {
         let requrst = XJRequest("v1/loan/config", method: .get, parameters: ["oid":oid])
         XJNetWork.request(requrst, successHandler: { (jsonInfo) in
-            if let model = try? XJDecoder.xj_decode(DSUserOrderConfiger.self, from: jsonInfo) {
+            if let model = DSUserOrderConfiger.deserialize(from: jsonInfo as? [String : Any]) {
                 complete(model)
             }
         }) { (error) in
@@ -237,7 +240,8 @@ extension DSApplyDataService {
     static func getLoanSimpleInfo(money:String,productId:String,complete:@escaping((DSApplyInfo)->Void)) {
         let requrst = XJRequest("v1/loan/calc", method: .get, parameters: ["borrow_money":money,"loan_product":productId])
         XJNetWork.request(requrst, successHandler: { (jsonInfo) in
-            if let model = try? XJDecoder.xj_decode(DSApplyInfo.self, from: jsonInfo) {
+            
+            if let model = DSApplyInfo.deserialize(from: jsonInfo as? [String : Any]) {
                 complete(model)
             }
         }) { (error) in
@@ -249,7 +253,7 @@ extension DSApplyDataService {
     class func uploadUserOrderInfo(paramDic:[String:Any],complete:@escaping((DSApplySuccessInfo)->Void)){
         let requrst = XJRequest("v1/loan/submit", method: .post, parameters: paramDic)
         XJNetWork.request(requrst, successHandler: { (jsonInfo) in
-            if let model = try? XJDecoder.xj_decode(DSApplySuccessInfo.self, from: jsonInfo) {
+            if let model = DSApplySuccessInfo.deserialize(from: jsonInfo as? [String :Any]) {
                 complete(model)
             }
         }) { (error) in

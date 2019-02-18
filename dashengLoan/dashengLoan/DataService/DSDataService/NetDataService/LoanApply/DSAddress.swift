@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import HandyJSON
 @objcMembers
-class DSAddress:NSObject,Codable {
+class DSAddress:NSObject,HandyJSON {
     var areaid:Int?
     var name:String?
     var parentid:Int?
     var joinname:String?
+    required override init() {
+        
+    }
 }
 class DSAddressLocalInfo {
     var province:String = ""

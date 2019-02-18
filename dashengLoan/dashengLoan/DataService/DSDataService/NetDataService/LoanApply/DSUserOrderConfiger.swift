@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class DSUserOrderConfiger: Codable {
+import HandyJSON
+class DSUserOrderConfiger: HandyJSON {
     /// 分期的产品们
     var loanProducts:[DSLoanProductInfo]?
     /// 课程们
@@ -28,10 +28,12 @@ class DSUserOrderConfiger: Codable {
     var school_pic_switch:Bool = true
     
     var org:DSApplyOrgationInfo?
-    
+    required init() {
+        
+    }
 }
 
-struct DSLoanProductInfo:Codable {
+struct DSLoanProductInfo:HandyJSON {
     /// 金融产品名称，需在提交申请是上报
     var loan_product:String?
     /// 金融产品名称
@@ -53,13 +55,13 @@ struct DSLoanProductInfo:Codable {
     /// 资方id
     var resource:Int?
 }
-struct DSCourseInfo:Codable {
+struct DSCourseInfo:HandyJSON {
     var cid:Int?
     var class_name:String?
     var money_apply_max:Int?
     var money_apply_min:Int?
 }
-struct DSApplyOrgationInfo:Codable {
+struct DSApplyOrgationInfo:HandyJSON {
     
     var oid:Int?
     var org_name:String?
