@@ -8,7 +8,13 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+
+public enum DSAppType:Int {
+    case dasheng = 0
+    case qingmiao = 1
+}
 class DSAppearance {
+    
     static let appearance = DSAppearance()
     // shifoushz
     var isAudit:Bool = false
@@ -16,6 +22,17 @@ class DSAppearance {
         let channel = XJDeviceInfo.channel
         return channel
     }()
+    /// na yi ge app
+    var appType:DSAppType = {
+        let bundleId = XJDeviceInfo.appBundleId
+        if bundleId == "com.powerfulfin.dasheng" {
+            return .dasheng
+        }else if bundleId == "com.young4up.qingmiao" {
+            return .qingmiao
+        }
+        return .dasheng
+    }()
+    
     
     
     class func applicationDidFinishLaunching(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
@@ -31,6 +48,7 @@ class DSAppearance {
         IQKeyboardManager.shared.toolbarTintColor = UIColor.ds_blackText
         DSBugly.startBugly()
     }
+    
     static var isFirstLaunch:Bool {
         let first = UserDefaults.standard.bool(forKey: "loan.first.launch")
         if first == false {
@@ -40,6 +58,7 @@ class DSAppearance {
         }
         return false
     }
+    
     
 }
 

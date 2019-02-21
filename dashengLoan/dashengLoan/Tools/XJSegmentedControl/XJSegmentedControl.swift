@@ -16,7 +16,7 @@ struct XJSegmentItemConfig {
     var itemWidth:CGFloat = 0
     var itemFont:UIFont = UIFont.ds_font(ptSize: 14)
     var itemColor = UIColor.ds_blackText
-    var itemSelectedColor = UIColor.ds_redText
+    var itemSelectedColor = UIColor.ds_tintColor
     
     var linePercent:CGFloat = 1 // 与itemWidth 的比 默认是1：1
     var lineHeight:CGFloat = 2

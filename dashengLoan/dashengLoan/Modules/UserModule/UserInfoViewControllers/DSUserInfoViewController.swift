@@ -70,7 +70,9 @@ extension DSUserInfoViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DSUserIdTableViewCell
         let model = dataArray[indexPath.row]
         
-        cell.logoImageView.image = UIImage(named: model.logo!)
+        cell.logoImageView.image = UIImage.ds_image(name: model.logo!)
+        cell.logoImageView.tintColor = UIColor.ds_tintColor
+//        cell.logoImageView.image = UIImage(named: model.logo!)
         cell.titleLabel.text = model.title
         cell.detailLabel.text = model.detail
         

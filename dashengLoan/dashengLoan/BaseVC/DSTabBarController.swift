@@ -45,11 +45,12 @@ class DSTabBarController: UITabBarController {
         tabBar.tintColor = UIColor.ds_tintColor
     }
     func imageOrgin(_ name:String) -> UIImage? {
-        return UIImage(named: name)?.withRenderingMode(.alwaysOriginal)
+        return UIImage(named: name)?.withRenderingMode(.alwaysTemplate)
     }
     func setupHomePage(_ controller:DSViewController,title:String,image:UIImage?,selectedImage:UIImage?) -> DSNavigationController {
         let navi = DSNavigationController.init(rootViewController: controller)
         navi.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: selectedImage);
+        
         controller.title = title
         return navi
     }

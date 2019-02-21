@@ -39,7 +39,11 @@ extension UIColor {
 
 // MARK: - App 主题色
 extension UIColor {
+    
     class var ds_tintColor:UIColor {
+        if DSAppearance.appearance.appType == .qingmiao {
+            return UIColor(hex: "56c24f")
+        }
         return UIColor(hex: "ea4934")
     }
     
@@ -76,6 +80,9 @@ extension UIColor {
     }
     /// 按钮红色边框的颜色 RGB:210 57 40 hex D23928
     class var ds_redBorder:UIColor {
+        if DSAppearance.appearance.appType == .qingmiao {
+            return UIColor(hex: "56c24f")
+        }
         return UIColor(hex: "d23928")
     }
     

@@ -23,7 +23,7 @@ class DSButton: UIButton {
                 layer.borderColor = UIColor.ds_redBorder.cgColor
             case .red:
                 layer.borderColor = UIColor.ds_redBorder.cgColor
-                setTitleColor(UIColor.ds_redText, for: .normal)
+                setTitleColor(UIColor.ds_tintColor, for: .normal)
             case.gray:
                 layer.borderColor = UIColor.ds_garyBorder.cgColor
                 setTitleColor(UIColor.ds_darkText, for: .normal)

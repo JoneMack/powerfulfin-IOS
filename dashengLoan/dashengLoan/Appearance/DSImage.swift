@@ -18,11 +18,15 @@ extension UIImage {
         context?.fill(rect)
         let theImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext();
-        return theImage!;
+        return theImage!
     }
     
     class func ds_backgroundImage(_ size:CGSize) -> UIImage {
-        return ds_gradientImage(size, colors: [UIColor(hex: "ec471b"),UIColor(hex: "ea3434")], direction: 1)
+        if DSAppearance.appearance.appType == .qingmiao {
+            return ds_gradientImage(size, colors: [UIColor(hex: "70e661"),UIColor(hex: "5bc24f")], direction: 1)
+        }else{
+            return ds_gradientImage(size, colors: [UIColor(hex: "ec471b"),UIColor(hex: "ea3434")], direction: 1)
+        }
     }
     /// 生成一个渐变色的图片
     ///
@@ -56,6 +60,9 @@ extension UIImage {
         
         UIGraphicsEndImageContext()
         return theImage!
-        
+    }
+    class func ds_image(name:String) -> UIImage {
+        let image = UIImage(named:name)?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        return image!
     }
 }

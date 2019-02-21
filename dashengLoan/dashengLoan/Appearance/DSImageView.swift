@@ -11,7 +11,6 @@ import AlamofireImage
 
 extension UIImageView {
     func setImage(_ urlString:String?,placeholderImage:UIImage? = nil)  {
-        
         if var urlStr = urlString {
             if urlStr.hasPrefix("http") == false && urlStr.hasPrefix("/")  {
                 urlStr = DSNetConfiger.baseHost + urlStr
@@ -21,4 +20,5 @@ extension UIImageView {
             }
         }
     }
+    
 }

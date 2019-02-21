@@ -76,7 +76,8 @@ extension DSUserViewController {
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! DSTableViewCell
         cell.textLabel?.text = cellModel?.text
-        cell.imageView?.image = UIImage(named: (cellModel?.logo)!)
+        cell.imageView?.image = UIImage.ds_image(name: (cellModel?.logo)!)
+        cell.imageView?.tintColor = UIColor.ds_tintColor
 //        if cellModel?.text == "关于" {
 //            cell.detailTextLabel?.text = XJDeviceInfo.appVersion + "(\(XJDeviceInfo.appBuildVersion))"
 //        }else{

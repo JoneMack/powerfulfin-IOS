@@ -57,7 +57,8 @@ class DSHomeViewController: DSViewController {
         contentView.addSubview(backTopView)
         
         bannerView.frame = CGRect(x: 9, y: 9, width: XJDeviceInfo.screenWidth-18, height: 150)
-        bannerView.delegate = self
+        bannerView.loopView?.delegate = self
+//        bannerView.delegate = self
         contentView.addSubview(bannerView)
         
         newsView.frame = CGRect(x: 0, y: bannerView.frame.maxY+7, width: XJDeviceInfo.screenWidth, height: 32)
@@ -114,14 +115,9 @@ extension DSHomeViewController:UIScrollViewDelegate  {
 // MARK: - 刷新页面
 extension DSHomeViewController {
     func refreshViews()  {
-        var bannerArray = [String]()
-        let count = homeInfo?.banner?.count ?? 0
-        for i in 0..<count {
-            let banner = homeInfo?.banner?[i]
-            bannerArray.append(banner?.img ?? "")
-        }
         
-        bannerView.loopView?.arrImage = bannerArray
+        bannerView.loopView?.count = homeInfo?.banner?.count ?? 0
+//        bannerView.loopView?.count = 1
         var orY = bannerView.frame.maxY
         if homeInfo?.notice?.content?.count == 0 {
             newsView.isHidden = true
@@ -192,10 +188,15 @@ extension DSHomeViewController:DSHomeLoanButtonViewDelegate {
         pushToNextViewController(searchVC)
     }
 }
-extension DSHomeViewController:DSHomeBannerViewDelegate {
-    func bannerView(_ bannerView:DSHomeBannerView, didSelectedIndex index:Int) {
+extension DSHomeViewController:XJLoopViewDelegate {
+    
+    func loopView(_ loopView: XJLoopView, didShowIndex index: Int, imageView: UIImageView) {
+        let banner = homeInfo?.banner?[index]
+        imageView.setImage(banner?.img)
+    }
+    func loopView(_ loopView: XJLoopView, didClickIndex index: Int) {
         if let homeBanner = homeInfo?.banner?[index] {
-             DSRouter.openURL(url: homeBanner.url)
+            DSRouter.openURL(url: homeBanner.url)
         }
     }
 }

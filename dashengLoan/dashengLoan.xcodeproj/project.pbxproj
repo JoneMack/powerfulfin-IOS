@@ -61,7 +61,6 @@
 		350A405C21E72C3C00092EDD /* success.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350A405B21E72C3C00092EDD /* success.plist */; };
 		350A405E21E72F0C00092EDD /* DSApplySuccessInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405D21E72F0C00092EDD /* DSApplySuccessInfo.swift */; };
 		350A406021E7502D00092EDD /* DSDisplayViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A405F21E7502D00092EDD /* DSDisplayViewCell.swift */; };
-		350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A521D06E170055EFA6 /* CLLoopView.swift */; };
 		350A68A821D0769B0055EFA6 /* MarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A721D0769B0055EFA6 /* MarqueeView.swift */; };
 		350A68AA21D0A71E0055EFA6 /* DSSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68A921D0A71E0055EFA6 /* DSSearchView.swift */; };
 		350A68B121D0B56E0055EFA6 /* DSHomeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350A68B021D0B56E0055EFA6 /* DSHomeDataService.swift */; };
@@ -113,6 +112,8 @@
 		350DD05021EC32D100243DDC /* DSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350DD04F21EC32D100243DDC /* DSData.swift */; };
 		350DD05221EC921000243DDC /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD05121EC921000243DDC /* opencv2.framework */; };
 		350DD05421EC947000243DDC /* UDIDSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DD05321EC947000243DDC /* UDIDSDK.a */; };
+		350E2468221CF5F30036DC9B /* XJLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350E2467221CF5F30036DC9B /* XJLoopView.swift */; };
+		3510FDA8221A998300C4275B /* Qingmiao.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3510FDA7221A998300C4275B /* Qingmiao.xcassets */; };
 		3513214721D4B120005AB183 /* XJImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214621D4B120005AB183 /* XJImagePicker.swift */; };
 		3513214921D4B527005AB183 /* DSImagePickerActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */; };
 		3513214B21D4D5FB005AB183 /* XJImageCompress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513214A21D4D5FB005AB183 /* XJImageCompress.swift */; };
@@ -253,7 +254,6 @@
 		350A405B21E72C3C00092EDD /* success.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = success.plist; sourceTree = "<group>"; };
 		350A405D21E72F0C00092EDD /* DSApplySuccessInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSApplySuccessInfo.swift; sourceTree = "<group>"; };
 		350A405F21E7502D00092EDD /* DSDisplayViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSDisplayViewCell.swift; sourceTree = "<group>"; };
-		350A68A521D06E170055EFA6 /* CLLoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLoopView.swift; sourceTree = "<group>"; };
 		350A68A721D0769B0055EFA6 /* MarqueeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeView.swift; sourceTree = "<group>"; };
 		350A68A921D0A71E0055EFA6 /* DSSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSSearchView.swift; sourceTree = "<group>"; };
 		350A68B021D0B56E0055EFA6 /* DSHomeDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSHomeDataService.swift; sourceTree = "<group>"; };
@@ -304,6 +304,8 @@
 		350DD04F21EC32D100243DDC /* DSData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSData.swift; sourceTree = "<group>"; };
 		350DD05121EC921000243DDC /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		350DD05321EC947000243DDC /* UDIDSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = UDIDSDK.a; sourceTree = "<group>"; };
+		350E2467221CF5F30036DC9B /* XJLoopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJLoopView.swift; sourceTree = "<group>"; };
+		3510FDA7221A998300C4275B /* Qingmiao.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Qingmiao.xcassets; sourceTree = "<group>"; };
 		3513214621D4B120005AB183 /* XJImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJImagePicker.swift; sourceTree = "<group>"; };
 		3513214821D4B527005AB183 /* DSImagePickerActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSImagePickerActionSheet.swift; sourceTree = "<group>"; };
 		3513214A21D4D5FB005AB183 /* XJImageCompress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XJImageCompress.swift; sourceTree = "<group>"; };
@@ -575,7 +577,6 @@
 			isa = PBXGroup;
 			children = (
 				350A68A721D0769B0055EFA6 /* MarqueeView.swift */,
-				350A68A521D06E170055EFA6 /* CLLoopView.swift */,
 			);
 			path = XJRoopView;
 			sourceTree = "<group>";
@@ -858,6 +859,14 @@
 			path = XJToast;
 			sourceTree = "<group>";
 		};
+		350E2466221CF5CD0036DC9B /* XJLoopView */ = {
+			isa = PBXGroup;
+			children = (
+				350E2467221CF5F30036DC9B /* XJLoopView.swift */,
+			);
+			path = XJLoopView;
+			sourceTree = "<group>";
+		};
 		3513214521D4AF8D005AB183 /* XJImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -975,6 +984,7 @@
 				3548366521BA158A008AB78D /* AppDelegate.swift */,
 				3508525521C352BB0095C391 /* dashengLoan-Bridging-Header.h */,
 				3548366C21BA158B008AB78D /* Assets.xcassets */,
+				3510FDA7221A998300C4275B /* Qingmiao.xcassets */,
 				3548367121BA158B008AB78D /* Info.plist */,
 			);
 			path = dashengLoan;
@@ -1151,6 +1161,7 @@
 		3595C61C21BE4C9800B90FD0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				350E2466221CF5CD0036DC9B /* XJLoopView */,
 				3513217821DC51D3005AB183 /* DSAddressBook */,
 				3513217121D72B9D005AB183 /* XJMutailDataPicker */,
 				3513216B21D65A62005AB183 /* XJSegmentedControl */,
@@ -1345,6 +1356,7 @@
 			files = (
 				350A691221D34FB00055EFA6 /* degree.plist in Resources */,
 				350A405021E5E05600092EDD /* sign.plist in Resources */,
+				3510FDA8221A998300C4275B /* Qingmiao.xcassets in Resources */,
 				350A692221D365BF0055EFA6 /* order.plist in Resources */,
 				350A68F821D326040055EFA6 /* bank.plist in Resources */,
 				3548366D21BA158B008AB78D /* Assets.xcassets in Resources */,
@@ -1511,6 +1523,7 @@
 				35552C7E21CB63D8002033FC /* DSAccountDataService.swift in Sources */,
 				3513216421D642CE005AB183 /* XJDataPicker.swift in Sources */,
 				3513217021D72231005AB183 /* DSWorkHeaderView.swift in Sources */,
+				350E2468221CF5F30036DC9B /* XJLoopView.swift in Sources */,
 				3513215A21D607E1005AB183 /* DSArray.swift in Sources */,
 				350A010421E0B47C00DFE703 /* DSUserMessageInfo.swift in Sources */,
 				350A00E921DF3F4000DFE703 /* DSSearchResultView.swift in Sources */,
@@ -1542,7 +1555,6 @@
 				35CE8ED821F71C1800B6E81F /* JPushManager.swift in Sources */,
 				3508778321CDEA94006580AD /* DSHomeSearchControl.swift in Sources */,
 				350A690B21D34CF90055EFA6 /* DSWorkViewController.swift in Sources */,
-				350A68A621D06E170055EFA6 /* CLLoopView.swift in Sources */,
 				350A405721E72A2900092EDD /* DSApplySuccessController.swift in Sources */,
 				350A011021E3504100DFE703 /* DSApplyInfoAlertView.swift in Sources */,
 				3548368221BA1765008AB78D /* DSTabBarController.swift in Sources */,

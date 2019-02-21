@@ -11,7 +11,6 @@ import AVFoundation
 import CoreImage
 import CoreGraphics
 class DSSacnBaseViewController: DSViewController {
-
     
     fileprivate(set) var captureSession:AVCaptureSession?
 
