@@ -135,9 +135,11 @@ extension XJLoopView:UIScrollViewDelegate {
             let width = bounds.width
             scrollView.setContentOffset(CGPoint(x: width, y: 0), animated: false)
         }else{
+
             if let imageView = scrollView.viewWithTag(baseImageViewTag + 0) as? UIImageView {
                 let indexx = indexFromImageInex(0)
                 self.delegate?.loopView(self, didShowIndex: indexx, imageView: imageView)
+
             }
         }
     }

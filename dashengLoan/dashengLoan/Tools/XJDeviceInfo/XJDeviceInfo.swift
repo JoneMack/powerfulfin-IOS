@@ -70,6 +70,7 @@ class XJDeviceInfo: NSObject {
     static var appVersion:String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     }
+    /// 0的测试包，1是AppStore，2是企业包
     static var channel:String {
         return Bundle.main.infoDictionary?["DSDownloadChannel"] as? String ?? "1"
     }

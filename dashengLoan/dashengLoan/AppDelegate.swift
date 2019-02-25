@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,BMKLocationAuthDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         DSAppearance.applicationDidFinishLaunching(launchOptions)
-        JPushManager.applicationDidFinishLaunching(launchOptions, delegate: self)
+//        JPushManager.applicationDidFinishLaunching(launchOptions, delegate: self)
         window?.rootViewController = DSTabBarController()
         DSUserCenter.default.applicationDidFinishLaunching()
         window?.makeKeyAndVisible()
